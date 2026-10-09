@@ -1,6 +1,6 @@
 # Foundational source inventory
 
-Inspected: 2026-10-07. Scope: files in this repository plus the reproducibleai website supplied by the user. This is a working inventory, not an exhaustive search of external program holdings.
+Inspected: 2026-10-07. Scope: repository context, the supplied UMRR collection in the parent workspace, and user-designated websites. This is a working inventory, not an exhaustive search of external program holdings.
 
 ## Available material
 
@@ -13,7 +13,7 @@ Inspected: 2026-10-07. Scope: files in this repository plus the reproducibleai w
 | [Scaffold manifest](../agentic-context.yml) | Records reproducibleai package_version 2026.9.4, standard_version 0.1, base and r-package profiles | Installation metadata and seeded-file hashes | Read; does not establish an implemented R package or verify the latest upstream guidance |
 | [reproducibleai website](https://mvr-gis.github.io/reproducibleai/) | URL supplied by user | Potential upstream framework guidance | Attempted access through web tool failed; current upstream content was not reviewed. Local scaffold guidance remains the available evidence. |
 
-No program reports, monitoring plans, datasets, database schemas, FG source code, or existing user analyses were found in this repository during inspection.
+At initial inspection, no program reports or prior technical work were present. The user has since supplied `UMRR/KeyDocuments` (37 PDFs, 2,478 pages) and `UMRR/EMMA` (three decks, 82 slides) in the parent workspace. These originals remain outside the Git repository. See the [first program review](umrr-program-review.md), [complete file register](umrr-source-register.json), and [EMMA crosswalk](../architecture/emma-crosswalk.md). Datasets, an executable EMMA schema, and FG source/interface documentation are still absent from this collection.
 
 ## User-designated canonical discovery sources
 
@@ -26,11 +26,11 @@ Supplied by the user on 2026-10-07. Canonical status applies to these discovery 
 | [HREP project finder](https://www.mvr.usace.army.mil/missions/environmental-stewardship/upper-mississippi-river-restoration/habitat-restoration/find-an-hrep-project/) | Project discovery for later validation | Page read; project finder is embedded ArcGIS content, not a static document listing |
 | [USGS LTRM](https://umesc.usgs.gov/ltrm-home.html) | Monitoring and scientific material discovery | Direct fetch returned 403; search found the official [LTRM report list](https://www.umesc.usgs.gov/reports_publications/ltrmp_rep_list.html); full documents not yet reviewed |
 
-These URLs are available starting points, not a locally acquired or indexed corpus. The missing-material list below now describes material still to acquire and review rather than an absence of discovery sources.
+These URLs are canonical discovery starting points. Local documents are now available and have received a first review; no vector index has been built. Individual files still require original-URL reconciliation and source-status/version review.
 
 ## Materials still to acquire and review
 
-The categories below are assistant-proposed collection priorities. They are not claims that particular documents exist or requirements already approved by a program.
+The categories below were the initial assistant-proposed collection priorities. The supplied collection now partially meets the program-document and user-framing priorities. Use the [program review's remaining gaps](umrr-program-review.md#foundational-material-still-missing-or-unverified) for the current specific acquisition needs. These priorities are not approved program requirements.
 
 | Priority | Material to locate | Purpose |
 | --- | --- | --- |
