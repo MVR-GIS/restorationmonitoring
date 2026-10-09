@@ -30,6 +30,12 @@ These URLs are canonical discovery starting points. Local documents are now avai
 
 ## Materials still to acquire and review
 
+### Research discovery addition, 2026-10-09
+
+The user identified USGS ScienceBase as the discovery platform for UMESC-administered UMRR LTRM and specialized research outputs. This is a user-designated research source to inventory, not an independently verified complete collection. No ScienceBase records or attachments have been inventoried in this review. A later acquisition pass should reconcile publication records, datasets, attachments, versions, and stable identifiers with the local collection and explicitly record coverage gaps.
+
+An initial official-source discovery check on 2026-10-09 located the UMESC data catalogue and a USGS data-release description linked to ScienceBase (DOI 10.5066/P14BFCUP). See [relationship analysis](../architecture/science-restoration-relationships.md#initial-external-discovery-check-2026-10-09) for exact sources and limits. This lead has not been added to the local-file register: no release attachments were acquired, and complete research coverage remains unestablished.
+
 The categories below were the initial assistant-proposed collection priorities. The supplied collection now partially meets the program-document and user-framing priorities. Use the [program review's remaining gaps](umrr-program-review.md#foundational-material-still-missing-or-unverified) for the current specific acquisition needs. These priorities are not approved program requirements.
 
 | Priority | Material to locate | Purpose |

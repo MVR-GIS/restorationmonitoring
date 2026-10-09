@@ -6,6 +6,16 @@
 
 ## What the decks document
 
+## Established relationships supplied by the user, 2026-10-09
+
+HREP → Project Objective → Performance Criterion → Monitoring Task → Observation.
+
+Each arrow means the preceding item "has" the following item, as specified by the user. This is the accepted conceptual starting point, not a verified physical schema or a statement of cardinality. Objectives, criteria, tasks, and observations are existing EMMA concepts; proposed work should inspect how these are represented and connected before defining extensions.
+
+The research side includes UMESC's LTRM and specialized research outputs, with ScienceBase identified by the user as a discovery platform. The desired scientific extension connects hypotheses in that research to planned/installed restoration practices and observed outcomes. A project performance assessment also connects observations back to criteria and objectives at lifecycle intervals. Scientific hypothesis evaluation and project performance assessment require related evidence but answer distinct questions.
+
+## Historical deck evidence
+
 [EMMA Getting Started](../../../UMRR/EMMA/EMMA%20Getting%20Started.pptx), slides 7-12, describes task recording, schedules, budgets, data stewardship, reporting, deployment in FY22-23, and subsequent data entry. This is historical deployment evidence as reported by the deck; the live system was not accessed.
 
 [EMMA Roadmap](../../../UMRR/EMMA/EMMA%20Roadmap.pptx), slides 8-9, proposes connecting studies, questions, hypotheses, scientific objectives/designs/treatments, measurements/results/conclusions/assessments with restoration projects, objectives, performance criteria, features, monitoring events, field data, and performance reports. Slides 26 and 31 include physical-model screenshots with entity and relationship tables. The drawings provide a valuable starting vocabulary but not a validated full schema or cardinality contract.

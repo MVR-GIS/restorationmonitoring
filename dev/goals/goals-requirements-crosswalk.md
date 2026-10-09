@@ -1,7 +1,7 @@
 # Goals and requirements crosswalk
 
 - Started: 2026-10-08
-- Status: revised around accepted user purpose and four user stories; specific requirements awaiting review
+- Status: revised around accepted user purpose and five user stories; specific requirements awaiting review
 - Evidence: [program review](umrr-program-review.md), [source register](umrr-source-register.json), [EMMA review](../architecture/emma-crosswalk.md)
 - Boundary: program foundation first; database implementation deferred
 
@@ -28,7 +28,7 @@ These infrastructure goals enable work toward program ecological goals; they do 
 
 ## User-provided stories and proposed interpretation
 
-These four needs are supplied by the user. The interpretations and requirement mappings are proposals, not approved specifications.
+These five needs are supplied by the user. The interpretations and requirement mappings are proposals, not approved specifications.
 
 | ID / user | User's question | Proposed information needed | Proposed requirements |
 | --- | --- | --- | --- |
@@ -36,10 +36,17 @@ These four needs are supplied by the user. The interpretations and requirement m
 | US-02 / USGS researcher | How do I identify all of the HREPs that implemented treatments informing Hypothesis X? | Explicit hypothesis identity; treatment definitions and actual implementations; studies, findings, and coverage of the program record | R-02, R-03, R-08, R-09, R-10 |
 | US-03 / USACE engineer | How do I assess the outcomes of Treatment X? | Intended response, actual treatment condition, study design, observations, analyses, context, uncertainty, and conflicting or inconclusive results | R-03, R-04, R-05, R-07, R-08, R-11 |
 | US-04 / citizen | How do I determine if continued funding for this program is worthwhile? | Accessible account of goals, accomplishments, outcomes, resource use where available, evidence limits, and the reasoning behind program assessments | R-01, R-05, R-12 |
+| US-05 / biologist | How do I evaluate collected monitoring data against specified performance criteria to assess achievement of project objectives and project success at intervals throughout the project lifecycle? | Relevant observations, criterion definitions and applicability, evaluation method, lifecycle interval, objective-level assessment, and uncertainty | R-03, R-04, R-05, R-07, R-14 |
 
 All stories depend on R-13 for continuity. Supporting a funding judgment does not establish a single automatic funding score or a required economic valuation method.
 
+On 2026-10-09 the user accepted US-02 as the starting point for analysis, added US-05, and specified EMMA's existing chain: HREP → Project Objective → Performance Criterion → Monitoring Task → Observation. This establishes the conceptual baseline without specifying cardinalities or a physical schema. ScienceBase is a user-designated discovery source for the UMESC research body; its completeness remains to be inventoried.
+
 ## Proposed requirements
+
+The user further clarified that artifact-based listing and linking is the inductive foundation of the effort. The relationship vocabulary and requirements should evolve through program-level examination of real artifacts. Descriptive discovery, scientific evaluation, and long-term preservation are distinct outcomes; new insights are not a prerequisite for preservation value.
+
+The user's latest clarification establishes support for mature, distributed expert workflows as a design direction. R-15 through R-17 below propose capabilities translating that direction and the desired study-management benefits into observable review evidence. They do not mandate replacement of existing methods or a centralized scientific approval process.
 
 Review tests describe observable acceptance evidence for later validation. They are not automated software tests or instructions to start individual-project analysis now.
 
@@ -58,10 +65,26 @@ Review tests describe observable acceptance evidence for later validation. They 
 | R-11 / G-02, G-03, G-04 | Synthesize treatment outcomes across studies while retaining site conditions, comparison design, uncertainty, and negative or inconclusive results | US-03; E2, E5 | Reviewer explains which outcomes can be compared, how they were derived, and where attribution or transfer to another setting is unsupported | Synthesis methods, comparability, treatment variants |
 | R-12 / G-06 | Produce understandable, source-traceable accounts of accomplishments and program value for different audiences | US-01, US-04; E1 | Reviewer traces summary statements to underlying records, separates completed work from ecological outcomes, and identifies uncertainty and aggregation limits | Reporting measures, resource-use records, public access and audiences |
 | R-13 / G-05 | Preserve scientific work, responsibilities, review state, and interpretation history through staff transitions | User's institutionalization purpose; E1 institutional knowledge | A successor reconstructs the scientific question, work completed, evidence, unresolved issues, and next evaluation without relying on the original individual's memory | Stewardship roles, review checkpoints, handoff practice |
+| R-14 / G-03, G-04 | Evaluate monitoring observations against applicable performance criteria at specified lifecycle intervals and connect results to objective-level assessments | US-05; user-defined EMMA chain; E4, E5 | Reviewer reconstructs which observations, criterion version, interval, and evaluation method support an assessment; missing or insufficient evidence remains explicit, and later assessments preserve earlier results | Criteria applicability over time, evaluation methods, objective aggregation, handling conflicting criteria |
+| R-15 / G-02, G-04, G-05 | Track planned study elements, dependencies, completion evidence, changes, and unresolved omissions through existing partner workflows | User's distributed-program and follow-through direction | A successor distinguishes planned, performed, changed, and undocumented study elements and explains the implications of an omitted comparison, treatment, sampling interval, or analysis | Existing tracking practices, minimum useful detail, responsible roles, visibility and update burden |
+| R-16 / G-01, G-02, G-04 | Make prior findings, lessons, answered questions within their scope, tentative conclusions, and remaining confirmation needs discoverable during study planning | User's learning and confirmatory-study needs; E1, E5, E7 | A planning review identifies relevant previous work, its conditions and confidence, how it affected the design, and what new evidence would strengthen or challenge a tentative conclusion | How disciplines describe confidence, applicability, answered questions, and confirmation needs |
+| R-17 / G-05 | Coordinate scientific records across organizations and disciplines using existing systems, stewardship roles, identifiers, and review practices where suitable | User's support-existing-workflows direction; E6; existing EMMA stewardship | Partners trace connected work and maintain their contributions with clear responsibility and visibility; a review identifies duplicated entry and demonstrates how routine updates fit existing work | Current systems and handoffs, permissions, shared vocabulary, synchronization and sustainable maintenance |
+| R-18 / G-01, G-02, G-05 | Extract and connect key scientific/restoration elements from historical artifacts, refining the conceptual vocabulary through observed content | User's inductive listing-and-linking strategy | A reviewer recovers each extracted element and relationship from its source/version/locator, distinguishes documented statements from inferred links, and identifies duplicates, unresolved identities, and unrepresented content | Extraction/review methods, source coverage, identity reconciliation, and vocabulary evolution |
+| R-19 / G-01, G-05 | Preserve access to underlying artifacts, datasets, and their versions alongside extracted records and relationships | User's intergenerational preservation purpose | A future practitioner can recover the evidence behind a record or see an explicit access/preservation gap; preservation remains valuable without a new scientific discovery | Custody, storage, backup/recovery, external dependencies, and access constraints |
+
+## Starting analysis: connecting the established restoration chain to research
+
+US-02 is the accepted starting story. The proposed first analysis should define what constitutes a hypothesis in the research corpus, a planned versus implemented restoration practice, and evidence that a treatment informs a hypothesis. Existing EMMA concepts provide the restoration anchor; research questions, designs, analyses, conclusions, and assessments are extensions to reconcile with that anchor.
+
+US-05 provides a complementary check: observations must remain interpretable against their specified criteria and objectives over lifecycle intervals. Meeting a project criterion alone does not demonstrate a causal hypothesis, and evidence informing a hypothesis does not alone establish project success. Both assessments should retain their reasoning and supporting observations.
+
+Before choosing an example or implementing entities, review the minimum connecting relationships, evidence needed to assert each connection, and unknowns in existing records. Inventory ScienceBase research metadata and available outputs at program level before claiming complete research coverage.
 
 ## Proposed incremental sequence
 
-1. Reconcile the program foundation with the four user stories and review the minimum scientific terminology and evidence needed for each. Use the accumulated program record before selecting validation cases.
+The user's inductive clarification refines the sequence below: begin program-level artifact inventory, extraction, and linking as foundation work; use encountered content to revise proposed definitions and requirements. Do not treat the draft vocabulary as a closed list or require all terms to be settled before examining artifacts. Detailed individual-project validation and physical database implementation still follow foundation review.
+
+1. Reconcile the program foundation with the five user stories and review the minimum scientific terminology and evidence needed for each. Use the accumulated program record before selecting validation cases.
 2. Inspect existing EMMA objectives, performance criteria, and monitoring commitments as the operational starting point. Preserve existing identifiers and stewardship practices where suitable.
 3. Specify the smallest useful extension linking those records to explicit hypotheses and treatment implementations. Record inferred legacy hypotheses as proposed interpretations until reviewed.
 4. After the foundation and requirements are reviewed, validate those links with selected real program records. Expand into study designs, observations, analyses, conclusions, assessments, and management decisions as successive capabilities require them.
@@ -70,6 +93,8 @@ Review tests describe observable acceptance evidence for later validation. They 
 This sequence is an assistant proposal following the user's accepted stepwise direction. Retrieval can help discover evidence; an exhaustive cross-project query also requires reviewed relationships and an explicit coverage account.
 
 ## Worked entry: assessment interpretation
+
+The [science–restoration relationship analysis](../architecture/science-restoration-relationships.md) defines proposed connections L-01 through L-08, evidence needs, query-result distinctions, and inspection inputs for US-02 and US-05. It is a conceptual review artifact, not an accepted schema.
 
 - **Documented evidence:** HNA-II PDF p47 (printed p24) illustrates different desired conditions behind an identical connectivity rating. See E3 for source scope and copy-status limits.
 - **Practical question (proposed):** What does this rating mean, and why did the agency assign it?
@@ -98,5 +123,11 @@ This sequence is an assistant proposal following the user's accepted stepwise di
 
 ## Review history
 
+- Latest user clarification: accepted an inductive artifact-based listing-and-linking strategy and preservation as an independently valuable outcome. Added proposed R-18 and R-19. Historical extraction may refine the conceptual model during foundation work; new scientific discoveries remain anticipated rather than guaranteed.
+
+- Latest user clarification: accepted support for mature distributed scientific workflows as a design direction; refined the earlier problem framing to recognize effective established practice. Added proposed R-15 through R-17 for study follow-through, cumulative learning/confirmation, and partner coordination. Benefits remain intended, not demonstrated.
+
 - 2026-10-08: Assistant drafted G-01 to G-05 and R-01 to R-08 from maintained review evidence. All entries proposed. User invited to select the first decision to review; no answer or priority inferred.
 - 2026-10-08: User supplied the central institutionalization purpose, current EMMA accomplishments, incremental extension direction, and four user stories. Recorded G-00 and US-01 through US-04 as explicit user direction. Added proposed G-06 and R-09 through R-13 and a proposed incremental sequence. No specific requirement, ordering among user stories, or technology choice was approved.
+- 2026-10-09: User accepted US-02 as the starting analysis, supplied US-05 and existing EMMA conceptual relationships, and identified the ScienceBase research connection. Added proposed R-14 and revised the starting analysis. Specific requirements, cardinalities, and implementation choices remain unapproved.
+- 2026-10-09: User authorized proceeding with relationship analysis. Drafted L-01 through L-08 and evidence/coverage needs; performed an initial official-source discovery check. The definitions remain proposals for review; current EMMA exports and full research inventory are still unavailable.
