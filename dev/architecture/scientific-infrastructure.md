@@ -27,6 +27,10 @@ Database implementation remains deferred pending grounded, reviewed goals and re
 
 ## State after the supplied-document review
 
+### Updated production baseline, 2026-10-13
+
+EMMA DDL/ERDs and Restoration Features XML are now supplied. Both systems are active production systems according to the user. Read-only inspection found established restoration identities/classifications and operational relationships; live records were not accessed. See [production schema review](production-schema-review.md). Scientific vocabulary development is inductive, and USACE ontology alignment is a long-term goal rather than an immediate dependency.
+
 On 2026-10-07, the parent workspace also contains 37 program PDFs and three EMMA decks in `UMRR/`. Repository HEAD at this review is 2699649, which records the scaffold and initial context; the working tree was clean before this review's documentation changes. The earlier inspection above describes the starting state.
 
 The decks report historical deployment of EMMA for monitoring operations and propose a scientific knowledge extension. See [EMMA crosswalk](emma-crosswalk.md) for evidence and recommended boundaries. This repository still has no database implementation; current external EMMA schema and status have not been verified. The source collection remains outside the repository and requires a storage/backup decision for reproducible use across checkouts.

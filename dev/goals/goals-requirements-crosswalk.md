@@ -74,6 +74,10 @@ Review tests describe observable acceptance evidence for later validation. They 
 
 ## Starting analysis: connecting the established restoration chain to research
 
+Terminology clarification: the user's "science vocabulary" means naming the scientific data entities in the conceptual model. Established ecosystem-restoration terminology is retained; creating a domain vocabulary is outside this naming task. Proposed entities and their relationships should be distinguished from domain terms appearing in their content.
+
+The [2026-10-13 production schema review](../architecture/production-schema-review.md) supplies concrete anchors for this work: many-to-many objective/criterion/task relations in EMMA and feature identifiers/classification domains in Restoration Features. Both are actively populated production systems according to the user. Vocabulary extraction from science/program documents proceeds inductively; USACE ontology alignment is a long-term goal. Earlier missing-schema notes are historical; observation storage and cross-system identities remain unresolved.
+
 US-02 is the accepted starting story. The proposed first analysis should define what constitutes a hypothesis in the research corpus, a planned versus implemented restoration practice, and evidence that a treatment informs a hypothesis. Existing EMMA concepts provide the restoration anchor; research questions, designs, analyses, conclusions, and assessments are extensions to reconcile with that anchor.
 
 US-05 provides a complementary check: observations must remain interpretable against their specified criteria and objectives over lifecycle intervals. Meeting a project criterion alone does not demonstrate a causal hypothesis, and evidence informing a hypothesis does not alone establish project success. Both assessments should retain their reasoning and supporting observations.

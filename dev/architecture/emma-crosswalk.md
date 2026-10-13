@@ -6,6 +6,10 @@
 
 ## What the decks document
 
+### Update: production structural evidence, 2026-10-13
+
+The user supplied current EMMA DDL and two ERDs and confirmed active production stewardship. The [production schema review](production-schema-review.md) documents objective–criterion and task–criterion many-to-many relations, event tracking, and remaining observation-storage questions. It supersedes the earlier absence of structural exports; historical deck interpretations remain dated evidence.
+
 ## Established relationships supplied by the user, 2026-10-09
 
 HREP → Project Objective → Performance Criterion → Monitoring Task → Observation.

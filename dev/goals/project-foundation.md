@@ -14,6 +14,12 @@ Use the existing reproducibleai artifact structure. Defer database implementatio
 
 ## Current scope
 
+### Production systems and vocabulary direction, 2026-10-13
+
+The user identifies EMMA as a production database actively populated by EMMA Data Stewards extracting from legacy HREP artifacts, and Restoration Features as a production database populated by USACE GIS staff for UMRR and NESP planned/installed practices. Supplied DDL/ERDs and a geodatabase XML schema now provide structural evidence. See [production schema review](../architecture/production-schema-review.md); earlier statements that schema exports are missing describe previous inspection states.
+
+The accepted direction is to inductively derive names and definitions for scientific data entities in the conceptual model from UMESC research and UMRR programmatic documents. The user clarified that "science vocabulary" refers only to these entity names, not a new ecosystem-restoration vocabulary. Established domain terminology should be retained. Integration into the user-designated USACE ontology is a long-term goal, not an immediate prerequisite or approved technology implementation.
+
 ### User clarification: inductive listing and linking
 
 The user's accepted strategy is highly inductive: systematically examine the science and restoration artifacts accumulated across the program's 40+ years, extract their key elements (including hypotheses, observations, performance criteria, and objectives), and use documented details to connect those elements to projects, restoration features, and one another. This clarifies the earlier program-first direction: historical artifact examination and extraction are the means of grounding and refining the requirements. They need not wait for a fully predetermined conceptual model; physical database implementation remains deferred pending foundation review.

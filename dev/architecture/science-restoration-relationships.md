@@ -9,6 +9,8 @@
 
 ### Inductive construction of the research network
 
+The user clarified that "science vocabulary" refers to conceptual data-entity names. Derive and review those entity distinctions from artifacts while preserving established ecosystem-restoration language. An entity such as Hypothesis describes the kind of record; ecological terms within a particular hypothesis remain domain content, not newly invented entity terminology.
+
 The user intends to build the network by extracting elements and relationships from the accumulated program artifacts. The terms and relationships in this draft are starting hypotheses about useful structure, not a closed ontology to impose on the source collection. Program-level artifact review should reveal additional concepts, exceptions, and relationship meanings and drive revisions before physical implementation.
 
 Proposed working progression:

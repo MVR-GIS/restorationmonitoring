@@ -4,6 +4,10 @@ Inspected: 2026-10-07. Scope: repository context, the supplied UMRR collection i
 
 ## Available material
 
+### Production schema additions, 2026-10-13
+
+Four supplied structural artifacts are now reviewed: EMMA model DDL, two ERD PNGs, and Restoration Features geodatabase XML. See [production schema review](../architecture/production-schema-review.md) for exact filenames, structural findings, and limits. Both systems are actively populated production databases according to the user. Prior statements about absent executable schema exports are superseded; current records, observed corpus coverage, and cross-system identity semantics remain uninspected. Source originals remain outside the repository. The XML's embedded connection metadata must be excluded from maintained context and shareable derivatives.
+
 | Source | Origin/version | Coverage and authority | Review state |
 | --- | --- | --- | --- |
 | [Initial conversation](../checkpoints/archive/initial_transcript.md) | User-provided archived chat; conversation dates not established | User purpose, sequencing correction, and FG relationship; assistant proposals interspersed | Read; accepted directions extracted into project-foundation.md. Assistant claims about other chats or recovered work are unverified. |
