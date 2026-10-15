@@ -73,6 +73,8 @@ The [USACE ontology repository](https://github.com/cwbi-apps/usace-ukg-ontologie
 
 ## Next inspection questions
 
+The [2026-10-14 Restoration Features book review](restoration-features-documentation-review.md) now adds documented lifecycle rules, status semantics, geometry representations, NESP/handbook crosswalks, and reconciliation items. It strengthens intended meanings without establishing live-record completeness or cross-system identity equivalence.
+
 - Where are EMMA observations and source-data/document links represented today?
 - What is the authoritative EMMA–Restoration Features project identity crosswalk, and how are feature identities/history managed?
 - Which accessible science/program documents should form the first varied terminology extraction sample?

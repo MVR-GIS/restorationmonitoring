@@ -22,6 +22,7 @@
 - Cohesive user-visible capabilities: `dev/features/`
 - Resumable unfinished work: `dev/checkpoints/current/`
 - R package API, implementation, documentation, or tests: `DESCRIPTION`, `NAMESPACE`, `R/`, `man/`, `tests/testthat/`, and `dev/workflows/r-package-development.md`
+- Restoration Features GIS model documentation, feature definitions, attributes, or classification crosswalks: sibling repository `../umrs_rf/`; start with `_quarto.yml`, `index.qmd`, and `intro.qmd`, then the relevant `rf_*.qmd`, `rsf_*.qmd`, or crosswalk chapter. Consult its local agent instructions if present. Read authored Quarto sources; `docs/` is rendered output. Compare documented structure with `../UMRR/RestorationFeatures/` schema exports when needed, retaining version differences.
 
 Full session transcripts are not normal context sources. Use maintained durable artifacts and concise checkpoints.
 

@@ -74,6 +74,10 @@ Review tests describe observable acceptance evidence for later validation. They 
 
 ## Starting analysis: connecting the established restoration chain to research
 
+The [Restoration Features book review](../architecture/restoration-features-documentation-review.md) grounds R-08/R-10/R-11/R-17/R-18 in existing documentation: retain measure/class/implementation/geometry distinctions; interpret missing attributes by lifecycle phase; preserve operating and repair history beyond status; and support multi-feature evaluations. Classification crosswalks guide discovery rather than establish hypothesis or outcome links. These are proposed implications, not newly approved requirements.
+
+The user clarified that initial examples need not concern the same project. The extraction pilot should represent independent fragmented artifacts, document internal relationships, and retain unresolved cross-artifact linking opportunities. An already connected document set is not an entry condition.
+
 Terminology clarification: the user's "science vocabulary" means naming the scientific data entities in the conceptual model. Established ecosystem-restoration terminology is retained; creating a domain vocabulary is outside this naming task. Proposed entities and their relationships should be distinguished from domain terms appearing in their content.
 
 The [2026-10-13 production schema review](../architecture/production-schema-review.md) supplies concrete anchors for this work: many-to-many objective/criterion/task relations in EMMA and feature identifiers/classification domains in Restoration Features. Both are actively populated production systems according to the user. Vocabulary extraction from science/program documents proceeds inductively; USACE ontology alignment is a long-term goal. Earlier missing-schema notes are historical; observation storage and cross-system identities remain unresolved.

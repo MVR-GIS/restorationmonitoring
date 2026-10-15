@@ -7,6 +7,8 @@
 
 ## Established baseline and scope
 
+The [Restoration Features documentation review](restoration-features-documentation-review.md) supplies existing feature definitions and crosswalks. Proposed L-02/L-03 meanings must distinguish broad restoration measures, GIS feature classes, physical implementations, and their spatial representations. L-04/L-05 must allow evaluations of combined interventions and operating histories. A feature-status label alone does not establish its condition at the time of observation; general handbook/documentation guidance is not automatically an HREP-specific criterion or hypothesis.
+
 ### Inductive construction of the research network
 
 The user clarified that "science vocabulary" refers to conceptual data-entity names. Derive and review those entity distinctions from artifacts while preserving established ecosystem-restoration language. An entity such as Hypothesis describes the kind of record; ecological terms within a particular hypothesis remain domain content, not newly invented entity terminology.

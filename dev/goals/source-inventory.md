@@ -4,6 +4,12 @@ Inspected: 2026-10-07. Scope: repository context, the supplied UMRR collection i
 
 ## Available material
 
+### Restoration Features documentation repository, 2026-10-14
+
+Review update: [Restoration Features documentation review](../architecture/restoration-features-documentation-review.md) records source HEAD `b5f344f16e4aee733cdb3eabe026bcb06263e8e7`, all 37 chapter files inventoried, and focused review of purpose, feature definitions, attribute/lifecycle guidance, classification crosswalks, and selected parameters. This supersedes the initial unreviewed-chapter status below. Numerical engineering guidance and case-study outcome claims have not been independently verified. Original book files remain unchanged.
+
+The sibling Git repository is present at `../umrs_rf/` (underscore in the actual workspace directory). Its `_quarto.yml` defines the **UMRS Restoration Features** book, authored in root-level `.qmd` chapters with rendered output in `docs/`. Feature and support-feature chapters document the GIS model; `rf_cross_x_nesp.qmd` and `rf_cross_x_design_hb.qmd` provide classification crosswalks. The repository links to `https://github.com/UMRS/Restoration-Features`. Configuration and chapter inventory were inspected; chapter content has not yet received a full review. `AGENTS.md` now routes relevant model/documentation work here conditionally. No sibling files were changed.
+
 ### Production schema additions, 2026-10-13
 
 Four supplied structural artifacts are now reviewed: EMMA model DDL, two ERD PNGs, and Restoration Features geodatabase XML. See [production schema review](../architecture/production-schema-review.md) for exact filenames, structural findings, and limits. Both systems are actively populated production databases according to the user. Prior statements about absent executable schema exports are superseded; current records, observed corpus coverage, and cross-system identity semantics remain uninspected. Source originals remain outside the repository. The XML's embedded connection metadata must be excluded from maintained context and shareable derivatives.
