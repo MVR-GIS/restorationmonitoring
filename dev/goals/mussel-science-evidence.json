@@ -1,0 +1,163 @@
+{
+  "record_kind": "science extraction and conceptual linking worksheet; not published ontology or causal inference result",
+  "status": "initial purposive sample; source depth labelled; user/SME review pending",
+  "organizational_baseline": {
+    "local_repo": "usace-ukg-ontologies",
+    "head": "3ab4e87813875f444748720b29e59483a44bfb0c",
+    "repository_version": "2.0.0",
+    "remote_freshness_verified": false
+  },
+  "zotero_collection": {
+    "group_id": 4862069,
+    "collection_key": "2SIRQ6RY",
+    "name": "mussels",
+    "coverage": "selected items only"
+  },
+  "sources": [
+    {
+      "id": "MS-01",
+      "zotero_item_key": "5FDNSRCG",
+      "doi": "10.1007/s10750-007-9167-1",
+      "source_url": "https://pubs.usgs.gov/publication/70033362",
+      "reading_depth": "USGS abstract; Zotero metadata"
+    },
+    {
+      "id": "MS-02",
+      "zotero_item_key": "DUVHKHIT",
+      "doi": "10.1007/s10750-008-9423-z",
+      "source_url": "https://www.usgs.gov/publications/use-complex-hydraulic-variables-predict-distribution-and-density-unionids-a-side",
+      "reading_depth": "USGS abstract; Zotero metadata"
+    },
+    {
+      "id": "MS-03",
+      "zotero_item_key": "T5L6D83Y",
+      "doi": "10.1111/fwb.13575",
+      "source_url": "https://pubs.usgs.gov/publication/70215652",
+      "reading_depth": "USGS abstract and previously inspected Zotero abstract"
+    },
+    {
+      "id": "MS-04",
+      "zotero_item_key": null,
+      "doi": "10.1002/aqc.2590",
+      "source_url": "https://pubs.usgs.gov/publication/70159856",
+      "reading_depth": "USGS abstract; collection title observed; item key not captured"
+    },
+    {
+      "id": "MS-05",
+      "zotero_item_key": null,
+      "doi": "10.31931/fmbc-d-21-00004",
+      "source_url": "https://molluskconservation.org/PUBLICATIONS/FMBC/EARLY%20VIEW/FMBC_Vol25_Newton_EarlyView.pdf",
+      "reading_depth": "Selected full-text sections; collection title observed; item key not captured"
+    },
+    {
+      "id": "MS-06",
+      "zotero_item_key": "7LEGWGAJ",
+      "doi": "10.5751/ES-10014-230206",
+      "source_url": "https://www.usgs.gov/publications/developing-a-shared-understanding-upper-mississippi-river-foundation-ecological",
+      "reading_depth": "USGS summary; Zotero metadata"
+    }
+  ],
+  "assertions": [
+    {
+      "id": "SC-01",
+      "source_id": "MS-01",
+      "kind": "reported_analysis_and_finding",
+      "paraphrase": "Retrospective statistical and geospatial analyses connect physical/hydraulic predictors to mussel distribution.",
+      "source_locator": "Abstract",
+      "limit": "Exploratory associations and predictions; not evidence of an experimental restoration effect.",
+      "extraction_status": "assistant source-based extraction; not SME-reviewed",
+      "full_text_scope": "see source reading depth"
+    },
+    {
+      "id": "SC-02",
+      "source_id": "MS-02",
+      "kind": "author_interpretation",
+      "paraphrase": "Low-flow transport and high-flow hydraulic refuge are proposed explanations for hydraulic associations with mussel density.",
+      "source_locator": "Abstract, final interpretation",
+      "limit": "Specific retrospective reach/flow context; no universal numerical design threshold extracted.",
+      "extraction_status": "assistant source-based extraction; not SME-reviewed",
+      "full_text_scope": "see source reading depth"
+    },
+    {
+      "id": "SC-03",
+      "source_id": "MS-03",
+      "kind": "reported_finding",
+      "paraphrase": "Repeated tagged-mussel measurements show species/time/habitat variation in survival and growth; substrate stability is relevant to interpretation.",
+      "source_locator": "Abstract, methods/results/conclusion",
+      "limit": "Do not infer that a Steamboat intervention caused survival changes.",
+      "extraction_status": "assistant source-based extraction; not SME-reviewed",
+      "full_text_scope": "see source reading depth"
+    },
+    {
+      "id": "SC-04",
+      "source_id": "MS-03",
+      "kind": "author_hypothesis_requiring_test",
+      "paraphrase": "Core-to-periphery source-sink dynamics are proposed, with further recruitment-source studies needed.",
+      "source_locator": "Abstract, habitat-specific survival interpretation",
+      "limit": "Proposed explanation is not a confirmed population mechanism.",
+      "extraction_status": "assistant source-based extraction; not SME-reviewed",
+      "full_text_scope": "see source reading depth"
+    },
+    {
+      "id": "SC-05",
+      "source_id": "MS-04",
+      "kind": "reported_analysis_and_finding",
+      "paraphrase": "Recruitment strength is associated with discharge metrics, with different selected predictors for life-history groups.",
+      "source_locator": "Abstract points 3-6",
+      "limit": "Species/life-history and retrospective cohort scope retained; no transferred coefficients or universal threshold.",
+      "extraction_status": "assistant source-based extraction; not SME-reviewed",
+      "full_text_scope": "see source reading depth"
+    },
+    {
+      "id": "SC-06",
+      "source_id": "MS-05",
+      "kind": "reported_method_and_finding",
+      "paraphrase": "Literature and expert-derived biological parameter estimates enter HEA scenarios; sensitivity analysis exposes uncertainty in restoration-scaling outputs.",
+      "source_locator": "Early-view PDF pp3-4 Parameterization; p6 Sensitivity Analysis; p8 Data Needed",
+      "limit": "Selected text sections only; no table-cell values transcribed and no claim HEA was used for Steamboat.",
+      "extraction_status": "assistant source-based extraction; not SME-reviewed",
+      "full_text_scope": "see source reading depth"
+    },
+    {
+      "id": "SC-07",
+      "source_id": "MS-06",
+      "kind": "conceptual_framework",
+      "paraphrase": "A shared UMRS model distinguishes connected channel, off-channel and floodplain systems and controlling variables across scales.",
+      "source_locator": "USGS summary paragraphs 1-4",
+      "limit": "System context; not a mussel-specific restoration-effect study.",
+      "extraction_status": "assistant source-based extraction; not SME-reviewed",
+      "full_text_scope": "see source reading depth"
+    },
+    {
+      "id": "SC-08",
+      "source_id": null,
+      "kind": "assistant_formulated_local_design_hypothesis",
+      "paraphrase": "A proposed restoration intervention maintaining suitable substrate stability across relevant flows may improve local conditions for mussel persistence.",
+      "source_locator": null,
+      "informed_by": [
+        "SC-02",
+        "SC-03"
+      ],
+      "limit": "Not a verbatim author hypothesis or demonstrated treatment effect. Requires applicability review and local design/observation evidence.",
+      "extraction_status": "proposal for review"
+    }
+  ],
+  "project_connection": {
+    "project": "Steamboat Island HREP",
+    "benefit": "anticipated ancillary mussel habitat benefit",
+    "restoration_evidence": "steamboat-island-objectives-criteria.json:mussel_benefit",
+    "design_hypothesis": "SC-08",
+    "relationship_status": "proposed applicability link, not evidence of adoption by project designers",
+    "installed_feature_identity": null,
+    "demonstrated_postconstruction_mussel_effect": null,
+    "dedicated_postconstruction_mussel_survey_commitment": "not in reviewed feasibility plan"
+  },
+  "not_encoded_as_facts": [
+    "That all six publications are independent studies",
+    "That all source papers explicitly state a formal hypothesis",
+    "That habitat creation guarantees colonization or persistence",
+    "That peer review or governance Current status proves a proposition",
+    "That source-derived implies evidentially supports",
+    "That the proposed UMRR entity names already exist in the organizational ontology"
+  ]
+}

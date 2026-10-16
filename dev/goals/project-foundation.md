@@ -1,79 +1,63 @@
-# Restoration Monitoring: purpose and foundation
+# Restoration Monitoring: purpose, current state, and direction
 
-## Accepted user directions
+Updated: 2026-10-16. This is the entry point for current project context. Accepted directions below come from the user's statements in this chat and the explicitly reviewed initial conversation. Source reviews document evidence; proposed requirements and conceptual definitions remain subject to review.
 
-Source: user statements in [initial conversation](../checkpoints/archive/initial_transcript.md), reinforced by the hand-off prompt in this chat on 2026-10-07. The transcript is historical evidence; this maintained artifact carries the extracted directions forward.
+## Accepted purpose and approach
 
-Restoration Monitoring supports shared scientific infrastructure for ecosystem restoration programs, including UMRR and NESP. It will connect hypotheses, research designs, systematic observations, analyses, conclusions, assessments, and adaptive-management decisions across disciplines and generations. The purpose includes assessing treatment outcomes over time and preserving evidence and reasoning for future practitioners.
+Systematically connect science and restoration across disciplines, organizations, careers, and generations. The intended network links hypotheses, research designs, restoration implementations, observations, analyses, conclusions, assessments, and adaptive-management decisions for UMRR and NESP. FluvialGeomorph is one contributing measurement/analysis suite and a consumer of this shared infrastructure.
 
-First review UMRR's approximately 40 years of accumulated program knowledge and the user's existing work to define project goals using reproducibleai. The program age is user-provided context, not independently verified here. Individual-project analysis follows this foundation.
+Support the mature Federal–State–Local–NGO program and its experienced experts through existing scientific methods, stewardship, and workflows. The user describes an effective 40+ year program whose regional, disciplinary, and temporal complexity creates opportunities for improved study continuity, design, follow-through, cumulative learning, and confirmation of tentative findings. These improvements are intended benefits, not demonstrated project outcomes.
 
-FluvialGeomorph (FG) is one contributing measurement and analysis suite. FG will also use the shared scientific infrastructure; the scope must accommodate other disciplines and tools.
+Build inductively: inventory accumulated artifacts, extract their key elements, and link them using documented details. Refine the conceptual model through real examples. Preserve original wording, source/version/locator, and the distinction between documented statements and later interpretations. Listing and linking may reveal descriptive patterns and enable scientific synthesis. Durable preservation of the underlying work is independently valuable even without new discoveries.
 
-Use the existing reproducibleai artifact structure. Defer database implementation until program goals and requirements have been grounded and reviewed.
+Review accumulated program knowledge before detailed individual-project validation. Independent examples from different projects are appropriate for the initial extraction pilot: an already connected set is not required. Missing links are part of the problem to represent, not an admission barrier.
 
-## Current scope
+"Science vocabulary" means names and definitions of conceptual data entities. Retain established ecosystem-restoration terminology. The user's latest direction makes the local USACE ontology an immediate terminology/structure dependency: reuse organizational concepts and identify justified gaps from the start. A future UMRR module will codify reviewed decisions beneath that infrastructure. This supersedes the earlier deferral of alignment; authoring/publishing the module remains later work. See the [organizational baseline review](../architecture/usace-ontology-alignment.md).
 
-### Production systems and vocabulary direction, 2026-10-13
+Use reproducibleai's established `dev/` artifact structure. Physical database implementation, production changes, and technology selection remain deferred until grounded requirements and the conceptual model have been reviewed.
 
-The user identifies EMMA as a production database actively populated by EMMA Data Stewards extracting from legacy HREP artifacts, and Restoration Features as a production database populated by USACE GIS staff for UMRR and NESP planned/installed practices. Supplied DDL/ERDs and a geodatabase XML schema now provide structural evidence. See [production schema review](../architecture/production-schema-review.md); earlier statements that schema exports are missing describe previous inspection states.
+## Existing systems and evidence
 
-The accepted direction is to inductively derive names and definitions for scientific data entities in the conceptual model from UMESC research and UMRR programmatic documents. The user clarified that "science vocabulary" refers only to these entity names, not a new ecosystem-restoration vocabulary. Established domain terminology should be retained. Integration into the user-designated USACE ontology is a long-term goal, not an immediate prerequisite or approved technology implementation.
+| Source/system | Current understanding | Remaining limits |
+| --- | --- | --- |
+| EMMA | Production system populated by Data Stewards from legacy HREP artifacts. User reports accomplished budgeting, scheduling, staffing, reporting, objectives, and criteria capabilities. Reviewed DDL/ERDs document projects, objectives, criteria, monitoring tasks/events, and many-to-many objective–criterion and task–criterion links | Observation storage/references, live records, population coverage, and integration semantics remain uninspected |
+| Restoration Features | Production GIS database populated by USACE GIS staff for UMRR/NESP planned and installed practices. XML schema and Quarto documentation reviewed; existing feature definitions, classifications, lifecycle guidance, and crosswalks anchor the restoration side | Project/feature identity reconciliation, history/operations, and selected documentation/schema differences need clarification before exact integration |
+| Program foundation | First review of 37 supplied PDFs and three EMMA decks completed with explicit scope limits; subsequent schema and book reviews add structural context | Historical coverage is incomplete; draft/historical documents do not automatically establish current policy |
+| Research corpus | User identifies UMESC publications, ScienceBase and the Zotero mussels collection. First science-side analysis samples six publications and derives candidate conceptual distinctions with source-depth labels | Most evidence is abstract-level; selected HEA full-text sections reviewed. Comprehensive inventory, full-text extraction and SME validation remain incomplete |
 
-### User clarification: inductive listing and linking
+The user's conceptual chain is HREP → Project Objective → Performance Criterion → Monitoring Task → Observation. Preserve that intent alongside the more detailed exported relationships; no new observation-table structure or cross-system join rule has been approved.
 
-The user's accepted strategy is highly inductive: systematically examine the science and restoration artifacts accumulated across the program's 40+ years, extract their key elements (including hypotheses, observations, performance criteria, and objectives), and use documented details to connect those elements to projects, restoration features, and one another. This clarifies the earlier program-first direction: historical artifact examination and extraction are the means of grounding and refining the requirements. They need not wait for a fully predetermined conceptual model; physical database implementation remains deferred pending foundation review.
+## User needs and current analysis focus
 
-Comprehensive listing and linking is expected by the user to reveal descriptive patterns and enable subsequent inductive analyses tracing hypotheses through HREPs, observations, and conclusions. These discoveries are anticipated benefits, not guaranteed results. The resulting research network should preserve the distinction between source-documented relationships and interpretations proposed during extraction or later analysis.
+Five user stories are recorded in the [crosswalk](goals-requirements-crosswalk.md): managerial reporting, research discovery, treatment-outcome assessment, citizen understanding of program value, and biologist assessment against project criteria at lifecycle intervals.
 
-Rigorous documentation and durable preservation of program work for future generations is an independently valuable intended outcome, even if new scientific insights do not emerge. Extracted records and links alone cannot prevent source-data loss: preservation must also address the underlying artifacts and datasets, versions, locations, and recoverability. Completeness is a goal to pursue and measure, not a claim established by the current collection.
+The user accepted the researcher story (US-02) as the analysis starting point: identify HREPs implementing treatments that inform a specified hypothesis. The biologist story (US-05) is a complementary check. Criterion attainment and scientific hypothesis evaluation can use related evidence while answering different questions.
 
-### User clarification: support a mature distributed program
+## Design status on 2026-10-16
 
-The user emphasizes an established, successful 40+ year program involving Federal partners (USACE, FWS, USGS), five states (MN, WI, IA, IL, MO), river municipalities, NGOs, and experienced interdisciplinary experts. Existing scientific methods and workflows have managed these issues fairly effectively and are characterized by the user as industry best practice. This account refines the earlier discussion of uneven formalization: the problem framing must recognize existing expertise and effective practice rather than imply that rigorous science is absent.
+The user accepts the restoration extraction as sufficient for the current demonstration; Data Stewards already perform this task in production. The active milestone now moves to scientific objects/evidence relationships and organizational reuse. The [science-side worked example](mussel-science-worked-example.md) and [structured evidence worksheet](mussel-science-evidence.json) provide an initial sample; they do not codify a UMRR module or demonstrate a local mussel outcome. Source disagreements in the accepted restoration example remain visible rather than resolved by acceptance.
 
-The accepted design direction is to buttress and coordinate existing workflows. The proposed infrastructure addresses the regional, disciplinary, organizational, and temporal complexity of scientific work, including long-running floodplain forest management studies. It must support distributed stewardship and preserve domain context without assuming one organization or application owns the entire scientific process.
+The user explicitly identifies assessment of this AI platform's ability to extract specific data from unstructured reports and scientific papers as a project goal. The [Steamboat Island objective/criterion extraction](steamboat-island-objectives-criteria.md) is the first worked restoration extraction, including evidence locations, source differences, and a structured review worksheet. Scientific-paper extraction and user/SME validation remain pending; source-checked output alone does not establish unattended accuracy.
 
-The user identifies expected benefits: sustained study follow-through, stronger study design, visibility into unimplemented key study elements, identification of answered questions, application of lessons, avoidance of repeated mistakes, and confirmatory studies strengthening tentative conclusions. These are user-stated desired benefits and a belief about infrastructure's potential, not demonstrated outcomes of this repository. Detailed mechanisms and measures of improvement require review.
+- **Established direction:** purpose, inductive method, existing production anchors, support for current workflows, starting user story, and preservation value.
+- **Reviewed evidence:** program foundation, EMMA structure, Restoration Features schema and authored documentation, with limits retained in each review.
+- **Draft design:** G-01 through G-06, R-01 through R-19, and L-01 through L-08 are working proposals. They are a review backlog, not a requirement to approve every item before examining artifacts.
+- **Worked design evidence:** restoration extraction accepted as adequate for this stage; initial science-side conceptual extraction and organizational reuse matrix now available for review, with full-text and inference limits retained.
+- **Not established:** a validated conceptual model, comprehensive source coverage, demonstrated scientific discoveries, or an implementation architecture.
 
-### User clarification, 2026-10-09
+The project is transitioning from framing and existing-system review into empirical conceptual modeling. Enough context exists to start the pilot; complete ScienceBase harvesting, production access, and resolution of every schema question are not prerequisites.
 
-The user accepted the USGS researcher story (US-02) as the starting point for analysis and added the biologist story (US-05): evaluate collected monitoring data against specified performance criteria at intervals throughout the project lifecycle to assess achievement of project objectives and project success.
+## Next milestone and reading route
 
-The user specified the existing EMMA conceptual relationships: HREPs have Project Objectives; Project Objectives have Performance Criteria; Performance Criteria have Monitoring Tasks; Monitoring Tasks have Observations. These are established user-reported relationships, not assistant candidate entities. Cardinalities, physical implementation, observation content, and interfaces remain uninspected.
+Use the [crosswalk's next milestone](goals-requirements-crosswalk.md#next-milestone-worked-extraction-from-fragmented-artifacts) for the proposed bounded extraction pilot and its completion evidence.
 
-The user identifies USGS UMESC as administering UMRR LTRM and specialized research and ScienceBase as the discovery platform for that body of research. The intended connection is explicit links between hypotheses discussed in those research outputs, planned/installed HREP restoration practices, and observed landscape outcomes. ScienceBase corpus coverage has not been independently audited; discovery location alone does not establish completeness or scientific relevance.
+The [knowledge graph literature assessment](knowledge-graph-literature-assessment.md) supports continuing the inductive approach, with expert validation of meanings and source-traceable links. Its focused review does not demonstrate UMRR collaboration or ecological benefits. The proposed next refinement is to compare answers to three mussel/Steamboat Island questions using current workflows and the linked evidence, recording usefulness, correctness and curation burden. This refines the current milestone rather than introducing another prerequisite or implementation commitment. Reconciliation with the final current strategic plan remains a source gap.
 
-### User clarification, 2026-10-08
+Read additional material conditionally:
 
-The central accepted purpose is to systematically link science and restoration by institutionalizing explicit, rigorous hypothesis evaluation across the scientific process, decades, and generations. Continuity must survive changes in the people occupying program roles. The user's expert account describes hypotheses embedded in existing work, uneven formalization and evaluation, and exemplary HREPs whose success depends on exceptional individuals. This is user-provided program experience, not an independently established finding about every HREP or the wider restoration community.
-
-The user reports that EMMA (Environmental Monitoring and Management Application) already records HREP project data and lifecycle monitoring commitments, supported by data stewards entering legacy tasks. Budgeting, scheduling, staffing, reporting, project objectives, and performance criteria are accomplished capabilities. The accepted direction is to build outward incrementally from this investment into hypotheses, study designs, treatments, observations, assessments, and their connections, grounded in real program data. Current deployment details and schema have not been inspected.
-
-The user supplied four needs: program managers communicate accomplishments; researchers identify all HREPs implementing treatments that inform a hypothesis; engineers assess treatment outcomes; citizens evaluate whether continued funding is worthwhile. These needs anchor the crosswalk. Specific requirements, priorities, review rules, and implementation choices remain proposals until reviewed.
-
-Inventory foundational sources, recover program intent and experience, and develop source-linked goals and requirements for review. No database technology, physical schema, integration interface, or implementation architecture has been selected.
-
-## Proposed foundation review criteria
-
-These are assistant proposals for user review, not accepted program requirements:
-
-- A referenced synthesis identifies program goals, accumulated lessons, existing scientific information systems, and unresolved gaps.
-- Goals identify intended users, supported decisions, boundaries, and priorities, with links to evidence or explicit user direction.
-- Requirements distinguish established practice from desired improvements and retain disagreements and unknowns.
-- The user reviews the foundation before individual-project validation or database implementation begins.
-
-## Open questions
-
-- Which additional existing user synthesis should supplement the central framing supplied on 2026-10-08?
-- Which UMRR documents and versions constitute the foundational program record?
-- What NESP material is needed initially, and what can follow the UMRR foundation?
-- Who should review goals and requirements, and what review evidence should be retained?
-
-See [source inventory](source-inventory.md) for materials available and missing.
-
-## Program evidence now available
-
-The [goals and requirements crosswalk](goals-requirements-crosswalk.md) was started on 2026-10-08 and revised around the user's central purpose and five user stories. It distinguishes accepted user direction from proposed enabling goals and requirements; inclusion does not establish requirement acceptance or priority.
-
-The supplied key documents and EMMA decks received a first review on 2026-10-07. See [program foundation review](umrr-program-review.md) for documented evidence, review limits, missing materials, and proposed next steps. Source-linked findings support the accepted direction to connect science and restoration, but the program goals/requirements crosswalk and conceptual architecture still require review. No assistant recommendation in that review is an accepted implementation decision.
+- [Source inventory](source-inventory.md): available holdings, discovery sources, and acquisition gaps.
+- [Program review](umrr-program-review.md): source-linked E1–E7 findings and historical review limits.
+- [Production schema review](../architecture/production-schema-review.md): current structural anchors and integration questions.
+- [Restoration Features book review](../architecture/restoration-features-documentation-review.md): feature meanings, lifecycle rules, crosswalks, and reconciliation items.
+- [Scientific relationship analysis](../architecture/science-restoration-relationships.md): draft L-01–L-08 and evidence needs to test against artifacts.
+- [EMMA deck review](../architecture/emma-crosswalk.md): historical design intent; current production exports take precedence for exported structure.

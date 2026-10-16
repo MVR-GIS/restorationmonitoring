@@ -1,0 +1,579 @@
+{
+  "record_kind": "worked conceptual extraction; not physical database schema",
+  "status": "assistant extraction checked against source renderings; user review pending",
+  "source": {
+    "file": "UMRR/HREPs/SteamboatIsland/Steamboat Island HREP - Final Report w Appendices.pdf",
+    "sha256": "ce62f059ddf5c9a28feb60647e06093aa00c2572de10c6914390433d4d04544c",
+    "pdf_pages": 979
+  },
+  "normalization": "Original objective wording normalized for capitalization/whitespace; criterion summaries are faithful paraphrases with structured values. IDs are local worksheet references, not EMMA IDs. Body and appendix assertions remain separate. Objective-to-table-row grouping is analyst mapping by the named measure.",
+  "objectives": [
+    {
+      "id": "SI-O1",
+      "name": "Floodplain forest diversity",
+      "source_text_normalized": "Enhance and restore areal coverage and diversity of forest stands and habitat and increase diversity of bottomland hardwood forest, as measured in forested acres suitable to support hard-mast species and structure, age, and species composition.",
+      "evidence": [
+        {
+          "pdf_page_1based": 81,
+          "printed_page": "III-15",
+          "section_or_table": "III.G Project Goals and Objectives"
+        },
+        {
+          "pdf_page_1based": 698,
+          "printed_page": "K-5",
+          "section_or_table": "II.A Project Goals and Objectives"
+        }
+      ],
+      "detailed_criterion_pdf_pages": [
+        701,
+        702
+      ]
+    },
+    {
+      "id": "SI-O2",
+      "name": "Aquatic diversity",
+      "source_text_normalized": "Increase year-round aquatic habitat diversity, as measured by acres and limnophilic native fish use of overwintering habitat, as this habitat is the most limiting of seasonal habitats.",
+      "evidence": [
+        {
+          "pdf_page_1based": 81,
+          "printed_page": "III-15",
+          "section_or_table": "III.G Project Goals and Objectives"
+        },
+        {
+          "pdf_page_1based": 698,
+          "printed_page": "K-5",
+          "section_or_table": "II.A Project Goals and Objectives"
+        }
+      ],
+      "detailed_criterion_pdf_pages": [
+        702,
+        703
+      ]
+    },
+    {
+      "id": "SI-O3",
+      "name": "Island restoration and protection",
+      "source_text_normalized": "Restore 50% of island acreage and topography lost since the 1950s and protect from erosion within the Project area, as measured by acres.",
+      "evidence": [
+        {
+          "pdf_page_1based": 81,
+          "printed_page": "III-15",
+          "section_or_table": "III.G Project Goals and Objectives"
+        },
+        {
+          "pdf_page_1based": 698,
+          "printed_page": "K-5",
+          "section_or_table": "II.A Project Goals and Objectives"
+        }
+      ],
+      "detailed_criterion_pdf_pages": [
+        703
+      ]
+    },
+    {
+      "id": "SI-O4",
+      "name": "Backwater protection and interior wetland enhancement",
+      "source_text_normalized": "Protect existing backwater habitat from sediment deposition and enhance backwater and interior wetland areas, as measured by acres of backwater and survivability of scrub-shrub/pollinator habitat.",
+      "evidence": [
+        {
+          "pdf_page_1based": 81,
+          "printed_page": "III-15",
+          "section_or_table": "III.G Project Goals and Objectives"
+        },
+        {
+          "pdf_page_1based": 698,
+          "printed_page": "K-5",
+          "section_or_table": "II.A Project Goals and Objectives"
+        }
+      ],
+      "detailed_criterion_pdf_pages": [
+        703,
+        704,
+        705
+      ]
+    }
+  ],
+  "criteria": [
+    {
+      "id": "SI-C01",
+      "objective_id": "SI-O1",
+      "statement_kind": "planned_performance_criterion",
+      "summary": "Assumed criterion: 60% survival of planted tree species at Year 9.",
+      "evidence": [
+        {
+          "pdf_page_1based": 702,
+          "printed_page": "K-9",
+          "section_or_table": "III.A Success Criteria, first paragraph"
+        }
+      ],
+      "target": {
+        "value": 60,
+        "unit": "percent_survival",
+        "operator_as_worded": "criterion of",
+        "year": 9,
+        "population": "planted species only"
+      },
+      "qualification": "Source calls criterion assumed; do not silently replace wording with a formal comparator."
+    },
+    {
+      "id": "SI-C02",
+      "objective_id": "SI-O1",
+      "statement_kind": "planned_performance_criterion",
+      "summary": "Assumed criterion: 800 trees per acre at Year 9, including early- and late-successional species and hard-mast species.",
+      "evidence": [
+        {
+          "pdf_page_1based": 702,
+          "printed_page": "K-9",
+          "section_or_table": "III.A Success Criteria, second paragraph"
+        }
+      ],
+      "target": {
+        "value": 800,
+        "unit": "trees/acre",
+        "operator_as_worded": "criterion of",
+        "year": 9
+      },
+      "qualification": "Density/diversity targets are to be calibrated and validated against a reference forest stand."
+    },
+    {
+      "id": "SI-C03",
+      "objective_id": "SI-O2",
+      "statement_kind": "planned_performance_criterion",
+      "summary": "Retain 28 acres of overwintering and summer backwater habitat at Year 5, with the stated depth and winter water-quality conditions.",
+      "evidence": [
+        {
+          "pdf_page_1based": 702,
+          "printed_page": "K-9",
+          "section_or_table": "III.B Success Criteria, starts"
+        },
+        {
+          "pdf_page_1based": 703,
+          "printed_page": "K-10",
+          "section_or_table": "III.B Success Criteria, continued"
+        }
+      ],
+      "target": {
+        "value": 28,
+        "unit": "acres",
+        "operator_as_worded": "retain",
+        "year": 5
+      },
+      "conditions": [
+        {
+          "metric": "water_depth",
+          "operator": ">=",
+          "value": 4,
+          "unit": "ft"
+        },
+        {
+          "metric": "average_winter_water_velocity",
+          "operator": "<=",
+          "value": 1,
+          "unit": "cm/sec"
+        },
+        {
+          "metric": "average_winter_dissolved_oxygen",
+          "operator": ">=",
+          "value": 5,
+          "unit": "mg/L"
+        },
+        {
+          "metric": "winter_temperature",
+          "operator": ">=",
+          "value": 1,
+          "unit": "degrees C"
+        }
+      ],
+      "scope": "Lower Lake, Upper Lake, NW Grant Slough; text requires individual site assessment as well as stating an acreage total."
+    },
+    {
+      "id": "SI-C04",
+      "objective_id": "SI-O3",
+      "statement_kind": "planned_performance_criterion",
+      "summary": "At 10 years, affected island acreage is not less than as-built acreage.",
+      "evidence": [
+        {
+          "pdf_page_1based": 703,
+          "printed_page": "K-10",
+          "section_or_table": "III.C Success Criteria"
+        }
+      ],
+      "target": {
+        "metric": "island_acreage",
+        "operator": ">=",
+        "reference": "as-built acreage",
+        "year": 10
+      },
+      "scope": "Individual locations; III.C names USI Head and West SE Island."
+    },
+    {
+      "id": "SI-C05",
+      "objective_id": "SI-O4",
+      "statement_kind": "planned_performance_criterion",
+      "summary": "At 5 years, backwater protection measures are intact and reducing sediment transport; also use aquatic-diversity criteria.",
+      "evidence": [
+        {
+          "pdf_page_1based": 704,
+          "printed_page": "K-11",
+          "section_or_table": "III.D.2.a Success Criteria"
+        }
+      ],
+      "target": {
+        "year": 5,
+        "conditions": [
+          "measures intact",
+          "reducing sediment transport"
+        ]
+      },
+      "referenced_criterion_ids": [
+        "SI-C03"
+      ],
+      "scope": "NE Bank protecting Upper Lake; Grade Control Structure (GCS) protecting Lower Lake."
+    },
+    {
+      "id": "SI-C06",
+      "objective_id": "SI-O4",
+      "statement_kind": "planned_performance_criterion",
+      "summary": "Assumed criterion: 60% SSP plant survival at Year 9 for established habitat at the higher elevation of 573.1 ft.",
+      "evidence": [
+        {
+          "pdf_page_1based": 705,
+          "printed_page": "K-12",
+          "section_or_table": "III.D.2.b Success Criteria"
+        }
+      ],
+      "target": {
+        "value": 60,
+        "unit": "percent_survival",
+        "operator_as_worded": "criterion of",
+        "year": 9,
+        "population": "scrub-shrub/pollinator species"
+      },
+      "qualification": "Source calls criterion assumed; elevation datum not specified in this passage."
+    },
+    {
+      "id": "SI-C07",
+      "objective_id": "SI-O2",
+      "statement_kind": "planned_performance_criterion",
+      "summary": "Main-body aquatic-habitat acreage targets by site and evaluation year.",
+      "evidence": [
+        {
+          "pdf_page_1based": 170,
+          "printed_page": "X-5",
+          "section_or_table": "Table X-4: Post-Construction Evaluation Plan"
+        }
+      ],
+      "target_series": {
+        "years": [
+          0,
+          1,
+          10,
+          25,
+          50
+        ],
+        "year_0_basis": "without alternative",
+        "later_years_basis": "with alternative",
+        "unit": "acres",
+        "Lower Lake": [
+          0,
+          10.4,
+          10.2,
+          9.8,
+          9.2
+        ],
+        "Upper Lake": [
+          0.14,
+          12.5,
+          12.2,
+          11.8,
+          11.2
+        ],
+        "NW Grant Slough": [
+          0,
+          6.0,
+          5.9,
+          5.8,
+          5.5
+        ],
+        "All locations constructed dredge cuts": [
+          0.14,
+          29,
+          28,
+          27,
+          26
+        ]
+      },
+      "conditions": [
+        {
+          "metric": "depth",
+          "operator": ">=",
+          "value": 4,
+          "unit": "ft"
+        },
+        {
+          "metric": "velocity",
+          "operator": "<=",
+          "value": 1,
+          "unit": "cm/sec"
+        },
+        {
+          "metric": "dissolved_oxygen",
+          "operator": ">=",
+          "value": 5,
+          "unit": "mg/L"
+        },
+        {
+          "metric": "water_temperature",
+          "operator": ">=",
+          "value": 1,
+          "unit": "degrees C"
+        }
+      ]
+    },
+    {
+      "id": "SI-C08",
+      "objective_id": "SI-O1",
+      "statement_kind": "planned_performance_criterion",
+      "summary": "Main-body forestry survival and density targets.",
+      "evidence": [
+        {
+          "pdf_page_1based": 170,
+          "printed_page": "X-5",
+          "section_or_table": "Table X-4: Post-Construction Evaluation Plan"
+        }
+      ],
+      "target_series": {
+        "years": [
+          1,
+          10,
+          25,
+          50
+        ],
+        "survival_percent": [
+          ">=90",
+          ">=60",
+          ">=60",
+          ">=40"
+        ],
+        "trees_per_acre": [
+          ">800 after planting",
+          "800",
+          "350-500",
+          "150-250"
+        ]
+      },
+      "scope": "All topographic diversity sites; Year 0 shown as 0%."
+    },
+    {
+      "id": "SI-C09",
+      "objective_id": "SI-O4",
+      "statement_kind": "planned_performance_criterion",
+      "summary": "Main-body SSP species survival targets.",
+      "evidence": [
+        {
+          "pdf_page_1based": 170,
+          "printed_page": "X-5",
+          "section_or_table": "Table X-4: Post-Construction Evaluation Plan"
+        }
+      ],
+      "target_series": {
+        "years": [
+          1,
+          10,
+          25,
+          50
+        ],
+        "survival_percent": [
+          ">=80",
+          ">=60",
+          ">=45",
+          ">=30"
+        ]
+      },
+      "scope": "All SSP sites; Year 0 shown as 0%."
+    },
+    {
+      "id": "SI-C10",
+      "objective_id": "SI-O1",
+      "statement_kind": "planned_performance_criterion",
+      "summary": "Main-body timber stand improvement targets relative to silvicultural treatment target threshold.",
+      "evidence": [
+        {
+          "pdf_page_1based": 170,
+          "printed_page": "X-5",
+          "section_or_table": "Table X-4: Post-Construction Evaluation Plan"
+        }
+      ],
+      "target_series": {
+        "years": [
+          1,
+          10,
+          25,
+          50
+        ],
+        "threshold_percent": [
+          ">90",
+          ">90",
+          ">60",
+          ">40"
+        ]
+      },
+      "qualification": "Keep source label; Appendix M prescription definitions and denominator not resolved in this extraction."
+    },
+    {
+      "id": "SI-C11",
+      "objective_id": "SI-O3",
+      "statement_kind": "planned_performance_criterion",
+      "summary": "Main-body constructed island acreage targets maintained through evaluation years.",
+      "evidence": [
+        {
+          "pdf_page_1based": 170,
+          "printed_page": "X-5",
+          "section_or_table": "Table X-4: Post-Construction Evaluation Plan"
+        }
+      ],
+      "target_series": {
+        "years": [
+          0,
+          1,
+          10,
+          25,
+          50
+        ],
+        "unit": "acres",
+        "USI Head": [
+          0,
+          14.2,
+          14.2,
+          14.2,
+          14.2
+        ],
+        "NE Bank": [
+          0,
+          8.3,
+          8.3,
+          8.3,
+          8.3
+        ],
+        "West SE Island": [
+          0,
+          3.5,
+          3.5,
+          3.5,
+          3.5
+        ],
+        "All locations constructed islands": [
+          0,
+          26,
+          26,
+          26,
+          26
+        ]
+      },
+      "qualification": "Summary includes NE Bank; detailed III.C naming is narrower. Preserve source scope, no assumed correction."
+    }
+  ],
+  "response_triggers": [
+    {
+      "id": "SI-T1",
+      "objective_id": "SI-O1",
+      "condition": "Tree survival below 60% at Years 5 or 7",
+      "action": "additional planting",
+      "evidence": [
+        {
+          "pdf_page_1based": 702,
+          "printed_page": "K-9",
+          "section_or_table": "III.A first Success Criteria"
+        }
+      ]
+    },
+    {
+      "id": "SI-T2",
+      "objective_id": "SI-O1",
+      "condition": "Tree density below 800 trees/acre at Years 5 or 7",
+      "action": "additional planting",
+      "evidence": [
+        {
+          "pdf_page_1based": 702,
+          "printed_page": "K-9",
+          "section_or_table": "III.A second Success Criteria"
+        }
+      ]
+    },
+    {
+      "id": "SI-T3",
+      "objective_id": "SI-O2",
+      "condition": "Sediment deposition from NE Bank and/or GCS affects water-quality criteria for two consecutive years, further demonstrated by Year-5 bathymetry",
+      "action": "modify the relevant measures",
+      "evidence": [
+        {
+          "pdf_page_1based": 703,
+          "printed_page": "K-10",
+          "section_or_table": "III.B Adaptive Management Trigger and Measure"
+        }
+      ]
+    },
+    {
+      "id": "SI-T4",
+      "objective_id": "SI-O4",
+      "condition": "After Year 5, monitoring indicates inability to reach success criteria",
+      "action": "NE Bank and/or GCS modifications guided by monitoring and surveys; source lists stone, dredged material and, for GCS, additional plantings",
+      "evidence": [
+        {
+          "pdf_page_1based": 704,
+          "printed_page": "K-11",
+          "section_or_table": "III.D.2.a Adaptive Management Trigger and Measure paragraphs"
+        }
+      ]
+    },
+    {
+      "id": "SI-T5",
+      "objective_id": "SI-O4",
+      "condition": "SSP survival below 60% at Years 5 or 7",
+      "action": "additional planting",
+      "evidence": [
+        {
+          "pdf_page_1based": 705,
+          "printed_page": "K-12",
+          "section_or_table": "III.D.2.b Success Criteria"
+        }
+      ]
+    }
+  ],
+  "mussel_benefit": {
+    "classification": "ancillary anticipated benefit; not formal project objective",
+    "evidence": [
+      {
+        "pdf_page_1based": 133,
+        "printed_page": "VI-1",
+        "section_or_table": "Recommended Plan, aquatic-diversity bullet"
+      },
+      {
+        "pdf_page_1based": 169,
+        "printed_page": "X-4",
+        "section_or_table": "Table X-3 footnote 8"
+      }
+    ],
+    "dedicated_postconstruction_mussel_surveys": "not committed by this feasibility plan",
+    "external_data_opportunity": "annual interagency Cordova Mussel Blitz; not a guaranteed dataset or dedicated task"
+  },
+  "reconciliation_needed": [
+    {
+      "id": "SI-Q1",
+      "issue": "Aquatic body total of 28 acres at Year 10 versus Appendix K retention of 28 acres at Year 5; retain both horizons, not automatically contradictory."
+    },
+    {
+      "id": "SI-Q2",
+      "issue": "Forestry/SSP Year-9 criteria and schedules versus Year-10 body targets and K-14 responsibility schedules."
+    },
+    {
+      "id": "SI-Q3",
+      "issue": "Main Table X-4 includes NE Bank in island totals; Appendix K III.C names USI Head and West SE Island."
+    },
+    {
+      "id": "SI-Q4",
+      "issue": "K-9 says individual aquatic sites are assessed but supplies an overall 28-acre criterion; site-specific Year-5 allocation not provided there."
+    }
+  ],
+  "lifecycle": "User reports construction ongoing; performance targets are planned, not observed results. No criterion attainment is asserted."
+}

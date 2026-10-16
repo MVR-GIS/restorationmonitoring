@@ -9,7 +9,7 @@
 
 [Project foundation](project-foundation.md) records accepted user directions. Evidence references E1-E7 below resolve to specific documents and page locators in the program review. G-00 and US-01 through US-04 record explicit user direction from 2026-10-08. Other goals, requirements, and acceptance tests are assistant proposals translating evidence and those needs into project scope. A source citation does not automatically make a requirement approved. Historical documents do not establish current policy applicability.
 
-Goal IDs identify intended outcomes; requirement IDs identify needed capabilities. Preserve IDs through revisions and record review outcomes. User acceptance establishes project direction, not official program endorsement. Priorities and implementation ownership remain unassigned.
+Goal IDs identify intended outcomes; requirement IDs identify needed capabilities. Preserve IDs through revisions and record review outcomes. User acceptance establishes project direction, not official program endorsement. US-02 is the accepted starting story; detailed requirement priorities and implementation ownership remain unassigned. The 19 proposed requirements are a backlog to refine through extraction, not a prerequisite checklist for starting it.
 
 ## Proposed goals
 
@@ -86,19 +86,29 @@ US-02 is the accepted starting story. The proposed first analysis should define 
 
 US-05 provides a complementary check: observations must remain interpretable against their specified criteria and objectives over lifecycle intervals. Meeting a project criterion alone does not demonstrate a causal hypothesis, and evidence informing a hypothesis does not alone establish project success. Both assessments should retain their reasoning and supporting observations.
 
-Before choosing an example or implementing entities, review the minimum connecting relationships, evidence needed to assert each connection, and unknowns in existing records. Inventory ScienceBase research metadata and available outputs at program level before claiming complete research coverage.
+Begin with independent artifact examples to test these preliminary definitions and expose missing concepts. Full ScienceBase inventory is needed before claiming complete coverage, not before starting a bounded extraction pilot. Physical implementation remains deferred.
 
-## Proposed incremental sequence
+## Next milestone: worked extraction from fragmented artifacts
 
-The user's inductive clarification refines the sequence below: begin program-level artifact inventory, extraction, and linking as foundation work; use encountered content to revise proposed definitions and requirements. Do not treat the draft vocabulary as a closed list or require all terms to be settled before examining artifacts. Detailed individual-project validation and physical database implementation still follow foundation review.
+The [knowledge graph literature assessment](knowledge-graph-literature-assessment.md) adds a proposed practical evaluation to this milestone: compare three science–restoration questions using today's workflow and the proposed linked evidence. Assess answer fidelity, retrieval/review effort, missing or unsupported links, preservation of scope, and correction/handoff burden. This supplies evaluation detail for the existing backlog, especially scientific retrieval, extraction quality and distributed stewardship; it adds no new requirement IDs or technology commitment. Exact acceptance thresholds remain to be agreed before the comparison.
 
-1. Reconcile the program foundation with the five user stories and review the minimum scientific terminology and evidence needed for each. Use the accumulated program record before selecting validation cases.
-2. Inspect existing EMMA objectives, performance criteria, and monitoring commitments as the operational starting point. Preserve existing identifiers and stewardship practices where suitable.
-3. Specify the smallest useful extension linking those records to explicit hypotheses and treatment implementations. Record inferred legacy hypotheses as proposed interpretations until reviewed.
-4. After the foundation and requirements are reviewed, validate those links with selected real program records. Expand into study designs, observations, analyses, conclusions, assessments, and management decisions as successive capabilities require them.
-5. Demonstrate a user-story outcome at each increment and document remaining coverage. Physical implementation remains deferred pending the foundation review.
+Current steering: the user accepts the restoration extraction as sufficient for this stage. Do not make further manual objective/criterion entry the main milestone. Work now focuses on [mussel scientific objects and evidence links](mussel-science-worked-example.md), informed from the outset by the [local USACE ontology](../architecture/usace-ontology-alignment.md). The initial six-publication sample and eight assertion records are review material, not a complete science synthesis. A future UMRR module will codify reviewed gaps/reuse decisions; organizational alignment is immediate even though publication is later.
 
-This sequence is an assistant proposal following the user's accepted stepwise direction. Retrieval can help discover evidence; an exhaustive cross-project query also requires reviewed relationships and an explicit coverage account.
+First worked restoration extraction is [available for review](steamboat-island-objectives-criteria.md), with [structured records](steamboat-island-objectives-criteria.json). It identifies four formal objectives and an ancillary mussel benefit, preserves criteria/timing differences, and distinguishes future monitoring from uncommitted mussel surveys. The user explicitly includes AI data-extraction capability assessment among project goals. No corpus-wide accuracy metric or new production schema is inferred from this sample.
+
+The user has selected [Steamboat Island mussel habitat and associated research](steamboat-island-worked-example.md) as the worked example. Local restoration PDFs and Zotero metadata are accessible; full scientific extraction remains next. The user reports ongoing construction and baseline/construction monitoring only. Post-construction performance monitoring is not yet applicable, and its absence must not be treated as failed performance or an impediment to conceptual modeling.
+
+Proposed bounded pilot, based on the accepted inductive strategy. It has not yet been completed. Sources need not belong to the same project, and every source need not contain every candidate entity.
+
+1. **Select a small varied sample.** Start with available program guidance and Restoration Features documentation; add one research output with methods/findings and one HREP planning or monitoring/evaluation artifact as available. Aim for three to five artifacts in total. The supplied research framework can seed questions/hypotheses but does not substitute for a completed research output. Missing document types limit the pilot's coverage, not all progress.
+2. **Produce worked evidence records.** For each selected passage, record a local extraction reference, source/version/locator, original wording or faithful paraphrase, candidate entity kind, explicit versus inferred meaning, relevant project/feature/time references, and unresolved questions. This is a review worksheet, not a physical database schema.
+3. **Record supported relationships.** Identify the two extracted records, relationship meaning, and supporting passage. Retain disconnected records and separately mark possible matches. Use existing EMMA/GIS identifiers when actually present; do not manufacture cross-system joins.
+4. **Derive a small conceptual-model revision.** Show which entities reuse existing production concepts, which additional scientific entities the sample supports, and which distinctions remain uncertain. Revise preliminary L/R entries only where the evidence warrants it.
+5. **Review the worked examples with the user.** Resolve the most consequential entity/relationship ambiguities, assess usefulness for US-02 and US-05, and choose the next increment from observed gaps.
+
+Completion evidence: a reader can trace every pilot record/link to source evidence, distinguish interpretations and unresolved matches, see a standalone artifact represented usefully, and identify concrete conceptual-model revisions. Record sample limits; a connected end-to-end project history or new scientific discovery is not required.
+
+Full production access, complete corpus acquisition, ontology alignment, vector indexing, and all schema reconciliation questions are not prerequisites. They enter later increments where demonstrated needs justify them. Database implementation follows review of the resulting conceptual model and prioritized requirements.
 
 ## Worked entry: assessment interpretation
 
@@ -130,6 +140,8 @@ The [science–restoration relationship analysis](../architecture/science-restor
 - Review outcomes are recorded; current coverage does not establish that the full historical foundation has been recovered.
 
 ## Review history
+
+- 2026-10-16: Consolidated current direction in project-foundation.md, corrected stale sequencing, and defined the worked fragmented-artifact extraction milestone. This is assistant assessment and a proposed next increment; existing draft requirement IDs/statuses are preserved.
 
 - Latest user clarification: accepted an inductive artifact-based listing-and-linking strategy and preservation as an independently valuable outcome. Added proposed R-18 and R-19. Historical extraction may refine the conceptual model during foundation work; new scientific discoveries remain anticipated rather than guaranteed.
 

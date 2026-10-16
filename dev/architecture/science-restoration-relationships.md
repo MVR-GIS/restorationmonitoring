@@ -1,11 +1,13 @@
 # Science–restoration relationship analysis
 
-- Date: 2026-10-09
+- Started: 2026-10-09; current-state reconciliation: 2026-10-16
 - Status: assistant proposal for review; conceptual meanings and evidence needs, not a physical schema
 - Starting need: accepted researcher story US-02; complementary biologist story US-05
 - Context: [foundation](../goals/project-foundation.md), [requirements](../goals/goals-requirements-crosswalk.md), [EMMA baseline](emma-crosswalk.md)
 
 ## Established baseline and scope
+
+Current dependency: [USACE ontology alignment](usace-ontology-alignment.md) is required from the outset under the user's latest direction. Reuse organizational provenance, observation, planning and spatial structure where semantically appropriate; new scientific terms are candidates to justify, not a parallel vocabulary. The [mussel science pilot](../goals/mussel-science-worked-example.md) tests this distinction using source-depth-labelled evidence. Earlier notes deferring ontology alignment are superseded by this direction.
 
 The [Restoration Features documentation review](restoration-features-documentation-review.md) supplies existing feature definitions and crosswalks. Proposed L-02/L-03 meanings must distinguish broad restoration measures, GIS feature classes, physical implementations, and their spatial representations. L-04/L-05 must allow evaluations of combined interventions and operating histories. A feature-status label alone does not establish its condition at the time of observation; general handbook/documentation guidance is not automatically an HREP-specific criterion or hypothesis.
 
@@ -26,7 +28,7 @@ Proposed working progression:
 
 Listing and linking can yield useful descriptive discoveries before scientific synthesis. It also preserves a documented program record even if anticipated insights do not emerge. The network representation is accepted conceptual intent; a graph database, ontology stack, extraction automation, and physical storage architecture remain undecided. Underlying sources and datasets need a preservation plan in addition to extracted records.
 
-The user defined EMMA's existing chain as HREP → Project Objective → Performance Criterion → Monitoring Task → Observation. Preserve these meanings and inspect their representation before proposing extensions. No cardinality, field structure, or identifier convention has been established here.
+The user defined EMMA's conceptual chain as HREP → Project Objective → Performance Criterion → Monitoring Task → Observation. Supplied DDL/ERDs now document project/objective/criterion/task/event structures, including many-to-many objective–criterion and task–criterion links. Observation storage and cross-system identity semantics remain unresolved; see the production review. Preserve established structures while testing extensions through artifact extraction.
 
 The accepted purpose is to connect hypotheses in the UMESC research body to planned/installed HREP restoration practices and observed landscape outcomes. The relationships below translate that purpose into reviewable meanings. User authorization to proceed with this analysis does not approve every proposed definition.
 
@@ -106,7 +108,7 @@ These are acceptance scenarios for future real-record validation after foundatio
 
 | Source | Obtain or establish | Purpose / current limit |
 | --- | --- | --- |
-| EMMA | Data dictionary or entity/relationship export; existing identifiers and meanings; representation of objectives, criteria, tasks, observations, lifecycle intervals, and revisions | Confirm the user-defined baseline and identify links already present; supplied workspace currently has three historical decks, not a current schema or record export |
+| EMMA | DDL and ERDs supplied and reviewed; further clarify observation storage, source-data references, and revision/evaluation practices | Production structural evidence is available; live records and population coverage remain uninspected. These gaps do not block independent document extraction |
 | EMMA/HREP holdings | Program-level inventory of planned/installed practices, supporting design/as-built/evaluation records, and existing project cross-references | Establish implementation evidence and program coverage before choosing representative validation records |
 | ScienceBase / UMESC | Defined collection boundaries; item identifiers, DOI and related publication links; dates/versions, attached versus externally hosted products; related dataset and study records | Build a deduplicated research inventory; a metadata match does not establish an explicit hypothesis or HREP evaluation |
 | Program guidance | Applicable criteria/evaluation guidance and stewardship/review responsibilities | Resolve terminology and judgment rules without assuming historical draft documents are current policy |
@@ -125,4 +127,4 @@ The official USGS [Hydrogeomorphic Units and Catena Linkages record](https://www
 - Which ScienceBase collection(s) and complementary publication lists define the research inventory?
 - What evidence and review suffice for a hypothesis/practice link, and how should related hypothesis formulations be reconciled?
 
-Next review: refine these definitions with the user, inventory the available source structures, and identify missing inputs. No physical database implementation is authorized by this draft.
+Next review: use the [worked extraction milestone](../goals/goals-requirements-crosswalk.md#next-milestone-worked-extraction-from-fragmented-artifacts) to test these definitions against independent artifacts. Review evidence can reveal entities/relationships beyond this draft. No matched project document set, full inventory, or physical database implementation is required for the pilot.

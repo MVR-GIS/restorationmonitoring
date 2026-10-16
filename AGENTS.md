@@ -15,6 +15,7 @@
 
 - Goals, scope, or success criteria: `dev/goals/`
 - Architecture, dependencies, or ownership boundaries: `dev/architecture/`
+- Scientific conceptual models and knowledge-graph design: use `dev/architecture/usace-ontology-alignment.md` and sibling `../usace-ukg-ontologies/` as the organizational baseline. Inspect current module definitions/IRIs before proposing new UMRR terms; reuse existing structure where meanings fit and record gaps as candidates. Follow sibling instructions if editing there; future UMRR module codification is separate from current design review.
 - Consequential and durable choices: `dev/decisions/`
 - Governance or artifact lifecycle: `dev/governance/`
 - Repeatable development procedures: `dev/workflows/`
