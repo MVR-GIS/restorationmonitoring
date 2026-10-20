@@ -20,6 +20,7 @@
 - Governance or artifact lifecycle: `dev/governance/`
 - Repeatable development procedures: `dev/workflows/`
 - Exact structural contracts: `dev/schemas/`
+- Document extraction, processing, reporting, or publication: `dev/workflows/document-processing.md`. Prefer R-centric workflows and the reviewed fluvgeo pattern: reusable R summaries/renderers, parameterized templates in `inst/reports/`, shared gt/ggplot2 presentation, and ignored generated snapshots. Do not introduce Python generators when suitable R tooling is available.
 - Cohesive user-visible capabilities: `dev/features/`
 - Resumable unfinished work: `dev/checkpoints/current/`
 - R package API, implementation, documentation, or tests: `DESCRIPTION`, `NAMESPACE`, `R/`, `man/`, `tests/testthat/`, and `dev/workflows/r-package-development.md`

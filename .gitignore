@@ -1,0 +1,10 @@
+.Rproj.user/
+.Rhistory
+.RData
+.Renviron
+Rplots.pdf
+dev/outputs/
+output/
+*_cache/
+*_files/
+.quarto/
