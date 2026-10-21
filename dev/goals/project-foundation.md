@@ -1,6 +1,12 @@
 # Restoration Monitoring: purpose, current state, and direction
 
-Updated: 2026-10-16. This is the entry point for current project context. Accepted directions below come from the user's statements in this chat and the explicitly reviewed initial conversation. Source reviews document evidence; proposed requirements and conceptual definitions remain subject to review.
+Updated: 2026-10-20. This is the entry point for current project context. Accepted directions below come from the user's statements in this chat and the explicitly reviewed initial conversation. Source reviews document evidence; proposed requirements and conceptual definitions remain subject to review.
+
+## Paused at user request
+
+The user considers the current HTML report and conceptual walkthrough sufficient for now and explicitly paused the effort on 2026-10-20. See the [resume checkpoint](../checkpoints/current/science-restoration-design.md) for the stopping point, verification limits and proposed next increment. This does not approve the full conceptual model or scientific conclusions. No further research or implementation is active until the user resumes.
+
+The latest accepted workflow is [R-centered document processing](../workflows/document-processing.md), using the reviewed fluvgeo pattern. The [dashboard](../features/research-question-dashboard.md) is now parameterized R Markdown rendered to self-contained HTML; the Python/PDF generator is superseded. Earlier milestone descriptions below record the design trajectory, not authorization to continue during the pause.
 
 ## Accepted purpose and approach
 

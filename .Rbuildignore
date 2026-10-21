@@ -1,0 +1,5 @@
+^AGENTS\.md$
+^dev$
+^output$
+^.*\.Rproj$
+^\.Rproj\.user$

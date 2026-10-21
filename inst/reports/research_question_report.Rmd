@@ -1,0 +1,117 @@
+---
+title: "Research Question Dashboard"
+subtitle: "Scientific evidence and restoration connections"
+output:
+  html_document:
+    self_contained: true
+    mathjax: null
+    toc: true
+    toc_depth: 2
+    css: report-tables.css
+params:
+  report: null
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = TRUE, error = FALSE)
+r <- params$report
+esc <- function(x) as.character(htmltools::htmlEscape(x))
+```
+
+## Research question and current understanding
+
+```{r question, results='asis'}
+cat('<div class="question"><strong>', esc(r$question_basis), '</strong><p>', esc(r$question), '</p></div>')
+report_table(data.frame(Item = c('Research outputs in sample', 'Source-based assertion records',
+  'Assertions without a direct source', 'Review status'),
+  Record = c(nrow(r$sources), sum(!is.na(r$assertions$source_id)),
+    sum(is.na(r$assertions$source_id)), r$source_status)))
+cat('<p>Snapshot: ', esc(format(r$generated_at, tz = 'UTC', usetz = TRUE)),
+  '. Counts describe worksheet records, not independent studies or scientific confidence.</p>')
+```
+
+## Research entities
+
+These are candidate distinctions to review, not an approved list of database tables or ontology classes.
+
+```{r entities, results='asis'}
+report_table(r$entities)
+```
+
+## Source findings and interpretations
+
+Each record retains its origin, passage locator, interpretation type, limitations and review state. A source-derived statement is not automatically a true proposition or causal effect.
+
+```{r findings, results='asis'}
+report_table(r$assertions[c('id', 'source_id', 'kind', 'paraphrase', 'limit')])
+```
+
+## Supplied derivation links
+
+Dashed links mean **informs formulation**, not causal proof or empirical confirmation. Source-derived records have a pale green fill; records without a direct source have an amber fill. The IDs and source fields supply the same distinction in text.
+
+```{r derivations, fig.width=11, fig.height=5, fig.alt='Supplied assertion derivations; see relationship table for exact IDs and meanings.'}
+if (nrow(r$derivations)) report_derivations(r) else cat('No derivation links supplied; none inferred.')
+```
+
+```{r derivation-table, results='asis'}
+report_table(r$derivations)
+```
+
+## Restoration connection and lifecycle
+
+```{r restoration, results='asis'}
+pc <- r$project_connection
+report_table(data.frame(Item = names(pc), Record = vapply(pc, function(x)
+  if (is.null(x)) NA_character_ else paste(unlist(x), collapse = '; '), '')))
+cat('<p>', esc(r$lifecycle), '</p>')
+cat('<p><strong>Benefit classification:</strong> ', esc(r$mussel_benefit$classification),
+  '. <strong>Dedicated post-construction mussel surveys:</strong> ',
+  esc(r$mussel_benefit$dedicated_postconstruction_mussel_surveys), '.</p>')
+report_table(r$objectives)
+```
+
+The user-defined conceptual chain is HREP → Project Objective → Performance Criterion → Monitoring Task → Observation. Production observation storage and cross-system identities remain unverified. Formal objectives above are distinct from the ancillary mussel benefit. Targets are not observed performance.
+
+## Questions for the next review
+
+- What evidence supports or challenges the expected habitat benefit, and under what conditions?
+- Does that evidence apply to the local design, species and flow context?
+- What observations and comparison design would evaluate the expectation?
+
+Reviewing this report does not create a monitoring obligation or approve a scientific conclusion. The current example needs deeper full-paper review and local applicability evidence.
+
+## Supporting record
+
+### Publications
+
+```{r publications, results='asis'}
+report_table(r$sources)
+for (i in seq_len(nrow(r$sources))) {
+  url <- r$sources$source_url[i]
+  if (!is.na(url) && grepl('^https://', url))
+    cat('<p><a href="', esc(url), '">', esc(r$sources$id[i]), ' primary source</a></p>')
+}
+```
+
+<details>
+<summary>Full assertion locators and review states</summary>
+
+```{r locators, results='asis'}
+report_table(r$assertions)
+```
+
+</details>
+
+### Inputs and render environment
+
+MD5 fingerprints identify the input worksheet bytes used for this snapshot; they are not security attestations. Linked publications and original data remain separate retained sources.
+
+```{r provenance, results='asis'}
+report_table(r$inputs)
+report_table(r$software)
+report_table(data.frame(Item = names(r$organizational_baseline), Value =
+  vapply(r$organizational_baseline, function(x) paste(unlist(x), collapse='; '), '')))
+```
+
+Existing USACE document, provenance, time, spatial and SOSA observation patterns provide the reuse baseline. Proposed scientific extensions remain subject to conceptual review. Rendering changes no source assertions, production records or ontology terms.

@@ -1,0 +1,21 @@
+/* Shared report presentation; scientific meaning stays in the report summary. */
+.main-container { max-width: 1440px; padding: 0 clamp(16px, 3vw, 40px); }
+body { color: #233746; font-size: 16px; line-height: 1.55; }
+h1, h2, h3 { color: #174d58; }
+.question { background: #edf3fa; padding: 1.2rem 1.5rem; border-radius: 6px; }
+.question p { font-size: 1.25rem; margin: .6rem 0 0; }
+.rm-table-wrap { max-width: 100%; overflow-x: auto; margin: 1rem 0 1.5rem; border: 1px solid #d4dde4; }
+.rm-table-wrap:focus-visible { outline: 3px solid #31708f; }
+.rm-table-wrap table.gt_table { width: 100%; min-width: 34em; margin: 0 !important; }
+.rm-table-wrap table.gt_table td, .rm-table-wrap table.gt_table th {
+  padding: 8px 14px; white-space: normal; overflow-wrap: anywhere; vertical-align: top;
+  border-right: 1px solid #e1e7ec; border-bottom: 1px solid #d4dde4;
+}
+.rm-table-wrap table.gt_table:has(th:nth-child(5)) { min-width: 65em; }
+details summary { cursor: pointer; padding: .6em 0; }
+img { max-width: 100%; height: auto; }
+@media print {
+  .main-container { max-width: none; padding: 0; }
+  .rm-table-wrap { overflow: visible; }
+  .rm-table-wrap table.gt_table { min-width: 0 !important; }
+}

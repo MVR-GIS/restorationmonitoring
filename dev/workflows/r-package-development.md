@@ -15,3 +15,5 @@
 3. Prefer deterministic functions with structured return values for automation.
 4. Run focused `testthat` tests, regenerate documentation when needed, then run package-level checks.
 5. Review generated-file changes separately from hand-authored source changes.
+
+For document processing and scientific reporting, follow [the R-centered document workflow](document-processing.md). Current source-development functions can be exercised before package metadata exists; do not describe those checks as an installed-package or R CMD check result.
