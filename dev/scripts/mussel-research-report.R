@@ -5,6 +5,7 @@ root <- normalizePath('.', winslash = '/', mustWork = TRUE)
 stopifnot(file.exists(file.path(root, 'AGENTS.md')), dir.exists(file.path(root, 'inst/reports')))
 source(file.path(root, 'R/report_presentation.R'))
 source(file.path(root, 'R/research_question_report.R'))
+source(file.path(root, 'R/workshop_priority_context.R'))
 entities <- data.frame(
   Entity = c('Source and passage', 'Study and execution', 'Question and hypothesis',
     'Study and sampling design', 'Population and habitat context', 'Property, observation and result',
@@ -16,10 +17,17 @@ entities <- data.frame(
     'Inputs and methods; observed data distinct from modeled output', 'Data-derived estimate distinct from expert judgment',
     'Result distinct from explanatory interpretation', 'Scope and rationale of support, challenge or uncertainty',
     'Why an intervention may produce a benefit', 'Review of transfer to another site and missing evidence'))
+entities <- rbind(entities, data.frame(Entity = c('Priority-defining artifact and assessment', 'Pilot relevance assessment'),
+  Meaning = c('Workshop source, question, reach-specific rank and assessment edition; priority is not evidence strength',
+    'Explicit proposed link from a workshop question to the pilot; not proof of a study or designer adoption')))
 summary <- research_question_summary(
   'Could restoration features improve mussel persistence through hydraulic and substrate changes, and how would we evaluate that expectation at Steamboat Island?',
   file.path(root, 'dev/goals/mussel-science-evidence.json'),
-  file.path(root, 'dev/goals/steamboat-island-objectives-criteria.json'), entities)
+  file.path(root, 'dev/goals/steamboat-island-objectives-criteria.json'), entities,
+  priorities_file = file.path(root, 'dev/goals/workshop-research-question-register.json'),
+  priorities_source = file.path(root, 'dev/checkpoints/archive/research_question_ranks.xlsx'),
+  priority_links_file = file.path(root, 'dev/goals/mussel-workshop-question-links.json'),
+  study_instance_file = file.path(root, 'dev/goals/mussel-vital-rates-instance.json'))
 destination <- file.path(root, 'dev/outputs/research-question')
 dir.create(destination, recursive = TRUE, showWarnings = FALSE)
 output <- if (length(args)) args[1] else file.path(destination,

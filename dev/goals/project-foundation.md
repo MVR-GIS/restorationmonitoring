@@ -1,12 +1,14 @@
 # Restoration Monitoring: purpose, current state, and direction
 
-Updated: 2026-10-20. This is the entry point for current project context. Accepted directions below come from the user's statements in this chat and the explicitly reviewed initial conversation. Source reviews document evidence; proposed requirements and conceptual definitions remain subject to review.
+Updated: 2026-10-21. This is the entry point for current project context. Accepted directions below come from the user's statements in this chat and the explicitly reviewed initial conversation. Source reviews document evidence; proposed requirements and conceptual definitions remain subject to review.
 
-## Paused at user request
+## Current focus
 
-The user considers the current HTML report and conceptual walkthrough sufficient for now and explicitly paused the effort on 2026-10-20. See the [resume checkpoint](../checkpoints/current/science-restoration-design.md) for the stopping point, verification limits and proposed next increment. This does not approve the full conceptual model or scientific conclusions. No further research or implementation is active until the user resumes.
+The user paused after the 2026-10-20 walkthrough, then explicitly resumed pilot report development on 2026-10-21. Latest steering makes **Steamboat Island's anticipated mussel benefit, scientific basis and local evaluation needs** the focus of the [updated report](../features/research-question-dashboard.md). Workshop research priorities remain background; their full agenda and ranks are supporting detail. See the [current checkpoint](../checkpoints/current/science-restoration-design.md) for the report state and next increment. Priority, proposed relevance, scientific findings and HREP associations remain distinguishable. The full conceptual model and scientific conclusions remain provisional.
 
-The latest accepted workflow is [R-centered document processing](../workflows/document-processing.md), using the reviewed fluvgeo pattern. The [dashboard](../features/research-question-dashboard.md) is now parameterized R Markdown rendered to self-contained HTML; the Python/PDF generator is superseded. Earlier milestone descriptions below record the design trajectory, not authorization to continue during the pause.
+The latest accepted workflow is [R-centered document processing](../workflows/document-processing.md), using the reviewed fluvgeo pattern. The report is parameterized R Markdown rendered to self-contained HTML; the Python/PDF generator is superseded. The present increment changes reporting and source context, not production databases or ontology publication.
+
+The [FY27 SOW draft](proposal-fy27.md) proposes a $100,000, 12-month in-house pilot with a reviewed evidence package, conceptual crosswalk, reusable R workflow/report and phased roadmap. The user names this effort the **science and restoration integration component of EMMA** and requests **report**, rather than dashboard, for its reporting product. Use this terminology in subsequent proposals and documentation. Detailed scope targets and budget allocations remain draft; the reporting increment does not approve production implementation.
 
 ## Accepted purpose and approach
 
@@ -23,6 +25,8 @@ Review accumulated program knowledge before detailed individual-project validati
 Use reproducibleai's established `dev/` artifact structure. Physical database implementation, production changes, and technology selection remain deferred until grounded requirements and the conceptual model have been reviewed.
 
 ## Existing systems and evidence
+
+The partnership has already developed a workshop learning agenda: [49 research questions and reach-specific priorities](workshop-research-priorities.md), supplied and reviewed on 2026-10-21. EMMA's science and restoration integration component should connect these existing questions to evidence and HREP learning opportunities. Preserve question identity, reach-specific priority assessments and the distinction between a recorded project association and a completed scientific test. Ranking methods, workshop dates and endorsement status remain incompletely documented. The mussel example is relevant but is not the highest-ranked topic in every reach; no pilot-theme change has been approved.
 
 | Source/system | Current understanding | Remaining limits |
 | --- | --- | --- |

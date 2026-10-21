@@ -1,0 +1,719 @@
+{
+  "source_file": "dev/checkpoints/archive/research_question_ranks.xlsx",
+  "source_md5": "bc5bebc667228e7b2fe5d254fa3bf9a3",
+  "identifier_note": "WQ IDs are review-local worksheet locators, not program or production IDs.",
+  "rank_definition": "Rank average of weighted agency averages (1=highest priority, 49=lowest priority)",
+  "reach_labels": ["Upper Impounded Reach (n=13)", "Lower Impounded Reach (n=9)", "Unimpounded Reach (n=6)", "Illinois River Reach (n=2)"],
+  "limitations": ["Workshop dates, raw agency ratings, weighting rules and meaning of n are not supplied.", "An x is a recorded association with no supplied legend or evidence of a completed hypothesis test.", "Blank project cells are unrecorded associations, not documented absence or lack of suitability.", "Four embedded project/feature inventory images are historical reference material; their dates and current status are unverified."],
+  "method": "Merged group labels carried forward within Ranked by Reach; four sorted views reconciled by question text and rank. Original workbook not recalculated.",
+  "questions": [
+    {
+      "local_id": "WQ-01",
+      "source_cell": "C3",
+      "restoration_goal": "Restore and sustain hydraulic, geomorphic, and sediment transport functions that create and maintain a dynamic and diverse river-floodplain ecosystem",
+      "restoration_objective": "Enhance hydrologic and geomorphic conditions that sustain depth diversity and reduce sediment deposition in backwaters",
+      "question": "What physical and ecological processes influence the rate of large wood accumulation in backwaters, and how does large wood affect sediment dynamics?",
+      "upper_impounded": 48,
+      "lower_impounded": 49,
+      "unimpounded": 49,
+      "illinois_river": 46
+    },
+    {
+      "local_id": "WQ-02",
+      "source_cell": "C4",
+      "restoration_goal": "Restore and sustain hydraulic, geomorphic, and sediment transport functions that create and maintain a dynamic and diverse river-floodplain ecosystem",
+      "restoration_objective": "Enhance hydrologic and geomorphic conditions that sustain depth diversity and reduce sediment deposition in backwaters",
+      "question": "Which environmental and geomorphic factors (e.g., hydraulic connectivity, flow velocity, sediment supply, vegetation, placement relative to main channel) explain why some backwaters retain depth while others infill rapidly?",
+      "upper_impounded": 4,
+      "lower_impounded": 14,
+      "unimpounded": 19,
+      "illinois_river": 1
+    },
+    {
+      "local_id": "WQ-03",
+      "source_cell": "C5",
+      "restoration_goal": "Restore and sustain hydraulic, geomorphic, and sediment transport functions that create and maintain a dynamic and diverse river-floodplain ecosystem",
+      "restoration_objective": "Enhance hydrologic and geomorphic conditions that sustain depth diversity and reduce sediment deposition in backwaters",
+      "question": "What combinations of restoration techniques and morphometric characteristics (e.g., mean depth, depth diversity, maximum depth, side slopes, substrate diversity, protective berms) most effectively reduce sediment deposition and sustain water depth in restored backwaters?",
+      "upper_impounded": 14,
+      "lower_impounded": 10,
+      "unimpounded": 7,
+      "illinois_river": 2.5
+    },
+    {
+      "local_id": "WQ-04",
+      "source_cell": "C6",
+      "restoration_goal": "Restore and sustain hydraulic, geomorphic, and sediment transport functions that create and maintain a dynamic and diverse river-floodplain ecosystem",
+      "restoration_objective": "Enhance hydrologic and geomorphic conditions that sustain depth diversity and reduce sediment deposition in backwaters",
+      "question": "How do variations in water residence time and channel–backwater flow exchange influence sediment and nutrient capture and processing (and occurrence of cyanobacteria)?",
+      "upper_impounded": 21,
+      "lower_impounded": 9,
+      "unimpounded": 25,
+      "illinois_river": 2.5
+    },
+    {
+      "local_id": "WQ-05",
+      "source_cell": "C7",
+      "restoration_goal": "Restore and sustain hydraulic, geomorphic, and sediment transport functions that create and maintain a dynamic and diverse river-floodplain ecosystem",
+      "restoration_objective": "Improve flow diversity and substrate conditions in channels, sloughs, and channel borders",
+      "question": "How can restoration techniques (for example, adjust side channel connectivity, shoreline protection) be enhanced to shape beneficial substrate conditions in channel environments?",
+      "upper_impounded": 27,
+      "lower_impounded": 2,
+      "unimpounded": 1,
+      "illinois_river": 46
+    },
+    {
+      "local_id": "WQ-06",
+      "source_cell": "C8",
+      "restoration_goal": "Restore and sustain hydraulic, geomorphic, and sediment transport functions that create and maintain a dynamic and diverse river-floodplain ecosystem",
+      "restoration_objective": "Improve flow diversity and substrate conditions in channels, sloughs, and channel borders",
+      "question": "What restoration techniques most effectively reduce sediment deposition in side channels?",
+      "upper_impounded": 23,
+      "lower_impounded": 31,
+      "unimpounded": 34,
+      "illinois_river": 6
+    },
+    {
+      "local_id": "WQ-07",
+      "source_cell": "C9",
+      "restoration_goal": "Restore and sustain hydraulic, geomorphic, and sediment transport functions that create and maintain a dynamic and diverse river-floodplain ecosystem",
+      "restoration_objective": "Manage and restore island soils, vegetation, and geomorphic processes to sustain island distribution and abundance while accommodating ongoing geomorphic dynamics",
+      "question": "How can understanding island development inform where to promote island formation, and which techniques (for example, seed islands or wood pilings) are most effective?",
+      "upper_impounded": 19,
+      "lower_impounded": 6,
+      "unimpounded": 18,
+      "illinois_river": 9
+    },
+    {
+      "local_id": "WQ-08",
+      "source_cell": "C10",
+      "restoration_goal": "Restore and sustain hydraulic, geomorphic, and sediment transport functions that create and maintain a dynamic and diverse river-floodplain ecosystem",
+      "restoration_objective": "Manage and restore island soils, vegetation, and geomorphic processes to sustain island distribution and abundance while accommodating ongoing geomorphic dynamics",
+      "question": "In what ways can protective features be enhanced to provide greater ecological benefits (for example, placement of slab rock, large wood, woody bundles) and how do ecological responses compare to more conventional riprap approaches?",
+      "upper_impounded": 45,
+      "lower_impounded": 8,
+      "unimpounded": 4,
+      "illinois_river": 10
+    },
+    {
+      "local_id": "WQ-09",
+      "source_cell": "C11",
+      "restoration_goal": "Restore and sustain hydraulic, geomorphic, and sediment transport functions that create and maintain a dynamic and diverse river-floodplain ecosystem",
+      "restoration_objective": "Manage and restore island soils, vegetation, and geomorphic processes to sustain island distribution and abundance while accommodating ongoing geomorphic dynamics",
+      "question": "How do differences in dredge material source and resulting soil conditions, together with designed island elevation, shape vegetation outcomes and long-term island development?",
+      "upper_impounded": 17,
+      "lower_impounded": 18,
+      "unimpounded": 13,
+      "illinois_river": 36
+    },
+    {
+      "local_id": "WQ-10",
+      "source_cell": "C12",
+      "restoration_goal": "Restore and sustain hydraulic, geomorphic, and sediment transport functions that create and maintain a dynamic and diverse river-floodplain ecosystem",
+      "restoration_objective": "Manage and restore island soils, vegetation, and geomorphic processes to sustain island distribution and abundance while accommodating ongoing geomorphic dynamics",
+      "question": "What are the rates of island erosion, accretion, and establishment of early successional forest across the system?",
+      "upper_impounded": 16,
+      "lower_impounded": 26,
+      "unimpounded": 38,
+      "illinois_river": 16
+    },
+    {
+      "local_id": "WQ-11",
+      "source_cell": "C13",
+      "restoration_goal": "Reestablish and maintain the physical and water-quality conditions that support resilient aquatic vegetation assemblages",
+      "restoration_objective": "Enhance topobathymetric complexity, water clarity, and water levels to promote aquatic vegetation",
+      "question": "How does water level management affect species diversity and areal extent of plant growth forms?",
+      "upper_impounded": 20,
+      "lower_impounded": 25,
+      "unimpounded": 37,
+      "illinois_river": 26
+    },
+    {
+      "local_id": "WQ-12",
+      "source_cell": "C14",
+      "restoration_goal": "Reestablish and maintain the physical and water-quality conditions that support resilient aquatic vegetation assemblages",
+      "restoration_objective": "Enhance topobathymetric complexity, water clarity, and water levels to promote aquatic vegetation",
+      "question": "How does aquatic vegetation composition, density, and seasonal phenology influence seasonal habitat conditions for target taxa?",
+      "upper_impounded": 28,
+      "lower_impounded": 36,
+      "unimpounded": 44,
+      "illinois_river": 39
+    },
+    {
+      "local_id": "WQ-13",
+      "source_cell": "C15",
+      "restoration_goal": "Reestablish and maintain the physical and water-quality conditions that support resilient aquatic vegetation assemblages",
+      "restoration_objective": "Enhance topobathymetric complexity, water clarity, and water levels to promote aquatic vegetation",
+      "question": "How can the effectiveness of restoring aquatic vegetation be sustained in areas with heavy herbivore pressure (e.g., grass carp, red-eared slider), and what management strategies are most effective?",
+      "upper_impounded": 39,
+      "lower_impounded": 13,
+      "unimpounded": 32,
+      "illinois_river": 11
+    },
+    {
+      "local_id": "WQ-14",
+      "source_cell": "C16",
+      "restoration_goal": "Reestablish and maintain the physical and water-quality conditions that support resilient aquatic vegetation assemblages",
+      "restoration_objective": "Enhance topobathymetric complexity, water clarity, and water levels to promote aquatic vegetation",
+      "question": "Can aquatic vegetation density/biomass affect nutrient cycling and improve water quality?",
+      "upper_impounded": 36,
+      "lower_impounded": 46,
+      "unimpounded": 46,
+      "illinois_river": 26
+    },
+    {
+      "local_id": "WQ-15",
+      "source_cell": "C17",
+      "restoration_goal": "Reestablish and maintain the physical and water-quality conditions that support resilient aquatic vegetation assemblages",
+      "restoration_objective": "Enhance topobathymetric complexity, water clarity, and water levels to promote aquatic vegetation",
+      "question": "How do biophysical feedbacks and sediment trapping vary by composition of aquatic vegetation and density/biomass?",
+      "upper_impounded": 25,
+      "lower_impounded": 11,
+      "unimpounded": 33,
+      "illinois_river": 26
+    },
+    {
+      "local_id": "WQ-16",
+      "source_cell": "C18",
+      "restoration_goal": "Reestablish and maintain the physical and water-quality conditions that support resilient aquatic vegetation assemblages",
+      "restoration_objective": "Enhance topobathymetric complexity, water clarity, and water levels to promote aquatic vegetation",
+      "question": "How does feature height (sub-surface, at-surface, and above-surface) influence wave energy, flow dynamics, wind shadows, and ambient turbidity across varying water levels; and how do these conditions influence submersed and emergent vegetation establishment within sheltered zones?",
+      "upper_impounded": 22,
+      "lower_impounded": 17,
+      "unimpounded": 26,
+      "illinois_river": 18.5
+    },
+    {
+      "local_id": "WQ-17",
+      "source_cell": "C19",
+      "restoration_goal": "Restore ecosystem functions that drive succession, structural diversity, and long-term resilience of floodplain vegetation",
+      "restoration_objective": "Reduce forest fragmentation and promote natural forest regeneration",
+      "question": "How does proximity to existing forest influence revegetation of restoration sites?",
+      "upper_impounded": 5,
+      "lower_impounded": 23,
+      "unimpounded": 29,
+      "illinois_river": 46
+    },
+    {
+      "local_id": "WQ-18",
+      "source_cell": "C20",
+      "restoration_goal": "Restore ecosystem functions that drive succession, structural diversity, and long-term resilience of floodplain vegetation",
+      "restoration_objective": "Reduce forest fragmentation and promote natural forest regeneration",
+      "question": "How do regeneration dynamics of individual species influence forest succession within a given stand?",
+      "upper_impounded": 33,
+      "lower_impounded": 37,
+      "unimpounded": 16,
+      "illinois_river": 30
+    },
+    {
+      "local_id": "WQ-19",
+      "source_cell": "C21",
+      "restoration_goal": "Restore ecosystem functions that drive succession, structural diversity, and long-term resilience of floodplain vegetation",
+      "restoration_objective": "Reduce forest fragmentation and promote natural forest regeneration",
+      "question": "How does sediment composition and compaction affect the success of burying non‑native invasive plants (such as reed canarygrass and hops) to improve tree survival?",
+      "upper_impounded": 38,
+      "lower_impounded": 4,
+      "unimpounded": 10,
+      "illinois_river": 34
+    },
+    {
+      "local_id": "WQ-20",
+      "source_cell": "C22",
+      "restoration_goal": "Restore ecosystem functions that drive succession, structural diversity, and long-term resilience of floodplain vegetation",
+      "restoration_objective": "Reduce forest fragmentation and promote natural forest regeneration",
+      "question": "How do site conditions and management actions—such as soil composition, compaction, inundation, elevation, invasive species pressure, light availability, site preparation, post‑planting maintenance, planting mix, and time since intervention—influence reforestation success and rates of establishment?  What actions or treatments most effectively promote natural regeneration?",
+      "upper_impounded": 1,
+      "lower_impounded": 1,
+      "unimpounded": 2,
+      "illinois_river": 17
+    },
+    {
+      "local_id": "WQ-21",
+      "source_cell": "C23",
+      "restoration_goal": "Restore ecosystem functions that drive succession, structural diversity, and long-term resilience of floodplain vegetation",
+      "restoration_objective": "Reduce flood stress on trees and understand ecological responses to floodplain hydrology",
+      "question": "What is the role of groundwater relative to flood inundation on forest dynamics? ",
+      "upper_impounded": 37,
+      "lower_impounded": 3,
+      "unimpounded": 3,
+      "illinois_river": 46
+    },
+    {
+      "local_id": "WQ-22",
+      "source_cell": "C24",
+      "restoration_goal": "Restore ecosystem functions that drive succession, structural diversity, and long-term resilience of floodplain vegetation",
+      "restoration_objective": "Reduce flood stress on trees and understand ecological responses to floodplain hydrology",
+      "question": "How does floodplain vegetation respond to ridge and swale topography?",
+      "upper_impounded": 3,
+      "lower_impounded": 30,
+      "unimpounded": 20,
+      "illinois_river": 14
+    },
+    {
+      "local_id": "WQ-23",
+      "source_cell": "C25",
+      "restoration_goal": "Restore ecosystem functions that drive succession, structural diversity, and long-term resilience of floodplain vegetation",
+      "restoration_objective": "Reduce flood stress on trees and understand ecological responses to floodplain hydrology",
+      "question": "How does sediment composition and compaction influence the outcomes of thin layer placement on existing forest?",
+      "upper_impounded": 10,
+      "lower_impounded": 15,
+      "unimpounded": 9,
+      "illinois_river": 37.5
+    },
+    {
+      "local_id": "WQ-24",
+      "source_cell": "C26",
+      "restoration_goal": "Restore ecosystem functions that drive succession, structural diversity, and long-term resilience of floodplain vegetation",
+      "restoration_objective": "Enhance forest structural complexity",
+      "question": "What is the importance of soil conditions relative to other factors on floodplain vegetation?",
+      "upper_impounded": 31,
+      "lower_impounded": 22,
+      "unimpounded": 6,
+      "illinois_river": 31.5
+    },
+    {
+      "local_id": "WQ-25",
+      "source_cell": "C27",
+      "restoration_goal": "Restore ecosystem functions that drive succession, structural diversity, and long-term resilience of floodplain vegetation",
+      "restoration_objective": "Enhance forest structural complexity",
+      "question": "Can existing datasets be used to develop floodplain forest stocking charts or a site suitability index that guide forest treatments?",
+      "upper_impounded": 15,
+      "lower_impounded": 19,
+      "unimpounded": 28,
+      "illinois_river": 29
+    },
+    {
+      "local_id": "WQ-26",
+      "source_cell": "C28",
+      "restoration_goal": "Restore ecosystem functions that drive succession, structural diversity, and long-term resilience of floodplain vegetation",
+      "restoration_objective": "Enhance forest structural complexity",
+      "question": "What are the effects of prescribed fire on forest health and tree growth in floodplains?",
+      "upper_impounded": 40,
+      "lower_impounded": 43,
+      "unimpounded": 23,
+      "illinois_river": 46
+    },
+    {
+      "local_id": "WQ-27",
+      "source_cell": "C29",
+      "restoration_goal": "Restore ecosystem functions that drive succession, structural diversity, and long-term resilience of floodplain vegetation",
+      "restoration_objective": "Enhance forest structural complexity",
+      "question": "What hard mast species are best suited for planting/ or promotion in the floodplain and what conditions are required to support these species?",
+      "upper_impounded": 44,
+      "lower_impounded": 34,
+      "unimpounded": 17,
+      "illinois_river": 41
+    },
+    {
+      "local_id": "WQ-28",
+      "source_cell": "C30",
+      "restoration_goal": "Restore ecosystem functions that drive succession, structural diversity, and long-term resilience of floodplain vegetation",
+      "restoration_objective": "Enhance forest structural complexity",
+      "question": "What are the effects of forest stand improvements on forest health and tree growth?",
+      "upper_impounded": 32,
+      "lower_impounded": 32,
+      "unimpounded": 5,
+      "illinois_river": 33
+    },
+    {
+      "local_id": "WQ-29",
+      "source_cell": "C31",
+      "restoration_goal": "Restore ecosystem functions that drive succession, structural diversity, and long-term resilience of floodplain vegetation",
+      "restoration_objective": "Increase diversity and establishment of native herbaceous vegetation while minimizing invasive species expansion",
+      "question": "How does pollinator use of island floral resources compare with ‘mainland’ areas, including those that become dewatered seasonally or during low-water periods?",
+      "upper_impounded": 42,
+      "lower_impounded": 45,
+      "unimpounded": 42,
+      "illinois_river": 46
+    },
+    {
+      "local_id": "WQ-30",
+      "source_cell": "C32",
+      "restoration_goal": "Restore ecosystem functions that drive succession, structural diversity, and long-term resilience of floodplain vegetation",
+      "restoration_objective": "Increase diversity and establishment of native herbaceous vegetation while minimizing invasive species expansion",
+      "question": "What are the roles of elevation, inundation, and light conditions on non-native, invasive herbaceous species (e.g., reed canarygrass, hops)?",
+      "upper_impounded": 26,
+      "lower_impounded": 5,
+      "unimpounded": 8,
+      "illinois_river": 26
+    },
+    {
+      "local_id": "WQ-31",
+      "source_cell": "C33",
+      "restoration_goal": "Restore ecosystem functions that drive succession, structural diversity, and long-term resilience of floodplain vegetation",
+      "restoration_objective": "Increase diversity and establishment of native herbaceous vegetation while minimizing invasive species expansion",
+      "question": "What factors influence the success of native herbaceous plant mixes, and how do these mixes—including the use of cover crops—affect the recruitment and natural regeneration of floodplain forest species?",
+      "upper_impounded": 9,
+      "lower_impounded": 7,
+      "unimpounded": 11,
+      "illinois_river": 26
+    },
+    {
+      "local_id": "WQ-32",
+      "source_cell": "C34",
+      "restoration_goal": "Support and sustain diverse fish and wildlife communities by restoring habitat conditions and ecological functions",
+      "restoration_objective": "Improve understanding of habitat functions and ecological conditions that support fish and wildlife",
+      "question": "How do variations in floodplain inundation (timing and duration) influence the diversity, abundance, and reproductive success of amphibian and reptile communities?",
+      "upper_impounded": 18,
+      "lower_impounded": 40,
+      "unimpounded": 24,
+      "illinois_river": 13
+    },
+    {
+      "local_id": "WQ-33",
+      "source_cell": "C35",
+      "restoration_goal": "Support and sustain diverse fish and wildlife communities by restoring habitat conditions and ecological functions",
+      "restoration_objective": "Improve understanding of habitat functions and ecological conditions that support fish and wildlife",
+      "question": "How do land‑bird communities respond to floodplain forest rehabilitation (e.g., stand improvements) and proximity to existing forest?",
+      "upper_impounded": 11,
+      "lower_impounded": 27.5,
+      "unimpounded": 21,
+      "illinois_river": 20
+    },
+    {
+      "local_id": "WQ-34",
+      "source_cell": "C36",
+      "restoration_goal": "Support and sustain diverse fish and wildlife communities by restoring habitat conditions and ecological functions",
+      "restoration_objective": "Improve understanding of habitat functions and ecological conditions that support fish and wildlife",
+      "question": "What are the habitat conditions required by secretive marsh birds, shorebirds, waterfowl, and wading birds – particularly species of conservation concern?",
+      "upper_impounded": 12,
+      "lower_impounded": 27.5,
+      "unimpounded": 30,
+      "illinois_river": 18.5
+    },
+    {
+      "local_id": "WQ-35",
+      "source_cell": "C37",
+      "restoration_goal": "Support and sustain diverse fish and wildlife communities by restoring habitat conditions and ecological functions",
+      "restoration_objective": "Improve understanding of habitat functions and ecological conditions that support fish and wildlife",
+      "question": "How do bat communities respond to enhancements in forest structural complexity?",
+      "upper_impounded": 30,
+      "lower_impounded": 33,
+      "unimpounded": 36,
+      "illinois_river": 15
+    },
+    {
+      "local_id": "WQ-36",
+      "source_cell": "C38",
+      "restoration_goal": "Support and sustain diverse fish and wildlife communities by restoring habitat conditions and ecological functions",
+      "restoration_objective": "Improve understanding of habitat functions and ecological conditions that support fish and wildlife",
+      "question": "What is the pollinator response to drawdowns (i.e., moist soil units)?",
+      "upper_impounded": 43,
+      "lower_impounded": 44,
+      "unimpounded": 22,
+      "illinois_river": 22
+    },
+    {
+      "local_id": "WQ-37",
+      "source_cell": "C39",
+      "restoration_goal": "Support and sustain diverse fish and wildlife communities by restoring habitat conditions and ecological functions",
+      "restoration_objective": "Improve understanding of habitat functions and ecological conditions that support fish and wildlife",
+      "question": "Are there negative effects of water level management/drawdowns on fish or mussels?",
+      "upper_impounded": 24,
+      "lower_impounded": 38,
+      "unimpounded": 27,
+      "illinois_river": 37.5
+    },
+    {
+      "local_id": "WQ-38",
+      "source_cell": "C40",
+      "restoration_goal": "Support and sustain diverse fish and wildlife communities by restoring habitat conditions and ecological functions",
+      "restoration_objective": "Improve understanding of habitat functions and ecological conditions that support fish and wildlife",
+      "question": "How do structure height, proximity to shorelines, water-body size, and aquatic vegetation composition influence waterfowl (canvasback), wading birds, and fisheries habitat use?",
+      "upper_impounded": 8,
+      "lower_impounded": 29,
+      "unimpounded": 31,
+      "illinois_river": 8
+    },
+    {
+      "local_id": "WQ-39",
+      "source_cell": "C41",
+      "restoration_goal": "Support and sustain diverse fish and wildlife communities by restoring habitat conditions and ecological functions",
+      "restoration_objective": "Improve understanding of habitat functions and ecological conditions that support fish and wildlife",
+      "question": "How do substrate composition, heterogeneity, and stability influence mussels, other benthic invertebrate, and spawning habitat for fish in channel environments?",
+      "upper_impounded": 2,
+      "lower_impounded": 16,
+      "unimpounded": 14,
+      "illinois_river": 5
+    },
+    {
+      "local_id": "WQ-40",
+      "source_cell": "C42",
+      "restoration_goal": "Support and sustain diverse fish and wildlife communities by restoring habitat conditions and ecological functions",
+      "restoration_objective": "Improve understanding of habitat functions and ecological conditions that support fish and wildlife",
+      "question": "How do fish (resident and migratory species), mussels, and macroinvertebrates respond to changes in side-channel connectivity across different spatial scales?",
+      "upper_impounded": 7,
+      "lower_impounded": 21,
+      "unimpounded": 12,
+      "illinois_river": 4
+    },
+    {
+      "local_id": "WQ-41",
+      "source_cell": "C43",
+      "restoration_goal": "Support and sustain diverse fish and wildlife communities by restoring habitat conditions and ecological functions",
+      "restoration_objective": "Improve understanding of habitat functions and ecological conditions that support fish and wildlife",
+      "question": "How do large wood features influence hydraulic and substrate diversity and the composition of macroinvertebrates and fish assemblages?",
+      "upper_impounded": 6,
+      "lower_impounded": 20,
+      "unimpounded": 15,
+      "illinois_river": 12
+    },
+    {
+      "local_id": "WQ-42",
+      "source_cell": "C44",
+      "restoration_goal": "Support and sustain diverse fish and wildlife communities by restoring habitat conditions and ecological functions",
+      "restoration_objective": "Improve understanding of habitat functions and ecological conditions that support fish and wildlife",
+      "question": "How do the composition and diversity of fish assemblages respond to backwater restoration measures?",
+      "upper_impounded": 13,
+      "lower_impounded": 39,
+      "unimpounded": 35,
+      "illinois_river": 7
+    },
+    {
+      "local_id": "WQ-43",
+      "source_cell": "C45",
+      "restoration_goal": "Advance restoration by strengthening the social, ecological, and decision-support processes that enable innovative and collaborative ecosystem management",
+      "restoration_objective": "Improve understanding of socio-ecological benefits of habitat restoration",
+      "question": "How does collaboration between restoration practitioners and scientists change the shared understanding of river ecosystems in ways that improve collective ability to sustain ecological function?",
+      "upper_impounded": 46,
+      "lower_impounded": 48,
+      "unimpounded": 48,
+      "illinois_river": 41
+    },
+    {
+      "local_id": "WQ-44",
+      "source_cell": "C46",
+      "restoration_goal": "Advance restoration by strengthening the social, ecological, and decision-support processes that enable innovative and collaborative ecosystem management",
+      "restoration_objective": "Improve understanding of socio-ecological benefits of habitat restoration",
+      "question": "Which restoration measures offer the best balance of cost effectiveness and ecological uplift, providing the greatest habitat benefits to the ecosystem?",
+      "upper_impounded": 34,
+      "lower_impounded": 35,
+      "unimpounded": 41,
+      "illinois_river": 23
+    },
+    {
+      "local_id": "WQ-45",
+      "source_cell": "C47",
+      "restoration_goal": "Advance restoration by strengthening the social, ecological, and decision-support processes that enable innovative and collaborative ecosystem management",
+      "restoration_objective": "Improve understanding of socio-ecological benefits of habitat restoration",
+      "question": "What are the social and economic benefits of restoration?",
+      "upper_impounded": 49,
+      "lower_impounded": 47,
+      "unimpounded": 47,
+      "illinois_river": 41
+    },
+    {
+      "local_id": "WQ-46",
+      "source_cell": "C48",
+      "restoration_goal": "Advance restoration by strengthening the social, ecological, and decision-support processes that enable innovative and collaborative ecosystem management",
+      "restoration_objective": "Improve understanding of socio-ecological benefits of habitat restoration",
+      "question": "What are appropriate biological response metrics to consider at the scale of restoration sites, and at what spatial scales and over what timeframes do restoration actions produce detectable changes in biological responses?",
+      "upper_impounded": 41,
+      "lower_impounded": 42,
+      "unimpounded": 43,
+      "illinois_river": 35
+    },
+    {
+      "local_id": "WQ-47",
+      "source_cell": "C49",
+      "restoration_goal": "Advance restoration by strengthening the social, ecological, and decision-support processes that enable innovative and collaborative ecosystem management",
+      "restoration_objective": "Incorporate past restoration outcomes and future hydrologic conditions to promote a resilient river ecosystem under changing hydrology",
+      "question": "How do extreme discharge events redistribute habitats?",
+      "upper_impounded": 47,
+      "lower_impounded": 41,
+      "unimpounded": 45,
+      "illinois_river": 46
+    },
+    {
+      "local_id": "WQ-48",
+      "source_cell": "C50",
+      "restoration_goal": "Advance restoration by strengthening the social, ecological, and decision-support processes that enable innovative and collaborative ecosystem management",
+      "restoration_objective": "Incorporate past restoration outcomes and future hydrologic conditions to promote a resilient river ecosystem under changing hydrology",
+      "question": "How can the anticipated effects of future hydrology on fluvial processes, geomorphic features, biological responses, and ecological structure and function be incorporated into restoration design?",
+      "upper_impounded": 35,
+      "lower_impounded": 24,
+      "unimpounded": 39,
+      "illinois_river": 21
+    },
+    {
+      "local_id": "WQ-49",
+      "source_cell": "C51",
+      "restoration_goal": "Advance restoration by strengthening the social, ecological, and decision-support processes that enable innovative and collaborative ecosystem management",
+      "restoration_objective": "Incorporate past restoration outcomes and future hydrologic conditions to promote a resilient river ecosystem under changing hydrology",
+      "question": "How can past restoration actions and future hydrologic projections be evaluated to improve project designs that are sustainable and resilient to flooding events?",
+      "upper_impounded": 29,
+      "lower_impounded": 12,
+      "unimpounded": 40,
+      "illinois_river": 31.5
+    }
+  ],
+  "recorded_project_marks": [
+    {
+      "reach": "Upper Impounded",
+      "cell": "D4",
+      "local_question_id": "WQ-39",
+      "project_label": "Bertom McCartney Lakes",
+      "mark": "x"
+    },
+    {
+      "reach": "Upper Impounded",
+      "cell": "H4",
+      "local_question_id": "WQ-39",
+      "project_label": "Capoli Slough",
+      "mark": "x"
+    },
+    {
+      "reach": "Upper Impounded",
+      "cell": "O4",
+      "local_question_id": "WQ-39",
+      "project_label": "Harpers Slough",
+      "mark": "x"
+    },
+    {
+      "reach": "Upper Impounded",
+      "cell": "P4",
+      "local_question_id": "WQ-39",
+      "project_label": "Indian Slough",
+      "mark": "x"
+    },
+    {
+      "reach": "Upper Impounded",
+      "cell": "U4",
+      "local_question_id": "WQ-39",
+      "project_label": "Lower Pool 10 Island and Backwater Complex",
+      "mark": "x"
+    },
+    {
+      "reach": "Upper Impounded",
+      "cell": "AI4",
+      "local_question_id": "WQ-39",
+      "project_label": "Pool 8 Islands Phase I",
+      "mark": "x"
+    },
+    {
+      "reach": "Upper Impounded",
+      "cell": "AK4",
+      "local_question_id": "WQ-39",
+      "project_label": "Pool 8 Islands Phase III",
+      "mark": "x"
+    },
+    {
+      "reach": "Upper Impounded",
+      "cell": "H24",
+      "local_question_id": "WQ-16",
+      "project_label": "Capoli Slough",
+      "mark": "x"
+    },
+    {
+      "reach": "Upper Impounded",
+      "cell": "O24",
+      "local_question_id": "WQ-16",
+      "project_label": "Harpers Slough",
+      "mark": "x"
+    },
+    {
+      "reach": "Upper Impounded",
+      "cell": "R24",
+      "local_question_id": "WQ-16",
+      "project_label": "Lake Onalaska",
+      "mark": "x"
+    },
+    {
+      "reach": "Upper Impounded",
+      "cell": "U24",
+      "local_question_id": "WQ-16",
+      "project_label": "Lower Pool 10 Island and Backwater Complex",
+      "mark": "x"
+    },
+    {
+      "reach": "Upper Impounded",
+      "cell": "V24",
+      "local_question_id": "WQ-16",
+      "project_label": "Lower Pool 11",
+      "mark": "x"
+    },
+    {
+      "reach": "Upper Impounded",
+      "cell": "W24",
+      "local_question_id": "WQ-16",
+      "project_label": "Lower Pool 13 Phase I",
+      "mark": "x"
+    },
+    {
+      "reach": "Upper Impounded",
+      "cell": "AE24",
+      "local_question_id": "WQ-16",
+      "project_label": "Polander Lake",
+      "mark": "x"
+    },
+    {
+      "reach": "Upper Impounded",
+      "cell": "AF24",
+      "local_question_id": "WQ-16",
+      "project_label": "Pool 11 Islands",
+      "mark": "x"
+    },
+    {
+      "reach": "Upper Impounded",
+      "cell": "AI24",
+      "local_question_id": "WQ-16",
+      "project_label": "Pool 8 Islands Phase I",
+      "mark": "x"
+    },
+    {
+      "reach": "Upper Impounded",
+      "cell": "AJ24",
+      "local_question_id": "WQ-16",
+      "project_label": "Pool 8 Islands Phase II",
+      "mark": "x"
+    },
+    {
+      "reach": "Upper Impounded",
+      "cell": "AK24",
+      "local_question_id": "WQ-16",
+      "project_label": "Pool 8 Islands Phase III",
+      "mark": "x"
+    },
+    {
+      "reach": "Upper Impounded",
+      "cell": "AL24",
+      "local_question_id": "WQ-16",
+      "project_label": "Pool 9 Islands",
+      "mark": "x"
+    },
+    {
+      "reach": "Upper Impounded",
+      "cell": "AQ24",
+      "local_question_id": "WQ-16",
+      "project_label": "Spring Lake Islands",
+      "mark": "x"
+    }
+  ],
+  "reach_checks": {
+    "Upper Impounded": {
+      "question_count": 49,
+      "rank_sum": 1225,
+      "repeated_rank_positions": 0,
+      "agrees_with_main": true
+    },
+    "Lower Impounded": {
+      "question_count": 49,
+      "rank_sum": 1225,
+      "repeated_rank_positions": 1,
+      "agrees_with_main": true
+    },
+    "Unimpounded": {
+      "question_count": 49,
+      "rank_sum": 1225,
+      "repeated_rank_positions": 0,
+      "agrees_with_main": true
+    },
+    "Illinois River": {
+      "question_count": 49,
+      "rank_sum": 1225,
+      "repeated_rank_positions": 16,
+      "agrees_with_main": true
+    }
+  },
+  "project_column_counts": [44, 30, 3, 9]
+}

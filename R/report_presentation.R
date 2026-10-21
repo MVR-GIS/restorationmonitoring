@@ -40,3 +40,36 @@
     ggplot2::scale_y_continuous(expand = ggplot2::expansion(add = .7)) +
     ggplot2::theme_void())
 }
+
+.rm_report_priority_ranks <- function(p) {
+  s <- p$selected
+  if (!nrow(s)) return(invisible(NULL))
+  d <- do.call(rbind, lapply(seq_along(p$rank_fields), function(i)
+    data.frame(question = s$local_id, reach = p$reach_labels[i], rank = s[[p$rank_fields[i]]])))
+  d$question <- factor(d$question, levels = rev(s$local_id))
+  d$reach <- factor(d$reach, levels = p$reach_labels)
+  print(ggplot2::ggplot(d, ggplot2::aes(rank, question)) +
+    ggplot2::geom_point(size = 3, colour = "#14756f") +
+    ggplot2::geom_text(ggplot2::aes(label = rank), nudge_y = .19, size = 3.5) +
+    ggplot2::facet_wrap(~reach, ncol = 2) +
+    ggplot2::scale_x_continuous(limits = c(1, nrow(p$questions)), breaks = c(1, 10, 20, 30, 40, nrow(p$questions))) +
+    ggplot2::scale_y_discrete(expand = ggplot2::expansion(add = .65)) +
+    ggplot2::labs(x = "Recorded priority rank (1 = highest priority)", y = "Workshop question") +
+    ggplot2::theme_minimal(base_size = 12) + ggplot2::theme(panel.grid.minor = ggplot2::element_blank()))
+}
+
+.rm_report_pilot_path <- function(r) {
+  nodes <- data.frame(x=0:2,y=1,
+    label=c('Restoration feature\nDesign and installation\nto be reconciled',
+      'Local habitat conditions\nHydraulics and\nsubstrate stability',
+      'Expected mussel benefit\nConditions for persistence\nto be evaluated'))
+  edges <- data.frame(x=c(.3,1.3),xend=c(.7,1.7),y=1,yend=1)
+  print(ggplot2::ggplot(nodes,ggplot2::aes(x,y)) +
+    ggplot2::geom_segment(data=edges,ggplot2::aes(x=x,xend=xend,y=y,yend=yend),
+      inherit.aes=FALSE,linetype='dashed',colour='#667d83',
+      arrow=grid::arrow(length=grid::unit(2,'mm'))) +
+    ggplot2::geom_label(ggplot2::aes(label=label),fill='#edf3fa',size=4,
+      label.padding=grid::unit(.7,'lines')) +
+    ggplot2::scale_x_continuous(limits=c(-.5,2.5)) +
+    ggplot2::scale_y_continuous(limits=c(.4,1.6)) + ggplot2::theme_void())
+}

@@ -1,0 +1,36 @@
+{
+  "id": "MS03-instance-20261021",
+  "status": "assistant extraction and applicability proposal; not SME-reviewed",
+  "reviewed": "2026-10-21",
+  "source_id": "MS-03",
+  "assertion_id": "SC-03",
+  "hypothesis_id": "SC-08",
+  "reading_depth": "USGS publication abstract; ScienceBase release description, FGDC metadata and both CSVs. Publisher full text inaccessible; analysis not reproduced.",
+  "publication_url": "https://www.usgs.gov/publications/estimation-vital-population-rates-assess-relative-health-mussel-assemblages-upper",
+  "dataset_doi": "10.5066/P9HRXPJQ",
+  "dataset_url": "https://www.sciencebase.gov/catalog/item/5d583085e4b01d82ce8ec16e",
+  "chain": [
+    {"object": "Research purpose", "record": "Compare survival and growth among species, years and mussel-density patches.", "locator": "Data-release description, objectives", "basis": "Source paraphrase"},
+    {"object": "Study context", "record": "West Newton Chute, Pool 5; tagging in 2012 and annual recoveries in 2013–2016. This is not Steamboat Island.", "locator": "Data-release description; FGDC /metadata/dataqual/lineage/procstep/procdesc", "basis": "Source paraphrase"},
+    {"object": "Comparison design", "record": "Historical density defined core/periphery polygons; five 5 × 5 m plots per polygon. Tagged mussels were allocated among plots. Density habitats were not randomly imposed restoration treatments.", "locator": "Data-release description, IDW quartiles and plot allocation", "basis": "Source description plus analyst inference limit"},
+    {"object": "Sampling and observations", "record": "PIT identity, recovery, live/dead status and shell length were recorded repeatedly. Plot visits retain dates, depth and search effort.", "locator": "FGDC eainfo/detailed attribute definitions; tracking data.csv and plot data.csv headers", "basis": "Inspected metadata and file structure"},
+    {"object": "Dataset", "record": "Two inspected CSVs: 569 individual records and 100 plot-visit rows. These are file counts, not independently estimated survival rates.", "locator": "CSV inventory, review-mussel-vital-rates.R", "basis": "Reproducible file inspection"},
+    {"object": "Analysis", "record": "Published survival and growth comparisons are identified, but fitted models, detection assumptions, exclusions and uncertainty estimates remain unverified. The inspected release lists metadata and two CSVs, with no analysis-code attachment.", "locator": "Publication abstract §§3–4; ScienceBase JSON files list", "basis": "Source scope and explicit gap"},
+    {"object": "Finding — survival", "record": "Authors report higher survival in core habitat and variation among species and years.", "locator": "Publication abstract §3", "basis": "Reported finding; not independently reproduced"},
+    {"object": "Finding — growth", "record": "Authors report species and age differences, without a significant core/periphery growth difference.", "locator": "Publication abstract §4", "basis": "Reported finding; not independently reproduced"},
+    {"object": "Interpretation", "record": "Authors infer the importance of substrate stability; their core/periphery source–sink explanation requires further recruitment-source testing.", "locator": "Publication abstract §§3,5; SC-04", "basis": "Author interpretation and unconfirmed hypothesis"},
+    {"object": "Local applicability", "record": "SC-03 informs formulation of SC-08. Compare local substrate dynamics, flows, species and sampling design before transferring the interpretation. No Steamboat treatment effect or numerical criterion follows from this study alone.", "locator": "SC-03 → SC-08; Steamboat feasibility VI-1 and X-4 footnote 8", "basis": "Assistant proposal for partner review"}
+  ],
+  "review_flags": [
+    "Publication/release narrative says 578 tagged mussels; the inspected tracking file has 569 unique individual IDs and the plot file sums to 576 placed in 2012. Reconcile cohort accounting before analysis; do not silently replace any source total.",
+    "CSV taxon label Quadrula pustulosa differs from Cyclonaias pustulosa in the abstract. Preserve both original labels; obtain an explicit taxonomic mapping before joining.",
+    "Not located, missing '.', recorded dead and carried-forward status must remain distinguishable. A missing recovery is not automatically mortality.",
+    "The abstract includes an apparently inconsistent directional statement about survival versus substrate stability. Resolve the metric and sign in full methods/results before encoding a quantitative relationship.",
+    "No local restoration feature, adopted hypothesis, post-construction observation or empirical support edge has been established by this extraction."
+  ],
+  "files": [
+    {"name": "ms03-metadata.xml", "source_name": "Estimation of vital rates to assess the relative health of mussel resources in the Upper Mississippi River System.xml", "md5": "4203263a7e1fcb2604052c2aa2ab75af", "url": "https://www.sciencebase.gov/catalog/file/get/5d583085e4b01d82ce8ec16e?f=__disk__ea%2F3a%2Fee%2Fea3aee7d4ffbcfb4a1b71146bec8fc4d941b095d"},
+    {"name": "ms03-plot-data.csv", "source_name": "plot data.csv", "md5": "c0b76177857aa80baec345803f986566", "rows": 100, "columns": 18, "url": "https://www.sciencebase.gov/catalog/file/get/5d583085e4b01d82ce8ec16e?f=__disk__82%2Fad%2F06%2F82ad061a519398e13a692a338c8398f906fd3a73"},
+    {"name": "ms03-tracking-data.csv", "source_name": "tracking data.csv", "md5": "fc92616553daab457d843e2ef8fb41fd", "rows": 569, "columns": 48, "url": "https://www.sciencebase.gov/catalog/file/get/5d583085e4b01d82ce8ec16e?f=__disk__bb%2F51%2F16%2Fbb5116ef120fc1957357867377b60f03e176fee9"}
+  ]
+}

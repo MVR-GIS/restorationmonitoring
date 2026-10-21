@@ -4,6 +4,10 @@ Initial inspection: 2026-10-07; current-state cleanup: 2026-10-16. Scope: reposi
 
 ## Available material
 
+### Workshop research priorities, 2026-10-21
+
+The user supplied [research_question_ranks.xlsx](../checkpoints/archive/research_question_ranks.xlsx) as workshop analysis identifying priority research questions. [The review](workshop-research-priorities.md) documents six sheets, 49 questions under five restoration goals/eleven objectives, four reach-specific rankings, 20 recorded question/project marks and four embedded historical inventory images. The [derivative register](workshop-research-question-register.json) retains question wording, ranks, source cells and marked project labels. The four sorted rank views reconcile with the main sheet; raw weighting inputs/protocol, workshop dates and mark semantics are unavailable. This is a supplied learning agenda, not evidence of hypothesis evaluation or approved strategic-plan numbering. The workbook was left unchanged and is not part of the initial 40-file corpus register.
+
 ### Knowledge graph literature collection, 2026-10-16
 
 The user supplied the [KnowledgeGraphs Zotero collection](https://www.zotero.org/groups/4862069/usace_ecomodeling/collections/CLHU5MJG/collection) as a source of the project's expectations. Its public library view displayed 89 items. The [literature assessment](knowledge-graph-literature-assessment.md) records a focused ten-publication review, reading-depth limits, duplicate-publication handling, a supplementary 2025 source, and implications for the existing design. This is not a systematic review or a complete attachment inventory. The local Zotero API remains unavailable; the public metadata API attempt was blocked. Browser-visible metadata and accessible primary publications supported the assessment. No Zotero records were changed.
@@ -72,3 +76,7 @@ The categories below were the initial assistant-proposed collection priorities. 
 | Later | Connected project records and live-system integration examples | Validate end-to-end relationships after the initial conceptual review |
 
 For incoming sources, record origin, date/version, program coverage, authority/review status, specific evidence locations, implications, and unresolved questions. This is a proposed working convention, not a formal schema. Do not store restricted material or personal information in agentic-context artifacts.
+
+## MS-03 acquisition update, 2026-10-21
+
+The public [ScienceBase data release](https://doi.org/10.5066/P9HRXPJQ), catalog item `5d583085e4b01d82ce8ec16e`, was inspected for the Newton et al. 2020 vital-rates study. Acquired FGDC metadata and both CSVs are local ignored files in `dev/outputs/research-question/ms03-*`. [The maintained instance](mussel-vital-rates-instance.json) retains download URLs, fingerprints, locators and review flags; [the R inspection script](../scripts/review-mussel-vital-rates.R) can reacquire missing files and verify the reviewed edition. The publisher's full text was blocked; analysis code was not attached among the three files inspected. Dataset access does not close the full-paper/model-validation gap.

@@ -33,7 +33,7 @@
       "zotero_item_key": "T5L6D83Y",
       "doi": "10.1111/fwb.13575",
       "source_url": "https://pubs.usgs.gov/publication/70215652",
-      "reading_depth": "USGS abstract and previously inspected Zotero abstract"
+      "reading_depth": "USGS abstract; companion ScienceBase description, FGDC metadata and two CSVs inspected 2026-10-21 (mussel-vital-rates-instance.json). Full article methods/results inaccessible."
     },
     {
       "id": "MS-04",
@@ -82,8 +82,8 @@
       "id": "SC-03",
       "source_id": "MS-03",
       "kind": "reported_finding",
-      "paraphrase": "Repeated tagged-mussel measurements show species/time/habitat variation in survival and growth; substrate stability is relevant to interpretation.",
-      "source_locator": "Abstract, methods/results/conclusion",
+      "paraphrase": "Authors report species/time variation and higher core-habitat survival; growth differed by species and age, without a significant core/periphery difference. Substrate stability is an author interpretation.",
+      "source_locator": "USGS publication abstract sections 3-5; expanded instance: mussel-vital-rates-instance.json",
       "limit": "Do not infer that a Steamboat intervention caused survival changes.",
       "extraction_status": "assistant source-based extraction; not SME-reviewed",
       "full_text_scope": "see source reading depth"

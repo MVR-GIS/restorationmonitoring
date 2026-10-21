@@ -7,9 +7,15 @@
 #' @param science_file Science worksheet JSON with sources and assertions.
 #' @param restoration_file Restoration extraction JSON.
 #' @param entities Optional data frame of candidate conceptual distinctions.
+#' @param priorities_file Optional reviewed workshop-priority register JSON.
+#' @param priorities_source Original workbook corresponding to that register.
+#' @param priority_links_file Optional explicit pilot relevance links JSON.
+#' @param study_instance_file Optional source-located scientific instance JSON.
 #' @return A read-only report summary with source fingerprints and derivation links.
 research_question_summary <- function(question, science_file, restoration_file,
-                                      entities = data.frame()) {
+                                      entities = data.frame(), priorities_file = NULL,
+                                      priorities_source = NULL, priority_links_file = NULL,
+                                      study_instance_file = NULL) {
   if (!is.character(question) || length(question) != 1L || is.na(question) ||
       !nzchar(trimws(question))) stop("Supply one nonempty research question.")
   if (!requireNamespace("jsonlite", quietly = TRUE)) stop("Install jsonlite to read worksheets.")
@@ -41,15 +47,37 @@ research_question_summary <- function(question, science_file, restoration_file,
   if (any(!c(edges$from, edges$to) %in% assertions$id)) stop("Derivation references an unknown assertion.")
   objectives <- records(r$objectives, c("id", "name", "source_text_normalized", "detailed_criterion_pdf_pages"))
   if (!is.data.frame(entities)) stop("entities must be a data frame.")
-  structure(list(report_version = "research-question-1", question = question,
+  if (xor(is.null(priorities_file), is.null(priorities_source)) ||
+      (!is.null(priority_links_file) && is.null(priorities_file)))
+    stop("Supply both priority register and source workbook before pilot links.")
+  priorities <- if (is.null(priorities_file)) NULL else
+    .rm_workshop_priorities(priorities_file, priorities_source, priority_links_file)
+  inputs <- data.frame(role = c("Science worksheet", "Restoration worksheet"),
+    file = basename(paths), md5 = unname(tools::md5sum(paths)))
+  if (!is.null(priorities)) inputs <- rbind(inputs, priorities$inputs)
+  study_instance <- NULL
+  if (!is.null(study_instance_file)) {
+    study_path <- normalizePath(study_instance_file, winslash = "/", mustWork = TRUE)
+    study_instance <- jsonlite::fromJSON(study_path, simplifyVector = FALSE)
+    if (!study_instance$source_id %in% sources$id ||
+        !study_instance$assertion_id %in% assertions$id ||
+        !study_instance$hypothesis_id %in% assertions$id)
+      stop("Scientific instance references an unknown source or assertion.")
+    a <- assertions[match(study_instance$assertion_id, assertions$id), ]
+    if (is.na(a$source_id) || a$source_id != study_instance$source_id)
+      stop("Scientific instance source does not match its assertion.")
+    study_instance$chain <- records(study_instance$chain, c("object", "record", "locator", "basis"))
+    inputs <- rbind(inputs, data.frame(role = "Scientific instance", file = basename(study_path),
+      md5 = unname(tools::md5sum(study_path))))
+  }
+  structure(list(report_version = "research-question-2", question = question,
     question_basis = "Analyst formulation for review", generated_at = Sys.time(),
     sources = sources, assertions = assertions, derivations = edges,
     entities = entities, objectives = objectives,
     project_connection = s$project_connection, lifecycle = scalar(r$lifecycle),
     mussel_benefit = r$mussel_benefit, source_status = scalar(s$status),
     organizational_baseline = s$organizational_baseline,
-    inputs = data.frame(role = c("Science worksheet", "Restoration worksheet"),
-      file = basename(paths), md5 = unname(tools::md5sum(paths))),
+    priorities = priorities, study_instance = study_instance, inputs = inputs,
     software = data.frame(component = c("R", "jsonlite", "rmarkdown", "knitr", "gt", "ggplot2"),
       version = c(as.character(getRversion()), vapply(c("jsonlite", "rmarkdown", "knitr", "gt", "ggplot2"),
         function(p) if (requireNamespace(p, quietly = TRUE)) as.character(utils::packageVersion(p)) else "Not installed", "")))),
@@ -81,13 +109,24 @@ research_question_report <- function(summary, output_file, template_dir = NULL) 
   # Render outside the source tree. Publish with a non-replacing filesystem link.
   stage_dir <- tempfile("research-report-", tmpdir = dirname(output_file))
   dir.create(stage_dir); on.exit(unlink(stage_dir, recursive = TRUE), add = TRUE)
+  # gt compiles Sass while knitting. Keep its writable cache beside the staged
+  # report rather than relying on a user-profile cache outside the workspace.
+  old_options <- options(sass.cache = file.path(stage_dir, "sass-cache"))
+  on.exit(options(old_options), add = TRUE)
   file.copy(c(template, css), stage_dir)
   env <- new.env(parent = baseenv())
   env$report_table <- .rm_report_table
   env$report_derivations <- .rm_report_derivations
+  env$report_priority_ranks <- .rm_report_priority_ranks
+  env$report_pilot_path <- .rm_report_pilot_path
   staged <- rmarkdown::render(file.path(stage_dir, basename(template)),
     output_file = "report.html", params = list(report = summary),
     envir = env, quiet = TRUE, encoding = "UTF-8")
+  # knitr can embed warnings in otherwise successful HTML. Refuse publication
+  # until the cause is resolved; never conceal them with warning = FALSE.
+  rendered <- paste(readLines(staged, warn = FALSE, encoding = "UTF-8"), collapse = "\n")
+  if (grepl("<pre[^>]*><code[^>]*>\\s*## (Warning|Error)", rendered, perl = TRUE))
+    stop("Report contains a rendered warning or error; inspect the render before publishing.")
   if (!isTRUE(suppressWarnings(file.link(staged, output_file))))
     stop("Could not publish without replacement; use a local hard-link-capable filesystem.")
   invisible(output_file)

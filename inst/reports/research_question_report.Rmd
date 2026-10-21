@@ -1,6 +1,6 @@
 ---
-title: "Research Question Dashboard"
-subtitle: "Scientific evidence and restoration connections"
+title: "Steamboat Island Mussel Pilot Report"
+subtitle: "EMMA Science and Restoration Integration Component"
 output:
   html_document:
     self_contained: true
@@ -15,75 +15,129 @@ params:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = TRUE, error = FALSE)
 r <- params$report
+p <- r$priorities
 esc <- function(x) as.character(htmltools::htmlEscape(x))
 ```
 
-## Research question and current understanding
+The Steamboat Island feasibility report anticipates an additional mussel-habitat benefit from stone protection. This pilot examines the scientific basis for that expectation and the evidence needed to evaluate it locally. **The current record supports an anticipated benefit, not a demonstrated post-construction mussel outcome.**
+
+## The Steamboat Island pilot
 
 ```{r question, results='asis'}
-cat('<div class="question"><strong>', esc(r$question_basis), '</strong><p>', esc(r$question), '</p></div>')
-report_table(data.frame(Item = c('Research outputs in sample', 'Source-based assertion records',
-  'Assertions without a direct source', 'Review status'),
-  Record = c(nrow(r$sources), sum(!is.na(r$assertions$source_id)),
-    sum(is.na(r$assertions$source_id)), r$source_status)))
-cat('<p>Snapshot: ', esc(format(r$generated_at, tz = 'UTC', usetz = TRUE)),
-  '. Counts describe worksheet records, not independent studies or scientific confidence.</p>')
+cat('<div class="question"><strong>Pilot question — ', esc(r$question_basis), '</strong><p>', esc(r$question), '</p></div>')
+report_table(data.frame(Item=c('Restoration intent','Project stage in the supplied record','Monitoring commitment'),
+  Understanding=c(r$mussel_benefit$classification,
+    'Construction ongoing; baseline/construction monitoring reported by the user. This report does not update construction status.',
+    paste('Dedicated post-construction mussel surveys:',r$mussel_benefit$dedicated_postconstruction_mussel_surveys))))
 ```
 
-## Research entities
+Mussel habitat is an **ancillary benefit**, separate from the project's formal objectives and performance criteria. The absence of post-construction performance data at this stage is not evidence of failure. The absence of a dedicated mussel-survey commitment is a separate planning consideration.
 
-These are candidate distinctions to review, not an approved list of database tables or ontology classes.
+## Restoration intent and the expected response
 
-```{r entities, results='asis'}
-report_table(r$entities)
+The recommended plan describes potential additional fish/mussel habitat associated with stone protection (feasibility report VI-1, PDF p. 133). Table X-3 footnote 8 (X-4, PDF p. 169) does not commit dedicated post-construction mussel surveys. The final feature design, installation identity and local mussel response have not been reconciled in this pilot.
+
+```{r pilot-path, fig.width=10, fig.height=2.8, fig.alt='Proposed pathway from a restoration feature to local hydraulic and substrate conditions and then an expected mussel response. Both arrows represent unverified local links.'}
+report_pilot_path(r)
 ```
 
-## Source findings and interpretations
+**How to read the diagram:** the arrows identify relationships to investigate. They do not establish that a feature has produced the expected conditions or that mussels have responded. Persistence, survival, recruitment and habitat occupancy are related but distinct possible responses; the pilot has not selected a local endpoint or numerical success threshold.
 
-Each record retains its origin, passage locator, interpretation type, limitations and review state. A source-derived statement is not automatically a true proposition or causal effect.
+## What the science contributes
 
-```{r findings, results='asis'}
-report_table(r$assertions[c('id', 'source_id', 'kind', 'paraphrase', 'limit')])
+The following extracts help explain why substrate and hydraulic conditions warrant investigation. Most are based on abstracts; they retain the source studies' inference limits and have not received SME review.
+
+```{r focused-science, results='asis'}
+ids <- c('SC-02','SC-03','SC-05')
+a <- r$assertions[match(ids,r$assertions$id),]
+report_table(data.frame(Reference=paste(a$id,a$source_id,sep=' / '),
+  `Scientific contribution`=a$paraphrase,`Limit on use at Steamboat Island`=a$limit,check.names=FALSE))
 ```
 
-## Supplied derivation links
+The hydraulic interpretation and habitat-dependent survival findings informed the following **proposed local hypothesis**, SC-08. It is an assistant formulation for review, not a verbatim author statement or a hypothesis known to have been adopted by the project's designers.
 
-Dashed links mean **informs formulation**, not causal proof or empirical confirmation. Source-derived records have a pale green fill; records without a direct source have an amber fill. The IDs and source fields supply the same distinction in text.
-
-```{r derivations, fig.width=11, fig.height=5, fig.alt='Supplied assertion derivations; see relationship table for exact IDs and meanings.'}
-if (nrow(r$derivations)) report_derivations(r) else cat('No derivation links supplied; none inferred.')
+```{r local-hypothesis, results='asis'}
+h <- r$assertions[r$assertions$id=='SC-08',]
+cat('<div class="question"><strong>SC-08 — proposed local hypothesis</strong><p>',esc(h$paraphrase),'</p></div>')
 ```
 
-```{r derivation-table, results='asis'}
-report_table(r$derivations)
+```{r derivations, fig.width=10, fig.height=4.5, fig.alt='SC-02 and SC-03 inform the formulation of SC-08; this relationship is not proof of a local restoration effect.'}
+report_derivations(r)
 ```
 
-## Restoration connection and lifecycle
+These links explain the hypothesis's origin. Applying the research to Steamboat Island still requires review of the study locations, species, flow regimes, methods and relevance to the local intervention. No sampled publication is asserted here to have evaluated Steamboat Island.
 
-```{r restoration, results='asis'}
-pc <- r$project_connection
-report_table(data.frame(Item = names(pc), Record = vapply(pc, function(x)
-  if (is.null(x)) NA_character_ else paste(unlist(x), collapse = '; '), '')))
-cat('<p>', esc(r$lifecycle), '</p>')
-cat('<p><strong>Benefit classification:</strong> ', esc(r$mussel_benefit$classification),
-  '. <strong>Dedicated post-construction mussel surveys:</strong> ',
-  esc(r$mussel_benefit$dedicated_postconstruction_mussel_surveys), '.</p>')
-report_table(r$objectives)
+```{r scientific-instance, results='asis'}
+si <- r$study_instance
+if (!is.null(si)) {
+  cat('<h3>Tracing one study: what survival and growth tell us</h3>',
+    '<p>MS-03 (Newton et al. 2020) can now be traced into its public data release. ',
+    'The inspected sources distinguish the comparison, repeated observations, reported findings and local interpretation. ',
+    'Full-text model details remain unverified.</p>')
+  report_table(si$chain[c(2,3,4,7,8),c('object','record','locator')])
+  cat('<p><strong>Implication for this pilot:</strong> survival and growth are distinct responses. ',
+    'A habitat contrast in one does not establish the same contrast in the other. ',
+    'This study informs a local question; it does not establish a Steamboat restoration effect.</p>',
+    '<p><strong>Source reconciliation needed:</strong> the narrative reports 578 tagged mussels; ',
+    'the tracking file contains 569 individual IDs, and the 2012 plot placement counts sum to 576. ',
+    'These totals have been preserved separately. Their differences are unresolved, and no new vital rates were calculated.</p>')
+}
 ```
 
-The user-defined conceptual chain is HREP → Project Objective → Performance Criterion → Monitoring Task → Observation. Production observation storage and cross-system identities remain unverified. Formal objectives above are distinct from the ancillary mussel benefit. Targets are not observed performance.
+## What would let us evaluate the benefit here
 
-## Questions for the next review
+| Part of the evidence chain | Current pilot record | Next useful work |
+| --- | --- | --- |
+| Restoration feature and location | Ancillary intent is documented; actual feature identity/design/installation is unresolved | Review final design and available as-built/GIS records; identify the feature and habitat area to evaluate |
+| Habitat conditions and mechanism | Hydraulic/substrate reasoning comes from research; local change has not been demonstrated | Review local flow and substrate evidence across relevant conditions and compare it with the studies' scope |
+| Mussel population and response | Baseline/construction monitoring is reported, but mussel-specific observations and analyses are not assembled in this pilot | Identify species, existing surveys, sampling periods and measured responses; assess suitability for the question |
+| Study design and inference | No local comparison design or demonstrated post-construction effect is established | Determine an appropriate comparison, timing, analysis and treatment of alternative explanations before drawing conclusions |
 
-- What evidence supports or challenges the expected habitat benefit, and under what conditions?
-- Does that evidence apply to the local design, species and flow context?
-- What observations and comparison design would evaluate the expectation?
+The feasibility report identifies the annual interagency Cordova Mussel Blitz as a possible external data opportunity. Availability and suitability need checking; it is not a guaranteed dataset or a dedicated project task.
 
-Reviewing this report does not create a monitoring obligation or approve a scientific conclusion. The current example needs deeper full-paper review and local applicability evidence.
+## Next steps for this pilot
+
+1. **Confirm the local restoration connection.** Identify the relevant feature, location, design intent and available construction evidence.
+2. **Resolve the scientific transfer questions.** The MS-03 source-to-data instance is now available below. Reconcile its cohort counts, verify full-paper analysis and substrate metrics, and review applicability alongside MS-02.
+3. **Assess the evidence that could answer the question.** Inventory local mussel/habitat data and identify the smallest useful analysis or study-design increment, including any missing observations and review responsibilities.
+
+The next deliverable should be one inspectable chain from restoration expectation through scientific reasoning to available observations and remaining needs. It should help partners decide whether existing data can address the expectation or whether additional work is justified. This report creates no new monitoring commitment.
+
+## Background — workshop research priorities
+
+```{r priority-background, results='asis'}
+if (is.null(p)) {
+  cat('<p>No priority-defining artifact supplied. No program priority has been inferred for this report.</p>')
+} else {
+  q <- p$questions[p$questions$local_id=='WQ-39',]
+  if(nrow(q)) cat('<p>The workshop workbook records a broader question, <strong>WQ-39</strong>: ',
+    esc(q$question), ' Its recorded Lower Impounded priority rank is <strong>',
+    q$lower_impounded, '</strong> (1 = highest priority). This supplies program context for the mussel pilot; the proposed link to SC-08 does not establish equivalence or a completed scientific test.</p>')
+  cat('<p>Steamboat Island is listed in the Lower Impounded sheet, with no question marks recorded in its column. A blank association is not evidence of absent learning value. Full priority information is retained below as background.</p>')
+}
+```
 
 ## Supporting record
 
-### Publications
+<details>
+<summary>MS-03 scientific instance: full evidence chain and unresolved checks</summary>
+
+```{r instance-detail, results='asis'}
+if (!is.null(si)) {
+  cat('<p>',esc(si$status),'. ',esc(si$reading_depth),'</p>')
+  cat('<p><a href="',esc(si$publication_url),'">Publication abstract</a> · ',
+    '<a href="',esc(si$dataset_url),'">ScienceBase data release ',esc(si$dataset_doi),'</a></p>')
+  report_table(si$chain)
+  for (flag in si$review_flags) cat('<p>',esc(flag),'</p>')
+  report_table(do.call(rbind,lapply(si$files,function(f)
+    data.frame(Source=f$source_name,MD5=f$md5,URL=f$url))))
+}
+```
+
+</details>
+
+<details>
+<summary>Scientific publications and source reading depth</summary>
 
 ```{r publications, results='asis'}
 report_table(r$sources)
@@ -92,26 +146,84 @@ for (i in seq_len(nrow(r$sources))) {
   if (!is.na(url) && grepl('^https://', url))
     cat('<p><a href="', esc(url), '">', esc(r$sources$id[i]), ' primary source</a></p>')
 }
+report_table(data.frame(Item=c('Research outputs in sample','Source-based assertion records','Review status'),
+  Record=c(nrow(r$sources),sum(!is.na(r$assertions$source_id)),r$source_status)))
 ```
 
+These are worksheet counts, not independent-study counts or confidence scores.
+
+</details>
+
 <details>
-<summary>Full assertion locators and review states</summary>
+<summary>Full scientific assertion locators and review states</summary>
 
 ```{r locators, results='asis'}
 report_table(r$assertions)
+report_table(r$derivations)
 ```
 
 </details>
 
-### Inputs and render environment
+<details>
+<summary>Conceptual entities and formal project objectives</summary>
 
-MD5 fingerprints identify the input worksheet bytes used for this snapshot; they are not security attestations. Linked publications and original data remain separate retained sources.
+The entities are candidate distinctions for data-model development. They are not approved tables or ontology classes. Formal project objectives remain separate from the ancillary mussel benefit.
 
-```{r provenance, results='asis'}
-report_table(r$inputs)
-report_table(r$software)
-report_table(data.frame(Item = names(r$organizational_baseline), Value =
-  vapply(r$organizational_baseline, function(x) paste(unlist(x), collapse='; '), '')))
+```{r entities-and-objectives, results='asis'}
+report_table(r$entities)
+report_table(r$objectives)
+report_table(data.frame(Item=names(r$project_connection),Record=vapply(r$project_connection,
+  function(x) if(is.null(x)) NA_character_ else paste(unlist(x),collapse='; '),'')))
 ```
 
-Existing USACE document, provenance, time, spatial and SOSA observation patterns provide the reuse baseline. Proposed scientific extensions remain subject to conceptual review. Rendering changes no source assertions, production records or ontology terms.
+The existing conceptual chain is HREP → Project Objective → Performance Criterion → Monitoring Task → Observation. Production observation storage and cross-system identities remain unverified. Existing USACE document, provenance, temporal, spatial and SOSA patterns provide the organizational baseline.
+
+</details>
+
+<details>
+<summary>Full workshop learning agenda and priority-source detail</summary>
+
+```{r priority-artifact, results='asis'}
+if (!is.null(p)) {
+  report_table(p$artifact)
+  cat('<p>',esc(p$link_status),'. ',esc(p$link_scope),'</p>')
+  for(limit in p$limitations) cat('<p>',esc(limit),'</p>')
+  if(nrow(p$selected)) report_table(data.frame(Question=p$selected$local_id,Role=p$selected$pilot_role,
+    `Reason for proposed relevance`=p$selected$pilot_rationale,check.names=FALSE))
+}
+```
+
+```{r priority-ranks, fig.width=10, fig.height=5.5, fig.alt='Background only: four reach-specific panels show the recorded ranks of selected workshop questions.'}
+if (!is.null(p)) report_priority_ranks(p)
+```
+
+```{r full-priority-register, results='asis'}
+if (!is.null(p)) {
+  agenda <- p$questions[c('local_id','question','restoration_goal','restoration_objective')]
+  names(agenda) <- c('Question','Original wording','Workshop restoration goal','Workshop restoration objective')
+  report_table(agenda)
+  ranks <- p$questions[c('local_id',p$rank_fields)]
+  names(ranks) <- c('Question',p$reach_labels)
+  report_table(ranks)
+  if(nrow(p$marks)) report_table(p$marks)
+}
+```
+
+Ranks remain reach-specific; no system-wide score is calculated. Reported n values are not interpreted as confirmed participant counts. An x records an association of unresolved meaning, not a completed test. Source groupings are not automatically strategic-plan or individual HREP objectives. WQ identifiers are review-local and tied to the source edition.
+
+</details>
+
+<details>
+<summary>Input fingerprints and render environment</summary>
+
+```{r provenance, results='asis'}
+cat('<p>Report generated: ',esc(format(r$generated_at,tz='UTC',usetz=TRUE)),'.</p>')
+report_table(r$inputs)
+report_table(r$software)
+report_table(data.frame(Item=names(r$organizational_baseline),Value=vapply(r$organizational_baseline,
+  function(x) paste(unlist(x),collapse='; '),'')))
+```
+
+MD5 fingerprints identify the worksheet bytes used for the snapshot. Original documents and data remain separate retained sources. Rendering does not acquire new evidence or approve a scientific conclusion.
+
+</details>

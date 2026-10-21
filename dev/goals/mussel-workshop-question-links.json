@@ -1,0 +1,27 @@
+{
+  "status": "Assistant-proposed relevance links for pilot review; not SME-reviewed",
+  "workbook_md5": "bc5bebc667228e7b2fe5d254fa3bf9a3",
+  "scope": "Mussel research pilot; links do not establish designer adoption, a completed test or equivalence to SC-08.",
+  "links": [
+    {
+      "question_id": "WQ-39",
+      "role": "Primary priority question",
+      "rationale": "The workshop asks how substrate composition, heterogeneity and stability influence mussels and other taxa. SC-08 proposes a narrower local substrate-stability/persistence hypothesis within this topic."
+    },
+    {
+      "question_id": "WQ-05",
+      "role": "Related restoration-mechanism question",
+      "rationale": "This question concerns interventions that shape channel substrates. It supplies restoration context for the pilot; a specific feature-to-response link still needs evidence."
+    },
+    {
+      "question_id": "WQ-40",
+      "role": "Related connectivity question",
+      "rationale": "Mussel responses to side-channel connectivity may matter to local applicability. Connectivity effects are broader than, and not equivalent to, SC-08."
+    },
+    {
+      "question_id": "WQ-37",
+      "role": "Additional adverse-response question",
+      "rationale": "The workshop also asks about adverse fish/mussel effects of water-level management. This is a separate question for consideration, not a result established by the current science sample."
+    }
+  ]
+}
