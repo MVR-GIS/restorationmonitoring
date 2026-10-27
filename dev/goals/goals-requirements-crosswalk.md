@@ -1,7 +1,8 @@
 # Goals and requirements crosswalk
 
 - Started: 2026-10-08
-- Status: revised around accepted user purpose and five user stories; specific requirements awaiting review
+- Updated: 2026-10-22
+- Status: coherent case-report milestone recognized by user; requirements consolidated for conceptual-model review; detailed specifications remain proposed
 - Evidence: [program review](umrr-program-review.md), [source register](umrr-source-register.json), [EMMA review](../architecture/emma-crosswalk.md)
 - Boundary: program foundation first; database implementation deferred
 
@@ -9,7 +10,9 @@
 
 [Project foundation](project-foundation.md) records accepted user directions. Evidence references E1-E7 below resolve to specific documents and page locators in the program review. G-00 and US-01 through US-04 record explicit user direction from 2026-10-08. Other goals, requirements, and acceptance tests are assistant proposals translating evidence and those needs into project scope. A source citation does not automatically make a requirement approved. Historical documents do not establish current policy applicability.
 
-Goal IDs identify intended outcomes; requirement IDs identify needed capabilities. Preserve IDs through revisions and record review outcomes. User acceptance establishes project direction, not official program endorsement. US-02 is the accepted starting story; detailed requirement priorities and implementation ownership remain unassigned. The 19 proposed requirements are a backlog to refine through extraction, not a prerequisite checklist for starting it.
+Goal IDs identify intended outcomes; requirement IDs identify needed capabilities. Preserve IDs through revisions and record review outcomes. User acceptance establishes project direction, not official program endorsement. US-02 is the accepted starting story; detailed requirement priorities and implementation ownership remain unassigned. R-01 through R-19 remain the proposed capability backlog. The pilot clarifications below refine these entries without approving every specification or creating a competing requirements list.
+
+On 2026-10-22 the user explicitly reaffirmed that the case report is a means to reason through data modeling and recognized the report milestone as accomplished. Capture requirements revealed by it and use them to develop the conceptual model. Report coherence is user feedback on the design aid, not acceptance of the scientific propositions, all requirement entries or a database schema.
 
 ## Proposed goals
 
@@ -48,7 +51,7 @@ The user further clarified that artifact-based listing and linking is the induct
 
 The user's latest clarification establishes support for mature, distributed expert workflows as a design direction. R-15 through R-17 below propose capabilities translating that direction and the desired study-management benefits into observable review evidence. They do not mandate replacement of existing methods or a centralized scientific approval process.
 
-Review tests describe observable acceptance evidence for later validation. They are not automated software tests or instructions to start individual-project analysis now.
+Review tests describe observable acceptance evidence for validation with real records. They are not automated software tests; the present case exercises some information needs without validating the full program-wide capability.
 
 | ID / goals | Capability | Evidence | Observable review test | Open question |
 | --- | --- | --- | --- | --- |
@@ -72,6 +75,25 @@ Review tests describe observable acceptance evidence for later validation. They 
 | R-18 / G-01, G-02, G-05 | Extract and connect key scientific/restoration elements from historical artifacts, refining the conceptual vocabulary through observed content | User's inductive listing-and-linking strategy | A reviewer recovers each extracted element and relationship from its source/version/locator, distinguishes documented statements from inferred links, and identifies duplicates, unresolved identities, and unrepresented content | Extraction/review methods, source coverage, identity reconciliation, and vocabulary evolution |
 | R-19 / G-01, G-05 | Preserve access to underlying artifacts, datasets, and their versions alongside extracted records and relationships | User's intergenerational preservation purpose | A future practitioner can recover the evidence behind a record or see an explicit access/preservation gap; preservation remains valuable without a new scientific discovery | Custody, storage, backup/recovery, external dependencies, and access constraints |
 
+## Requirements clarified by the Steamboat pilot
+
+Reviewed 2026-10-22 against the maintained [restoration worksheet](steamboat-island-objectives-criteria.json), [science worksheet](mussel-science-evidence.json), [MS-03 instance](mussel-vital-rates-instance.json), [workshop review](workshop-research-priorities.md) and [report feature](../features/research-question-dashboard.md). These are proposed refinements and review examples for existing requirements, not newly accepted field definitions. Accepted directions remain in the foundation; extracted evidence retains its own source depth and review status.
+
+| Existing requirements | What the case makes concrete | Consequence for conceptual modeling and proposed review evidence |
+| --- | --- | --- |
+| R-01, R-18, R-19 | The report combines feasibility passages, research abstracts, release metadata and data files with different access/reading depths | Represent source/version/locator and extraction attribution separately from the extracted statement; recover each source or identify its access/preservation gap. A report section or JSON row is not automatically an entity |
+| R-02, R-09 | Workshop WQ-39, author findings, the SC-04 author explanation and assistant-formulated SC-08 have different roles | Distinguish question, hypothesis, finding and interpretation. Recover who formulated a proposition and whether it was explicitly stated, reconstructed or adopted; do not assume a question has one hypothesis or that an author investigated SC-08 |
+| R-02, R-10, R-16 | Workshop ranks vary by reach; project marks and proposed pilot links do not establish a scientific test | Keep question identity, priority assessment/context and relevance assessment distinct from empirical evidence. Explain both why a case is relevant and what evidence is actually available; priority is not confidence |
+| R-03, R-07, R-11 | MS-03 uses repeated measurements in core/periphery habitat; its survival and growth findings differ | Distinguish study/design/context, sampling event, measured property/result, dataset, analysis and finding. Reconstruct each result's derivation and inference limits; do not treat a vital-rate estimate as a direct live/dead observation or a habitat contrast as an HREP treatment experiment |
+| R-03, R-09, R-11 | SC-03 informs SC-08, but the study did not evaluate Steamboat Island | Represent derivation, evidential interpretation and local applicability as different meanings. Explain which link is source-documented or analyst-proposed and which local evidence is missing. A connected path is not proof of a restoration effect |
+| R-04, R-08, R-14 | Mussel habitat is an ancillary anticipated benefit, separate from the four formal project objectives; the actual local feature is unresolved | Allow a documented expected benefit without inventing a formal objective, criterion, monitoring commitment or installation. Preserve planned versus actual feature identity and connect formal criterion evaluations through existing EMMA structures |
+| R-03, R-05, R-14 | Post-construction effects are not yet available in the supplied construction-stage record; dedicated mussel surveys were not committed in the reviewed plan | Keep lifecycle applicability, unplanned work, missing evidence and assessed failure distinct. Show why a question remains unanswered rather than assigning a failed-performance result |
+| R-01, R-07, R-13, R-18 | MS-03 sources retain 578, 576 and 569 cohort totals, changing tag IDs and different taxon labels | Preserve original identities/values and any proposed reconciliation with provenance. Separate an organism's identity from its tag; do not silently join labels, substitute a total or equate non-recovery with death. Source discrepancies are review issues, not verified errors |
+| R-05, R-06, R-13, R-15, R-17 | Scientific and applicability reviews, responsible roles, local implementation evidence and study follow-through remain incomplete | Make review state, revisions, responsibility and unresolved work representable without assuming a centralized approval authority. Later review should recover what was known and decided at a given time; current prototype does not demonstrate this lifecycle capability |
+| R-10, R-12, R-18 | The coherent report makes a partial chain and its gaps understandable for one case | Use reports/query walkthroughs to test whether the proposed model answers user questions. Carry the report's useful distinctions into a model; do not turn page layout, helper objects or figure counts into storage requirements or claim all-HREP retrieval |
+
+The case partially exercises US-02 discovery and scientific reasoning, and makes distinctions needed by US-03 and US-05 visible. It has **not** demonstrated a complete hypothesis-to-installed-feature-to-local-outcome chain, a performed criterion assessment, program-wide retrieval, partner workflow adoption or public assessment of program value. US-01, US-04 and long-term coordination requirements remain part of the intended scope rather than validated outcomes.
+
 ## Starting analysis: connecting the established restoration chain to research
 
 The [Restoration Features book review](../architecture/restoration-features-documentation-review.md) grounds R-08/R-10/R-11/R-17/R-18 in existing documentation: retain measure/class/implementation/geometry distinctions; interpret missing attributes by lifecycle phase; preserve operating and repair history beyond status; and support multi-feature evaluations. Classification crosswalks guide discovery rather than establish hypothesis or outcome links. These are proposed implications, not newly approved requirements.
@@ -80,7 +102,7 @@ The user clarified that initial examples need not concern the same project. The 
 
 Terminology clarification: the user's "science vocabulary" means naming the scientific data entities in the conceptual model. Established ecosystem-restoration terminology is retained; creating a domain vocabulary is outside this naming task. Proposed entities and their relationships should be distinguished from domain terms appearing in their content.
 
-The [2026-10-13 production schema review](../architecture/production-schema-review.md) supplies concrete anchors for this work: many-to-many objective/criterion/task relations in EMMA and feature identifiers/classification domains in Restoration Features. Both are actively populated production systems according to the user. Vocabulary extraction from science/program documents proceeds inductively; USACE ontology alignment is a long-term goal. Earlier missing-schema notes are historical; observation storage and cross-system identities remain unresolved.
+The [2026-10-13 production schema review](../architecture/production-schema-review.md) supplies concrete anchors for this work: many-to-many objective/criterion/task relations in EMMA and feature identifiers/classification domains in Restoration Features. Both are actively populated production systems according to the user. Conceptual entity naming proceeds inductively; the user's later direction establishes organizational ontology reuse as an immediate design dependency, while module publication remains later work. Earlier missing-schema notes and deferral of alignment are superseded; observation storage and cross-system identities remain unresolved.
 
 US-02 is the accepted starting story. The proposed first analysis should define what constitutes a hypothesis in the research corpus, a planned versus implemented restoration practice, and evidence that a treatment informs a hypothesis. Existing EMMA concepts provide the restoration anchor; research questions, designs, analyses, conclusions, and assessments are extensions to reconcile with that anchor.
 
@@ -90,6 +112,8 @@ Begin with independent artifact examples to test these preliminary definitions a
 
 ## Next milestone: worked extraction from fragmented artifacts
 
+**Milestone status, 2026-10-22:** this heading is retained for existing links and records the original extraction milestone. The accepted restoration extraction, six-publication science worksheet, partial MS-03 source-to-data instance and coherent case report now provide its working evidence. The user recognizes the reporting milestone as accomplished. Full scientific extraction and validation remain partial; the next design milestone is [conceptual-model review](#next-milestone-conceptual-model-review-from-the-pilot), not restarting this sequence or completing every study before modeling.
+
 New source, 2026-10-21: [workshop priorities](workshop-research-priorities.md) provide an existing 49-question learning agenda with four reach-specific ranks. Use it to ground source/pilot selection and test US-02 retrieval against actual partnership questions. Preserve priority assessment context separately from scientific findings; workbook project marks are associations needing interpretation, not proof of a tested hypothesis. This refines the existing retrieval, provenance and cumulative-learning backlog without creating a new ranking exercise or approving new requirement IDs. Retain the user-selected mussel/Steamboat example pending review of subsequent priorities.
 
 The [knowledge graph literature assessment](knowledge-graph-literature-assessment.md) adds a proposed practical evaluation to this milestone: compare three science–restoration questions using today's workflow and the proposed linked evidence. Assess answer fidelity, retrieval/review effort, missing or unsupported links, preservation of scope, and correction/handoff burden. This supplies evaluation detail for the existing backlog, especially scientific retrieval, extraction quality and distributed stewardship; it adds no new requirement IDs or technology commitment. Exact acceptance thresholds remain to be agreed before the comparison.
@@ -98,9 +122,9 @@ Current steering: the user accepts the restoration extraction as sufficient for 
 
 First worked restoration extraction is [available for review](steamboat-island-objectives-criteria.md), with [structured records](steamboat-island-objectives-criteria.json). It identifies four formal objectives and an ancillary mussel benefit, preserves criteria/timing differences, and distinguishes future monitoring from uncommitted mussel surveys. The user explicitly includes AI data-extraction capability assessment among project goals. No corpus-wide accuracy metric or new production schema is inferred from this sample.
 
-The user has selected [Steamboat Island mussel habitat and associated research](steamboat-island-worked-example.md) as the worked example. Local restoration PDFs and Zotero metadata are accessible; full scientific extraction remains next. The user reports ongoing construction and baseline/construction monitoring only. Post-construction performance monitoring is not yet applicable, and its absence must not be treated as failed performance or an impediment to conceptual modeling.
+The user selected [Steamboat Island mussel habitat and associated research](steamboat-island-worked-example.md) as the worked example. Local restoration sources and partial scientific extraction now underpin the case report; full methods and local applicability remain unresolved. The user reported ongoing construction and baseline/construction monitoring only; that statement does not independently update field status. The absence of post-construction performance monitoring in the supplied record must not be treated as failed performance or an impediment to conceptual modeling.
 
-Proposed bounded pilot, based on the accepted inductive strategy. It has not yet been completed. Sources need not belong to the same project, and every source need not contain every candidate entity.
+The original bounded-pilot sequence below is retained as a reusable extraction approach, not the current next-action list. Its case-report milestone has been reached; scientific coverage remains partial. Sources need not belong to the same project, and every source need not contain every candidate entity.
 
 1. **Select a small varied sample.** Start with available program guidance and Restoration Features documentation; add one research output with methods/findings and one HREP planning or monitoring/evaluation artifact as available. Aim for three to five artifacts in total. The supplied research framework can seed questions/hypotheses but does not substitute for a completed research output. Missing document types limit the pilot's coverage, not all progress.
 2. **Produce worked evidence records.** For each selected passage, record a local extraction reference, source/version/locator, original wording or faithful paraphrase, candidate entity kind, explicit versus inferred meaning, relevant project/feature/time references, and unresolved questions. This is a review worksheet, not a physical database schema.
@@ -110,7 +134,19 @@ Proposed bounded pilot, based on the accepted inductive strategy. It has not yet
 
 Completion evidence: a reader can trace every pilot record/link to source evidence, distinguish interpretations and unresolved matches, see a standalone artifact represented usefully, and identify concrete conceptual-model revisions. Record sample limits; a connected end-to-end project history or new scientific discovery is not required.
 
-Full production access, complete corpus acquisition, ontology alignment, vector indexing, and all schema reconciliation questions are not prerequisites. They enter later increments where demonstrated needs justify them. Database implementation follows review of the resulting conceptual model and prioritized requirements.
+Full production access, complete corpus acquisition, vector indexing and resolution of every schema question are not prerequisites. Organizational ontology reuse is a current design dependency using the reviewed baseline; full module codification remains later work. Database implementation follows review of the resulting conceptual model and prioritized requirements.
+
+## Next milestone: conceptual-model review from the pilot
+
+The report has served its immediate purpose as a design aid. Proposed next deliverable: a small, reviewable conceptual model and query walkthrough using the existing case, without adding a technology stack or requiring a completed scientific conclusion.
+
+1. **Define the objects the case needs.** For each candidate, give its intended meaning, concrete source example and boundary from nearby concepts. Identify existing EMMA/Restoration Features anchors and organizational reuse candidates. Do not equate the report's entity groups, ten chain rows or JSON layout with classes or tables.
+2. **Define the relationships and context.** Refine L-01 through L-08 with examples showing participants, relationship meaning, source versus interpretation, applicable place/time, review state and unresolved evidence. Keep source derivation, scientific interpretation, local relevance and adopted design rationale distinct.
+3. **Review identities and multiplicities.** Preserve verified production many-to-many objective/criterion and task/criterion relations. Test candidate study/output/dataset, question/hypothesis, feature/evaluation and individual/tag relationships against the examples; label unverified cardinalities and identity rules as open decisions. No physical schema is implied.
+4. **Walk through the user questions.** For US-02, trace what a specified hypothesis can currently retrieve and why Steamboat remains a proposed opportunity rather than a completed local test. For US-03, distinguish expected treatment benefit from evaluated outcome. For US-05, trace the existing objective/criterion/task chain and show what an actual interval assessment would additionally require, without inventing a formal mussel criterion.
+5. **Record the review outcome.** Map model elements and unresolved decisions to R-01 through R-19 and L-01 through L-08. Identify accepted/revised/deferred meanings and the next smallest artifact needed to discriminate alternatives. No numeric quality threshold, requirement priority or SME endorsement has yet been agreed.
+
+Proposed completion evidence: the user can follow one case through defined objects and relationship meanings, see which existing systems own the anchors, distinguish unknown from contradicted or inapplicable evidence, and identify the remaining model decisions. The scientific source gaps can be modeled now and resolved when needed for a specific inference or analysis; cohort reconciliation is not a prerequisite for naming a dataset, observation or finding. Further reporting changes should answer a modeling question exposed by this review.
 
 ## Worked entry: assessment interpretation
 
@@ -142,6 +178,8 @@ The [science–restoration relationship analysis](../architecture/science-restor
 - Review outcomes are recorded; current coverage does not establish that the full historical foundation has been recovered.
 
 ## Review history
+
+- 2026-10-22: User recognized the coherent case-report milestone and reaffirmed its purpose as a data-modeling aid. Consolidated pilot implications against existing R-01 through R-19, corrected obsolete ontology sequencing and defined the next conceptual-model review milestone. No requirement entries, scientific propositions or schema were implicitly approved; no requirement IDs were added.
 
 - 2026-10-16: Consolidated current direction in project-foundation.md, corrected stale sequencing, and defined the worked fragmented-artifact extraction milestone. This is assistant assessment and a proposed next increment; existing draft requirement IDs/statuses are preserved.
 

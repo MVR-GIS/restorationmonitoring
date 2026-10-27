@@ -3,7 +3,7 @@
 - Reviewed: 2026-10-13
 - Authority: user identifies EMMA and Restoration Features as production systems actively populated by EMMA Data Stewards and USACE GIS staff respectively; supplied exports provide structural evidence, not a live-system audit.
 - Scope: read-only inspection of DDL, two ERDs, and XML schema. No production connection, execution, or modification.
-- Direction: derive scientific vocabulary inductively from science and program artifacts. USACE ontology integration is a long-term goal, explicitly clarified by the user; it is not an immediate dependency.
+- Direction: derive conceptual entity names inductively from science and program artifacts. Updated 2026-10-22: later user direction makes organizational ontology reuse an immediate design dependency; actual module publication remains later work. The [baseline review](usace-ontology-alignment.md) supersedes the earlier alignment deferral.
 
 ## Supplied artifacts
 
@@ -61,7 +61,7 @@ Proposed extraction/review sequence:
 3. Compare candidate entity meanings across documents: for example, what distinguishes a Hypothesis, Study Design, Observation, Analysis, Conclusion, or Assessment? Use examples and counterexamples to resolve conceptual distinctions; these names remain proposals.
 4. Reconcile candidate entities with existing EMMA and Restoration Features structures while retaining identifiers, classifications, and established domain language. Determine which entities already exist, which need extension, and which conceptual distinctions remain unresolved.
 5. Have domain experts review entity names, definitions, and relationship assertions using source evidence, then test whether they support the researcher and biologist stories. Preserve changed interpretations and uncertainty.
-6. Retain a future alignment note for each reviewed concept where useful. USACE ontology class/property mapping, imports, and publication can follow later; no ontology class assignments are made now.
+6. Compare reviewed meanings with the existing organizational ontology now, retaining reuse/extension candidates and unresolved mapping issues. Exact axioms, imports and publication follow model review; no ontology class assignments are made by this production-schema review.
 
 A modest, varied program-level extraction sample should reveal terminology and gaps before comprehensive scaling. Existing preliminary concepts are revisable. Database/embedding/ontology technology choices remain deferred.
 
@@ -69,7 +69,7 @@ A modest, varied program-level extraction sample should reveal terminology and g
 
 On 2026-10-13 direct access to the supplied UMESC report-list URL returned 403, while its search-indexed official content was available. The [report list](https://www.umesc.usgs.gov/reports_publications/ltrmp_rep_list.html) indexes publications from 1987 through 2026 and notes copyright-related availability limits for reprints/journal publications and unpublished completion reports. Bibliographic discovery therefore must be tracked separately from full-text acquisition. No entire research collection was downloaded or screened in this review.
 
-The [USACE ontology repository](https://github.com/cwbi-apps/usace-ukg-ontologies) is the user-designated long-term alignment target. Browser fetches of the repository and raw README failed; shell API access was unavailable. Its actual classes, properties, imports, license, and revision have not been reviewed. This does not block immediate inductive vocabulary work.
+At the original 2026-10-13 inspection, remote ontology fetches failed. The subsequent local [organizational baseline review](usace-ontology-alignment.md) inspected selected actual modules at a pinned revision, making that earlier access gap historical. Reuse is now a current design dependency; the scoped review does not certify all imports or scientific mappings.
 
 ## Next inspection questions
 

@@ -1,12 +1,14 @@
 # Restoration Monitoring: purpose, current state, and direction
 
-Updated: 2026-10-21. This is the entry point for current project context. Accepted directions below come from the user's statements in this chat and the explicitly reviewed initial conversation. Source reviews document evidence; proposed requirements and conceptual definitions remain subject to review.
+Updated: 2026-10-22. This is the entry point for current project context. Accepted directions below come from the user's statements in this chat and the explicitly reviewed initial conversation. Source reviews document evidence; proposed requirements and conceptual definitions remain subject to review.
 
 ## Current focus
 
-The user paused after the 2026-10-20 walkthrough, then explicitly resumed pilot report development on 2026-10-21. Latest steering makes **Steamboat Island's anticipated mussel benefit, scientific basis and local evaluation needs** the focus of the [updated report](../features/research-question-dashboard.md). Workshop research priorities remain background; their full agenda and ranks are supporting detail. See the [current checkpoint](../checkpoints/current/science-restoration-design.md) for the report state and next increment. Priority, proposed relevance, scientific findings and HREP associations remain distinguishable. The full conceptual model and scientific conclusions remain provisional.
+On 2026-10-22 the user recognized the Steamboat Island mussel report as a coherent case and this reporting milestone as accomplished. **The report is a means to reason through data modeling, not the primary project outcome.** Its purpose is to expose which information objects, relationships, context and evidence the science and restoration integration component of EMMA must represent. The next milestone is a reviewable conceptual model grounded in this case, not further report expansion by default. See the [requirements crosswalk](goals-requirements-crosswalk.md#next-milestone-conceptual-model-review-from-the-pilot) and [current checkpoint](../checkpoints/current/science-restoration-design.md).
 
-The latest accepted workflow is [R-centered document processing](../workflows/document-processing.md), using the reviewed fluvgeo pattern. The report is parameterized R Markdown rendered to self-contained HTML; the Python/PDF generator is superseded. The present increment changes reporting and source context, not production databases or ontology publication.
+The case remains focused on Steamboat Island's anticipated ancillary mussel benefit, scientific basis and local evaluation needs. Workshop priorities provide background and a future discovery anchor. Recognition of a coherent report does not establish an accepted schema, scientific conclusion, formal mussel objective, or demonstrated restoration effect.
+
+The accepted workflow is [R-centered document processing](../workflows/document-processing.md), using the reviewed fluvgeo pattern. The report is parameterized R Markdown rendered to self-contained HTML; the Python/PDF generator is superseded. The current increment consolidates requirements and conceptual implications; production implementation and ontology publication remain deferred.
 
 The [FY27 SOW draft](proposal-fy27.md) proposes a $100,000, 12-month in-house pilot with a reviewed evidence package, conceptual crosswalk, reusable R workflow/report and phased roadmap. The user names this effort the **science and restoration integration component of EMMA** and requests **report**, rather than dashboard, for its reporting product. Use this terminology in subsequent proposals and documentation. Detailed scope targets and budget allocations remain draft; the reporting increment does not approve production implementation.
 
@@ -43,23 +45,25 @@ Five user stories are recorded in the [crosswalk](goals-requirements-crosswalk.m
 
 The user accepted the researcher story (US-02) as the analysis starting point: identify HREPs implementing treatments that inform a specified hypothesis. The biologist story (US-05) is a complementary check. Criterion attainment and scientific hypothesis evaluation can use related evidence while answering different questions.
 
-## Design status on 2026-10-16
+## Design status on 2026-10-22
 
 The user accepts the restoration extraction as sufficient for the current demonstration; Data Stewards already perform this task in production. The active milestone now moves to scientific objects/evidence relationships and organizational reuse. The [science-side worked example](mussel-science-worked-example.md) and [structured evidence worksheet](mussel-science-evidence.json) provide an initial sample; they do not codify a UMRR module or demonstrate a local mussel outcome. Source disagreements in the accepted restoration example remain visible rather than resolved by acceptance.
 
-The user explicitly identifies assessment of this AI platform's ability to extract specific data from unstructured reports and scientific papers as a project goal. The [Steamboat Island objective/criterion extraction](steamboat-island-objectives-criteria.md) is the first worked restoration extraction, including evidence locations, source differences, and a structured review worksheet. Scientific-paper extraction and user/SME validation remain pending; source-checked output alone does not establish unattended accuracy.
+The user explicitly identifies assessment of this AI platform's ability to extract specific data from unstructured reports and scientific papers as a project goal. The [Steamboat Island objective/criterion extraction](steamboat-island-objectives-criteria.md) demonstrates restoration-side extraction accepted as sufficient at this stage. The six-source science worksheet and [MS-03 instance](mussel-vital-rates-instance.json) demonstrate partial scientific extraction, including dataset and metadata inspection. Full-paper coverage, SME validation and evaluation of extraction accuracy remain incomplete; source-checked output does not establish unattended accuracy.
 
 - **Established direction:** purpose, inductive method, existing production anchors, support for current workflows, starting user story, and preservation value.
 - **Reviewed evidence:** program foundation, EMMA structure, Restoration Features schema and authored documentation, with limits retained in each review.
 - **Draft design:** G-01 through G-06, R-01 through R-19, and L-01 through L-08 are working proposals. They are a review backlog, not a requirement to approve every item before examining artifacts.
-- **Worked design evidence:** restoration extraction accepted as adequate for this stage; initial science-side conceptual extraction and organizational reuse matrix now available for review, with full-text and inference limits retained.
+- **Worked design evidence:** restoration extraction accepted as adequate for this stage; coherent case report recognized by the user; scientific extraction, organizational reuse candidates and a partial source-to-data instance available with full-text and inference limits retained.
 - **Not established:** a validated conceptual model, comprehensive source coverage, demonstrated scientific discoveries, or an implementation architecture.
 
-The project is transitioning from framing and existing-system review into empirical conceptual modeling. Enough context exists to start the pilot; complete ScienceBase harvesting, production access, and resolution of every schema question are not prerequisites.
+The project has progressed from framing and existing-system review through a bounded extraction/report prototype into conceptual-model consolidation. Missing study methods, cohort reconciliation and local feature identities remain explicit gaps. They need not all be resolved before representing the objects, relationships and unknowns in a draft conceptual model.
 
 ## Next milestone and reading route
 
-Use the [crosswalk's next milestone](goals-requirements-crosswalk.md#next-milestone-worked-extraction-from-fragmented-artifacts) for the proposed bounded extraction pilot and its completion evidence.
+The [Steamboat conceptual-model walkthrough](../architecture/steamboat-conceptual-model.md) begins this review at the user's request on 2026-10-22. It connects proposed objects and relationship meanings to existing systems and selected organizational ontology definitions. The draft records recommendations, not accepted model decisions.
+
+Use the [crosswalk's next milestone](goals-requirements-crosswalk.md#next-milestone-conceptual-model-review-from-the-pilot) for the conceptual-model review. Its pilot clarification matrix connects concrete evidence to existing R-01 through R-19 rather than creating a separate requirements framework. Detailed requirements and entity/relationship definitions remain proposals until reviewed; this documentation pass does not silently promote them to accepted specifications.
 
 The [knowledge graph literature assessment](knowledge-graph-literature-assessment.md) supports continuing the inductive approach, with expert validation of meanings and source-traceable links. Its focused review does not demonstrate UMRR collaboration or ecological benefits. The proposed next refinement is to compare answers to three mussel/Steamboat Island questions using current workflows and the linked evidence, recording usefulness, correctness and curation burden. This refines the current milestone rather than introducing another prerequisite or implementation commitment. Reconciliation with the final current strategic plan remains a source gap.
 

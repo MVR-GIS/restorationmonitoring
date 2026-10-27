@@ -1,6 +1,6 @@
 # Research question report
 
-Updated: 2026-10-21. Status: R Markdown pilot report development resumed at user request, now incorporating the workshop priority artifact; not a validated conceptual schema or accepted scientific assessment.
+Updated: 2026-10-22. Status: user recognizes coherent case-report milestone; report retained as a conceptual-model design aid, not a validated schema or accepted scientific assessment.
 
 Latest user steering: focus the report on the **Steamboat Island mussel pilot**. Workshop priorities supply background, not the report's organizing structure. The current draft leads with local restoration intent, the proposed response mechanism, selected scientific contributions, evaluation gaps and next steps. A brief WQ-39 background note follows the pilot narrative; ranking figures, the full learning agenda, generic entity inventory and formal project objectives are retained in expandable supporting sections.
 
@@ -9,6 +9,10 @@ The user paused after the 2026-10-20 walkthrough, then explicitly resumed pilot 
 ## Purpose
 
 The report makes a research question, scientific entities, findings, evidence links and restoration context reviewable. It is a design aid for future database development and science/restoration reporting. The first example uses the mussel and Steamboat Island worksheets, now supplemented by a source-located MS-03 instance; SME validation remains pending.
+
+The user explicitly reaffirmed on 2026-10-22 that this report is a **means to reason through data modeling**. Its immediate success is a coherent case that makes necessary information and missing links visible. The next deliverable is the [conceptual-model review](../goals/goals-requirements-crosswalk.md#next-milestone-conceptual-model-review-from-the-pilot). Change the report when it helps test a model question; do not expand presentation or scientific synthesis as a substitute for defining entities and relationships. Report structure and JSON helpers are not persistence contracts.
+
+The [pilot requirement matrix](../goals/goals-requirements-crosswalk.md#requirements-clarified-by-the-steamboat-pilot) captures lessons against the existing requirements. This report demonstrates source-traceable presentation of a partial case. It does not yet demonstrate all-HREP retrieval, a local treatment-effect evaluation, criterion attainment, multi-partner adoption or program-level outcomes.
 
 ## R centered implementation
 
@@ -50,4 +54,4 @@ On 2026-10-21 the updated example rendered successfully. Extended checks passed 
 
 The subsequent Steamboat-focused draft also rendered successfully. It adds a clearly proposed feature → local habitat conditions → expected mussel benefit diagram; no new scientific record or measured response is inferred. Focused checks additionally verify the pilot is the first report section, evaluation precedes priority background, and the rank figure is contained within supporting details. All three actual embedded figures were visually inspected. Full browser layout qualification remains outstanding.
 
-Next review should establish whether this report structure supplies the right visual and scientific detail. Then deepen MS-02/MS-03 and the local applicability bridge through the existing worked example. The framework does not approve a database schema, ontology module, new monitoring obligation or numerical acceptance threshold.
+Next review should use the report to define and test conceptual objects, relationships, identities and unresolved multiplicities. Full methods and local applicability gaps remain available as targeted evidence work when a particular model or inference question requires them. The framework does not approve a database schema, ontology module, new monitoring obligation or numerical acceptance threshold. The user's recognition of a coherent report is recorded separately from the still-outstanding browser-layout and SME qualifications.

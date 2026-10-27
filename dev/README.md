@@ -2,9 +2,9 @@
 
 This directory contains durable, repository-owned context for human and agentic development. `AGENTS.md` routes tasks here; the artifacts below hold the detail.
 
-**Pilot report development resumed by user request on 2026-10-21.** Start with the [science/restoration design checkpoint](checkpoints/current/science-restoration-design.md). The report now incorporates the workshop priority artifact; conceptual/scientific proposals remain provisional.
+**The user recognized the coherent case-report milestone on 2026-10-22.** The report is a means to reason through data modeling. Current work consolidates requirements and prepares conceptual-model review; scientific conclusions and model specifications remain provisional. Start with the [science/restoration design checkpoint](checkpoints/current/science-restoration-design.md).
 
-For current purpose and design status, start with [project foundation](goals/project-foundation.md). The [crosswalk](goals/goals-requirements-crosswalk.md#next-milestone-worked-extraction-from-fragmented-artifacts) defines the next worked extraction milestone. Detailed source and architecture reviews are conditional evidence references, not sequential prerequisites.
+For current purpose and design status, start with [project foundation](goals/project-foundation.md). The [crosswalk](goals/goals-requirements-crosswalk.md#requirements-clarified-by-the-steamboat-pilot) captures pilot-derived requirement clarifications and the [next conceptual-model milestone](goals/goals-requirements-crosswalk.md#next-milestone-conceptual-model-review-from-the-pilot). The [relationship analysis](architecture/science-restoration-relationships.md#pilot-implications-for-conceptual-model-review) identifies concrete modeling questions. Detailed source reviews are conditional evidence references, not sequential prerequisites.
 
 - `goals/`: scope, outcomes, and success criteria
 - `architecture/`: system structure and ownership boundaries

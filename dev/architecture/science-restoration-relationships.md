@@ -1,6 +1,6 @@
 # Science–restoration relationship analysis
 
-- Started: 2026-10-09; current-state reconciliation: 2026-10-16
+- Started: 2026-10-09; current-state reconciliation: 2026-10-22
 - Status: assistant proposal for review; conceptual meanings and evidence needs, not a physical schema
 - Starting need: accepted researcher story US-02; complementary biologist story US-05
 - Context: [foundation](../goals/project-foundation.md), [requirements](../goals/goals-requirements-crosswalk.md), [EMMA baseline](emma-crosswalk.md)
@@ -62,6 +62,28 @@ These are proposed mechanisms supporting the accepted direction. They extend L-0
 | Assessment | A contextual judgment about an objective, project, or program using one or more evaluations | Aggregation, reference conditions, and judgment need explicit reasoning |
 
 These are proposed working meanings, not a mandate to create one table per term.
+
+## Pilot implications for conceptual-model review
+
+The [Steamboat conceptual-model walkthrough](steamboat-conceptual-model.md), begun 2026-10-22 at the user's request, applies these distinctions to concrete existing-system anchors, proposed scientific objects and organizational reuse. It records recommendations and open decisions; beginning the review does not accept the proposed model.
+
+On 2026-10-22 the user recognized the coherent case report as a milestone and reaffirmed that its purpose is to help reason through data modeling. The next model review should use the [requirements clarification matrix](../goals/goals-requirements-crosswalk.md#requirements-clarified-by-the-steamboat-pilot) and existing worksheets. The following are evidence-grounded questions and candidate distinctions, not approved ontology classes, predicates or cardinalities.
+
+| Distinction or relationship to review | Concrete pilot example | Modeling implication and unresolved decision |
+| --- | --- | --- |
+| Source passage → extracted assertion | Feasibility VI-1; MS-03 abstract sections 3–5; release metadata | Give evidence location and attributed statement separate meanings; one passage can discuss several concepts. Review passage identity and assertion granularity; SC-03 still summarizes multiple findings |
+| Question / hypothesis / finding / interpretation | WQ-39; SC-08; separate MS-03 survival/growth findings; SC-04 source–sink explanation | Review relationships rather than merge these by topic. A question can motivate hypotheses; a finding addresses a response under a design/context; an explanation can remain untested |
+| Study / execution / publication / dataset / analysis | MS-03 paper and ScienceBase release, repeated recovery effort and unverified fitted models | Multiple outputs need not mean independent studies. The worksheet's publication ID is not an approved study identifier. Unknown analysis details must not prevent representing known source and dataset records |
+| Individual / tag / sampling event / observation / derived estimate | Repeated tagged mussels; replacement tags; plot visits; shell lengths and recovery codes | Preserve individual identity independently of tag history. A wide CSV row is not necessarily one observation, and estimated survival is not identical to a recorded live/dead status. Production EMMA Observation meaning/storage remains a separate integration question |
+| Finding → applicability judgment → local design rationale | SC-03 informs assistant-formulated SC-08; local adoption is undocumented | Separate origin of formulation, scientific support/limits, transfer to a receiving site and documented designer intent. Existing provenance semantics alone do not assert evidential support |
+| Objective / criterion / task / expected ancillary benefit | Four formal Steamboat objectives versus anticipated mussel habitat | Represent ancillary expectation without requiring a fabricated objective or criterion. Reuse production objective/criterion/task anchors and their verified many-to-many links; review how benefit and design rationale relate to them |
+| Restoration practice / physical implementation / spatial record / condition over time | Stone-protection intent; installed feature and GIS match unresolved | Do not create an installation or join from a practice label alone. Preserve identity/version/place/time and allow several features or interventions to contribute to an evaluation; precise cardinalities require review |
+| Source statement / reconciliation / review outcome | 578 narrative, 576 placement total, 569 tracking IDs; taxon-label difference | Preserve competing source values with their scopes and any correction rationale. Do not declare an error or canonical value until reconciled; user acceptance of the report does not resolve source disagreements |
+| Priority assessment / relevance / scientific evaluation | Reach-specific workshop rank, workbook marks, proposed pilot link | Preserve assessment edition and context. Importance to the partnership, relevance to a study and evidence for a proposition answer different questions |
+
+Review place/time, responsible role, source attribution, interpretation/review state and change history across these relationships; their exact representation remains open. Missing evidence, not-yet-applicable monitoring, work not committed, and contrary results need distinguishable meanings without inventing a status enumeration now. The case illustrates the first three; it does not establish a local failed restoration outcome.
+
+The report's grouped entities, diagram nodes, chain rows and helper objects are presentation structures. The conceptual-model review should decide whether each corresponds to an entity, relationship, attribute, contextual qualification or view. It should reuse the organizational baseline before proposing extensions and leave physical storage and ontology publication deferred.
 
 ## Connecting relationships
 
@@ -129,4 +151,4 @@ The official USGS [Hydrogeomorphic Units and Catena Linkages record](https://www
 - Which ScienceBase collection(s) and complementary publication lists define the research inventory?
 - What evidence and review suffice for a hypothesis/practice link, and how should related hypothesis formulations be reconciled?
 
-Next review: use the [worked extraction milestone](../goals/goals-requirements-crosswalk.md#next-milestone-worked-extraction-from-fragmented-artifacts) to test these definitions against independent artifacts. Review evidence can reveal entities/relationships beyond this draft. No matched project document set, full inventory, or physical database implementation is required for the pilot.
+Next review: use the [conceptual-model milestone](../goals/goals-requirements-crosswalk.md#next-milestone-conceptual-model-review-from-the-pilot) to review these meanings against the existing pilot. More source acquisition should resolve a specific ambiguity rather than postpone modeling until the collection is complete. No matched end-to-end project history or physical implementation is required to represent a useful partial model.
