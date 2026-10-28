@@ -1,7 +1,7 @@
 # Science–restoration relationship analysis
 
 - Started: 2026-10-09; current-state reconciliation: 2026-10-22
-- Status: assistant proposal for review; conceptual meanings and evidence needs, not a physical schema
+- Status: conceptual relationship review; attributed-linkage pattern accepted for validation, with detailed meanings and implementation decisions still proposed
 - Starting need: accepted researcher story US-02; complementary biologist story US-05
 - Context: [foundation](../goals/project-foundation.md), [requirements](../goals/goals-requirements-crosswalk.md), [EMMA baseline](emma-crosswalk.md)
 
@@ -103,6 +103,8 @@ The user asked to work forward from science planning as well as backward from le
 | Assessment or conclusion → management decision → later question/design | R-06, R-16; L-08 | What decision, action, follow-up and unresolved uncertainty should be retained to make learning available to future projects? |
 
 This is a review matrix, not an addition to L-01 through L-08. It identifies where the current relationship register is sufficient, where a proposed link needs a precise meaning, and where existing EMMA structures must remain the operational anchor.
+
+The [prospective study-linkage review](prospective-study-linkage-review.md) develops the four planning connections into minimum durable records, existing-system anchors and a Steamboat gap test. The user accepted the [attributed-linkage minimum pattern](prospective-study-linkage-minimum-record.md) for further validation on 2026-10-28. It does not assign new capture work, alter L-01 through L-08, or settle detailed relationship meanings.
 
 | ID | Relationship and meaning | Minimum evidence to record | Reviewer should be able to establish |
 | --- | --- | --- | --- |

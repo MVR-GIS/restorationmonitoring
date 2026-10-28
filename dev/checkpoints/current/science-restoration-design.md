@@ -1,7 +1,7 @@
 # Checkpoint: science and restoration conceptual design
 
 - Updated: 2026-10-28
-- Status: requirements reconciled; forward conceptual-link review recorded; proposed meanings await discussion
+- Status: requirements reconciled; attributed-linkage pattern accepted for validation; detailed meanings and implementation decisions remain open
 
 ## Objective and accepted direction
 
@@ -26,7 +26,7 @@ Use detailed source reviews conditionally; do not restart foundation review or r
 - [The report](../../outputs/research-question/steamboat-mussel-pilot-20261021-evidence.html) connects local intent, scientific reasoning, the proposed hypothesis and evaluation gaps. Workshop priorities remain background. The user recognizes its coherence; scientific and technical qualifications remain separate.
 - The workshop source records 49 questions, four reach-specific rankings and recorded project associations. Rank, relevance and completed scientific evaluation are distinct. WQ identifiers are review-local; marks and blanks retain their interpretation limits.
 - A focused knowledge-graph literature review supports pursuing the approach conditionally; no UMRR collaboration or ecological benefit has been demonstrated by this prototype.
-- The 2026-10-22 documentation pass consolidates requirements and modeling implications in existing artifacts. No new requirement IDs, ontology terms, tables or governance framework were introduced. R-01 through R-19 and detailed L definitions remain proposals for review.
+- The 2026-10-22 documentation pass consolidates requirements and modeling implications in existing artifacts. No new requirement IDs, ontology terms, tables or governance framework were introduced. On 2026-10-28, the user accepted the attributed-linkage pattern for validation; R-01 through R-19 and detailed L definitions remain proposals for review.
 
 ## Current design lessons
 
@@ -45,9 +45,9 @@ These gaps limit scientific claims and implementation decisions; they do not blo
 
 ## Next safe action
 
-The user requested the conceptual-model walkthrough on 2026-10-22. [The review draft](../../architecture/steamboat-conceptual-model.md) now walks existing EMMA/GIS anchors, scientific objects, concrete relationships and rechecked organizational reuse. Its link-by-link review works forward from priority question through hypothesis, design, implementation, observation, evaluation, assessment and decision, while using Steamboat to test incomplete legacy evidence. It recommends distinguishing expected benefit, finding, hypothesis and applicability judgment, with data granularity and identity/cardinality decisions open. No recommendation has been accepted merely by presenting it. Continue discussion from that draft rather than recreating the entity list.
+The user requested the conceptual-model walkthrough on 2026-10-22. [The review draft](../../architecture/steamboat-conceptual-model.md) now walks existing EMMA/GIS anchors, scientific objects, concrete relationships and rechecked organizational reuse. Its link-by-link review works forward from priority question through hypothesis, design, implementation, observation, evaluation, assessment and decision, while using Steamboat to test incomplete legacy evidence. The [prospective test record](../../goals/steamboat-prospective-study-linkage.md) applies the planning meanings without claiming a completed local study; the user accepted the [attributed-linkage minimum pattern](../../architecture/prospective-study-linkage-minimum-record.md) for a second, contrasting test. It preserves expected benefit, finding, hypothesis and applicability judgment as distinct meanings, with data granularity and identity/cardinality decisions open. The pattern is accepted as a design direction; detailed relationship meanings, physical implementation and partner adoption remain unapproved. Continue discussion from those artifacts rather than recreating the entity list.
 
-Prepare the [conceptual-model review](../../goals/goals-requirements-crosswalk.md#next-milestone-conceptual-model-review-from-the-pilot) from existing records: define candidate objects and boundaries, relationship meanings and context, organizational reuse and production anchors; expose identity/cardinality decisions; walk through US-02, US-03 and US-05. Review each link for minimum supporting evidence, responsible steward, revision/history needs, reuse by later projects and representation of unresolved or contested connections. Trace proposed model elements back to R/L entries and evidence. Request further source work only where it resolves a consequential ambiguity; do not make cohort reconciliation or another report draft the default next milestone.
+Apply the accepted [attributed-linkage minimum pattern](../../architecture/prospective-study-linkage-minimum-record.md) to one contrasting artifact situation: a formal study plan with a stated hypothesis but no completed observations, or an HREP monitoring/evaluation record with a documented implementation but no explicit scientific hypothesis. Test duplicate-entry burden, source recovery, preservation of incomplete links and partner stewardship. Use the result to refine candidate relationship meanings; do not create physical storage, ontology terms or new monitoring obligations.
 
 ## Technical state and other work
 

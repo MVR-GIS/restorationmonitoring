@@ -2,7 +2,7 @@
 
 - Started: 2026-10-08
 - Updated: 2026-10-28
-- Status: requirements reconciled; forward conceptual-link review underway; detailed specifications remain proposed
+- Status: requirements reconciled; attributed-linkage pattern accepted for validation; detailed specifications remain proposed
 - Evidence: [program review](umrr-program-review.md), [source register](umrr-source-register.json), [EMMA review](../architecture/emma-crosswalk.md)
 - Boundary: program foundation first; database implementation deferred
 
@@ -10,7 +10,7 @@
 
 [Project foundation](project-foundation.md) records accepted user directions. Evidence references E1-E7 below resolve to specific documents and page locators in the program review. G-00 and US-01 through US-04 record explicit user direction from 2026-10-08. Other goals, requirements, and acceptance tests are assistant proposals translating evidence and those needs into project scope. A source citation does not automatically make a requirement approved. Historical documents do not establish current policy applicability.
 
-Goal IDs identify intended outcomes; requirement IDs identify needed capabilities. Preserve IDs through revisions and record review outcomes. User acceptance establishes project direction, not official program endorsement. US-02 is the accepted starting story; detailed requirement priorities and implementation ownership remain unassigned. R-01 through R-19 remain the proposed capability backlog. The pilot clarifications below refine these entries without approving every specification or creating a competing requirements list.
+Goal IDs identify intended outcomes; requirement IDs identify needed capabilities. Preserve IDs through revisions and record review outcomes. User acceptance establishes project direction, not official program endorsement. US-02 is the accepted starting story; detailed requirement priorities and implementation ownership remain unassigned. R-01 through R-19 remain the proposed capability backlog. On 2026-10-28, the user accepted an attributed-linkage record as a working conceptual pattern for further validation; this does not approve individual requirement priorities, fields, cardinalities, ontology terms, systems of record or workflow obligations. The pilot clarifications below refine these entries without creating a competing requirements list.
 
 On 2026-10-22 the user explicitly reaffirmed that the case report is a means to reason through data modeling and recognized the report milestone as accomplished. Capture requirements revealed by it and use them to develop the conceptual model. Report coherence is user feedback on the design aid, not acceptance of the scientific propositions, all requirement entries or a database schema.
 
@@ -147,6 +147,8 @@ The report has served its immediate purpose as a design aid. Proposed next deliv
 5. **Record the review outcome.** Map model elements and unresolved decisions to R-01 through R-19 and L-01 through L-08. Identify accepted/revised/deferred meanings and the next smallest artifact needed to discriminate alternatives. No numeric quality threshold, requirement priority or SME endorsement has yet been agreed.
 
 The forward path from priority question to hypothesis, study design, planned evidence collection and practice implementation is a candidate relationship gap for this review. Existing L-01 through L-08 describe research-output evidence, practice relevance/implementation, observation, evaluation, assessment and decision; they do not by themselves establish that prospective planning path. Review it against R-02, R-03, R-09 and R-15 before assigning relationship identifiers, requirements, ontology terms or implementation responsibilities.
+
+The [prospective study-linkage review](../architecture/prospective-study-linkage-review.md), started 2026-10-28, makes this candidate path reviewable through four proposed connections and a Steamboat gap test. The user accepted its [attributed-linkage minimum pattern](../architecture/prospective-study-linkage-minimum-record.md) for further validation. It specifies no new fields, controlled values, system-of-record assignments or project obligations. The next validation should test the pattern against a contrasting artifact situation.
 
 Proposed completion evidence: the user can follow one case through defined objects and relationship meanings, see which existing systems own the anchors, distinguish unknown from contradicted or inapplicable evidence, and identify the remaining model decisions. The scientific source gaps can be modeled now and resolved when needed for a specific inference or analysis; cohort reconciliation is not a prerequisite for naming a dataset, observation or finding. Further reporting changes should answer a modeling question exposed by this review.
 
