@@ -1,7 +1,7 @@
 # Checkpoint: science and restoration conceptual design
 
-- Updated: 2026-10-22
-- Status: coherent case-report milestone recognized; requirements consolidated; conceptual-model review begun, proposed meanings awaiting discussion
+- Updated: 2026-10-28
+- Status: requirements reconciled; forward conceptual-link review recorded; proposed meanings await discussion
 
 ## Objective and accepted direction
 
@@ -32,7 +32,7 @@ Use detailed source reviews conditionally; do not restart foundation review or r
 
 Keep source/passage, extracted assertion, study/design, sampling event, measured property/result, dataset/analysis, finding, interpretation and applicability distinguishable. Survival and growth are separate responses; measured live/dead status is not an estimated survival rate. Derivation is not empirical support, and relevance is not designer adoption or a local test. Ancillary benefit need not be forced into a formal objective/criterion. Report groups, diagram nodes and JSON rows do not determine classes, tables or cardinalities.
 
-Preserve original identity/value/context alongside proposed reconciliation. Represent partial chains, missing evidence, monitoring not yet applicable and work not committed without treating them as failed performance. Review-state history and partner responsibilities remain design needs, not implemented capabilities.
+Preserve original identity/value/context alongside proposed reconciliation. Represent partial chains, missing evidence, monitoring not yet applicable and work not committed without treating them as failed performance. Review-state history and partner responsibilities remain design needs, not implemented capabilities. Each link must be reviewed for its ability to support durable, low-friction coordination across staff turnover, project lifecycles and the regional portfolio, rather than merely its ability to describe one case.
 
 ## Remaining evidence and review gaps
 
@@ -45,9 +45,9 @@ These gaps limit scientific claims and implementation decisions; they do not blo
 
 ## Next safe action
 
-The user requested the conceptual-model walkthrough on 2026-10-22. [The review draft](../../architecture/steamboat-conceptual-model.md) now walks existing EMMA/GIS anchors, scientific objects, concrete relationships and rechecked organizational reuse. It recommends distinguishing expected benefit, finding, hypothesis and applicability judgment, with data granularity and identity/cardinality decisions open. No recommendation has been accepted merely by presenting it. Continue discussion from that draft rather than recreating the entity list.
+The user requested the conceptual-model walkthrough on 2026-10-22. [The review draft](../../architecture/steamboat-conceptual-model.md) now walks existing EMMA/GIS anchors, scientific objects, concrete relationships and rechecked organizational reuse. Its link-by-link review works forward from priority question through hypothesis, design, implementation, observation, evaluation, assessment and decision, while using Steamboat to test incomplete legacy evidence. It recommends distinguishing expected benefit, finding, hypothesis and applicability judgment, with data granularity and identity/cardinality decisions open. No recommendation has been accepted merely by presenting it. Continue discussion from that draft rather than recreating the entity list.
 
-Prepare the [conceptual-model review](../../goals/goals-requirements-crosswalk.md#next-milestone-conceptual-model-review-from-the-pilot) from existing records: define candidate objects and boundaries, relationship meanings and context, organizational reuse and production anchors; expose identity/cardinality decisions; walk through US-02, US-03 and US-05. Trace proposed model elements back to R/L entries and evidence. Request further source work only where it resolves a consequential ambiguity; do not make cohort reconciliation or another report draft the default next milestone.
+Prepare the [conceptual-model review](../../goals/goals-requirements-crosswalk.md#next-milestone-conceptual-model-review-from-the-pilot) from existing records: define candidate objects and boundaries, relationship meanings and context, organizational reuse and production anchors; expose identity/cardinality decisions; walk through US-02, US-03 and US-05. Review each link for minimum supporting evidence, responsible steward, revision/history needs, reuse by later projects and representation of unresolved or contested connections. Trace proposed model elements back to R/L entries and evidence. Request further source work only where it resolves a consequential ambiguity; do not make cohort reconciliation or another report draft the default next milestone.
 
 ## Technical state and other work
 

@@ -6,7 +6,7 @@
 
 ## The model's job
 
-Make it possible to explain what restoration was intended, what was committed and implemented, what science informed an expectation, what was actually observed and analyzed, and why an assessment or decision follows. Preserve incomplete cases. A coherent report shows these information needs; it does not determine tables, classes or an implementation platform.
+Make it possible to explain what restoration was intended, what was committed and implemented, what science informed an expectation, what was actually observed and analyzed, and why an assessment or decision follows. The purpose is durable, low-friction coordination: scientists and restoration practitioners must be able to create, review, carry forward and reuse these connections across decades of a project's lifecycle and across a regional portfolio of projects. Preserve incomplete cases. A coherent report shows these information needs; it does not determine tables, classes or an implementation platform.
 
 Use existing system records as anchors rather than maintaining competing project, objective or GIS inventories. A conceptual reference can point to a retained external dataset; modeling individual measurements does not require ingesting every historical observation into EMMA.
 
@@ -74,10 +74,29 @@ Question, hypothesis, finding and evidence/applicability assessment are candidat
 
 ## 5. Proposed model decisions to review next
 
+Review each candidate link for its operational value over time and at program scale, not only for whether it can describe Steamboat. For every link, ask what minimum evidence establishes it, which partner can maintain it through staff turnover, how a later project can discover and reuse it, and how the model preserves an unresolved or contested connection without blocking work.
+
 - Give the scientific proposition, reported finding and local applicability judgment distinguishable identities/meanings; decide their smallest useful granularity and revision behavior.
 - Represent ancillary expected benefit independently of whether it has a formal objective/criterion; review how it relates to design rationale and one or more features.
 - Reference observations/datasets at the useful granularity without assuming wholesale raw-data ingestion; define how field records and analysis-derived results remain distinguishable.
 - Preserve verified production multiplicities; test many-to-many study/output, question/hypothesis and feature/evaluation possibilities without asserting exact cardinalities from one example.
 - Walk US-02 through relevant installed/planned practices and located/absent evaluations, US-03 through expectation versus outcome, and US-05 through criterion evaluation. Steamboat currently supplies an opportunity and incomplete evidence chain, not a completed local test.
+
+## 6. Link-by-link lifecycle and portfolio review
+
+The following review works forward from science planning and then tests each connection against Steamboat. It does not assume that a completed HREP must exist before the model can be useful, nor that every project follows one linear process. Each row is a proposed minimum coordination record, not a required new form, table or workflow step.
+
+| Link to support | Minimum durable connection | Steamboat pilot status | Portfolio value and review question |
+| --- | --- | --- | --- |
+| Priority question → hypothesis | Question identity/context; attributed hypothesis wording, scope and review state | WQ-39 is background; SC-08 is an analyst-formulated proposition, not an adopted project hypothesis | Lets future teams find which propositions respond to a shared learning need. What review establishes a proposed linkage? |
+| Hypothesis → study design | Intended response, comparison, scale, timing, conditions and known limitations | MS-03 supplies an observational core/periphery design; it was not designed as a Steamboat experiment | Lets a planner identify whether a proposed study can answer the stated proposition. What minimum design detail is reusable across disciplines? |
+| Design → practice or implementation | Role of the practice in the design, planned/actual state, feature reference, place/time and change record | Stone protection is a documented rationale/intent; identified installed feature and condition are unresolved | Prevents a practice label from being reported as an installed, studied treatment. How should planned changes and undocumented implementation be carried forward? |
+| Design → monitoring task/event → observation | Planned collection, responsible partner, task/event reference, observation/dataset reference and method | Baseline/construction context is reported; a dedicated mussel monitoring commitment is not located | Allows study continuity without treating EMMA task completion as a biological observation. Which work remains in existing partner systems? |
+| Observation/data → analysis → finding | Data/version, method, result, scope, limitation and derivation | MS-03 provides partial source-to-data trace; fitted-model details remain unverified | Allows later users to reuse a finding without losing inference limits. What is the smallest viable reference to external data and analysis? |
+| Finding → applicability judgment → local expected benefit | Finding, receiving conditions, rationale, limitations, reviewer/time and local expectation | Scientific findings inform the proposed SC-08 path; documented local adoption remains unresolved | Makes transfer reasoning inspectable without calling it proof. Who reviews applicability and how are competing judgments retained? |
+| Observation → performance evaluation → objective assessment | Criterion/version, lifecycle interval, observations, method, result, aggregation rationale and assessment history | No formal mussel criterion or local mussel evaluation is documented; formal non-mussel EMMA chain remains the anchor | Supports US-05 across repeated intervals without retroactively changing prior assessments. How do differing criteria and incomplete evidence affect aggregation? |
+| Assessment/conclusion → decision → subsequent learning | Decision context, evidence considered, action/continuation, follow-up and unresolved issue | No Steamboat mussel decision is documented | Makes lessons discoverable by later projects and enables confirmation or correction. What decision records already exist and which links can be captured with low burden? |
+
+The review confirms these design boundaries: project-success assessment and scientific hypothesis evaluation can share observations but remain distinct; a planned practice, installed implementation, monitored condition and evaluated outcome are distinct lifecycle states; and a reusable regional connection needs provenance, scope, stewardship and revision history. The review leaves exact cardinalities, system-of-record assignments, new relationship identifiers, ontology extensions and physical implementation open.
 
 Review outcome at creation: discussion begun; recommendations above remain proposals. No formal entity set, cardinalities, source correction, production join, database platform or ontology module is approved.

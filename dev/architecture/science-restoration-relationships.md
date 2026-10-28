@@ -87,6 +87,23 @@ The report's grouped entities, diagram nodes, chain rows and helper objects are 
 
 ## Connecting relationships
 
+### Prospective pathway under review
+
+The user asked to work forward from science planning as well as backward from legacy artifacts. The following is a proposed coordination path, not a mandatory linear workflow: mature projects may begin at different points, and a study can examine an existing practice rather than cause it to be installed. It makes explicit the prospective connections that are only partly covered by L-01 through L-08.
+
+| Proposed forward connection | Existing requirement/relationship support | Review question before formalizing it |
+| --- | --- | --- |
+| Priority research question → hypothesis | R-02, R-09; workshop records provide a question/priority anchor | What formulation, scope and review establish that a question motivates a particular hypothesis, without treating priority as evidence or confidence? |
+| Hypothesis → study design | R-03, R-09, R-15 | Which response, comparison, conditions, timing and limitations must be planned so that later evidence can evaluate the proposition? |
+| Study design → planned evidence collection and relevant practice/implementation | R-03, R-08, R-15; L-02/L-03 provide related practice meanings | Is the practice an experimental treatment, an existing exposure, an implementation being observed, or only a candidate opportunity? Who records design changes and omissions? |
+| Planned evidence collection → monitoring task/event → observation | Existing EMMA objective/criterion/task anchors; L-04 | How do planned scientific sampling and EMMA monitoring commitments relate without assuming they are the same task or that task completion is an observation? |
+| Observation/data → analysis → finding/conclusion | R-03, R-07, R-11; L-05 | What identifies the analysis, inputs, method, result and scope so that a finding can be reviewed and reused? |
+| Finding/conclusion → applicability judgment → local expectation | R-09, R-11, R-16; L-02/L-05 | What local conditions, rationale, reviewer and limitation justify carrying evidence to a specific project without asserting a treatment effect? |
+| Observation → criterion evaluation → objective assessment | R-14; L-06/L-07 | Which criterion version, interval, method and aggregation rationale support a project-success judgment, separately from hypothesis inference? |
+| Assessment or conclusion → management decision → later question/design | R-06, R-16; L-08 | What decision, action, follow-up and unresolved uncertainty should be retained to make learning available to future projects? |
+
+This is a review matrix, not an addition to L-01 through L-08. It identifies where the current relationship register is sufficient, where a proposed link needs a precise meaning, and where existing EMMA structures must remain the operational anchor.
+
 | ID | Relationship and meaning | Minimum evidence to record | Reviewer should be able to establish |
 | --- | --- | --- | --- |
 | L-01 | Research output addresses a hypothesis | Output identifier/version, exact passage or evidence location, hypothesis wording, author's stated purpose, explicit versus reconstructed formulation | Whether the output proposes, evaluates, discusses, or synthesizes the hypothesis; those roles must remain distinguishable |

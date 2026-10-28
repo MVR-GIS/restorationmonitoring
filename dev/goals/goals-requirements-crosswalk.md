@@ -1,8 +1,8 @@
 # Goals and requirements crosswalk
 
 - Started: 2026-10-08
-- Updated: 2026-10-22
-- Status: coherent case-report milestone recognized by user; requirements consolidated for conceptual-model review; detailed specifications remain proposed
+- Updated: 2026-10-28
+- Status: requirements reconciled; forward conceptual-link review underway; detailed specifications remain proposed
 - Evidence: [program review](umrr-program-review.md), [source register](umrr-source-register.json), [EMMA review](../architecture/emma-crosswalk.md)
 - Boundary: program foundation first; database implementation deferred
 
@@ -138,13 +138,15 @@ Full production access, complete corpus acquisition, vector indexing and resolut
 
 ## Next milestone: conceptual-model review from the pilot
 
-The report has served its immediate purpose as a design aid. Proposed next deliverable: a small, reviewable conceptual model and query walkthrough using the existing case, without adding a technology stack or requiring a completed scientific conclusion.
+The report has served its immediate purpose as a design aid. Proposed next deliverable: a small, reviewable conceptual model and query walkthrough using the existing case, without adding a technology stack or requiring a completed scientific conclusion. The review must serve durable, low-friction coordination across staff turnover, project lifecycles and the regional portfolio; a link that merely describes this one report is insufficient.
 
 1. **Define the objects the case needs.** For each candidate, give its intended meaning, concrete source example and boundary from nearby concepts. Identify existing EMMA/Restoration Features anchors and organizational reuse candidates. Do not equate the report's entity groups, ten chain rows or JSON layout with classes or tables.
 2. **Define the relationships and context.** Refine L-01 through L-08 with examples showing participants, relationship meaning, source versus interpretation, applicable place/time, review state and unresolved evidence. Keep source derivation, scientific interpretation, local relevance and adopted design rationale distinct.
 3. **Review identities and multiplicities.** Preserve verified production many-to-many objective/criterion and task/criterion relations. Test candidate study/output/dataset, question/hypothesis, feature/evaluation and individual/tag relationships against the examples; label unverified cardinalities and identity rules as open decisions. No physical schema is implied.
 4. **Walk through the user questions.** For US-02, trace what a specified hypothesis can currently retrieve and why Steamboat remains a proposed opportunity rather than a completed local test. For US-03, distinguish expected treatment benefit from evaluated outcome. For US-05, trace the existing objective/criterion/task chain and show what an actual interval assessment would additionally require, without inventing a formal mussel criterion.
 5. **Record the review outcome.** Map model elements and unresolved decisions to R-01 through R-19 and L-01 through L-08. Identify accepted/revised/deferred meanings and the next smallest artifact needed to discriminate alternatives. No numeric quality threshold, requirement priority or SME endorsement has yet been agreed.
+
+The forward path from priority question to hypothesis, study design, planned evidence collection and practice implementation is a candidate relationship gap for this review. Existing L-01 through L-08 describe research-output evidence, practice relevance/implementation, observation, evaluation, assessment and decision; they do not by themselves establish that prospective planning path. Review it against R-02, R-03, R-09 and R-15 before assigning relationship identifiers, requirements, ontology terms or implementation responsibilities.
 
 Proposed completion evidence: the user can follow one case through defined objects and relationship meanings, see which existing systems own the anchors, distinguish unknown from contradicted or inapplicable evidence, and identify the remaining model decisions. The scientific source gaps can be modeled now and resolved when needed for a specific inference or analysis; cohort reconciliation is not a prerequisite for naming a dataset, observation or finding. Further reporting changes should answer a modeling question exposed by this review.
 
