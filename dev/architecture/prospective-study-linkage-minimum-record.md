@@ -55,8 +55,10 @@ The shared envelope alone is not enough. Each relationship needs a small, distin
 
 The pattern appears proportionate for a pilot because it limits new information to the meaning and provenance of a connection. It needs partner review against actual planning and monitoring workflows before it can be treated as sustainable at program scale.
 
-## Recommended next validation
+## Second validation and refinement
 
-Use this minimum pattern on one additional, deliberately contrasting artifact situation: either a formal study plan with a clearly stated hypothesis but no completed observations, or an HREP monitoring/evaluation record with a documented implementation but no explicit scientific hypothesis. The purpose is to test whether the pattern handles a different starting point without adding duplicate records or forcing false completeness.
+The [Steamboat performance-evaluation record](../goals/steamboat-performance-evaluation-linkage.md) supplies a contrasting artifact path: formal objective → planned criterion → planned evaluation, without an explicit scientific hypothesis or performed evaluation. It confirms that the common envelope can support both science-planning and performance-assessment paths without merging them.
 
-Do not select a case only because it is complete. The validation should expose whether the minimum pattern represents the ordinary fragmentation the program is trying to manage.
+The second test adds a candidate distinction for later review: an evaluation's lifecycle state must remain separate from the states of its criterion, monitoring task, implementation and objective. The tests do not yet validate a source-backed installed feature, performed monitoring task, observation storage or cross-project reuse.
+
+The next external validation should use a deliberately contrasting project or study artifact when convenient, preferably one with either a source-backed installed feature and evaluation record or an explicit study design. Do not select a case only because it is complete; the purpose is to test ordinary fragmentation without adding duplicate records or forcing false completeness.
