@@ -6,7 +6,7 @@
 - Exported interface: `NAMESPACE`, roxygen source, and generated `man/`
 - Implementation: `R/`
 - Behavioral verification: `tests/testthat/`
-- User guidance: `README.Rmd`, vignettes, and pkgdown configuration
+- User guidance: `README.md`, generated help, and pkgdown configuration; vignettes may be added later
 
 ## Procedure
 

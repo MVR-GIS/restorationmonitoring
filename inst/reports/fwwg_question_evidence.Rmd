@@ -1,0 +1,98 @@
+---
+title: "From a research question to restoration evidence"
+subtitle: "A conceptual-model review using Bertom and McCartney Lakes"
+output:
+  html_document:
+    self_contained: true
+    mathjax: null
+    toc: false
+params:
+  report: null
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=TRUE, error=FALSE, dpi=144)
+r <- params$report
+esc <- function(x) as.character(htmltools::htmlEscape(x))
+```
+
+<style>
+body{max-width:1050px;margin:auto;padding:0 20px 65px;color:#253a36;line-height:1.6}h1,h2,h3{color:#174c42}h2{border-bottom:1px solid #cbded6;padding-bottom:.3em;margin-top:1.7em}.intro{background:#e7f2ed;border-left:5px solid #2c8068;padding:1rem 1.2rem}.panels{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}.panel{background:#f1f6f3;padding:1rem;border-radius:5px}.panel h3{margin-top:0}.caution{background:#fff5e3;border-left:4px solid #bb852d;padding:1rem}.source{font-size:.92em;color:#4d6058}details{margin:1rem 0;padding:.8rem 1rem;border:1px solid #cedfd6;border-radius:5px}summary{font-weight:600;cursor:pointer}table{width:100%;border-collapse:collapse}th,td{padding:8px;border-bottom:1px solid #d2e2da;text-align:left;vertical-align:top}th{background:#ecf4ef}img{max-width:100%;height:auto}@media(max-width:600px){table{display:block;overflow-x:auto}}
+</style>
+
+<div class="intro"><strong>Review question:</strong> What evidence could help a working group consider how channel substrate relates to mussel habitat—and what would still need to be checked? This is an analyst-created model test, not an FWWG-endorsed opportunity or project assessment.</div>
+
+## The question and its context
+
+```{r question, results='asis'}
+cat('<blockquote>', esc(r$question), '</blockquote>')
+```
+
+The supplied workshop workbook records reach-specific ranks and an `x` for Bertom. The meaning of the mark and the full ranking protocol are not supplied. Rank describes recorded priority, not scientific confidence, and does not prove the project tested this question.
+
+```{r reach-ranks, fig.width=9, fig.height=3.1, fig.alt='Workshop WQ-39 ranks: Upper Impounded 2, Lower Impounded 16, Unimpounded 14, Illinois River 5; one is highest recorded priority.'}
+d <- r$ranks; d$reach <- factor(d$reach, levels=rev(d$reach))
+ggplot2::ggplot(d, ggplot2::aes(x=rank,y=reach)) +
+  ggplot2::geom_segment(ggplot2::aes(x=1,xend=49,yend=reach),colour="#d7e5de",linewidth=2) +
+  ggplot2::geom_point(size=4,colour="#23765f") +
+  ggplot2::geom_text(ggplot2::aes(label=rank),nudge_y=.25,size=4,colour="#253a36") +
+  ggplot2::scale_x_continuous(limits=c(1,49),breaks=c(1,10,20,30,40,49)) +
+  ggplot2::labs(x="Recorded reach rank   ·   1 = highest, 49 = lowest",y=NULL) +
+  ggplot2::theme_minimal(base_size=12) + ggplot2::theme(panel.grid.major.y=ggplot2::element_blank(), panel.grid.minor=ggplot2::element_blank())
+```
+
+<p class="source">Workshop workbook, Ranked by Reach!C41:G41 and Upper Impounded!D4. WQ-39 is a local review reference. Reach ranks are shown separately; no overall ranking is inferred.</p>
+
+## A relationship map to interrogate
+
+The map separates **what a source documents** from **what remains a candidate connection**. Select a connection below the map for its basis and limitation. The map is conceptual: it does not prescribe tables, a workflow, or mandatory links.
+
+```{r network, fig.width=10, fig.height=4.8, fig.alt='Concept map: workshop question has a candidate association with Bertom project; project objective is linked in the PER to the rock habitat channel; a 2014 survey describes the channel and reports findings; GIS segment correspondence remains a candidate.'}
+nodes <- data.frame(x=c(1,3.8,3.8,6.8,6.8,9.5),y=c(2,3.2,.8,3.2,.8,2),
+ label=c("WQ-39\nWorkshop question","Project objective\nMussel bed / substrate","UMRRDB project 65\nBertom & McCartney","Rock habitat channel\nPER / 7 GIS candidates","2014 survey\nHabitat + comparisons","Reported finding\n40 live / 11 species"))
+edges <- data.frame(x=c(1.8,3.8,4.7,4.7,7.7,7.7),y=c(1.7,1.25,3.2,.8,2.95,1.05),
+ xend=c(2.8,3.8,5.85,5.85,8.6,8.6),yend=c(1.1,2.75,3.2,.8,2.25,1.75),
+ kind=c("Candidate", "Candidate", "Documented", "Candidate", "Candidate", "Documented"))
+ggplot2::ggplot() + ggplot2::geom_segment(data=edges,ggplot2::aes(x=x,y=y,xend=xend,yend=yend,linetype=kind),colour="#55716a",linewidth=.6,arrow=grid::arrow(length=grid::unit(2,"mm"))) +
+ ggplot2::geom_label(data=nodes,ggplot2::aes(x=x,y=y,label=label),fill="#eff6f2",colour="#183f35",label.size=.25,label.padding=grid::unit(.5,"lines"),size=3.4) +
+ ggplot2::scale_linetype_manual(values=c(Documented="solid",Candidate="dashed")) +
+ ggplot2::coord_cartesian(xlim=c(.1,10.3),ylim=c(0,4),clip="off") + ggplot2::labs(linetype="Connection") +
+ ggplot2::theme_void(base_size=12) + ggplot2::theme(legend.position="bottom",plot.margin=grid::unit(c(5,15,5,15),"pt"))
+```
+
+<details><summary>Question → project: workbook association and analyst relevance</summary><p>The workbook records an x at Upper Impounded!D4. Its meaning is not defined. The question's substrate/mussel content and Bertom sources motivate a candidate relevance judgment; no FWWG selection or study-to-question intent is documented.</p></details>
+<details><summary>Project → objective: historical source and candidate identity</summary><p>The project report documents the objectives, and the historical compilation associates them with project number 65. The UMRRDB snapshot names Bertom for that number; its relationship to EMMA's project identity has not been verified.</p></details>
+<details><summary>Objective → channel: documented project intent</summary><p>The 1989 DPR table 4-1 lists increasing rock substrate and establishing a mussel bed. The 11-year PER addendum table 1 associates both with the rock habitat channel and records year-50 targets of 10,000 square yards and 10 mussels per square yard. These are not verified EMMA criterion records or evaluated results.</p></details>
+<details><summary>Project → survey: source-backed history, GIS match unresolved</summary><p>The 2015 report describes an October 2014 survey of the habitat channel and comparison areas. UMRRDB project 65 and named Restoration Features records suggest a match, but the EMMA identity and specific survey-to-GIS-segment crosswalk remain unverified. No EMMA monitoring task was recorded for this project, according to the user.</p></details>
+<details><summary>Channel → finding: contextual connection needing reconciliation</summary><p>The survey report describes the channel and reports mussel results by site and segment. Names alone do not prove that a report segment equals an exported GIS feature geometry. No overlay, exact exposure or causal effect is established.</p></details>
+<details><summary>Survey → finding: report evidence</summary><p>The report states that 40 live mussels of 11 species were collected in the habitat channel across survey methods. Source: 2014 survey final report, printed p. 7. Raw observations and analysis inputs were not located in this review; that does not establish they are lost.</p></details>
+
+## What the survey reports—and what it cannot settle here
+
+The report presents quantitative densities at four habitat-channel sites. These are **site-level values**, not a channel-wide estimate; sampling methods differed across locations. Segments 1, 3 and 4 had qualitative searches only, and segment 6 had quantitative quadrats only.
+
+```{r densities, fig.width=8, fig.height=3.4, fig.alt='Reported site densities: site 2a 0.8, site 5 4.8, site 6 4.0, site 7 1.6 live mussels per square metre.'}
+d <- r$sites; d$site <- factor(d$site, levels=rev(d$site))
+ggplot2::ggplot(d,ggplot2::aes(x=density,y=site)) +
+ ggplot2::geom_segment(ggplot2::aes(x=0,xend=density,yend=site),colour="#bdd7ca",linewidth=2) +
+ ggplot2::geom_point(size=4,colour="#23765f") + ggplot2::geom_text(ggplot2::aes(label=sprintf("%.1f",density)),nudge_y=.24,size=4) +
+ ggplot2::scale_x_continuous(limits=c(0,5.5),breaks=0:5) + ggplot2::labs(x="Reported live mussels per square metre",y="Survey site") +
+ ggplot2::theme_minimal(base_size=12) + ggplot2::theme(panel.grid.major.y=ggplot2::element_blank(),panel.grid.minor=ggplot2::element_blank())
+```
+
+<p class="source">2014 survey final report, printed pp. 3–4 and 7. The historical target is 10 per square yard at year 50; comparing a few site-level measurements to it requires an evaluation method, temporal and spatial coverage, and unit reconciliation.</p>
+
+<div class="panels"><div class="panel"><h3>Usable now</h3><p>Describe the historical objective, the report's survey methods and its scoped findings. A missing EMMA task does not erase the historical survey.</p></div><div class="panel"><h3>Needs more evidence</h3><p>Reproduce the analysis, reconcile survey sites with GIS features, or evaluate the historical target. Each requires its own missing inputs and review.</p></div><div class="panel"><h3>Not established</h3><p>FWWG selection, project-wide target attainment, causation, or the downstream effect. The report describes downstream effects as inconclusive.</p></div></div>
+
+## What this tests in the conceptual model
+
+An opportunity is a **reviewable connection**, not a synonym for a priority question, a project, or a finding. A question and its reach-specific priority assessment remain distinct. A project objective, historical target, practice implementation, survey, observation, analysis and finding also remain distinguishable. A source-backed survey can exist without an EMMA task.
+
+<div class="caution"><strong>For later practitioner review:</strong> Would this view help select or develop a learning opportunity? Which comparison, context or next decision is missing? These are open questions, not practitioner-validated requirements.</div>
+
+<details><summary>Source snapshots and review limits</summary><p>Based on the reviewed workshop workbook/register and Bertom linkage and availability reviews. Underlying report and export hashes and page locators are retained in those reviews. No raw-data reanalysis, spatial overlay, FWWG interview, production link or new monitoring obligation was created. Generated from the following inputs:</p>
+```{r source-table, results='asis'}
+cat(knitr::kable(r$sources, format="html", col.names=c("Input", "MD5 fingerprint")))
+cat('<p class="source">Generated ',esc(format(r$generated,tz="UTC",usetz=TRUE)),'</p>')
+```
+</details>

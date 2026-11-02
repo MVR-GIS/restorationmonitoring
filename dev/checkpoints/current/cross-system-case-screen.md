@@ -1,7 +1,7 @@
 # Cross-system case availability screen
 
 - Reviewed: 2026-11-02
-- Status: preliminary evidence and access screen; no project selected for the full mapping review. No partner review performed.
+- Status: preliminary evidence and access screen, followed by a bounded Bertom linkage review and report. No partner review performed.
 - Purpose: prepare the bounded review described in [next-chat handoff](next-chat-handoff.md). This is not a production linkage or a finding about system completeness.
 
 ## Update: supplied data exports, 2026-11-02
@@ -39,7 +39,9 @@ The workshop workbook's **WQ-39** concerns substrate composition, heterogeneity 
 
 The supplied [2014 mussel monitoring report](../../../../UMRR/HREPs/Bertrom_McCartney_Lakes/2014_BertomMcCartney_PER_Mussels.pdf), reviewed in the [HREP/PER review](../../goals/hrep-per-workshop-review.md), describes a fish-and-mussel enhancement area, a control-channel comparison context and a 2014 survey after planned five-year surveys did not occur as scheduled. This makes the project a useful candidate for investigating the question; it does not establish that the study tested WQ-39 or that the workbook mark means that it did. The source folder spelling `Bertrom` differs from the report/project label; neither spelling establishes a system identity.
 
-## Availability against the handoff gate
+## Initial availability assessment (superseded)
+
+This section records the initial screen before the supplied data exports, workbook and user clarification above. It is historical; the original gate is not a prerequisite for source-supported analysis, and the [Bertom linkage review](../../goals/bertom-rock-habitat-linkage-review.md) contains the subsequent source review.
 
 1. **EMMA project, objective, criterion and task:** the supplied 2026-10-08 model export describes structures and relationships, but no project-specific records were identified in the supplied EMMA folder. IDs, links, task/event and current record state are unknown.
 2. **Restoration Features implementation and spatial reference:** the supplied 2026-09-02 schema XML describes feature classes and fields but contains no inspected project feature rows or geometry. The project folder includes an as-built PDF and map; their presence is a discovery lead, not a reconciled feature record, geometry or verified implementation-to-survey match. The project's feature ID, status, spatial reference and geometry version remain unknown.
@@ -48,7 +50,7 @@ The supplied [2014 mussel monitoring report](../../../../UMRR/HREPs/Bertrom_McCa
 
 The local Bertom archive contains reports, a fact sheet and map, rather than an identified EMMA or Restoration Features record export. The supplied schemas are structural evidence, not proof of access to live records. No conclusion about whether the production records exist follows from this screen. The [production schema review](../../architecture/production-schema-review.md) records the limitations and cautions against assuming project ID equivalence.
 
-## What is needed to proceed
+## Initial follow-up proposal (superseded)
 
 Obtain or identify read-only, appropriately shareable project-specific references or exports for the same candidate: EMMA project/objective/criterion/task and, if available, event records and their relationship keys; Restoration Features class, identifiers, project reference, lifecycle state, geometry/spatial reference and version; and a survey station or dataset reference. Record the responsible source system, extraction/version date and any access restrictions. Then inspect the report passages and relevant as-built/map, reconcile the names and dates with source stewards, and document each relationship independently. If these references are unavailable, screen another project for the same gate rather than asserting a complete case.
 

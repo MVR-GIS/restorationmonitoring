@@ -3,7 +3,7 @@
 - Updated: 2026-11-02
 - Status: cross-case conceptual review completed; attributed-linkage pattern accepted for validation; detailed meanings and implementation decisions remain open
 
-For a compact continuation brief, use the [next-chat handoff](next-chat-handoff.md) after reading `AGENTS.md`.
+For current state and the next review boundary, use the [next-chat handoff](next-chat-handoff.md) after reading `AGENTS.md`. This checkpoint preserves the earlier conceptual-design progression; its historical next-action narrative is superseded by the handoff and Bertom linkage review.
 
 ## Objective and accepted direction
 
@@ -60,8 +60,8 @@ The accepted [attributed-linkage minimum pattern](../../architecture/prospective
 
 The R-centered workflow follows the reviewed fluvgeo pattern: reusable summaries/renderers, parameterized R Markdown, gt/ggplot2 and self-contained HTML snapshots. [The feature](../../features/research-question-dashboard.md) and [processing workflow](../../workflows/document-processing.md) hold implementation detail. Latest code checks on 2026-10-21 passed source/instance provenance, ranks/edition guards, HTML escaping, warning rejection, cache restoration, non-overwrite and input preservation. The three source-file fingerprints and CSV dimensions/counts were checked separately. The documentation pass does not claim a new software test run.
 
-The renderer fixes the inaccessible Sass profile cache by using a temporary render-local cache. Command-line verification used supported process-local Windows UTF-8 locale settings and Positron Pandoc. No persistent machine settings changed. Full browser layout remains unqualified; three figures were inspected in the earlier draft and plotting code was unchanged. There is no DESCRIPTION/NAMESPACE, installed-package qualification or R CMD check result.
+The renderer fixes the inaccessible Sass profile cache by using a temporary render-local cache. Command-line verification used supported process-local Windows UTF-8 locale settings and Positron Pandoc. No persistent machine settings changed. Full browser layout remains unqualified; three figures were inspected in the earlier draft. The repository now has DESCRIPTION, NAMESPACE, generated help and tests; on 2026-11-02 `R CMD check --no-manual` passed and the installed package rendered the Steamboat pilot.
 
-Generated HTML/acquisitions are ignored and need regeneration or separate preservation in a fresh clone. Maintained sources/manifest and scripts remain available. Existing uncommitted work is preserved; inspect Git status before edits. No production writes, platform selection, UMRR ontology publication, new monitoring obligation or source-data correction is approved.
+Generated report HTML and acquisitions under `dev/outputs/` are ignored and need regeneration or separate preservation in a fresh clone. The locally built pkgdown `docs/` is versioned for manual GitHub Pages publication. Maintained sources/manifest and scripts remain available. Inspect Git status before edits. No production writes, platform selection, UMRR ontology publication, new monitoring obligation or source-data correction is approved.
 
 The [FY27 Markdown proposal](../../goals/proposal-fy27.md) remains a separate draft: $100,000 in-house USACE labor over 12 months, practical pilot deliverables and a learning-opportunity action plan. Budget/task allocations and scope counts are proposals, not funded commitments. Use "report" and "science and restoration integration component of EMMA". Do not generate PDFs unless explicitly requested. No scheduled work or reminder was requested.
