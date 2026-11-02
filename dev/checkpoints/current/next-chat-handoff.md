@@ -43,6 +43,14 @@ The root `AGENTS.md` now contains the same source-family routing. Do not reread 
 
 ## Next safe action
 
+Update 2026-11-02: the [availability screen](cross-system-case-screen.md) now records supplied Restoration Features and UMRRDB project data. Bertom project ID 65 matches named feature records in the snapshots, including rock habitat channel segments; this is a candidate association, not a validated EMMA identity or survey-to-feature link. The EMMA objective/criterion/task gate remains unmet. Obtain the missing references or screen another candidate.
+
+The subsequent FY27 historical goals/objectives workbook lists Bertom objectives and associates two with a rock habitat channel. Its project-65 entries strengthen the candidate mapping, but do not prove EMMA entry or identify individual feature segments; the screen records a master-sheet project-label mismatch elsewhere. The user clarified that EMMA has no recorded monitoring tasks for Bertom; the status of other EMMA record types remains unconfirmed. Verify the cited source passages.
+
+The cited passages and 2014 survey have now received a focused review in [Bertom rock habitat linkage](../../goals/bertom-rock-habitat-linkage-review.md). They support historical objectives, year-50 targets, channel and performed survey at report level, with unverified GIS segment identity and no EMMA task. Continue with steward reconciliation and survey geometry if available; do not present the target as an evaluated EMMA criterion or the report as a project-success judgment.
+
+The user clarified that EMMA deliberately did not enter monitoring tasks for completed older projects without future planned monitoring, and historical evidence can be hard or impossible to recover. The [relationship analysis](../../architecture/science-restoration-relationships.md#historical-evidence-without-an-emma-task) and Bertom walkthrough now allow source-backed historical analysis without an EMMA task. The original four-part case gate below is not a universal prerequisite: qualify the specific inference that needs missing evidence, rather than blocking supported analysis or inventing a task. Preserve uncertainty about the existence and recoverability of unlocated records.
+
 Use **one** FWWG/workshop priority or uncertainty and **one** project that can supply all of the following for a bounded cross-system mapping review:
 
 1. an EMMA project/objective/criterion/task reference;
@@ -64,4 +72,4 @@ Bertom and McCartney is a possible older-project candidate, but choose it only a
 
 ## Workspace state
 
-Documentation changes are intentionally uncommitted. Preserve them and inspect `git status` before editing. The active worktree includes updates to `AGENTS.md`, goals, architecture and the current checkpoint, plus new cross-case, HREP/PER, Marsh Lake, Reno Bottoms, Steamboat construction and strategic/FWWG review documents. Generated outputs remain ignored. No production systems or source originals were changed.
+At the start of the 2026-11-02 availability screen, `restorationmonitoring` was clean on `main` at `0059dbb`; the screen and checkpoint updates are subsequent workspace changes. Inspect `git status` before editing and preserve unrelated work. Generated outputs remain ignored. No production systems or source originals were changed by the screen.

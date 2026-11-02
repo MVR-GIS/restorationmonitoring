@@ -25,6 +25,8 @@ This is a consolidation of evidence already reviewed in the working examples. It
 
 The cases support these candidate principles for the next model review.
 
+The user subsequently clarified that EMMA intentionally did not back-enter monitoring tasks for completed older projects without planned future monitoring, and that some historical evidence may be difficult or impossible to recover. The [Bertom walkthrough](../goals/bertom-rock-habitat-linkage-review.md#analysis-with-incomplete-historical-tracking) therefore tests an additional route: use source-supported historical survey and finding references even when no EMMA task exists, while qualifying each inference according to the evidence it needs. A missing task is not a general analysis gate and must not be fabricated.
+
 1. **A relationship is an attributed assertion.** Preserve the two things linked, the exact relationship, source or contributor, locator, scope, lifecycle state and review state. Do not reduce this to an unqualified graph edge.
 2. **Question, hypothesis and design are separable.** A question may lead to a source-stated hypothesis, an analyst-formulated candidate hypothesis, or directly to a study design. The absence of one is an evidence condition, not proof that the other did not exist.
 3. **Restoration lifecycle claims have different levels.** Project authorization, contract, construction stage, action, feature, geometry, as-built condition and operating condition need distinguishable meanings. Evidence at an earlier level must not silently imply one at a later level.
@@ -50,6 +52,8 @@ The relationship meanings can continue to be reviewed now. Physical integration 
 No case currently supplies all five packages. The absence is informative: it identifies the evidence needed to make implementation decisions without pretending that report-level examples answer production identity and ownership questions.
 
 ## Recommended bounded next review
+
+Update 2026-11-02: do not treat an EMMA task as a universal eligibility gate. The Bertom case has a user-confirmed absence of such tasks and still supports source-level analysis. The review below remains useful when operational task/event records exist; for legacy cases, use available source, project and feature references and document the missing operational link. Confirm identity and data fitness for each proposed inference rather than requiring a complete chain before analysis.
 
 Conduct a cross-system mapping review using a single project for which an EMMA project record, at least one Restoration Features record, and one monitoring or observation reference can be viewed together. Record only:
 

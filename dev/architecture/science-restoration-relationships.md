@@ -34,6 +34,20 @@ Listing and linking can yield useful descriptive discoveries before scientific s
 
 The user defined EMMA's conceptual chain as HREP → Project Objective → Performance Criterion → Monitoring Task → Observation. Supplied DDL/ERDs now document project/objective/criterion/task/event structures, including many-to-many objective–criterion and task–criterion links. Observation storage and cross-system identity semantics remain unresolved; see the production review. Preserve established structures while testing extensions through artifact extraction.
 
+### Historical evidence without an EMMA task
+
+On 2026-11-02 the user clarified an EMMA development decision: older completed projects with no further monitoring planned were not to have environmental monitoring tasks entered merely to reconstruct history. Evidence for some completed tasks, observations or reports was not recorded and can be difficult or impossible to recover. The integration tracking process must anticipate such loss without obstructing analysis. For Bertom, the user confirms no monitoring tasks are recorded in EMMA; the [historical source review](../goals/bertom-rock-habitat-linkage-review.md) nevertheless documents a 2014 survey and reported findings.
+
+The following are conceptual implications for review, not approved database rules or a mandate for retrospective task entry:
+
+- Permit an attributed report, dataset, documented survey or finding to be discovered and analyzed through source-supported project, practice, objective or question relationships even when an EMMA task or event reference is absent. Do not fabricate one to complete a path.
+- Preserve the available source, date, method, location, stated result and inference limits at the level actually supported. Distinguish a report's summary of observations from recovered individual observations or raw data, and distinguish a historical target from a formal evaluated criterion.
+- Describe a gap precisely: for example, no EMMA task recorded (user-confirmed), source not located in a bounded search, source access unavailable, or actual occurrence unknown. An unlocated record is not proof that a survey did not occur, that its underlying data never existed, or that it is irrecoverable; keep scope, basis and review time when known.
+- Let a particular analysis proceed when its own evidence is fit for its stated question. Show missing lineage and limits alongside its result; do not impose a blanket completeness gate. If a particular inference requires missing methods, data, spatial match or comparison, qualify or withhold that inference while retaining other supported findings.
+- Preserve existing EMMA commitments and relationships when present. Historical report-to-survey and report-to-finding links supplement the operational anchor; they do not replace it, backfill production tasks, or imply a physical implementation, schema or universal controlled status list.
+
+This refines the earlier chain as a useful operational path rather than a mandatory prerequisite for representing historical evidence. The [Bertom analysis walkthrough](../goals/bertom-rock-habitat-linkage-review.md#analysis-with-incomplete-historical-tracking) tests the distinction.
+
 The accepted purpose is to connect hypotheses in the UMESC research body to planned/installed HREP restoration practices and observed landscape outcomes. The relationships below translate that purpose into reviewable meanings. User authorization to proceed with this analysis does not approve every proposed definition.
 
 ## Distributed scientific practice: design direction

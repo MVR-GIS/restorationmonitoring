@@ -4,6 +4,16 @@ Initial inspection: 2026-10-07; current-state cleanup: 2026-10-16. Scope: reposi
 
 ## Available material
 
+### Historical goals and objectives compilation, 2026-11-02
+
+The user supplied the FY27 goals/objectives/performance-criteria workbook as a historical compilation intended for EMMA entry. The [Bertom case screen](../checkpoints/current/cross-system-case-screen.md) records its fingerprint, targeted cell locators, proposed objective–practice associations and an observed master-sheet project-label mismatch. The workbook is not evidence that planned entry has happened; the broader workbook has not been fully audited.
+
+The cited Bertom DPR and PER passages and selected pages of the 2014 mussel monitoring report were subsequently checked in the [bounded linkage review](bertom-rock-habitat-linkage-review.md), which records source hashes, printed and PDF page locators, historical targets, sampling limits and remaining identity and spatial gaps. The user confirms no Bertom monitoring tasks are recorded in EMMA.
+
+### Project and Restoration Features data exports, 2026-11-02
+
+The user supplied ArcGIS workspace XML exports of Restoration Features data and UMRRDB project data. A targeted Bertom availability review, filenames, SHA-256 fingerprints, record locators and limitations are in the [case screen](../checkpoints/current/cross-system-case-screen.md). The snapshots support a candidate project-ID match and feature leads, but do not contain the required inspected EMMA objective, criterion or task records or establish a survey-to-feature match. Extraction timing, coverage and cross-system identity semantics need confirmation. The exports may contain connection metadata; do not propagate it into context artifacts.
+
 ### Workshop research priorities, 2026-10-21
 
 The user supplied [research_question_ranks.xlsx](../checkpoints/archive/research_question_ranks.xlsx) as workshop analysis identifying priority research questions. [The review](workshop-research-priorities.md) documents six sheets, 49 questions under five restoration goals/eleven objectives, four reach-specific rankings, 20 recorded question/project marks and four embedded historical inventory images. The [derivative register](workshop-research-question-register.json) retains question wording, ranks, source cells and marked project labels. The four sorted rank views reconcile with the main sheet; raw weighting inputs/protocol, workshop dates and mark semantics are unavailable. This is a supplied learning agenda, not evidence of hypothesis evaluation or approved strategic-plan numbering. The workbook was left unchanged and is not part of the initial 40-file corpus register.

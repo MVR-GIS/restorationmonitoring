@@ -188,6 +188,8 @@ The [science–restoration relationship analysis](../architecture/science-restor
 
 ## Review history
 
+- 2026-11-02: The user clarified that EMMA deliberately did not back-enter monitoring tasks for older completed projects without planned future monitoring, and that historical evidence may be difficult or impossible to recover. The [relationship review](../architecture/science-restoration-relationships.md#historical-evidence-without-an-emma-task) and [Bertom walkthrough](bertom-rock-habitat-linkage-review.md#analysis-with-incomplete-historical-tracking) propose preserving and using independently supported historical evidence without requiring an EMMA task, while qualifying analyses that require missing evidence. This refines proposed R-01, R-03, R-07, R-13 and R-19; it does not approve new schema or requirement IDs.
+
 - 2026-10-22: User recognized the coherent case-report milestone and reaffirmed its purpose as a data-modeling aid. Consolidated pilot implications against existing R-01 through R-19, corrected obsolete ontology sequencing and defined the next conceptual-model review milestone. No requirement entries, scientific propositions or schema were implicitly approved; no requirement IDs were added.
 
 - 2026-10-16: Consolidated current direction in project-foundation.md, corrected stale sequencing, and defined the worked fragmented-artifact extraction milestone. This is assistant assessment and a proposed next increment; existing draft requirement IDs/statuses are preserved.
