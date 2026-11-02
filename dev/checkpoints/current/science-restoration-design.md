@@ -1,7 +1,9 @@
 # Checkpoint: science and restoration conceptual design
 
-- Updated: 2026-10-28
-- Status: requirements reconciled; attributed-linkage pattern accepted for validation; detailed meanings and implementation decisions remain open
+- Updated: 2026-11-02
+- Status: cross-case conceptual review completed; attributed-linkage pattern accepted for validation; detailed meanings and implementation decisions remain open
+
+For a compact continuation brief, use the [next-chat handoff](next-chat-handoff.md) after reading `AGENTS.md`.
 
 ## Objective and accepted direction
 
@@ -12,9 +14,11 @@ On 2026-10-22 the user recognized the Steamboat Island mussel report as a cohere
 ## Read first
 
 1. [Project foundation](../../goals/project-foundation.md): accepted purpose, current scope and evidence boundaries.
-2. [Requirements crosswalk](../../goals/goals-requirements-crosswalk.md#requirements-clarified-by-the-steamboat-pilot): pilot clarifications mapped to existing R-01 through R-19 and the next conceptual-model milestone.
+2. [Requirements crosswalk](../../goals/goals-requirements-crosswalk.md#requirements-clarified-by-the-steamboat-pilot): pilot clarifications mapped to existing R-01 through R-20 and the next conceptual-model milestone.
 3. [Relationship analysis](../../architecture/science-restoration-relationships.md#pilot-implications-for-conceptual-model-review): L-01 through L-08 and candidate distinctions exposed by the case.
 4. [USACE ontology baseline](../../architecture/usace-ontology-alignment.md): meanings already inspected and reuse/extension limits.
+5. [HREP performance-evaluation and workshop review](../../goals/hrep-per-workshop-review.md): focused evidence on legacy assessment and partner collaboration practice.
+6. [Draft 2025–2035 strategic-plan and FWWG framework review](../../goals/strategic-plan-fwwg-review.md): current planning alignment and the active learning-opportunity initiative.
 
 Use detailed source reviews conditionally; do not restart foundation review or reread archived transcripts for routine context. Existing instructions route the adjacent Restoration Features book and organizational ontology.
 
@@ -26,7 +30,9 @@ Use detailed source reviews conditionally; do not restart foundation review or r
 - [The report](../../outputs/research-question/steamboat-mussel-pilot-20261021-evidence.html) connects local intent, scientific reasoning, the proposed hypothesis and evaluation gaps. Workshop priorities remain background. The user recognizes its coherence; scientific and technical qualifications remain separate.
 - The workshop source records 49 questions, four reach-specific rankings and recorded project associations. Rank, relevance and completed scientific evaluation are distinct. WQ identifiers are review-local; marks and blanks retain their interpretation limits.
 - A focused knowledge-graph literature review supports pursuing the approach conditionally; no UMRR collaboration or ecological benefit has been demonstrated by this prototype.
-- The 2026-10-22 documentation pass consolidates requirements and modeling implications in existing artifacts. No new requirement IDs, ontology terms, tables or governance framework were introduced. On 2026-10-28, the user accepted the attributed-linkage pattern for validation; R-01 through R-19 and detailed L definitions remain proposals for review.
+- The 2026-10-22 documentation pass consolidates requirements and modeling implications in existing artifacts. No new requirement IDs, ontology terms, tables or governance framework were introduced. On 2026-10-28, the user accepted the attributed-linkage pattern for validation; R-01 through R-19 and detailed L definitions remain proposals for review. On 2026-10-30, R-20 was added as a proposed spatial-relationship capability based on the user-provided LTRM Technical Representative requirement.
+- The focused [HREP performance-evaluation and workshop review](../../goals/hrep-per-workshop-review.md) identifies a documented assessment lineage from objective through criterion, evidence, evaluation and lesson/recommendation, plus long-running partner collaboration. It supports refining existing requirements and selecting an older-project integration case; it does not rate PER quality, validate all conclusions or establish a replacement workflow.
+- The latest supplied [draft strategic plan and FWWG framework review](../../goals/strategic-plan-fwwg-review.md) aligns the component with current proposed UMRR actions for performance evaluation, research-framework development, learning opportunities, HREP–LTRM exchange, unified data/metadata and knowledge transfer. The plan is draft and the FWWG deck documents an active initiative; neither establishes a final system design or implementation authorization.
 
 ## Current design lessons
 
@@ -39,6 +45,7 @@ Preserve original identity/value/context alongside proposed reconciliation. Repr
 - MS-02/MS-03 full methods/results, fitted models and detection/exclusion assumptions remain unverified. MS-03 sources retain 578 narrative, 576 placement-total and 569 tracking-ID counts; reconcile before analysis. Taxon labels, tag changes and substrate metric direction also need review. No vital rates were recalculated.
 - Steamboat final feature/design/installation identity and usable local mussel observations have not been assembled; no local effect or designer adoption of SC-08 is established.
 - Production observation storage, cross-system identity rules, exact cardinalities, review ownership and sustainable update practices remain unresolved.
+- Spatially located studies, observations and habitat/context units must be represented alongside Restoration Features when their spatial interactions are material. The next design review must distinguish a documented/reproducible spatial relationship from record identity, exposure, causation, applicability and project success; R-20 captures this proposed capability.
 - Final strategic-plan version, comprehensive source coverage, scientific applicability/SME review and comparative usefulness/curation-burden evaluation remain outstanding. No numeric acceptance thresholds are agreed.
 
 These gaps limit scientific claims and implementation decisions; they do not block representing known objects, relationships and unknowns in a draft conceptual model.
@@ -47,7 +54,7 @@ These gaps limit scientific claims and implementation decisions; they do not blo
 
 The user requested the conceptual-model walkthrough on 2026-10-22. [The review draft](../../architecture/steamboat-conceptual-model.md) now walks existing EMMA/GIS anchors, scientific objects, concrete relationships and rechecked organizational reuse. Its link-by-link review works forward from priority question through hypothesis, design, implementation, observation, evaluation, assessment and decision, while using Steamboat to test incomplete legacy evidence. The [prospective test record](../../goals/steamboat-prospective-study-linkage.md) applies the planning meanings without claiming a completed local study; the user accepted the [attributed-linkage minimum pattern](../../architecture/prospective-study-linkage-minimum-record.md) for a second, contrasting test. It preserves expected benefit, finding, hypothesis and applicability judgment as distinct meanings, with data granularity and identity/cardinality decisions open. The pattern is accepted as a design direction; detailed relationship meanings, physical implementation and partner adoption remain unapproved. Continue discussion from those artifacts rather than recreating the entity list.
 
-The accepted [attributed-linkage minimum pattern](../../architecture/prospective-study-linkage-minimum-record.md) has now been tested against Steamboat's contrasting formal-objective/criterion path in the [performance-evaluation record](../../goals/steamboat-performance-evaluation-linkage.md). It confirms that performance-evaluation lifecycle state needs a distinct meaning from criterion, task, implementation and objective state. The next external validation should use a different project or study artifact with source-backed implementation/evaluation or explicit study design. Test duplicate-entry burden, source recovery, preservation of incomplete links and partner stewardship; do not create physical storage, ontology terms or new monitoring obligations.
+The accepted [attributed-linkage minimum pattern](../../architecture/prospective-study-linkage-minimum-record.md) has now been tested against Steamboat's contrasting formal-objective/criterion path in the [performance-evaluation record](../../goals/steamboat-performance-evaluation-linkage.md), the [Reno Bottoms study-design record](../../goals/reno-bottoms-study-design-linkage.md), the [Steamboat construction-initiation record](../../goals/steamboat-construction-initiation-linkage.md), and the [updated Marsh Lake mussel-monitoring record](../../goals/marsh-lake-mussel-monitoring-linkage.md). The full Marsh Lake feasibility report now supplies planning objectives, recommended action and monitoring intent while leaving cross-system identities unverified. The [cross-case consolidation](../../architecture/cross-case-linkage-consolidation.md) records the resulting distinctions: question-to-design can bypass a formal hypothesis; construction stage is not feature/condition/outcome evidence; monitoring, analysis and finding remain distinct; and scientific learning does not automatically establish formal performance or project success. The focused [HREP/PER/workshop review](../../goals/hrep-per-workshop-review.md) supplies an older-project performance path and identifies Bertom and McCartney as a possible cross-system review candidate, subject to actual EMMA and Restoration Features access. The MVR LTRM Technical Representative also identified spatial interaction as a required relationship basis: science studies and other entities may be spatially located, and an overlay/proximity result must retain its inputs, method and temporal alignment without becoming an automatic identity or causal claim. The next bounded review should use one FWWG/workshop priority or uncertainty and inspect one actual EMMA project record, Restoration Features record and monitoring or observation reference together, including one reproducible spatial relationship where available. Do not create physical storage, ontology terms or new monitoring obligations.
 
 ## Technical state and other work
 

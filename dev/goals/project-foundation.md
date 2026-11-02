@@ -1,6 +1,6 @@
 # Restoration Monitoring: purpose, current state, and direction
 
-Updated: 2026-10-28. This is the entry point for current project context. Accepted directions below come from the user's statements in this chat and the explicitly reviewed initial conversation. Source reviews document evidence; proposed requirements and conceptual definitions remain subject to review.
+Updated: 2026-11-02. This is the entry point for current project context. Accepted directions below come from the user's statements in this chat and the explicitly reviewed initial conversation. Source reviews document evidence; proposed requirements and conceptual definitions remain subject to review.
 
 ## Current focus
 
@@ -9,6 +9,12 @@ On 2026-10-22 the user recognized the Steamboat Island mussel report as a cohere
 The case remains focused on Steamboat Island's anticipated ancillary mussel benefit, scientific basis and local evaluation needs. Workshop priorities provide background and a future discovery anchor. Recognition of a coherent report does not establish an accepted schema, scientific conclusion, formal mussel objective, or demonstrated restoration effect.
 
 On 2026-10-28 the user accepted an **attributed linkage record** as the working conceptual pattern for prospective science–restoration connections. The pattern records the precise relationship, attribution/evidence, scope, lifecycle/review state and responsible contributor or system, while referencing existing EMMA, Restoration Features and research-source records. It is accepted for further validation, not as a physical schema, mandated form, system-of-record assignment, ontology profile or new partner obligation.
+
+The 2026-10-30 [cross-case linkage consolidation](../architecture/cross-case-linkage-consolidation.md) reviews five fragmented artifact paths. It supports further review of relationship distinctions and identifies cross-system identity evidence as the next decision boundary; it does not approve detailed meanings, identifier rules or implementation.
+
+The MVR LTRM Technical Representative, who also serves as an EMMA Data Steward, identified a further accepted direction on 2026-10-30: relevant science studies, sampling areas, habitat/context units and other discovered entities may be spatial as well as Restoration Features. The integration component must make spatial applicability and interactions explicit where they matter to a linkage. Spatial overlay may establish a documented spatial relationship or candidate for review; it does not by itself establish identity, treatment exposure, causal relevance, scientific applicability or project success.
+
+The user supplied the [Draft 2025–2035 strategic-plan and FWWG framework review](strategic-plan-fwwg-review.md) on 2026-11-02 and directed this effort to support the latest draft plan. The draft is program-planning evidence, not final controlled policy. It directly aligns this effort with the program's proposed restoration-science research framework, learning-opportunity selection, performance-evaluation framework, standardized monitoring/data sharing, and institutional knowledge transfer. The active FWWG initiative provides a complementary planning process; the EMMA component remains a proposed information-infrastructure contribution, not a replacement for its partner deliberation or scientific design.
 
 The accepted workflow is [R-centered document processing](../workflows/document-processing.md), using the reviewed fluvgeo pattern. The report is parameterized R Markdown rendered to self-contained HTML; the Python/PDF generator is superseded. The current increment consolidates requirements and conceptual implications; production implementation and ontology publication remain deferred.
 
@@ -36,7 +42,7 @@ The partnership has already developed a workshop learning agenda: [49 research q
 | --- | --- | --- |
 | EMMA | Production system populated by Data Stewards from legacy HREP artifacts. User reports accomplished budgeting, scheduling, staffing, reporting, objectives, and criteria capabilities. Reviewed DDL/ERDs document projects, objectives, criteria, monitoring tasks/events, and many-to-many objective–criterion and task–criterion links | Observation storage/references, live records, population coverage, and integration semantics remain uninspected |
 | Restoration Features | Production GIS database populated by USACE GIS staff for UMRR/NESP planned and installed practices. XML schema and Quarto documentation reviewed; existing feature definitions, classifications, lifecycle guidance, and crosswalks anchor the restoration side | Project/feature identity reconciliation, history/operations, and selected documentation/schema differences need clarification before exact integration |
-| Program foundation | First review of 37 supplied PDFs and three EMMA decks completed with explicit scope limits; subsequent schema and book reviews add structural context | Historical coverage is incomplete; draft/historical documents do not automatically establish current policy |
+| Program foundation | First review of the original 37 supplied PDFs and three EMMA decks completed with explicit scope limits; the subsequently supplied draft 2025–2035 plan and FWWG framework deck have focused reviews, while schema and book reviews add structural context | Historical coverage is incomplete; draft/historical documents do not automatically establish current policy |
 | Research corpus | User identifies UMESC publications, ScienceBase and the Zotero mussels collection. First science-side analysis samples six publications and derives candidate conceptual distinctions with source-depth labels | Most evidence is abstract-level; selected HEA full-text sections reviewed. Comprehensive inventory, full-text extraction and SME validation remain incomplete |
 
 The user's conceptual chain is HREP → Project Objective → Performance Criterion → Monitoring Task → Observation. Preserve that intent alongside the more detailed exported relationships; no new observation-table structure or cross-system join rule has been approved.
@@ -55,7 +61,7 @@ The user explicitly identifies assessment of this AI platform's ability to extra
 
 - **Established direction:** purpose, inductive method, existing production anchors, support for current workflows, starting user story, and preservation value.
 - **Reviewed evidence:** program foundation, EMMA structure, Restoration Features schema and authored documentation, with limits retained in each review.
-- **Draft design:** G-01 through G-06, R-01 through R-19, and L-01 through L-08 are working proposals. They are a review backlog, not a requirement to approve every item before examining artifacts.
+- **Draft design:** G-01 through G-06, R-01 through R-20, and L-01 through L-08 are working proposals. They are a review backlog, not a requirement to approve every item before examining artifacts.
 - **Worked design evidence:** restoration extraction accepted as adequate for this stage; coherent case report recognized by the user; scientific extraction, organizational reuse candidates and a partial source-to-data instance available with full-text and inference limits retained.
 - **Not established:** a validated conceptual model, comprehensive source coverage, demonstrated scientific discoveries, or an implementation architecture.
 
@@ -65,9 +71,9 @@ The project has progressed from framing and existing-system review through a bou
 
 The [Steamboat conceptual-model walkthrough](../architecture/steamboat-conceptual-model.md) begins this review at the user's request on 2026-10-22. It connects proposed objects and relationship meanings to existing systems and selected organizational ontology definitions. The draft records recommendations, not accepted model decisions.
 
-Use the [crosswalk's next milestone](goals-requirements-crosswalk.md#next-milestone-conceptual-model-review-from-the-pilot) for the conceptual-model review. Its pilot clarification matrix connects concrete evidence to existing R-01 through R-19 rather than creating a separate requirements framework. Detailed requirements and entity/relationship definitions remain proposals until reviewed; this documentation pass does not silently promote them to accepted specifications.
+Use the [crosswalk's next milestone](goals-requirements-crosswalk.md#next-milestone-conceptual-model-review-from-the-pilot) for the conceptual-model review. Its pilot clarification matrix connects concrete evidence to existing R-01 through R-20 rather than creating a separate requirements framework. Detailed requirements and entity/relationship definitions remain proposals until reviewed; this documentation pass does not silently promote them to accepted specifications.
 
-The [knowledge graph literature assessment](knowledge-graph-literature-assessment.md) supports continuing the inductive approach, with expert validation of meanings and source-traceable links. Its focused review does not demonstrate UMRR collaboration or ecological benefits. The proposed next refinement is to compare answers to three mussel/Steamboat Island questions using current workflows and the linked evidence, recording usefulness, correctness and curation burden. This refines the current milestone rather than introducing another prerequisite or implementation commitment. Reconciliation with the final current strategic plan remains a source gap.
+The [knowledge graph literature assessment](knowledge-graph-literature-assessment.md) supports continuing the inductive approach, with expert validation of meanings and source-traceable links. Its focused review does not demonstrate UMRR collaboration or ecological benefits. The proposed next refinement is to compare answers to three mussel/Steamboat Island questions using current workflows and the linked evidence, recording usefulness, correctness and curation burden. This refines the current milestone rather than introducing another prerequisite or implementation commitment. The latest supplied strategic direction is now reviewed as a draft; confirmation of a final controlled plan remains a source-status gap.
 
 Read additional material conditionally:
 

@@ -1,12 +1,12 @@
 # UMRR program foundation: first document review
 
-- Reviewed: 2026-10-07
+- Reviewed: 2026-10-07; updated with current supplied strategic-plan review 2026-11-02
 - Status: assistant synthesis and recommendations for user review
 - Scope: program-level foundation and the supplied EMMA designs; database implementation remains deferred
 
 ## Review coverage and limits
 
-The workspace collection contains 37 PDFs (2,478 PDF pages) under `UMRR/KeyDocuments` and three PowerPoint decks (82 slides) under `UMRR/EMMA`. These directories are siblings of the Git repository, not files currently tracked within it. Originals were preserved.
+The original workspace collection contained 37 PDFs (2,478 PDF pages) under `UMRR/KeyDocuments` and three PowerPoint decks (82 slides) under `UMRR/EMMA`. The current KeyDocuments holding has 38 PDFs (2,496 pages) after addition of the focused-reviewed Draft 2025–2035 plan; the current FWWG holding adds one 22-slide deck. These directories are siblings of the Git repository, not files currently tracked within it. Originals were preserved.
 
 Every file was inventoried and screened. All PDF text layers were extracted; all slide text and available speaker notes were extracted. Focused reading covered strategic goals, adaptive management, monitoring interpretation, existing information systems, and EMMA's conceptual direction. Selected PDF pages and four EMMA Roadmap diagrams were visually inspected. This is a substantive first review, not an exhaustive reading or verification of every page, figure, or cited publication.
 
@@ -23,6 +23,12 @@ Page references below use one-based PDF file pages; printed page labels are supp
 The [2015-2025 Strategic Plan](../../../UMRR/KeyDocuments/StrategicPlan2015-2015.pdf), PDF pages 9-16 (printed pages 5-12), defines habitat improvement, knowledge advancement, engagement, and partnership goals. Objective 1.2 calls for explicit hypothesis testing and learning objectives on selected habitat projects, communicating conclusions, and improving later restoration. Goal 2 includes long-term data integrity and usability. Objective 4.1 includes maintaining institutional knowledge.
 
 Inference: Restoration Monitoring can help operationalize existing program aims. Its value should be assessed by improved scientific and management decisions, not simply document volume or database size. This plan covers 2015-2025; its successor or continuing applicability must be confirmed.
+
+### E1a. Latest supplied strategic direction explicitly names the integration work
+
+The [Draft 2025–2035 Strategic Plan](../../../UMRR/KeyDocuments/Draft%202025-2035%20UMRR%20Strategic%20Plan.pdf), PDF pp. 7–12 (printed pp. 6–11), describes a continuous science, implementation and learning cycle. It calls for a project performance-evaluation framework, HREP–LTRM information exchange, a restoration science research framework, identification of high-value learning opportunities, standardized HREP monitoring/data sharing, a unified database with harmonized fields and metadata, and institutional knowledge transfer. The [strategic-plan and FWWG review](strategic-plan-fwwg-review.md) records the detailed alignment and source-status limit.
+
+Inference: the science and restoration integration component of EMMA can support these draft actions by preserving reviewable connections among questions, studies, practices, observations, assessments and subsequent learning. The plan remains a draft, so this evidence does not establish final policy or authorize implementation.
 
 ### E2. Program-scale monitoring and individual-project evaluation have different purposes
 
@@ -87,7 +93,7 @@ Suggested retrieval questions include: How do management and learning objectives
 - Current EMMA and HREP schemas, data dictionaries, identifiers, example reports/exports, interfaces, and confirmed operational status. The roadmap includes a schema screenshot and external link, not a local executable schema.
 - The full 2022 Ecological Status and Trends report, referenced by the 2022 RTC and 2023 flyers; the collection contains the 2008 synthesis instead.
 - Earlier Reports to Congress (1997, 2004, 2010, 2016), HNA-I, and other historical foundational work referenced by supplied documents, if needed to recover the full program history.
-- Current strategic direction after the supplied 2015-2025 plan; current handbook/guidance versions and approval status, including source clarification for the draft monitoring handbook and HNA-II copy.
+- Final controlled status of the supplied 2025–2035 strategic plan; current handbook/guidance versions and approval status, including source clarification for the draft monitoring handbook and HNA-II copy.
 - FG interface/output/provenance documentation and NESP-specific requirements beyond the supplied joint objectives/reach-planning material.
 
 Immediate recommended milestone: a user-reviewed program goals and requirements crosswalk, backed by verified source passages and a clear inventory of existing systems. Document retrieval supports that work; it does not constitute review or automatically turn extracted statements into accepted scientific assertions.
