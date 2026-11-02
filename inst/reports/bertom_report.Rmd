@@ -1,0 +1,75 @@
+---
+title: "Learning from the Bertom rock habitat channel"
+subtitle: "A practitioner walkthrough of restoration and monitoring evidence"
+output:
+  html_document:
+    self_contained: true
+    mathjax: null
+    toc: true
+    toc_depth: 2
+params:
+  report: null
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = TRUE, error = FALSE)
+r <- params$report
+esc <- function(x) as.character(htmltools::htmlEscape(x))
+```
+
+<style>
+body{max-width:1050px;margin:auto;color:#20342f;line-height:1.6;padding:0 18px 50px} h1,h2,h3{color:#174b40} .lead{background:#e8f2ed;border-left:5px solid #347d68;padding:1rem 1.2rem;margin:1.5rem 0}.path{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:1.2rem 0}.step{background:#f5f8f6;border-top:4px solid #4d8c78;border-radius:4px;padding:14px}.step h3{font-size:1.05em;margin:0 0 8px}.step p{margin:0 0 8px}.qualifier{font-size:.9em;color:#53615c}.caution{background:#fff6e5;border-left:5px solid #bc8735;padding:1rem 1.2rem}.source{font-size:.92em;color:#4b5b56}table{width:100%;border-collapse:collapse}th,td{border-bottom:1px solid #d7e2dc;padding:9px;text-align:left;vertical-align:top}th{background:#e8f2ed} @media(max-width:650px){table{display:block;overflow-x:auto}.path{grid-template-columns:1fr}}
+</style>
+
+<div class="lead"><strong>What can this project tell us about substrate and mussel habitat?</strong><br>The 2014 survey describes mussels and habitat in a constructed rock channel and comparison areas. It provides a useful starting point for learning, even though EMMA has no recorded monitoring task for this older project. The report does not, by itself, establish a causal effect or attainment of the historical target.</div>
+
+## Follow the evidence
+
+Read the cards in order as a route to evidence, not as proof that each relationship was formally adopted or that every record is in EMMA.
+
+```{r pathway, results='asis'}
+cat('<div class="path">')
+for (i in seq_len(nrow(r$case))) {
+  cat('<section class="step"><h3>', esc(r$case$stage[i]), '</h3><p>', esc(r$case$evidence[i]),
+      '</p><p class="qualifier">', esc(r$case$qualifier[i]), '</p></section>')
+}
+cat('</div>')
+```
+
+The workshop workbook records an association between Bertom and WQ-39, ranked second for the Upper Impounded reach. The mark's meaning and ranking protocol are not fully documented. The association is a reason to examine the case, not evidence that the survey was designed to answer that question.
+
+## What the project intended
+
+The 1989 project report lists two objectives under enhancing aquatic habitat: increase rock substrate habitat and establish a mussel bed. It lists targets of **10,000 square yards of rock substrate** and **10 mussels per square yard**. The later performance-evaluation addendum presents those as year-50 targets and identifies the rock habitat channel as the related feature. These are historical source targets; their mapping to an EMMA criterion and method of evaluation remain open.
+
+The report describes a roughly 1,500-foot channel divided into seven sections with different rock materials. The Restoration Features export contains seven similarly named rock habitat channel revetment segments under project ID 65. Their correspondence to the report's segments is plausible but has not been verified against as-built geometry or survey locations.
+
+<p class="source">Sources: 1989 DPR, printed pp. 10 and 14; 11-year PER addendum, printed p. 2; Restoration Features and UMRRDB snapshots. See source notes below.</p>
+
+## What the monitoring report says
+
+The 2014 survey examined the habitat channel, a control channel and downstream areas. The report describes both quantitative quadrats and qualitative searches, with methods differing by substrate and site. It reports **40 live mussels representing 11 species** in the habitat channel across its survey methods; at sites 5 and 6 it reports densities of **4.8 and 4.0 mussels/m²**, respectively. These are site-level observations summarized in the report, not an overall channel density.
+
+The author describes apparent colonization in some parts of the channel and discusses possible roles of substrate and flow. The report considers the effect on downstream Coalpit Slough inconclusive. The historical target is expressed per square yard; a defensible assessment would also need appropriate spatial coverage, timing, aggregation and an evaluation rule. A unit conversion alone would not establish target attainment.
+
+<p class="source">Source: 2014 monitoring final report, printed pp. 3–4 and 7–9. The report dates the survey October 2014 and itself January 2015.</p>
+
+## What can be used now
+
+| Practitioner question | What the available evidence supports | What still limits the answer |
+|:--|:--|:--|
+| What did the project intend? | Historical objectives, targets and a described channel are documented. | EMMA criterion and project identity mappings remain to be confirmed. |
+| What was observed? | The report describes a 2014 survey and reports findings with methods and locations at report level. | Underlying observations and survey geometry were not located in this review; they are not proven lost. |
+| Which GIS segment was sampled? | The report and feature export both describe seven named segments. | A segment-by-segment crosswalk, geometry and time alignment have not been verified. |
+| Was the target met or the outcome caused by the project? | The report supplies evidence relevant to habitat and mussels. | Coverage, evaluation method, comparability and causal inference need further review. |
+
+<div class="caution"><strong>Missing history need not stop analysis.</strong> The user explained that EMMA did not back-enter tasks for older completed projects with no future monitoring planned. A source-supported report or finding can still be discovered and described. Limit a particular inference when its required evidence is missing; do not invent a task or assume an unlocated record never existed.</div>
+
+## Sources and review boundary
+
+This is a conceptual practitioner walkthrough based on a bounded source review, not an SME-approved assessment or a production record. Relationships and unresolved questions are documented in `dev/goals/bertom-rock-habitat-linkage-review.md` and `dev/checkpoints/current/cross-system-case-screen.md`. The 1989 DPR table 4-1 and the PER table 1 were visually checked. Raw observations, geospatial overlays, a full corpus inventory and stewardship review were not completed.
+
+```{r source-table, results='asis'}
+cat(knitr::kable(r$inputs, format = 'html', col.names = c('Input snapshot', 'MD5 fingerprint')))
+cat('<p class="source">Generated ', esc(format(r$generated_at, '%Y-%m-%d %H:%M %Z')), ' · ', esc(r$software), '</p>')
+```

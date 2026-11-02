@@ -1,5 +1,11 @@
 # Research question report
 
+## Bertom practitioner walkthrough, 2026-11-02
+
+At the user's direction, a second, bounded case report tests how practitioners can follow a priority question through historical objectives, a restoration channel, a survey and findings when an EMMA monitoring task was intentionally not entered. [Bertom summary/renderer](../../R/bertom_report.R), [R Markdown template](../../inst/reports/bertom_report.Rmd), and [driver](../scripts/bertom-report.R) produce a self-contained HTML snapshot. The report distinguishes documented evidence, candidate GIS matches and inference-specific gaps; it does not backfill tasks or assess target attainment. It is a case-specific demonstration, not a general data model or approved assessment. The source is the [bounded linkage review](../goals/bertom-rock-habitat-linkage-review.md).
+
+Snapshot: [Bertom evidence walkthrough](../outputs/bertom/bertom-evidence-20261102T175410Z.html) (ignored generated output). R 4.6.1 and rmarkdown rendered successfully; focused checks covered input presence/fingerprints, five pathway stages, key evidence text and refusal to overwrite a snapshot. The in-app browser blocked local `file:` URLs under its security policy, so browser visual and narrow-width review remain outstanding. Partner/SME review remains outstanding. Source originals and production systems were not modified.
+
 Updated: 2026-10-22. Status: user recognizes coherent case-report milestone; report retained as a conceptual-model design aid, not a validated schema or accepted scientific assessment.
 
 Latest user steering: focus the report on the **Steamboat Island mussel pilot**. Workshop priorities supply background, not the report's organizing structure. The current draft leads with local restoration intent, the proposed response mechanism, selected scientific contributions, evaluation gaps and next steps. A brief WQ-39 background note follows the pilot narrative; ranking figures, the full learning agenda, generic entity inventory and formal project objectives are retained in expandable supporting sections.

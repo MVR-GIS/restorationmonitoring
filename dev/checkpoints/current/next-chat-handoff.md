@@ -51,6 +51,8 @@ The cited passages and 2014 survey have now received a focused review in [Bertom
 
 The user clarified that EMMA deliberately did not enter monitoring tasks for completed older projects without future planned monitoring, and historical evidence can be hard or impossible to recover. The [relationship analysis](../../architecture/science-restoration-relationships.md#historical-evidence-without-an-emma-task) and Bertom walkthrough now allow source-backed historical analysis without an EMMA task. The original four-part case gate below is not a universal prerequisite: qualify the specific inference that needs missing evidence, rather than blocking supported analysis or inventing a task. Preserve uncertainty about the existence and recoverability of unlocated records.
 
+The user agreed to return to report design. A [Bertom practitioner report](../../features/research-question-dashboard.md#bertom-practitioner-walkthrough-2026-11-02) now renders the case and its gaps as a self-contained HTML snapshot. Focused checks passed; browser visual review was blocked by the in-app browser local-file URL policy, and practitioner/SME review is pending. Review the report's usefulness and layout before generalizing its case-specific summary into a reusable report model.
+
 Use **one** FWWG/workshop priority or uncertainty and **one** project that can supply all of the following for a bounded cross-system mapping review:
 
 1. an EMMA project/objective/criterion/task reference;
