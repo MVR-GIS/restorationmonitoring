@@ -1,0 +1,19 @@
+# Bertom multi-entry evidence prototype
+
+- Started: 2026-11-02. Status: bounded development prototype; not a production integration, approved model, FWWG-validated workflow or comprehensive search.
+- Purpose: exercise the [three-entry conceptual test](../goals/bertom-three-entry-model-test.md) from a question, survey or project using the same curated nodes and attributed links, including an explicitly hypothetical future assessment. EMMA is the likely system of record for judgments for design purposes; this prototype does not connect to or write EMMA.
+- User review, 2026-11-02: the user described the Bertom report as good progress. This feedback does not by itself approve the conceptual model, user interface, scientific interpretations or a production workflow.
+
+## What the prototype does
+
+The [fixture and view builder](../../R/evidence_walkthrough.R) define a small, manually curated Bertom evidence network. The builder follows explicit links in both directions, terminates on cycles, keeps each link's original direction and source qualification, gives one shortest path for orientation, and returns all links among the reached records so alternative paths remain inspectable. There is no arbitrary fixed-depth cutoff. These choices are a test of model behavior, not an approved general traversal policy or physical data contract.
+
+The [report template](../../inst/reports/bertom_multi_entry.Rmd) lets a reader switch among three precompiled entry views, expand records and relationships, and open evidence reviews. A hypothetical assessment and its two illustrative links are **excluded by default** and visibly marked as a design example when enabled. It has no practitioner author, adoption, actual decision or production identity. The source reviews record original document versions and locators; GitHub links in the report require the relevant review files to have been committed and pushed. The original local documents remain external to the report.
+
+The graph is a manually curated fixture: it does not dynamically retrieve live records or discover new sources, confirm all institutional knowledge, reconcile cross-system IDs, reproduce survey data, or assess a target. The report discloses these limits, the unknown workbook-mark semantics, candidate identity links and absent EMMA task. View switching and optional example visibility are client-side interactions over views computed at render time; they are not live queries. The feature is internal development code, not a public package API.
+
+## Running and verification
+
+From the repository root, run `Rscript dev/scripts/bertom-multi-entry.R [new-output.html]` with the R dependencies and Pandoc available. The [driver](../scripts/bertom-multi-entry.R) fingerprints the reviewed inputs, creates a self-contained HTML snapshot under ignored `dev/outputs/bertom-multi-entry/` by default, and refuses to overwrite an existing destination. The 2026-11-02 [snapshot](../outputs/bertom-multi-entry/bertom-evidence-20261102T214833Z.html) is a review artifact and may need regeneration in a fresh checkout.
+
+Focused testthat checks exercise all three starts, original relationship direction, shared nodes/links, cycle termination through the fixture, opt-in hypothetical records, unknown starts and invalid references. The [JavaScript interaction check](../scripts/check-bertom-multi-entry.js), run as `node dev/scripts/check-bertom-multi-entry.js path/to/snapshot.html`, exercises selection, link counts and example visibility using a simulated document; it is not a full browser or accessibility test. The report rendered with R 4.6.1, and `R CMD check --no-manual` returned `Status: OK`; dependency repository indexes were unavailable during the check, but installed dependencies were sufficient. The in-app browser previously blocked local `file:` URLs, so full-page and narrow-width visual inspection remains outstanding. Practitioner and subject-matter review remain outstanding.

@@ -1,13 +1,15 @@
 # Model-guided evidence reports: design review
 
 - Recorded: 2026-11-02. Status: user-directed reporting vision; traversal rules, presentation and implementation below are proposals for review.
-- Scope: a family of R package reports that starts from a selected research question, study, project or another supported item and compiles connected institutional knowledge for expert teams. No production system, data source, physical schema, query technology or delivery schedule is selected here.
+- Scope: a family of R package reports that starts from a selected research question, study, project or another supported item and compiles connected institutional knowledge for expert teams. EMMA is the user-identified likely system of record for new judgments; physical schema, integration, query technology and delivery schedule remain unselected.
 
 ## Purpose and accepted direction
 
 The user envisions a family of reports that practitioners can run from different starting points. For the selected item, the reports should rapidly and dynamically assemble the connected institutional knowledge available to the system, looking backward or upward conceptually and forward or downstream observationally. Practitioners should be able to drill down to the evidence. An opinionated, science-driven conceptual model should guide discovery of relevant items and connections, rather than requiring the practitioner to assemble a chain by hand.
 
 The objective is comprehensive discovery **within the connected and accessible evidence**, with the sources searched, coverage and known gaps made visible. A report cannot establish that it contains everything the institution knows unless the holdings, access, ingestion, identities and coverage have actually been verified. Dynamic compilation is the intended behavior; the current case-specific prototypes do not yet implement it.
+
+The user additionally identifies a need to capture expert findings, assessments and decisions directly when formal artifacts are absent. A future report should discover both document-backed and practitioner-authored judgments while preserving authorship, evidence, reasoning, uncertainty and review/adoption state. See the [durable-judgment model](durable-assessment-and-decision-model.md): EMMA is the likely record system for design purposes, and new formal assessment reports are a possible future program decision, not an existing obligation.
 
 ## One evidence network, multiple entry points
 
@@ -38,14 +40,14 @@ Existing EMMA objective–criterion and task–criterion many-to-many links must
 
 ## Concrete test across starting points
 
-Use the same bounded Bertom evidence to test three views, without creating production records:
+The [three-entry Bertom model test](../goals/bertom-three-entry-model-test.md) manually walks the same bounded evidence from three views, without creating production records:
 
 - **WQ-39:** recover its workbook question and reach ranks; show the Bertom workbook mark as an association of unknown meaning and the analyst's candidate relevance; continue to the project, channel, 2014 survey and reported findings only through separately attributed links. No study intent or FWWG selection is implied.
 - **2014 survey:** recover the report's study purpose, methods and comparison areas; show the Bertom project/channel context as supported at report level and the GIS-segment match as unresolved; follow to the reported site-level and channel findings, distinguishing them from raw observations and formal target assessment.
 - **Bertom project:** recover the historical goals, objective/target and channel references, and the later survey and reported findings. Show that an EMMA monitoring task is not recorded without requiring one for discovery. The UMRRDB-to-EMMA identity and survey-to-GIS segment crosswalk remain unverified.
 
-For each view, compare overlapping source objects and links, explain any differences in relevance or scope, and make the evidence and uncertainty drillable. A common underlying set should not yield conflicting identities or invent a reversed causal claim. This is a proposed evaluation using existing evidence, not evidence that the current prototype can perform multi-entry traversal.
+The manual walkthrough compares overlapping source objects and links, explains differences in relevance and scope, and identifies evidence and uncertainty to make drillable. It avoids inventing a reversed causal claim. The subsequent prototype traverses a manually curated fixture; neither the walkthrough nor that prototype establishes live-system or corpus-wide discovery.
 
 ## Next review boundary
 
-Refine the concept inventory and relationship semantics against the three entry-point walkthroughs, including path explanations, identity ambiguity and coverage reporting. Then prototype a shared source-referenced evidence summary and multiple views in the existing R reporting workflow. Review the results with the user before seeking practitioner stories when FWWG members have capacity. Exact data contracts, performance expectations, physical storage, live system connectivity, cross-system identity rules and production deployment remain open.
+The [multi-entry prototype](../features/bertom-multi-entry-prototype.md) now tests a shared curated evidence set, three selectable views, attributed link directions and a separately labeled, opt-in hypothetical assessment. The user described the report as good progress. Views are computed at render time over a bounded local fixture; this does not implement live retrieval or settle detailed record ownership. Continue testing other starting types, contradictory evidence, coverage and scalable traversal before generalizing. Defer practitioner stories until FWWG members have capacity. Exact data contracts, performance expectations, physical storage, live system connectivity, cross-system identity rules and production deployment remain open.

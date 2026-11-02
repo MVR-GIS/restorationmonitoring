@@ -18,6 +18,6 @@ For current purpose and design status, start with [project foundation](goals/pro
 
 Chat transcripts and generated output are not canonical project context.
 
-The [research question report](features/research-question-dashboard.md) describes the Steamboat prototype and Bertom practitioner walkthrough; maintained source reviews and worksheets remain the evidence basis. Follow the [R-centered document-processing workflow](workflows/document-processing.md) for extraction and reporting and the [R package workflow](workflows/r-package-development.md) for package and local pkgdown development.
+The [research question report](features/research-question-dashboard.md) describes the Steamboat prototype and earlier Bertom walkthrough. The [Bertom multi-entry prototype](features/bertom-multi-entry-prototype.md) tests selectable views and a hypothetical assessment using a curated fixture; maintained source reviews remain the evidence basis. Follow the [R-centered document-processing workflow](workflows/document-processing.md) for extraction and reporting and the [R package workflow](workflows/r-package-development.md) for package and local pkgdown development.
 
 The [workshop research-priority review](goals/workshop-research-priorities.md) and [question register](goals/workshop-research-question-register.json) capture the partnership's supplied learning agenda and reach-specific rankings for EMMA's science and restoration integration component.

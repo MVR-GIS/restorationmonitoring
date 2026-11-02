@@ -17,7 +17,9 @@ flowchart LR
   S -->|uses or yields| D[Observation / dataset]
   D -->|analyzed to produce| R[Finding]
   F -.->|context for study, if supported| S
-  R -.->|may inform| E[Evaluation / decision]
+  R -.->|may inform| E[Evaluation / assessment]
+  E -.->|may inform| A[Decision / deferral]
+  A -.->|may lead to| T[Action / follow-up]
 ```
 
 Solid and dashed paths are conceptual possibilities, not mandatory steps or assertions that every connection exists. Each relationship needs its own precise meaning and evidence; the diagram does not establish cardinality. In particular, a workshop mark is not an adopted opportunity, and a project's feature is not automatically a study treatment. The accepted [attributed linkage pattern](prospective-study-linkage-minimum-record.md) carries source or contributor, locator, scope, lifecycle and review state, and responsible role/system where known. It is not a physical record specification.
@@ -33,6 +35,8 @@ Solid and dashed paths are conceptual possibilities, not mandatory steps or asse
 | Study/design, event and task | Planned design, collection activity and EMMA operational task are distinct | A 2014 survey is documented; the user confirms no EMMA task was recorded. A task must not be fabricated or required to represent the survey. |
 | Observation, analysis and finding | Measured data, computation and author interpretation have different provenance | The report summarizes results; raw observations and analysis inputs were not located in this review. Reported site densities are not a channel-wide estimate. |
 | Evaluation, assessment and decision | A criterion evaluation, objective judgment and later decision are separate | A reported scientific finding does not establish target attainment, causation or project success. |
+
+The user clarified that expert findings, assessments and decisions may need to be created and maintained as durable information even without existing formal documents. The [durable-judgment model](durable-assessment-and-decision-model.md) proposes distinctions, attribution, reasoning and revision needs, and an application as a possibility rather than a selected implementation. It permits a bounded insufficient-evidence assessment without assuming a formal criterion; a proposed, reviewed, adopted or performed action remains distinguishable.
 
 Source/version/locator, temporal and spatial scope, review state and uncertainty qualify each link. A reproducible spatial relation, where needed, requires inputs, method, parameters and temporal alignment; proximity or overlap does not establish identity or exposure. Missing evidence limits only the inference that needs it.
 

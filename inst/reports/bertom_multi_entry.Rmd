@@ -1,0 +1,104 @@
+---
+title: "Explore one body of evidence from three starting points"
+subtitle: "Bertom and McCartney Lakes · conceptual model test"
+output:
+  html_document:
+    self_contained: true
+    mathjax: null
+    toc: false
+params:
+  report: null
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=TRUE, error=FALSE)
+r <- params$report
+```
+
+<style>
+body{max-width:1100px;margin:auto;padding:0 18px 60px;color:#203932;line-height:1.55}h1,h2,h3{color:#164c3d}h2{margin-top:1.8em}.intro{background:#e9f4ed;border-left:5px solid #287b60;padding:1rem 1.2rem}.controls{display:flex;gap:8px;flex-wrap:wrap;margin:1.1rem 0}.controls button{background:#f2f7f4;border:1px solid #98b8a6;border-radius:4px;padding:.6rem .9rem;color:#193e32}.controls button[aria-pressed=true]{background:#1c6450;color:white;border-color:#1c6450}.toggle{display:block;margin:1rem 0}.scope{color:#4b6258}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}.record{background:#f5f8f6;border:1px solid #c9dbd0;border-radius:6px;padding:1rem}.record h3{font-size:1.08em;margin:.2rem 0}.kind{font-size:.88em;color:#4a6659}.record details,.links details{margin-top:.6rem}.example{border:2px solid #a56e17;background:#fff5df}.path{font-size:.9em;color:#4b6258;overflow-wrap:anywhere}.links details{padding:.7rem;border-bottom:1px solid #d4e4da}.caution{background:#fff5df;border-left:4px solid #b77b25;padding:1rem}.links summary{cursor:pointer}.footnote{font-size:.9em;color:#52665b}table{width:100%;border-collapse:collapse}td,th{padding:8px;border-bottom:1px solid #d4e4da;text-align:left} @media(max-width:600px){table{display:block;overflow-x:auto}.cards{grid-template-columns:1fr}}
+</style>
+
+<div class="intro"><strong>One bounded evidence set, three perspectives.</strong> Select a research question, survey or project to explore the same source-backed relationships. This prototype uses a manually curated local fixture; it does not query EMMA or claim complete institutional coverage.</div>
+
+## Choose a starting point
+
+<div class="controls" role="group" aria-label="Starting point">
+<button type="button" data-start="question" aria-pressed="true">Research question</button>
+<button type="button" data-start="survey" aria-pressed="false">2014 survey</button>
+<button type="button" data-start="project" aria-pressed="false">Bertom project</button>
+</div>
+<label class="toggle"><input type="checkbox" id="show-example"> Include a clearly labeled hypothetical future assessment</label>
+<div id="view-heading" aria-live="polite"></div>
+<p class="scope">Each view follows the same explicit links in either direction, preserving the original meaning. One shortest path explains discovery; the relationship list retains all included links. Candidate matches and source statements remain distinct.</p>
+
+<h2>Connected evidence</h2>
+<div id="evidence-cards" class="cards"></div>
+
+<h2>Relationships and evidence</h2>
+<p>Expand a relationship to inspect its basis. An arrow states the original relationship direction even when discovery began at the other end.</p>
+<div id="evidence-links" class="links"></div>
+
+## What is not established
+
+<div class="caution">The workshop mark's meaning is unknown; FWWG selection and original study intent are unverified. UMRRDB-to-EMMA identity and survey-to-GIS segment matches are unresolved. Raw observations were not located in this review. No EMMA monitoring task was recorded for Bertom, according to the user. The survey findings do not establish target attainment, causation or project success.</div>
+
+EMMA is the likely system of record for future practitioner-authored judgments for design purposes. A formal assessment report may become a future program artifact. Neither has been implemented or approved by this prototype. The optional assessment above is an analyst-created illustration, not a real assessment, author, decision or determination.
+
+<details><summary>Input fingerprints and scope</summary>
+<p>Only the curated evidence and source reviews listed here are included. Source-review files contain the original document fingerprints and page or cell locators. This snapshot does not search all research or project holdings.</p>
+```{r sources, results='asis'}
+cat(knitr::kable(r$sources, format="html", col.names=c("Reviewed input", "MD5 fingerprint")))
+cat('<p class="footnote">Generated ', htmltools::htmlEscape(format(r$generated,tz="UTC",usetz=TRUE)), '</p>')
+```
+</details>
+
+```{r embedded-data, results='asis'}
+data <- jsonlite::toJSON(r$views, auto_unbox=TRUE, dataframe="rows", null="null")
+data <- gsub("<", "\\u003c", data, fixed=TRUE)
+cat('<script type="application/json" id="bertom-views-data">', data, '</script>')
+```
+
+<script>
+(() => {
+  const data = JSON.parse(document.getElementById('bertom-views-data').textContent);
+  const buttons = [...document.querySelectorAll('[data-start]')];
+  const toggle = document.getElementById('show-example');
+  const cards = document.getElementById('evidence-cards');
+  const links = document.getElementById('evidence-links');
+  const heading = document.getElementById('view-heading');
+  let start = 'question';
+  function element(tag, text, className) {
+    const el = document.createElement(tag); if (text) el.textContent = text;
+    if (className) el.className = className; return el;
+  }
+  function draw() {
+    const view = data[start][toggle.checked ? 'example' : 'actual'];
+    const labels = Object.fromEntries(view.nodes.map(n => [n.id, n.label]));
+    const edgeById = Object.fromEntries(view.edges.map(e => [e.id, e]));
+    heading.textContent = 'Starting point: ' + labels[start];
+    buttons.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.start === start)));
+    cards.replaceChildren(); links.replaceChildren();
+    view.nodes.forEach(n => {
+      const card = element('article', '', 'record' + (n.hypothetical ? ' example' : ''));
+      card.append(element('div', n.type, 'kind'), element('h3', n.label));
+      const path = n.path ? n.path.split(' -> ').map(id => {
+        const e = edgeById[id]; return e ? e.id + ': ' + labels[e.from] + ' ' + e.relation + ' ' + labels[e.to] : id;
+      }).join(' | ') : 'Selected starting point';
+      card.append(element('p', path, 'path'));
+      const detail = element('details'); detail.append(element('summary', 'Evidence and source'), element('p', n.detail), element('p', n.source, 'footnote'));
+      const sourceLink = element('a', 'Open evidence review'); sourceLink.href = n.source_url;
+      detail.append(sourceLink);
+      card.append(detail); cards.append(card);
+    });
+    view.edges.forEach(e => {
+      const detail = element('details', '', e.hypothetical ? 'example' : '');
+      detail.append(element('summary', labels[e.from] + ' → ' + labels[e.to] + ' · ' + e.state),
+        element('p', 'Relationship: ' + e.relation), element('p', e.basis));
+      links.append(detail);
+    });
+  }
+  buttons.forEach(b => b.addEventListener('click', () => { start = b.dataset.start; draw(); }));
+  toggle.addEventListener('change', draw); draw();
+})();
+</script>
