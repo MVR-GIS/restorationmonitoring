@@ -12,6 +12,7 @@
 #' @param priority_links_file Optional explicit pilot relevance links JSON.
 #' @param study_instance_file Optional source-located scientific instance JSON.
 #' @return A read-only report summary with source fingerprints and derivation links.
+#' @export
 research_question_summary <- function(question, science_file, restoration_file,
                                       entities = data.frame(), priorities_file = NULL,
                                       priorities_source = NULL, priority_links_file = NULL,
@@ -24,9 +25,9 @@ research_question_summary <- function(question, science_file, restoration_file,
   r <- jsonlite::fromJSON(paths[2], simplifyVector = FALSE)
   scalar <- function(x) if (is.null(x) || !length(x)) NA_character_ else paste(unlist(x), collapse = "; ")
   records <- function(x, fields) {
-    rows <- lapply(x, function(row) as.data.frame(setNames(lapply(fields,
+    rows <- lapply(x, function(row) as.data.frame(stats::setNames(lapply(fields,
       function(field) scalar(row[[field]])), fields), stringsAsFactors = FALSE))
-    if (!length(rows)) return(as.data.frame(setNames(rep(list(character()), length(fields)), fields)))
+    if (!length(rows)) return(as.data.frame(stats::setNames(rep(list(character()), length(fields)), fields)))
     do.call(rbind, rows)
   }
   sources <- records(s$sources, c("id", "doi", "source_url", "reading_depth"))
@@ -91,6 +92,10 @@ research_question_summary <- function(question, science_file, restoration_file,
 #' @param template_dir Source checkout's inst/reports directory. When NULL, use
 #'   the installed restorationmonitoring package's report resources.
 #' @return Normalized report path invisibly. Existing snapshots are never replaced.
+#' @details The current template is specific to the Steamboat Island mussel pilot
+#'   and expects the associated reviewed worksheet structure. It is not a general
+#'   report for arbitrary projects.
+#' @export
 research_question_report <- function(summary, output_file, template_dir = NULL) {
   if (!inherits(summary, "research_question_summary")) stop("Supply a research_question_summary().")
   for (p in c("rmarkdown", "knitr", "htmltools", "gt", "ggplot2"))

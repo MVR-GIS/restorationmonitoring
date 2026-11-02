@@ -1,4 +1,6 @@
 # Shared HTML presentation, independently written around fluvgeo's gt pattern.
+utils::globalVariables(c("x", "y", "xend", "yend", "label", "source_id", "question"))
+
 .rm_report_table <- function(x) {
   if (!is.data.frame(x) || !nrow(x) || !ncol(x)) {
     cat("<p>No records supplied; absence has not been established.</p>\n")
@@ -26,7 +28,7 @@
   ids <- unique(c(e$from, e$to))
   a <- r$assertions[match(ids, r$assertions$id), , drop = FALSE]
   a$x <- ifelse(a$id %in% e$to, 1, 0)
-  a$y <- ave(seq_len(nrow(a)), a$x, FUN = function(v) seq_along(v))
+  a$y <- stats::ave(seq_len(nrow(a)), a$x, FUN = function(v) seq_along(v))
   a$label <- paste(a$id, vapply(a$paraphrase, function(s) paste(strwrap(s, 39), collapse = "\n"), ""), sep = "\n")
   e$x <- a$x[match(e$from, a$id)]; e$y <- a$y[match(e$from, a$id)]
   e$xend <- a$x[match(e$to, a$id)]; e$yend <- a$y[match(e$to, a$id)]

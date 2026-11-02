@@ -21,7 +21,7 @@ fluvgeo's inspected report family uses R Markdown, not a Quarto project. Therefo
 | `dev/outputs/` | Ignored generated report snapshots and local qualification outputs |
 | External `UMRR/` holdings | Retained source originals, referenced rather than duplicated in the package |
 
-At this date the checkout has the reproducibleai R-package profile but no DESCRIPTION or NAMESPACE. Functions can be sourced for development; they are not installed/exported package APIs. Package metadata, dependency declarations, roxygen documentation, namespacing and package checks belong to later package initialization. Do not invent maintainers or claim R CMD check passed. `.Rbuildignore` excludes development/output paths; `inst/reports` remains available for future package resources.
+Update 2026-11-02: the checkout is now an R package scaffolded with `usethis`, with metadata, dependency declarations, generated documentation, a namespace and tests. The Steamboat summary and renderer are exported; the Bertom example remains a workspace-specific internal development workflow. `.Rbuildignore` excludes development/output paths; `inst/reports` is installed as package resources. See the [package workflow](r-package-development.md) and current check results before claiming package verification.
 
 ## Processing stages
 
@@ -46,7 +46,7 @@ source("dev/scripts/mussel-research-report.R")
 
 Or run `Rscript dev/scripts/mussel-research-report.R` for an automatically timestamped destination. To select a new destination, use `Rscript dev/scripts/mussel-research-report.R dev/outputs/research-question/new-review.html`. Source scripts from the repo root; reusable functions accept explicit inputs and template location. Existing destinations fail before rendering. Publication uses a non-replacing hard link, following the inspected fluvgeo pattern; a local hard-link-capable filesystem is required. Rendering does not access production systems, alter worksheets or acquire new scientific evidence.
 
-Run `Rscript dev/scripts/check-research-report.R` for focused validation. A lockfile should be produced from the agreed actual team environment when package initialization occurs; no speculative renv lockfile is supplied.
+Run `Rscript dev/scripts/check-research-report.R` for focused validation. A lockfile can be produced from an agreed actual team environment; no speculative renv lockfile is supplied.
 
 ## Initial qualification
 
