@@ -1,6 +1,6 @@
 # Handoff: science and restoration integration design
 
-- Updated: 2026-11-02
+- Updated: 2026-11-03
 - Status: active conceptual-design work; no production implementation is authorized
 - Use: concise rehydration for the next chat. Read this after `AGENTS.md`; then open only the linked maintained artifacts needed for the task.
 
@@ -37,6 +37,8 @@ Design the **science and restoration integration component of EMMA** for UMRR/NE
 | Program purpose, source status or strategic alignment | [Project foundation](../../goals/project-foundation.md), [source inventory](../../goals/source-inventory.md), [strategic/FWWG review](../../goals/strategic-plan-fwwg-review.md) |
 | Conceptual entities/relationships or ontology alignment | [Relationship analysis](../../architecture/science-restoration-relationships.md), [Steamboat model](../../architecture/steamboat-conceptual-model.md), [USACE alignment](../../architecture/usace-ontology-alignment.md) |
 | Consolidated data model design review | [Data model design report](../../architecture/data-model-design-report.md), then the linked detailed model and source reviews as needed |
+| Existing science and AM data tooling, models or reuse | [Tooling watch baseline](../../goals/science-am-tooling-watch.md) and [repeatable watch workflow](../../workflows/science-am-tooling-watch.md); the earlier broad landscape review's priorities are superseded |
+| Bounded comparison of Bertom with external models | [Bertom tool-model mapping](../../architecture/bertom-tool-model-mapping.md); documentation-based, no imports, implementation or schema approval |
 | HREP monitoring, PERs or assessment lineage | [HREP/PER/workshop review](../../goals/hrep-per-workshop-review.md) |
 | FWWG/workshop priorities and learning opportunities | [Strategic/FWWG review](../../goals/strategic-plan-fwwg-review.md), [workshop priorities](../../goals/workshop-research-priorities.md) |
 | Marsh Lake comparison | [Marsh Lake linkage](../../goals/marsh-lake-mussel-monitoring-linkage.md) |
@@ -47,6 +49,10 @@ Design the **science and restoration integration component of EMMA** for UMRR/NE
 The root `AGENTS.md` now contains the same source-family routing. Do not reread the archived transcript or scan all of `UMRR/` by default.
 
 ## Next safe action
+
+The user clarified on 2026-11-03 that manuals, AM program descriptions and construction/project tracking are insufficient: the goal is inspectable data models and preferably open-source tooling for long-term governance of science–restoration integration. The [tooling watch](../../goals/science-am-tooling-watch.md) supersedes the earlier broad review's comparison priorities. No verified open end-to-end replacement emerged from the bounded search. Continue conceptual design and report work while examining concrete partial candidates, particularly AMMonitor/AMModels, Miradi's model, NPAM, ORKG and SEPIO; repositories for the USGS R packages returned 403 in direct browsing. Do not stall for broad manual/portal searches or assume outreach, adoption, production records or a technology choice is authorized. The [watch workflow](../../workflows/science-am-tooling-watch.md) gives a bounded, unscheduled refresh process.
+
+The user then requested a one- or two-turn mapping exercise. The [Bertom mapping](../../architecture/bertom-tool-model-mapping.md) completes it in one turn using available documentation: AMMonitor's monitoring concepts, Miradi's intended results, SEPIO's claims/evidence, and AMModels' analysis bundle. It records analogies and limits; no candidate was installed and no schema was validated. Resume conceptual model and practitioner-report iteration rather than extend the mapping without a new reason.
 
 The [Bertom linkage review](../../goals/bertom-rock-habitat-linkage-review.md) and [availability screen](cross-system-case-screen.md) trace WQ-39, historical objectives and targets, a rock habitat channel and the 2014 survey. UMRRDB project ID 65 matches named Restoration Features records in the supplied snapshots, but EMMA identity and survey-to-feature geometry are unverified. The FY27 compilation is an entry source, not evidence that entry occurred; it also contains a project-label mismatch elsewhere. The cited source passages have been reviewed. Do not present the historical target as an evaluated EMMA criterion or the report as a project-success judgment.
 

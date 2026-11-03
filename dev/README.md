@@ -6,6 +6,8 @@ This directory contains durable, repository-owned context for human and agentic 
 
 For current purpose and design status, start with [project foundation](goals/project-foundation.md). The [data model design report](architecture/data-model-design-report.md) consolidates the proposed objects, relationships, existing-system anchors, Bertom test and open decisions for review. The [crosswalk](goals/goals-requirements-crosswalk.md#requirements-clarified-by-the-steamboat-pilot) captures pilot-derived requirement clarifications. The [relationship analysis](architecture/science-restoration-relationships.md#pilot-implications-for-conceptual-model-review) identifies concrete modeling questions. Detailed source reviews are conditional evidence references, not sequential prerequisites.
 
+The [science and adaptive-management tooling watch](goals/science-am-tooling-watch.md) screens concrete implementations and models against the user's clarified requirements; its [repeatable workflow](workflows/science-am-tooling-watch.md) maintains the watch. It supersedes the priorities of the broader [landscape review](goals/existing-models-tools-landscape-review.md).
+
 - `goals/`: scope, outcomes, and success criteria
 - `architecture/`: system structure and ownership boundaries
 - `decisions/`: accepted architectural decision records

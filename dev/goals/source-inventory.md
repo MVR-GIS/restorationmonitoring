@@ -4,6 +4,12 @@ Initial inspection: 2026-10-07; current-state cleanup: 2026-10-16. Scope: reposi
 
 ## Available material
 
+### Existing models, tools and programs, 2026-11-02
+
+The [targeted landscape review](existing-models-tools-landscape-review.md) assesses selected primary program and standards documentation for reuse, coordination and possible alternatives. It distinguishes documented functions from unverified fit and proposes a common-case comparison; it is not a systematic review or hands-on software evaluation.
+
+The user narrowed the question on 2026-11-03 to implemented data tooling and models, preferably open source, rather than general adaptive-management programs or project tracking. The [tooling watch baseline](science-am-tooling-watch.md) supersedes that review's candidate priorities and records new software and source-access findings; the [watch workflow](../workflows/science-am-tooling-watch.md) describes bounded future checks.
+
 ### Historical goals and objectives compilation, 2026-11-02
 
 The user supplied the FY27 goals/objectives/performance-criteria workbook as a historical compilation intended for EMMA entry. The [Bertom case screen](../checkpoints/current/cross-system-case-screen.md) records its fingerprint, targeted cell locators, proposed objective–practice associations and an observed master-sheet project-label mismatch. The workbook is not evidence that planned entry has happened; the broader workbook has not been fully audited.

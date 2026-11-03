@@ -8,6 +8,10 @@ The intended result is a family of reports that can start with a research questi
 
 **Status:** the attributed linkage pattern has been accepted by the user for further validation. The objects and relationships in this report are working proposals, except where specifically identified as existing system structure or user direction. They are not an approved database schema, ontology, mandated workflow, complete inventory, or an assertion that production records already exist. EMMA is the user-identified **likely system of record for practitioner-authored findings, assessments and decisions for design purposes**; detailed ownership, schema and implementation are unresolved.
 
+The [science and adaptive-management tooling watch](../goals/science-am-tooling-watch.md) identifies concrete software and models for targeted reuse. The bounded review did not find a verified open, end-to-end replacement; continue conceptual and reporting work while testing relevant components. This report remains a conceptual description, not a committed implementation.
+
+The [bounded Bertom mapping](bertom-tool-model-mapping.md) compares monitoring, intended results, evidence and analysis concepts with AMMonitor, Miradi, SEPIO and AMModels. It records proposed analogies and limits, not validated imports or approved schema changes.
+
 ## The model at a glance
 
 The model brings together a learning agenda, restoration activities, scientific evidence and adaptive-management judgments. The diagram is a **map of possible connections**, not a mandatory sequence. A study may address a question without a formal hypothesis; historical evidence may be useful without a recorded EMMA monitoring task; and a finding need not lead to a documented decision.
