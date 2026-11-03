@@ -6,7 +6,7 @@
 
 ## Objective
 
-Design the **science and restoration integration component of EMMA** for UMRR/NESP. It must help a mature, distributed partnership link questions, hypotheses, designs, restoration implementations, observations, analyses, findings, performance assessments and adaptive-management decisions across projects, disciplines and decades. It supports existing workflows rather than replacing them.
+Design the **science and restoration integration component of the Environmental Monitoring and Management Application (EMMA)** for UMRR/NESP. It must help a mature, distributed partnership link questions, hypotheses, designs, restoration implementations, observations, analyses, findings, performance assessments and adaptive-management decisions across projects, disciplines and decades. It supports existing workflows rather than replacing them.
 
 ## Directions accepted from the user
 

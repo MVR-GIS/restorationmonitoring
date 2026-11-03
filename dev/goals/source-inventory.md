@@ -4,6 +4,8 @@ Initial inspection: 2026-10-07; current-state cleanup: 2026-10-16. Scope: reposi
 
 ## Available material
 
+The [structured data guide](structured-data-guide.md) describes the JSON source register, extraction worksheets and other structured research records, with links to each file and its companion review.
+
 ### Existing models, tools and programs, 2026-11-02
 
 The [targeted landscape review](existing-models-tools-landscape-review.md) assesses selected primary program and standards documentation for reuse, coordination and possible alternatives. It distinguishes documented functions from unverified fit and proposes a common-case comparison; it is not a systematic review or hands-on software evaluation.

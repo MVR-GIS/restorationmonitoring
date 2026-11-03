@@ -2,7 +2,7 @@
 
 ## Purpose and review status
 
-This report presents the **current conceptual design** for the science and restoration integration component of EMMA. It is intended to help practitioners, data stewards and developers discuss what information the model must distinguish, how evidence can be connected, and what remains to be decided before implementation.
+This report presents the **current conceptual design** for the science and restoration integration component of the Environmental Monitoring and Management Application (EMMA). It is intended to help practitioners, data stewards and developers discuss what information the model must distinguish, how evidence can be connected, and what remains to be decided before implementation.
 
 The intended result is a family of reports that can start with a research question, study, project or another selected item, then follow relevant relationships toward both conceptual context and observations, findings and decisions. A reader should be able to inspect why an item was included and drill down to the evidence. This is a design objective, not a claim that the current prototype searches all program information.
 

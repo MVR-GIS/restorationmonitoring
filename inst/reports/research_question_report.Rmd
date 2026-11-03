@@ -1,6 +1,6 @@
 ---
 title: "Steamboat Island Mussel Pilot Report"
-subtitle: "EMMA Science and Restoration Integration Component"
+subtitle: "Environmental Monitoring and Management Application (EMMA) · Science and Restoration Integration"
 output:
   html_document:
     self_contained: true
@@ -225,5 +225,19 @@ report_table(data.frame(Item=names(r$organizational_baseline),Value=vapply(r$org
 ```
 
 MD5 fingerprints identify the worksheet bytes used for the snapshot. Original documents and data remain separate retained sources. Rendering does not acquire new evidence or approve a scientific conclusion.
+
+```{r input-links, results='asis'}
+known <- c('mussel-science-evidence.json', 'steamboat-island-objectives-criteria.json',
+  'workshop-research-question-register.json', 'mussel-workshop-question-links.json',
+  'mussel-vital-rates-instance.json')
+linked <- intersect(r$inputs$file, known)
+if (length(linked)) {
+  cat('<p>Current repository copies of the structured inputs: ',
+    paste(sprintf('<a href="https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/goals/%s">%s</a>',
+      linked, linked), collapse = '; '), '.</p>',
+    '<p>These links lead to the current repository files, which can change. Compare their fingerprints with the table above before treating them as this snapshot’s exact inputs. ',
+    'The <a href="https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/goals/structured-data-guide.md">structured data guide</a> describes each resource and its limits.</p>')
+}
+```
 
 </details>

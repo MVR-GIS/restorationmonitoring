@@ -6,10 +6,11 @@ find, understand and use—across projects, disciplines and generations?**
 This guide is a starting point for program managers, scientists,
 restoration practitioners and partners who want to explore the work
 behind that question. It brings together selected research and
-development documents for the proposed **science and restoration
-integration component of EMMA**, supporting the Upper Mississippi River
-Restoration (UMRR) and Navigation and Ecosystem Sustainability Program
-(NESP) communities.
+development documents for the proposed science and restoration
+integration component of the **Environmental Monitoring and Management
+Application (EMMA)**, supporting the Upper Mississippi River Restoration
+(UMRR) and Navigation and Ecosystem Sustainability Program (NESP)
+communities.
 
 The guide leads directly into the working documents in `dev/`. Those
 documents retain the evidence, design reasoning and unanswered questions
@@ -60,6 +61,13 @@ If you have ten minutes, these three documents give a useful overview:
 The documents themselves are the source for their detailed status. In
 particular, a source-reported result, a proposed interpretation and an
 approved program decision are different things.
+
+Some reports and design notes also refer to structured JSON worksheets
+and registers. The [guide to structured research and design
+resources](https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/goals/structured-data-guide.md)
+explains what each file contains, links to it and its companion review,
+and shows how to interpret record references such as `SI-O3` and
+`MS-03`.
 
 ## What is the initiative trying to accomplish?
 
@@ -144,10 +152,11 @@ designs and evidence, without presenting an expected benefit as a
 demonstrated local effect.
 
 - **[View the Steamboat Island mussel
-  report](reports/steamboat-mussel-20261021.md)** — A source-oriented
+  report](reports/steamboat-mussel-20261103.md)** — A source-oriented
   case report connecting restoration intent, scientific evidence and
-  evaluation questions. *Draft snapshot, 2026-10-21.* [Downloadable
-  snapshot](https://github.com/MVR-GIS/restorationmonitoring/blob/main/pkgdown/assets/reports/steamboat-mussel-20261021.html).
+  evaluation questions, with links to its structured inputs. *Draft
+  snapshot, 2026-11-03.* [Downloadable
+  snapshot](https://github.com/MVR-GIS/restorationmonitoring/blob/main/pkgdown/assets/reports/steamboat-mussel-20261103.html).
 
 - **[Steamboat worked
   example](https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/goals/steamboat-island-worked-example.md)**

@@ -4,6 +4,8 @@ This directory contains durable, repository-owned context for human and agentic 
 
 For a reader-oriented introduction organized by program questions, see the [research and design guide](../RESEARCH-DESIGN-GUIDE.md). It links directly to the maintained documents here and does not replace conditional routing in `AGENTS.md`.
 
+The [structured data guide](goals/structured-data-guide.md) explains and links the JSON registers and worksheets used in research and design reports.
+
 **The user recognized the coherent Steamboat case-report milestone on 2026-10-22.** The reports are means to reason through data modeling. Conceptual work now includes a Bertom historical-evidence walkthrough, while scientific conclusions and model specifications remain provisional. Start with the [next-chat handoff](checkpoints/current/next-chat-handoff.md) for current resumable state.
 
 For current purpose and design status, start with [project foundation](goals/project-foundation.md). The [data model design report](architecture/data-model-design-report.md) consolidates the proposed objects, relationships, existing-system anchors, Bertom test and open decisions for review. The [crosswalk](goals/goals-requirements-crosswalk.md#requirements-clarified-by-the-steamboat-pilot) captures pilot-derived requirement clarifications. The [relationship analysis](architecture/science-restoration-relationships.md#pilot-implications-for-conceptual-model-review) identifies concrete modeling questions. Detailed source reviews are conditional evidence references, not sequential prerequisites.

@@ -2,6 +2,8 @@
 
 Updated: 2026-11-02. This is the entry point for current project context. Accepted directions below come from the user's statements in this chat and the explicitly reviewed initial conversation. Source reviews document evidence; proposed requirements and conceptual definitions remain subject to review.
 
+EMMA stands for **Environmental Monitoring and Management Application**.
+
 ## Current focus
 
 The user requested a consolidated [data model design report](../architecture/data-model-design-report.md) so reviewers can reason about the proposed objects and relationships behind the reports. It integrates the existing-system anchors, scientific and adaptive-management distinctions, attributed links, Bertom test, ontology reuse candidates and open decisions. It is a conceptual review report, not approval of a schema or production implementation.

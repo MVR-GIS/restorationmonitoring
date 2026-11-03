@@ -2,6 +2,10 @@
 
 Package update 2026-11-02: `usethis` scaffolding now supplies DESCRIPTION, NAMESPACE, generated help and testthat infrastructure. The Steamboat summary and renderer are exported; the Bertom driver remains a workspace-specific example. See the [package workflow](../workflows/r-package-development.md) and root README for scope and verification.
 
+For descriptions and direct links to the JSON worksheets and registers referenced by this work, see the [structured data guide](../goals/structured-data-guide.md).
+
+The Steamboat report template links recognized structured inputs to their current GitHub copies and retains the snapshot fingerprints for comparison. Those links are conveniences, not proof that a later repository version matches the file used in a particular render.
+
 ## Bertom practitioner walkthrough, 2026-11-02
 
 At the user's direction, a second, bounded case report tests how practitioners can follow a priority question through historical objectives, a restoration channel, a survey and findings when an EMMA monitoring task was intentionally not entered. [Bertom summary/renderer](../../R/bertom_report.R), [R Markdown template](../../inst/reports/bertom_report.Rmd), and [driver](../scripts/bertom-report.R) produce a self-contained HTML snapshot. The report distinguishes documented evidence, candidate GIS matches and inference-specific gaps; it does not backfill tasks or assess target attainment. It is a case-specific demonstration, not a general data model or approved assessment. The source is the [bounded linkage review](../goals/bertom-rock-habitat-linkage-review.md).
