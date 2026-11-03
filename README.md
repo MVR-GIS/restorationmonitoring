@@ -6,6 +6,8 @@ River restoration unfolds over decades. A question raised by a scientist may inf
 
 `restorationmonitoring` is an early-stage R package and design effort supporting the **science and restoration integration component of EMMA**. Its long-term aim is to help the Upper Mississippi River Restoration (UMRR) and Navigation and Ecosystem Sustainability Program (NESP) communities bring scientific inquiry and restoration practice into a shared, traceable view. It builds on the partnership's established expertise, information systems, and ways of working.
 
+For a curated introduction to the project's cases, research findings, conceptual model and open questions, see the [research and design reader’s guide](https://github.com/MVR-GIS/restorationmonitoring/blob/main/RESEARCH-DESIGN-GUIDE.md).
+
 ## A more connected cycle of learning
 
 The initiative is designed around a practical ambition: a researcher, biologist, engineer, manager, or partner should be able to follow the evidence behind a restoration question and see how it relates to work on the river. Questions worth asking include:
