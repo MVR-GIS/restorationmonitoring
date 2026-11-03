@@ -21,6 +21,11 @@ Restoration (UMRR) and Navigation and Ecosystem Sustainability Program
 into a shared, traceable view. It builds on the partnership’s
 established expertise, information systems, and ways of working.
 
+For a curated introduction to the project’s cases, research findings,
+conceptual model and open questions, see the [research and design
+reader’s
+guide](https://github.com/MVR-GIS/restorationmonitoring/blob/main/RESEARCH-DESIGN-GUIDE.md).
+
 ## A more connected cycle of learning
 
 The initiative is designed around a practical ambition: a researcher,

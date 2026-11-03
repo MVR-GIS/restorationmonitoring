@@ -1,4 +1,12 @@
 url: ~
 template:
   bootstrap: 5
+navbar:
+  structure:
+    left: [intro, reference, research_design, articles, tutorials, news]
+    right: [search, github, lightswitch]
+  components:
+    research_design:
+      text: Research & Design
+      href: RESEARCH-DESIGN-GUIDE.html
 
