@@ -3,7 +3,7 @@ bertom_report_summary <- function(root = ".") {
   root <- normalizePath(root, winslash = "/", mustWork = TRUE)
   files <- c(
     "dev/goals/bertom-rock-habitat-linkage-review.md",
-    "dev/checkpoints/current/cross-system-case-screen.md",
+    "dev/goals/cross-system-case-screen.md",
     "dev/goals/workshop-research-priorities.md",
     "../UMRR/HREPs/Bertrom_McCartney_Lakes/BertromMcCartneyLakes_DPR_1989.pdf",
     "../UMRR/HREPs/Bertrom_McCartney_Lakes/BertromMcCartneyLakes_PER_2004.pdf",

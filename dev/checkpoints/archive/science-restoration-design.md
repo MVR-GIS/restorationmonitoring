@@ -3,7 +3,7 @@
 - Updated: 2026-11-02
 - Status: cross-case conceptual review completed; attributed-linkage pattern accepted for validation; detailed meanings and implementation decisions remain open
 
-For current state and the next review boundary, use the [next-chat handoff](next-chat-handoff.md) after reading `AGENTS.md`. This checkpoint preserves the earlier conceptual-design progression; its historical next-action narrative is superseded by the handoff and Bertom linkage review.
+For current state and the next review boundary, use the [next-chat handoff](../current/next-chat-handoff.md) after reading `AGENTS.md`. This checkpoint preserves the earlier conceptual-design progression; its historical next-action narrative is superseded by the handoff and Bertom linkage review.
 
 ## Objective and accepted direction
 

@@ -1,7 +1,7 @@
 # Bertom: three starting points into one evidence network
 
 - Reviewed: 2026-11-02. Status: manual conceptual walkthrough of bounded source evidence, not a software traversal, production record or FWWG validation.
-- Basis: [Bertom linkage review](bertom-rock-habitat-linkage-review.md), [workshop priorities](workshop-research-priorities.md), [case screen](../checkpoints/current/cross-system-case-screen.md), and [model-guided report design](../architecture/model-guided-evidence-reports.md). Original hashes and page/cell locators are retained there.
+- Basis: [Bertom linkage review](bertom-rock-habitat-linkage-review.md), [workshop priorities](workshop-research-priorities.md), [case screen](cross-system-case-screen.md), and [model-guided report design](../architecture/model-guided-evidence-reports.md). Original hashes and page/cell locators are retained there.
 - Boundary: explore the same known source objects from three starting items. This is neither a full corpus search nor proof of all institutional knowledge. No EMMA task, GIS match, expert assessment or decision is invented.
 
 ## Shared evidence and link meanings

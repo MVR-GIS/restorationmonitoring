@@ -5,7 +5,7 @@ root <- normalizePath(".", winslash = "/", mustWork = TRUE)
 paths <- file.path(root, c("dev/goals/workshop-research-question-register.json",
   "dev/checkpoints/archive/research_question_ranks.xlsx",
   "dev/goals/bertom-rock-habitat-linkage-review.md",
-  "dev/checkpoints/current/cross-system-case-screen.md",
+  "dev/goals/cross-system-case-screen.md",
   "dev/architecture/fwwg-learning-opportunity-model.md"))
 paths <- normalizePath(paths, winslash = "/", mustWork = TRUE)
 register <- jsonlite::fromJSON(paths[1])

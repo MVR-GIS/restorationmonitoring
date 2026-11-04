@@ -4,7 +4,7 @@ args <- commandArgs(trailingOnly = TRUE)
 root <- normalizePath(".", winslash = "/", mustWork = TRUE)
 source(file.path(root, "R/evidence_walkthrough.R"))
 input_files <- c("R/evidence_walkthrough.R", "dev/goals/bertom-three-entry-model-test.md",
-  "dev/goals/bertom-rock-habitat-linkage-review.md", "dev/checkpoints/current/cross-system-case-screen.md",
+  "dev/goals/bertom-rock-habitat-linkage-review.md", "dev/goals/cross-system-case-screen.md",
   "dev/goals/workshop-research-priorities.md", "dev/architecture/durable-assessment-and-decision-model.md")
 input_paths <- normalizePath(file.path(root, input_files), winslash = "/", mustWork = TRUE)
 graph <- .rm_bertom_evidence()

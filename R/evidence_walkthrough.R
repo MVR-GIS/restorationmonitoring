@@ -19,9 +19,9 @@
       "2015 survey report pp. 3-4; user statement about EMMA tasks.", "2015 survey report pp. 7-9.",
       "Hypothetical analyst-created example; no practitioner author or actual decision."),
     source_url = paste0("https://github.com/MVR-GIS/restorationmonitoring/blob/main/", c(
-      "dev/goals/workshop-research-priorities.md", "dev/checkpoints/current/cross-system-case-screen.md",
+      "dev/goals/workshop-research-priorities.md", "dev/goals/cross-system-case-screen.md",
       "dev/goals/bertom-rock-habitat-linkage-review.md", "dev/goals/bertom-rock-habitat-linkage-review.md",
-      "dev/checkpoints/current/cross-system-case-screen.md", "dev/goals/bertom-rock-habitat-linkage-review.md",
+      "dev/goals/cross-system-case-screen.md", "dev/goals/bertom-rock-habitat-linkage-review.md",
       "dev/goals/bertom-rock-habitat-linkage-review.md", "dev/architecture/durable-assessment-and-decision-model.md")),
     hypothetical = c(rep(FALSE, 7), TRUE), stringsAsFactors = FALSE)
   edges <- data.frame(

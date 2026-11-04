@@ -14,13 +14,13 @@ The user narrowed the question on 2026-11-03 to implemented data tooling and mod
 
 ### Historical goals and objectives compilation, 2026-11-02
 
-The user supplied the FY27 goals/objectives/performance-criteria workbook as a historical compilation intended for EMMA entry. The [Bertom case screen](../checkpoints/current/cross-system-case-screen.md) records its fingerprint, targeted cell locators, proposed objective–practice associations and an observed master-sheet project-label mismatch. The workbook is not evidence that planned entry has happened; the broader workbook has not been fully audited.
+The user supplied the FY27 goals/objectives/performance-criteria workbook as a historical compilation intended for EMMA entry. The [Bertom case screen](cross-system-case-screen.md) records its fingerprint, targeted cell locators, proposed objective–practice associations and an observed master-sheet project-label mismatch. The workbook is not evidence that planned entry has happened; the broader workbook has not been fully audited.
 
 The cited Bertom DPR and PER passages and selected pages of the 2014 mussel monitoring report were subsequently checked in the [bounded linkage review](bertom-rock-habitat-linkage-review.md), which records source hashes, printed and PDF page locators, historical targets, sampling limits and remaining identity and spatial gaps. The user confirms no Bertom monitoring tasks are recorded in EMMA.
 
 ### Project and Restoration Features data exports, 2026-11-02
 
-The user supplied ArcGIS workspace XML exports of Restoration Features data and UMRRDB project data. A targeted Bertom availability review, filenames, SHA-256 fingerprints, record locators and limitations are in the [case screen](../checkpoints/current/cross-system-case-screen.md). The snapshots support a candidate project-ID match and feature leads, but do not contain the required inspected EMMA objective, criterion or task records or establish a survey-to-feature match. Extraction timing, coverage and cross-system identity semantics need confirmation. The exports may contain connection metadata; do not propagate it into context artifacts.
+The user supplied ArcGIS workspace XML exports of Restoration Features data and UMRRDB project data. A targeted Bertom availability review, filenames, SHA-256 fingerprints, record locators and limitations are in the [case screen](cross-system-case-screen.md). The snapshots support a candidate project-ID match and feature leads, but do not contain the required inspected EMMA objective, criterion or task records or establish a survey-to-feature match. Extraction timing, coverage and cross-system identity semantics need confirmation. The exports may contain connection metadata; do not propagate it into context artifacts.
 
 ### Workshop research priorities, 2026-10-21
 

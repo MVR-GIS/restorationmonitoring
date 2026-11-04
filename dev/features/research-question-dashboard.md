@@ -16,7 +16,7 @@ Updated: 2026-10-22. Status: user recognizes coherent case-report milestone; rep
 
 Latest user steering: focus the report on the **Steamboat Island mussel pilot**. Workshop priorities supply background, not the report's organizing structure. The current draft leads with local restoration intent, the proposed response mechanism, selected scientific contributions, evaluation gaps and next steps. A brief WQ-39 background note follows the pilot narrative; ranking figures, the full learning agenda, generic entity inventory and formal project objectives are retained in expandable supporting sections.
 
-The user paused after the 2026-10-20 walkthrough, then explicitly resumed pilot report development on 2026-10-21. Follow the [current checkpoint](../checkpoints/current/science-restoration-design.md). The latest increment resolves embedded warnings and begins the SC-03 scientific instance using accessible publication and dataset sources, with full-method gaps retained.
+The user paused after the 2026-10-20 walkthrough, then explicitly resumed pilot report development on 2026-10-21. The [earlier checkpoint](../checkpoints/archive/science-restoration-design.md) preserves that design progression; use the [current handoff](../checkpoints/current/next-chat-handoff.md) for current state. The increment described here resolved embedded warnings and began the SC-03 scientific instance using accessible publication and dataset sources, with full-method gaps retained.
 
 ## Purpose
 

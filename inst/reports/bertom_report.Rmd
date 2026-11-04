@@ -67,7 +67,7 @@ The author describes apparent colonization in some parts of the channel and disc
 
 ## Sources and review boundary
 
-This is a conceptual practitioner walkthrough based on a bounded source review, not an SME-approved assessment or a production record. Relationships and unresolved questions are documented in `dev/goals/bertom-rock-habitat-linkage-review.md` and `dev/checkpoints/current/cross-system-case-screen.md`. The 1989 DPR table 4-1 and the PER table 1 were visually checked. Raw observations, geospatial overlays, a full corpus inventory and stewardship review were not completed.
+This is a conceptual practitioner walkthrough based on a bounded source review, not an SME-approved assessment or a production record. Relationships and unresolved questions are documented in `dev/goals/bertom-rock-habitat-linkage-review.md` and `dev/goals/cross-system-case-screen.md`. The 1989 DPR table 4-1 and the PER table 1 were visually checked. Raw observations, geospatial overlays, a full corpus inventory and stewardship review were not completed.
 
 ```{r source-table, results='asis'}
 cat(knitr::kable(r$inputs, format = 'html', col.names = c('Input snapshot', 'MD5 fingerprint')))
