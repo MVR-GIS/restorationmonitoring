@@ -89,6 +89,13 @@ repeatable workflow, feature behavior, or resumable state. Update the
 applicable durable artifact. Create a checkpoint only when useful
 unfinished state remains.
 
+Reconcile context affected by the work: correct stale next steps and
+conflicting summaries, check relevant routes and links, and keep
+handoffs concise. Distinguish current guidance from historical records;
+preserve source evidence, accepted decisions, and unrelated changes.
+Limit routine review to the affected area and record broader issues for
+a separate review.
+
 ## Verification and information governance
 
 Run checks proportionate to the change, inspect Git status and diff, and

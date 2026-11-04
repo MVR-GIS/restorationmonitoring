@@ -6,3 +6,4 @@
 4. Update affected durable artifacts before closing consequential work.
 5. Use checkpoints only for unfinished work that another session must resume.
 6. Remove superseded scaffolding after its relevant content is adapted and Git records its history.
+7. When work changes the current context, reconcile affected summaries, routes, links and handoff next steps. Keep historical source evidence and decisions identifiable; do not treat age or repetition alone as grounds for removal. At a meaningful milestone, review the handoff for completed tasks, stale priorities and unnecessary repetition.
