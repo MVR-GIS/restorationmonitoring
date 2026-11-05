@@ -69,7 +69,15 @@ if (r$include_hypothetical) cat('<p><strong>Hypothetical examples are enabled.</
 show(r$assessments, 'No assessment is shown; hypothetical examples are excluded by default.')
 ```
 
-The database currently does not connect the channel/GIS candidates at the detail required for this report. Their absence here does not mean they do not exist. The richer [Bertom source review](https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/goals/bertom-rock-habitat-linkage-review.md) and earlier [multi-entry prototype](https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/features/bertom-multi-entry-prototype.md) preserve those additional source-backed and candidate relationships.
+## Candidate Restoration Features
+
+The following are feature records whose exported project number matches the candidate UMRRDB project reference. This is a **candidate project-level match**, not a verified survey-to-segment relationship, geometry match, exposure or effect. The XML geometry was not imported or interpreted; no map or spatial analysis is implied. The source snapshot identifies the exported feature class and its hash.
+
+```{r features, results='asis'}
+if (is.null(r$features)) cat('<p>The optional Restoration Features snapshot is not present in this database.</p>') else show(r$features, 'No matching feature records were found in this bounded snapshot; this does not establish absence elsewhere.')
+```
+
+The [Bertom source review](https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/goals/bertom-rock-habitat-linkage-review.md) and earlier [multi-entry prototype](https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/features/bertom-multi-entry-prototype.md) preserve additional source-backed and candidate relationships.
 
 ## Snapshot provenance
 

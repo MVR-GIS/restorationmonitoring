@@ -135,6 +135,20 @@ not establish target attainment or project success.
   [project](https://github.com/MVR-GIS/restorationmonitoring/blob/main/pkgdown/assets/reports/bertom-duckdb-multi-project.html)
   HTML snapshot.
 
+- **DuckDB with Restoration Features:**
+  [Question](reports/bertom-duckdb-rf-question.md), [2014
+  survey](reports/bertom-duckdb-rf-survey.md), or
+  [project](reports/bertom-duckdb-rf-project.md). These newer snapshots
+  include seven candidate features linked by project number, without
+  claiming a survey-to-feature match. [Source and spatial design
+  notes](https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/features/restoration-features-duckdb.md).
+  On GitHub, download the
+  [question](https://github.com/MVR-GIS/restorationmonitoring/blob/main/pkgdown/assets/reports/bertom-duckdb-rf-question.html),
+  [survey](https://github.com/MVR-GIS/restorationmonitoring/blob/main/pkgdown/assets/reports/bertom-duckdb-rf-survey.html),
+  or
+  [project](https://github.com/MVR-GIS/restorationmonitoring/blob/main/pkgdown/assets/reports/bertom-duckdb-rf-project.html)
+  snapshot.
+
 - **[View the Bertom multi-entry
   prototype](reports/bertom-multi-entry-20261102.md)** — A curated
   evidence network with question, survey and project starting points;
