@@ -14,7 +14,9 @@ The [bounded Bertom mapping](bertom-tool-model-mapping.md) compares monitoring, 
 
 On 2026-11-05 the user established a relational-first direction toward the enterprise Oracle APEX environment, a portable open-source local prototype, and retrieval/LLM-assisted source extraction. The [relational model and extraction roadmap](relational-model-and-extraction-roadmap.md) translates this conceptual model into a first reviewable logical skeleton and next steps; it is not physical DDL or a deployment decision.
 
-The subsequent [relational vertical slice](relational-vertical-slice.md) and [extraction quality and reprocessing plan](extraction-quality-and-reprocessing.md) develop the ERD, dictionary, case checks and evaluation approach. PostgreSQL is the user-selected development engine; physical schema and Oracle deployment remain future work.
+The subsequent [relational vertical slice](relational-vertical-slice.md) and [extraction quality and reprocessing plan](extraction-quality-and-reprocessing.md) develop the ERD, dictionary, case checks and evaluation approach. DuckDB is the user-selected development engine; its [local prototype and migration crosswalk](duckdb-mvp-and-emma-migration.md) do not constitute an Oracle deployment.
+
+The user has since prioritized a working concept for partner and ROI evaluation. The [expanded domain ERD](relational-vertical-slice.md#erd-source-and-evidence) now includes questions, hypotheses, objectives, criteria, assessments and decisions. Detailed review/change control and extraction-quality benchmarking remain future requirements rather than prototype gates.
 
 ## The model at a glance
 

@@ -203,12 +203,18 @@ sources.
 - **[Relational vertical
   slice](https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/architecture/relational-vertical-slice.md)**
   — Reviewable ERDs, proposed fields and constraints, and
-  Bertom/Steamboat examples for PostgreSQL development and later
-  enterprise review. *Working design.*
+  Bertom/Steamboat examples for DuckDB development and later enterprise
+  review. *Working design.*
+- **[DuckDB prototype and EMMA migration
+  crosswalk](https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/architecture/duckdb-mvp-and-emma-migration.md)**
+  — Run the local relational example and see how its tables correspond
+  to existing EMMA structures. *Local prototype; enterprise migration
+  remains unverified.*
 - **[Extraction quality and reprocessing
   plan](https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/architecture/extraction-quality-and-reprocessing.md)**
-  — How source provenance, human review, evaluation and incremental
-  updates can remain traceable as methods evolve. *Working design.*
+  — Future options for source provenance, human review, evaluation and
+  incremental updates. *Working design; detailed review and quality
+  processes are deferred until after the MVP.*
 - **[Science–restoration relationship
   analysis](https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/architecture/science-restoration-relationships.md)**
   — The distinctions and relationships the cases suggest the model needs

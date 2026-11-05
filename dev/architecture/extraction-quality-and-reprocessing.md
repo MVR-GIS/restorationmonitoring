@@ -2,6 +2,8 @@
 
 Updated 2026-11-05. Status: proposed quality framework, not a validated production process. The user requires high scientific standards, traceability, evolving evaluation methods and repeatable updates as source collections and techniques change. The [relational vertical slice](relational-vertical-slice.md) proposes records for preserving the corresponding evidence and decisions.
 
+**MVP priority update:** the user has placed detailed extraction-quality methods, benchmarking, adjudication and change-control design on hold until a working concept can be evaluated with partners. The sections below preserve future requirements and options, not current implementation gates. For the MVP, retain available source and run attribution, distinguish extracted proposals from confirmed facts, and demonstrate the core objects; do not imply an evaluation or partnership approval has already occurred.
+
 ## Traceable, replaceable stages
 
 Treat source registration, text/OCR, segmentation, indexing, retrieval, extraction, validation, expert review and publication as separately versioned stages with explicit inputs and outputs. Record source byte hashes and rights/access; page/section/table locators; text extraction method/version; segmentation policy; index content and corpus version; query and filters; retrieved ranks and scores; model/provider and available revision; prompt/schema version; code/dependency/environment revision; parameters and random seed where meaningful; candidate content; review decisions; and resulting record versions. Protect restricted information and credentials. Model output and candidate provenance are retained subject to enterprise policy.
