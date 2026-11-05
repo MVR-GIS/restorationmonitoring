@@ -2,6 +2,8 @@
 
 Reviewed: 2026-10-16. The user's [KnowledgeGraphs collection](https://www.zotero.org/groups/4862069/usace_ecomodeling/collections/CLHU5MJG/collection) informed the project's expectations. Its public library interface displayed 89 items. This assessment screens the visible title coverage and examines a purposeful selection of ten directly relevant publications, with reading depth specified below. It is a focused design review, not a systematic review or full-text review of all 89 items. Collection attachments were not comprehensively acquired. Sources remain in Zotero and their original repositories.
 
+**Direction update, 2026-11-05:** the user intends a retrieval-augmented, LLM-assisted extraction and analysis workflow. The earlier caution below remains relevant: retrieval does not substitute for explicit source-supported, reviewed relationships. The [relational and extraction roadmap](../architecture/relational-model-and-extraction-roadmap.md) records the current design direction.
+
 ## Assessment
 
 The central expectation is well grounded as a design hypothesis: explicit, traceable relationships can help partnership members discover relevant work, compare findings, examine the scientific basis of restoration, and preserve institutional knowledge. The reviewed literature provides implemented examples of knowledge organization and integration, alongside proposals for extending these capabilities to restoration. It does not establish that this project will improve UMRR collaboration, scientific inference, or ecological outcomes. Those are different benefits requiring different evidence.

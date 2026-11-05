@@ -7,10 +7,10 @@ This guide is a starting point for program managers, scientists,
 restoration practitioners and partners who want to explore the work
 behind that question. It brings together selected research and
 development documents for the proposed science and restoration
-integration component of the **Environmental Monitoring and Management
-Application (EMMA)**, supporting the Upper Mississippi River Restoration
-(UMRR) and Navigation and Ecosystem Sustainability Program (NESP)
-communities.
+integration component of the the Upper Mississippi River Restoration
+(UMRR) Program’s **Environmental Monitoring and Management Application
+(EMMA)**, supporting both UMRR and Navigation and Ecosystem
+Sustainability Program (NESP) communities.
 
 The guide leads directly into the working documents in `dev/`. Those
 documents retain the evidence, design reasoning and unanswered questions
@@ -195,6 +195,20 @@ sources.
   report](https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/architecture/data-model-design-report.md)**
   — A consolidated view of the proposed objects, relationships,
   existing-system anchors and open choices. *Working design.*
+- **[Relational model and extraction
+  roadmap](https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/architecture/relational-model-and-extraction-roadmap.md)**
+  — A first table-oriented logical sketch, enterprise and local
+  prototyping boundaries, and retrieval-assisted document extraction.
+  *Working design; not production DDL.*
+- **[Relational vertical
+  slice](https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/architecture/relational-vertical-slice.md)**
+  — Reviewable ERDs, proposed fields and constraints, and
+  Bertom/Steamboat examples for PostgreSQL development and later
+  enterprise review. *Working design.*
+- **[Extraction quality and reprocessing
+  plan](https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/architecture/extraction-quality-and-reprocessing.md)**
+  — How source provenance, human review, evaluation and incremental
+  updates can remain traceable as methods evolve. *Working design.*
 - **[Science–restoration relationship
   analysis](https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/architecture/science-restoration-relationships.md)**
   — The distinctions and relationships the cases suggest the model needs

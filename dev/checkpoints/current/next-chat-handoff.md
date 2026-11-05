@@ -1,6 +1,6 @@
 # Handoff: science and restoration integration design
 
-- Updated: 2026-11-03
+- Updated: 2026-11-05
 - Status: active conceptual-design work; no production implementation is authorized
 - Use: concise rehydration for the next chat. Read this after `AGENTS.md`; then open only the linked maintained artifacts needed for the task.
 
@@ -9,6 +9,8 @@
 Design the **science and restoration integration component of the Environmental Monitoring and Management Application (EMMA)** for UMRR/NESP. It must help a mature, distributed partnership link questions, hypotheses, designs, restoration implementations, observations, analyses, findings, performance assessments and adaptive-management decisions across projects, disciplines and decades. It supports existing workflows rather than replacing them.
 
 ## Directions accepted from the user
+
+- Prioritize a durable relational, table-based logical model and ERDs for eventual enterprise Oracle APEX deployment; the user identifies the existing AWS-hosted environment and Oracle as the probable target. The user selected PostgreSQL for development; version, provisioning, physical DDL, enterprise integration and deployment remain open. Plan retrieval-augmented, LLM-assisted extraction with rigorous quality assessment, traceable review, evolving methods and reproducible incremental updates. See [relational model and extraction roadmap](../../architecture/relational-model-and-extraction-roadmap.md).
 
 - Build inductively from program artifacts. Preserve source/version/locator, documented statements, assistant proposals, uncertainty and review state.
 - Existing EMMA anchor: HREP → Project Objective → Performance Criterion → Monitoring Task → Observation. Exported objective–criterion and task–criterion many-to-many relationships must remain intact.
@@ -49,6 +51,8 @@ Design the **science and restoration integration component of the Environmental 
 The root `AGENTS.md` now contains the same source-family routing. Do not reread the archived transcript or scan all of `UMRR/` by default.
 
 ## Next safe action
+
+The [relational vertical slice](../../architecture/relational-vertical-slice.md) now proposes ERDs, a field dictionary, constraints and case checks; the [quality and reprocessing plan](../../architecture/extraction-quality-and-reprocessing.md) records evaluation and update requirements. Review the open integrity and governance decisions, then implement a bounded PostgreSQL schema and fixtures when ready; do not assume automatic acceptance or enterprise deployment. Historical snapshots and prior discussions of SQLite are superseded by the PostgreSQL direction.
 
 The user clarified on 2026-11-03 that manuals, AM program descriptions and construction/project tracking are insufficient: the goal is inspectable data models and preferably open-source tooling for long-term governance of science–restoration integration. The [tooling watch](../../goals/science-am-tooling-watch.md) supersedes the earlier broad review's comparison priorities. No verified open end-to-end replacement emerged from the bounded search. Continue conceptual design and report work while examining concrete partial candidates, particularly AMMonitor/AMModels, Miradi's model, NPAM, ORKG and SEPIO; repositories for the USGS R packages returned 403 in direct browsing. Do not stall for broad manual/portal searches or assume outreach, adoption, production records or a technology choice is authorized. The [watch workflow](../../workflows/science-am-tooling-watch.md) gives a bounded, unscheduled refresh process.
 

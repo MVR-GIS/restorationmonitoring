@@ -12,6 +12,10 @@ The [science and adaptive-management tooling watch](../goals/science-am-tooling-
 
 The [bounded Bertom mapping](bertom-tool-model-mapping.md) compares monitoring, intended results, evidence and analysis concepts with AMMonitor, Miradi, SEPIO and AMModels. It records proposed analogies and limits, not validated imports or approved schema changes.
 
+On 2026-11-05 the user established a relational-first direction toward the enterprise Oracle APEX environment, a portable open-source local prototype, and retrieval/LLM-assisted source extraction. The [relational model and extraction roadmap](relational-model-and-extraction-roadmap.md) translates this conceptual model into a first reviewable logical skeleton and next steps; it is not physical DDL or a deployment decision.
+
+The subsequent [relational vertical slice](relational-vertical-slice.md) and [extraction quality and reprocessing plan](extraction-quality-and-reprocessing.md) develop the ERD, dictionary, case checks and evaluation approach. PostgreSQL is the user-selected development engine; physical schema and Oracle deployment remain future work.
+
 ## The model at a glance
 
 The model brings together a learning agenda, restoration activities, scientific evidence and adaptive-management judgments. The diagram is a **map of possible connections**, not a mandatory sequence. A study may address a question without a formal hypothesis; historical evidence may be useful without a recorded EMMA monitoring task; and a finding need not lead to a documented decision.
