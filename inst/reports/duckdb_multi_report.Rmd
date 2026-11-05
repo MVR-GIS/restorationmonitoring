@@ -1,0 +1,78 @@
+---
+title: "Explore linked evidence from three starting points"
+subtitle: "DuckDB relational prototype · bounded Bertom example"
+output:
+  html_document:
+    self_contained: true
+    mathjax: null
+    toc: true
+params:
+  report: null
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=TRUE, error=FALSE)
+r <- params$report
+show <- function(x, empty) if (nrow(x)) cat(knitr::kable(x, format='html', escape=TRUE)) else cat(paste0('<p>', empty, '</p>'))
+```
+
+This is a **curated DuckDB snapshot**, assembled at render time. It does not search the full program corpus or query live EMMA. Relations retain their recorded direction and status. Missing rows mean only that the selected path is not present in this prototype.
+
+## Selected starting point
+
+```{r start, results='asis'}
+cat('<p>Starting type: <strong>', htmltools::htmlEscape(r$start_type), '</strong>.</p>')
+show(r$start, 'No starting record.')
+```
+
+## Studies and surveys
+
+For a survey start, only its linked study version is followed. Question and project starts follow all linked study versions in the fixture; version-selection policy needs future review. Study-level associations do not establish that a finding is attributable to a particular event.
+
+```{r studies, results='asis'}
+show(r$studies, 'No study version is linked to this starting point.')
+show(r$events, 'No survey event is linked to the selected study versions.')
+```
+
+## Research questions and hypotheses
+
+The question–study association may be later proposed relevance, not the original purpose of the study. A hypothesis reached through a question is not thereby established as a study hypothesis.
+
+```{r questions, results='asis'}
+show(r$questions, 'No research question is linked to the selected study versions.')
+show(r$hypotheses, 'No hypothesis is linked through those questions.')
+```
+
+## Project context
+
+Project links include their relation type, status and scope. A UMRRDB project reference is not automatically an EMMA identity or a survey-to-GIS-feature match.
+
+```{r projects, results='asis'}
+show(r$projects, 'No project reference is linked to the selected study versions.')
+```
+
+## Historical project objectives
+
+From a project start these objectives follow its direct recorded associations. From a question or survey they are reached through the study-to-project and project-to-objective associations shown in the table. These are candidate cross-system links; the historical source does not establish an EMMA identity or entry.
+
+```{r objectives, results='asis'}
+show(r$objectives, 'No objective is linked along this path in the prototype.')
+```
+
+## Reported findings and assessments
+
+Findings are linked at the study-version level. Their source locator and source-version hash are retained where recorded; no raw observations or monitoring task are inferred. Multiple source passages can produce multiple rows.
+
+```{r findings, results='asis'}
+show(r$findings, 'No findings are linked to the selected study versions.')
+if (r$include_hypothetical) cat('<p><strong>Hypothetical examples are enabled.</strong> They are not practitioner-authored assessments or decisions.</p>')
+show(r$assessments, 'No assessment is shown; hypothetical examples are excluded by default.')
+```
+
+The database currently does not connect the channel/GIS candidates at the detail required for this report. Their absence here does not mean they do not exist. The richer [Bertom source review](https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/goals/bertom-rock-habitat-linkage-review.md) and earlier [multi-entry prototype](https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/features/bertom-multi-entry-prototype.md) preserve those additional source-backed and candidate relationships.
+
+## Snapshot provenance
+
+```{r provenance, results='asis'}
+show(data.frame(Item=c('Generated (UTC)','Database MD5 at read','DuckDB R package'), Value=c(r$generated_at,r$database_md5,r$duckdb_version)), 'No provenance.')
+```

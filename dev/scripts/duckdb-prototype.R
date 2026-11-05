@@ -4,7 +4,7 @@ if (length(args) > 1L) stop('Supply at most one new database path.')
 if (!requireNamespace('DBI', quietly = TRUE) || !requireNamespace('duckdb', quietly = TRUE))
   stop('Install DBI and duckdb to run the prototype.')
 source('dev/scripts/duckdb-prototype-lib.R', local = TRUE)
-path <- if (length(args)) args[[1]] else 'dev/outputs/duckdb/restoration-prototype-v1-reviewed.duckdb'
+path <- if (length(args)) args[[1]] else 'dev/outputs/duckdb/restoration-prototype-v2.duckdb'
 if (file.exists(path)) stop('Destination already exists; refusing to overwrite: ', path)
 dir.create(dirname(path), recursive = TRUE, showWarnings = FALSE)
 con <- DBI::dbConnect(duckdb::duckdb(), dbdir = path)

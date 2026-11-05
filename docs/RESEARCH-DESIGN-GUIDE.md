@@ -112,6 +112,29 @@ recorded monitoring task for Bertom. The case illustrates why a missing
 task should not prevent people from using a historical report; it does
 not establish target attainment or project success.
 
+- **[View the DuckDB-backed question
+  report](reports/bertom-duckdb-question-20261105.md)** — A
+  question-to-finding report assembled from a local relational fixture
+  at render time, with source and relationship status. *Draft snapshot;
+  not a live query.* [Downloadable
+  snapshot](https://github.com/MVR-GIS/restorationmonitoring/blob/main/pkgdown/assets/reports/bertom-duckdb-question-20261105.html)
+  · [Design and reproduction
+  notes](https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/features/duckdb-question-report.md).
+
+- **DuckDB multi-entry snapshots:** [Start from the
+  question](reports/bertom-duckdb-multi-question.md), [2014
+  survey](reports/bertom-duckdb-multi-survey.md), or
+  [project](reports/bertom-duckdb-multi-project.md). These separate
+  draft reports read the same local fixture at render time; candidate
+  associations remain labeled. [Design and reproduction
+  notes](https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/features/duckdb-multi-entry-report.md).
+  When reading this guide on GitHub, download the
+  [question](https://github.com/MVR-GIS/restorationmonitoring/blob/main/pkgdown/assets/reports/bertom-duckdb-multi-question.html),
+  [survey](https://github.com/MVR-GIS/restorationmonitoring/blob/main/pkgdown/assets/reports/bertom-duckdb-multi-survey.html)
+  or
+  [project](https://github.com/MVR-GIS/restorationmonitoring/blob/main/pkgdown/assets/reports/bertom-duckdb-multi-project.html)
+  HTML snapshot.
+
 - **[View the Bertom multi-entry
   prototype](reports/bertom-multi-entry-20261102.md)** — A curated
   evidence network with question, survey and project starting points;

@@ -1,0 +1,23 @@
+# DuckDB multi-entry evidence reports
+
+This development prototype creates separate self-contained report snapshots starting from a question, survey event or project reference in the DuckDB fixture. It queries recorded relationships at render time; the HTML does not query the database after rendering. It extends the [earlier question-only report](duckdb-question-report.md), while the [original curated multi-entry prototype](bertom-multi-entry-prototype.md) remains the richer source for channel/GIS candidate details. These reports are not a production API, live EMMA search or complete corpus discovery.
+
+## Reproduce
+
+Create a **new version-2 fixture** as described in the [DuckDB setup and crosswalk](../architecture/duckdb-mvp-and-emma-migration.md); existing version-1 databases do not contain the new `project_objective_link` table and are not automatically migrated. With DuckDB/DBI, R Markdown and Pandoc installed, from the repository root:
+
+```text
+Rscript dev/scripts/duckdb-multi-report.R DATABASE.duckdb NEW-REPORT.html question 1
+Rscript dev/scripts/duckdb-multi-report.R DATABASE.duckdb NEW-REPORT.html survey 1
+Rscript dev/scripts/duckdb-multi-report.R DATABASE.duckdb NEW-REPORT.html project 1
+```
+
+The final optional `TRUE` includes a synthetic assessment; it is excluded by default. IDs are local fixture keys: `project 1` means the local external-reference row for UMRRDB project 65, not EMMA project ID 1. Outputs must be distinct new files in existing directories. The driver opens the database read-only, checks its MD5 before/after reading, and records its fingerprint and render time. Source hashes are stored fixture data and not verified against originals at render time.
+
+The [reader](../scripts/duckdb-multi-report-lib.R) follows question–study, survey-event–study-version and project–study associations through explicit tables, then queries findings, event context and sources. Project objectives use the separately attributed `project_objective_link`, rather than silently turning a candidate identity into a direct FK. From a project start, its objective links remain visible even if no study is linked. Question and survey starts reach those objectives through the candidate study–project association. Rows retain both association statuses and scope. Survey starts restrict study versions to the event's linked version; project and question starts include all associated versions. A study-level finding is **not** proof that it is attributable to a particular event.
+
+In-memory tests compare the same question, finding and candidate project/objective associations across all three starts, check original source locator and link status, reject missing starts, verify hypothetical exclusion and test a project with objectives but no study. Reports were rendered from the version-2 local database for each start. No clinical or scientific validation, full corpus search, RAG extraction, final GIS identity or project-success assessment is implied.
+
+## Current gap versus the original walkthrough
+
+The relational fixture does not yet encode the report-described channel and seven GIS candidates as attributed, source-backed practice/feature and survey-location relationships. It therefore does not show them as related facts. No geometry, feature match, intervention effect, historical target evaluation or EMMA task is inferred to make the paths complete. Detailed spatial modeling and source-identity reconciliation remain future work. The reports present tabular snapshots rather than an interactive in-page selector; readers select an entry point when rendering or from the guide's separate links.

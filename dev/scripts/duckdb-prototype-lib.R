@@ -43,6 +43,8 @@ prototype_seed <- function(con, goals_dir = 'dev/goals') {
     put('INSERT INTO project_objective VALUES (?, ?, ?, ?, ?, ?)', 1L, 'Increase rock substrate aquatic habitat', NA_integer_, NA_integer_, 3L, 'source-reported')
     put('INSERT INTO project_objective VALUES (?, ?, ?, ?, ?, ?)', 2L, 'Establish mussel bed', NA_integer_, NA_integer_, 3L, 'source-reported')
     put('INSERT INTO project_objective VALUES (?, ?, ?, ?, ?, ?)', 3L, 'Island restoration and protection: restore 50% of lost island acreage/topography and protect it from erosion', NA_integer_, NA_integer_, 4L, 'source-reported')
+    put('INSERT INTO project_objective_link VALUES (?, ?, ?, ?, ?, ?, ?)', 1L, 1L, 1L, 'candidate project association', 'assistant-proposed', 'Historical objective names Bertom; match to UMRRDB project 65 is a candidate, not an EMMA identity.', 3L)
+    put('INSERT INTO project_objective_link VALUES (?, ?, ?, ?, ?, ?, ?)', 2L, 1L, 2L, 'candidate project association', 'assistant-proposed', 'Historical objective names Bertom; match to UMRRDB project 65 is a candidate, not an EMMA identity.', 3L)
     put('INSERT INTO performance_criterion VALUES (?, ?, CAST(? AS DATE), ?, ?, ?)', 1L, 'At 10 years, affected island acreage is not less than as-built acreage', NA_character_, NA_integer_, 5L, 'source-reported')
     put('INSERT INTO objective_criterion VALUES (?, ?, ?, ?)', 3L, 1L, 5L, 'Steamboat planned criterion; not an evaluation result.')
     put('INSERT INTO finding VALUES (?)', 1L)

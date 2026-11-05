@@ -1,0 +1,57 @@
+---
+title: "Explore a research question through linked evidence"
+subtitle: "DuckDB relational prototype · bounded Bertom example"
+output:
+  html_document:
+    self_contained: true
+    mathjax: null
+    toc: true
+    toc_depth: 2
+params:
+  report: null
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=TRUE, error=FALSE)
+r <- params$report
+```
+
+This is a **local, curated prototype** read from a DuckDB database at render time. It does not query EMMA or search the complete institutional record. Relationships, source coverage and assessments retain the status shown below; no project-success conclusion is implied. The saved HTML is a snapshot, not a live database view.
+
+## Starting question
+
+```{r question, results='asis'}
+cat(knitr::kable(r$question, format='html', escape=TRUE))
+```
+
+## Related hypotheses
+
+The hypothesis and its relationship to the question may be proposed interpretations, not adopted project statements.
+
+```{r hypotheses, results='asis'}
+if (nrow(r$hypotheses)) cat(knitr::kable(r$hypotheses, format='html', escape=TRUE)) else cat('<p>No hypothesis link is recorded in this prototype.</p>')
+```
+
+## Studies and reported findings
+
+The relationship's direction, status and scope explain why a study appears. Source hashes identify the cited file version; they do not establish that the relationship is scientifically validated. A survey or report finding can exist without a recorded EMMA monitoring task or recovered raw observations.
+
+```{r findings, results='asis'}
+if (nrow(r$findings)) cat(knitr::kable(r$findings, format='html', escape=TRUE)) else cat('<p>No linked findings are recorded in this prototype. This is not proof that none exist.</p>')
+```
+
+## Assessments
+
+```{r assessments, results='asis'}
+if (r$include_hypothetical) cat('<p><strong>Illustrative records are enabled.</strong> Hypothetical entries are not practitioner-authored assessments or decisions.</p>')
+if (nrow(r$assessments)) cat(knitr::kable(r$assessments, format='html', escape=TRUE)) else cat('<p>No assessment is shown. Hypothetical examples are excluded by default; absence here does not prove none exist elsewhere.</p>')
+```
+
+## Scope and provenance
+
+Source-document identity, passage locators and hashes above come from the database. The local fixture uses prior source reviews, not an automated extraction run or a live systems connection. [Bertom source and linkage review](https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/goals/bertom-rock-habitat-linkage-review.md) and the [DuckDB prototype and migration crosswalk](https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/architecture/duckdb-mvp-and-emma-migration.md) explain the scope and known gaps.
+
+```{r provenance, results='asis'}
+cat(knitr::kable(data.frame(Item=c('Generated (UTC)', 'Database MD5 at read', 'DuckDB R package'),
+  Value=c(r$generated_at, r$database_md5, r$duckdb_version)), format='html', escape=TRUE))
+```
