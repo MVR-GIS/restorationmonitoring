@@ -112,6 +112,20 @@ recorded monitoring task for Bertom. The case illustrates why a missing
 task should not prevent people from using a historical report; it does
 not establish target attainment or project success.
 
+- **Redesigned DuckDB evidence reports:** [Start from the
+  question](reports/bertom-styled-question.md), [2014
+  survey](reports/bertom-styled-survey.md), or
+  [project](reports/bertom-styled-project.md). These static snapshots
+  share the Steamboat report’s visual style and show source-backed
+  records, provisional relationships and expandable details. [Report
+  notes](https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/features/duckdb-multi-entry-report.md).
+  On GitHub, download the
+  [question](https://github.com/MVR-GIS/restorationmonitoring/blob/main/pkgdown/assets/reports/bertom-styled-question.html),
+  [survey](https://github.com/MVR-GIS/restorationmonitoring/blob/main/pkgdown/assets/reports/bertom-styled-survey.html),
+  or
+  [project](https://github.com/MVR-GIS/restorationmonitoring/blob/main/pkgdown/assets/reports/bertom-styled-project.html)
+  snapshot.
+
 - **[View the DuckDB-backed question
   report](reports/bertom-duckdb-question-20261105.md)** — A
   question-to-finding report assembled from a local relational fixture
@@ -147,6 +161,20 @@ not establish target attainment or project success.
   [survey](https://github.com/MVR-GIS/restorationmonitoring/blob/main/pkgdown/assets/reports/bertom-duckdb-rf-survey.html),
   or
   [project](https://github.com/MVR-GIS/restorationmonitoring/blob/main/pkgdown/assets/reports/bertom-duckdb-rf-project.html)
+  snapshot.
+
+- **DuckDB with UMRR-DB and Restoration Features:**
+  [Question](reports/bertom-umrrdb-question.md), [2014
+  survey](reports/bertom-umrrdb-survey.md), or
+  [project](reports/bertom-umrrdb-project.md). These latest snapshots
+  also display the UMRR-DB project record and source fingerprint.
+  Project status is not an ecological assessment. [Report
+  notes](https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/features/duckdb-multi-entry-report.md).
+  On GitHub, download the
+  [question](https://github.com/MVR-GIS/restorationmonitoring/blob/main/pkgdown/assets/reports/bertom-umrrdb-question.html),
+  [survey](https://github.com/MVR-GIS/restorationmonitoring/blob/main/pkgdown/assets/reports/bertom-umrrdb-survey.html),
+  or
+  [project](https://github.com/MVR-GIS/restorationmonitoring/blob/main/pkgdown/assets/reports/bertom-umrrdb-project.html)
   snapshot.
 
 - **[View the Bertom multi-entry

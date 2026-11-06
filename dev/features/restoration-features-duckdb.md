@@ -30,13 +30,17 @@ The local build is `dev/outputs/duckdb/restoration-full-rf-20261106.duckdb`: all
 
 ## UMRR-DB projects export
 
-When the coworker's GeoPackage arrives, inspect its layer names, fields, CRS and date, then import the exact projects layer into the existing **local** prototype's separate `umrrdb` schema:
+The supplied `../UMRR/UMRR-DB/UMRRDB_Projects_20261106.gpkg` has SHA-256 `05f0944cd7b138832d6c4e2d149e803ba3d4c611019291ebd1d704025a5df755`. Its `Projects` layer contains 140 records in NAD83 / UTM zone 15N (EPSG:26915), with multipolygon geometry. All 140 project IDs are distinct and non-null. Fifteen project geometries are null in the source; the 125 non-null geometries passed DuckDB's `ST_IsValid` check. This is a basic technical check, not confirmation of project boundaries, temporal currency or spatial applicability. Project 65 has the short name Bertom McCartney Lakes, consistent with the earlier XML project record; this alone does not establish EMMA identity or survey exposure.
+
+The layer is imported into the local database `dev/outputs/duckdb/restoration-umrrdb-projects-v1.duckdb` as `umrrdb.src_Projects`. Source and imported counts match, and bidirectional `EXCEPT ALL` comparisons found no row differences as read by DuckDB. The 27 Restoration Features layers and existing science and reconciliation records remain present. The GeoPackage is an independently maintained source snapshot; the local copy is not a live connection, a source-system write-back mechanism or a complete reproduction of original geodatabase constraints and domains. The ignored local database is not a backup.
+
+To repeat this increment, first use [copy_checkpointed_database](../scripts/duckdb-copy-checkpoint.R) to create a **new** copy of the prior local database with other connections closed. Then import the exact projects layer into that copy's separate `umrrdb` schema:
 
 ```text
-Rscript dev/scripts/duckdb-import-umrrdb.R dev/outputs/duckdb/restoration-full-rf-20261106.duckdb PATH/TO/projects.gpkg EXACT_LAYER_NAME dev/outputs/duckdb-extensions
+Rscript dev/scripts/duckdb-import-umrrdb.R dev/outputs/duckdb/NEW-COPY.duckdb ../UMRR/UMRR-DB/UMRRDB_Projects_20261106.gpkg Projects dev/outputs/duckdb-extensions
 ```
 
-This adds `umrrdb.src_<layer name>`, `umrrdb.import_source` and `umrrdb.import_layer` transactionally. It refuses to overwrite a previously imported snapshot and does not alter the GeoPackage or establish identity links; use a new database for a later snapshot. The import mechanism is tested with a synthetic projects layer; the coworker's export, schema, identifiers and CRS have not yet been verified. This command modifies the named local DuckDB file, so disconnect other processes first. It must not target enterprise systems.
+This adds `umrrdb.src_<layer name>`, `umrrdb.import_source` and `umrrdb.import_layer` transactionally. It refuses to overwrite a previously imported snapshot and does not alter the GeoPackage or establish identity links; use a new database for a later snapshot. This command modifies the named local DuckDB file, so disconnect other processes first. It must not target enterprise systems. The [multi-entry reports](duckdb-multi-entry-report.md) can now display a project snapshot through the recorded UMRR-DB identifier. Differential refresh and cross-system identity reconciliation remain future work.
 
 ## GeoPackage staging
 

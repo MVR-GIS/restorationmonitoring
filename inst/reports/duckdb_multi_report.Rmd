@@ -1,88 +1,142 @@
 ---
-title: "Explore linked evidence from three starting points"
-subtitle: "DuckDB relational prototype · bounded Bertom example"
+title: "Bertom & McCartney Lakes"
+subtitle: "Following an evidence trail across a project's history"
 output:
   html_document:
     self_contained: true
     mathjax: null
-    toc: true
+    toc: false
 params:
   report: null
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=TRUE, error=FALSE)
+knitr::opts_chunk$set(echo=FALSE,message=FALSE,warning=TRUE,error=FALSE)
 r <- params$report
-show <- function(x, empty) if (nrow(x)) cat(knitr::kable(x, format='html', escape=TRUE)) else cat(paste0('<p>', empty, '</p>'))
+esc <- function(x) { y <- as.character(x); y[is.na(x)] <- ''; as.character(htmltools::htmlEscape(y)) }
+table_html <- function(x,empty='No records are connected along this path in the snapshot.') {
+  if(is.null(x)) return('<p class="muted">This optional source snapshot is not available in this database.</p>')
+  if(!nrow(x)) return(paste0('<p class="muted">',esc(empty),'</p>'))
+  paste0('<div class="table-wrap">',paste(knitr::kable(x,format='html',escape=TRUE),collapse='\n'),'</div>')
+}
+panel <- function(title,x,empty='No records are connected along this path in the snapshot.') cat('<details><summary>',esc(title),'</summary>',table_html(x,empty),'</details>')
 ```
 
-This is a **curated DuckDB snapshot**, assembled at render time. It does not search the full program corpus or query live EMMA. Relations retain their recorded direction and status. Missing rows mean only that the selected path is not present in this prototype.
+<style>
+:root{--ink:#17303c;--blue:#1d5567;--teal:#087f76;--gold:#b56d20;--paper:#f4f7f5;--line:#d6e2df}
+body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:#f8faf8;line-height:1.6;font-size:16px}
+.main-container{max-width:1120px!important;background:#fff;padding:2.4rem 3rem 5rem;box-shadow:0 8px 40px #17303c10}
+h1.title{font-size:clamp(2.4rem,5vw,4rem);font-weight:750;letter-spacing:-.035em;margin-bottom:.2em;color:#17303c}
+h4.subtitle{color:var(--blue);font-size:1.15rem;font-weight:500;margin-bottom:2rem}
+h2{font-size:1.85rem;letter-spacing:-.02em;margin-top:2.7rem;padding-top:.6rem;border-top:2px solid var(--line)}h3{font-size:1.25rem;color:var(--blue);margin-top:1.7rem}
+a{color:#006e70;text-decoration:underline;text-underline-offset:3px}a:focus,summary:focus{outline:3px solid #e1a94f;outline-offset:3px}
+.lead{font-size:1.23rem;max-width:76ch;color:#304d59}.banner{border-left:5px solid var(--gold);background:#fff7e9;padding:1rem 1.3rem;margin:1.4rem 0;border-radius:0 8px 8px 0}
+.navline{display:flex;flex-wrap:wrap;gap:.65rem;margin:1.3rem 0 2rem}.navline a{background:#edf4f2;border-radius:99px;padding:.35rem .8rem;font-size:.9rem}
+.eyebrow{text-transform:uppercase;letter-spacing:.11em;font-size:.73rem;font-weight:750;color:var(--teal)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:1rem;margin:1.2rem 0}.card{padding:1.2rem;border:1px solid var(--line);border-radius:10px;background:var(--paper)}.card strong{display:block;font-size:1.06rem;line-height:1.3;margin:.4rem 0}.card p{font-size:.92rem;margin:.35rem 0}
+.path{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.7rem;margin:1.4rem 0}.path div{padding:1rem;border-top:4px solid var(--teal);background:#f3f8f6;border-radius:5px}.path span{display:block;font-size:.79rem;font-weight:700;color:var(--teal);margin-bottom:.3rem}
+.focus{background:#eaf4f2;padding:1.4rem;border-radius:10px;font-size:1.12rem;border:1px solid #bedad3}.pill{display:inline-block;font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;border-radius:20px;background:#fff1d7;color:#764608;padding:.18rem .55rem;font-weight:750}
+details{border:1px solid var(--line);border-radius:8px;margin:.7rem 0;background:#fff}summary{cursor:pointer;padding:1rem;font-weight:700;color:var(--blue)}details[open] summary{border-bottom:1px solid var(--line)}details>p,details>ul{margin:1rem}
+.table-wrap{overflow-x:auto;margin:1rem}table{border-collapse:collapse;width:100%;font-size:.9rem}th,td{padding:.65rem .75rem;text-align:left;vertical-align:top;border-bottom:1px solid #e3ebe8;min-width:90px}th{background:#eff5f3}td{max-width:460px}tbody tr:nth-child(even){background:#fafcfb}.muted{color:#557078}.small{font-size:.87rem}.meta{font-size:.85rem;color:#506b73}
+@media(max-width:650px){.main-container{padding:1.3rem 1.2rem 3rem}h2{font-size:1.5rem}.path{grid-template-columns:1fr 1fr}}
+</style>
 
-## Selected starting point
+<p class="eyebrow">Science &amp; restoration integration · model review</p>
+<p class="lead">How do a research question, a historical project and a later survey connect—and what can the surviving evidence actually tell us?</p>
+<div class="banner"><strong>Read this as a design prototype.</strong> This report assembles a bounded DuckDB snapshot at render time. It does not search all program holdings or query live EMMA. A connected path is not, by itself, evidence of a restoration effect or project success.</div>
+<nav class="navline" aria-label="Report sections"><a href="#starting-point">Starting point</a><a href="#project">Project and intent</a><a href="#survey">Study and survey</a><a href="#findings">Findings</a><a href="#features">Restoration features</a><a href="#records">Explore records</a></nav>
+
+## Your starting point {#starting-point}
 
 ```{r start, results='asis'}
-cat('<p>Starting type: <strong>', htmltools::htmlEscape(r$start_type), '</strong>.</p>')
-show(r$start, 'No starting record.')
+cat('<div class="focus"><span class="pill">Starting from ',esc(r$start_type),'</span>')
+if('description' %in% names(r$start)) cat('<p>',esc(r$start$description[1]),'</p>')
+if(r$start_type=='project') cat('<p>UMRR-DB project reference <strong>',esc(r$start$project_id[1]),'</strong> · ',esc(r$start$namespace[1]),'.</p>')
+cat('</div>')
 ```
 
-## Studies and surveys
+The same underlying case can be viewed from a question, survey or project. The selected route determines which recorded relationships are followed; a different start may expose a different subset of the evidence.
 
-For a survey start, only its linked study version is followed. Question and project starts follow all linked study versions in the fixture; version-selection policy needs future review. Study-level associations do not establish that a finding is attributable to a particular event.
+<div class="path"><div><span>01 · QUESTION</span>A research question and any recorded relevance</div><div><span>02 · PROJECT</span>Historical intent and a candidate project connection</div><div><span>03 · SURVEY</span>A documented study event and reported findings</div><div><span>04 · FEATURES</span>GIS records linked by project number</div></div>
 
-```{r studies, results='asis'}
-show(r$studies, 'No study version is linked to this starting point.')
-show(r$events, 'No survey event is linked to the selected study versions.')
+## Project and historical intent {#project}
+
+The project association has its own status and scope. For question and survey starts, the UMRR-DB record is reached through the candidate study–project link; a project start follows its reference directly. An exported project status or completion date is not an ecological assessment.
+
+```{r project-summary, results='asis'}
+if(is.null(r$project_snapshot)) {
+  cat('<p class="muted">The optional UMRR-DB Projects snapshot is not present in this database.</p>')
+} else if(!nrow(r$project_snapshot)) {
+  cat('<p class="muted">No matching project was found for this path in the imported snapshot; this does not establish absence elsewhere.</p>')
+} else {
+  cat('<div class="grid">')
+  for(i in seq_len(nrow(r$project_snapshot))) {p<-r$project_snapshot[i,];cat('<div class="card"><span class="eyebrow">UMRR-DB · project ',esc(p$project_id),'</span><strong>',esc(p$project_name),'</strong><p>',esc(p$district),' · ',esc(p$pool),'</p><p>Exported phase: ',esc(p$phase),'<br>Exported status: ',esc(p$status),'</p><p class="meta">Geometry: ',esc(p$geometry_status),'</p></div>')}
+  cat('</div>')
+}
+if(nrow(r$objectives)) {
+  cat('<h3>Historical objectives along this path</h3><div class="grid">')
+  for(i in seq_len(nrow(r$objectives))) {o<-r$objectives[i,];cat('<div class="card"><span class="eyebrow">',esc(o$objective_status),'</span><strong>',esc(o$objective_text),'</strong><p>Project association: ',esc(o$objective_relation_status),'.</p><p class="meta">',esc(o$objective_scope),'</p></div>')}
+  cat('</div>')
+} else cat('<p class="muted">No objective is linked along this path in the prototype.</p>')
+panel('Inspect project links and their status',r$projects)
+panel('Inspect the UMRR-DB snapshot and provenance',r$project_snapshot)
+panel('Inspect objective associations and source locators',r$objectives)
 ```
 
-## Research questions and hypotheses
+Historical objectives and their candidate project associations do not establish that those objectives were entered into EMMA or that a historical target was attained. A UMRR-DB project identifier is not automatically an EMMA project identity.
 
-The question–study association may be later proposed relevance, not the original purpose of the study. A hypothesis reached through a question is not thereby established as a study hypothesis.
+## Study and survey {#survey}
 
-```{r questions, results='asis'}
-show(r$questions, 'No research question is linked to the selected study versions.')
-show(r$hypotheses, 'No hypothesis is linked through those questions.')
+For a survey start, the report follows only its linked study version. Question and project starts follow all associated versions in this fixture. A study-level association does not by itself attribute every finding to a particular event.
+
+```{r survey, results='asis'}
+if(nrow(r$studies)) {cat('<div class="grid">');for(i in seq_len(nrow(r$studies))) {s<-r$studies[i,];cat('<div class="card"><span class="eyebrow">Study version ',esc(s$study_version_id),'</span><strong>',esc(s$title),'</strong><p>',esc(s$description),'</p></div>')};cat('</div>')}
+if(nrow(r$events)) {cat('<div class="grid">');for(i in seq_len(nrow(r$events))) {e<-r$events[i,];cat('<div class="card"><span class="eyebrow">Documented event</span><strong>',esc(e$description),'</strong><p>',esc(e$start_date),' to ',esc(e$end_date),'</p><p class="meta">',esc(e$source_title),' · ',esc(e$source_locator),'</p></div>')};cat('</div>')} else cat('<p class="muted">No survey event is linked to the selected study versions.</p>')
+panel('Inspect study records',r$studies)
+panel('Inspect survey sources and dates',r$events)
 ```
 
-## Project context
+A historical survey can be useful even if a corresponding EMMA monitoring task is not recorded. No task or individual measurement is created to complete the path.
 
-Project links include their relation type, status and scope. A UMRRDB project reference is not automatically an EMMA identity or a survey-to-GIS-feature match.
-
-```{r projects, results='asis'}
-show(r$projects, 'No project reference is linked to the selected study versions.')
-```
-
-## Historical project objectives
-
-From a project start these objectives follow its direct recorded associations. From a question or survey they are reached through the study-to-project and project-to-objective associations shown in the table. These are candidate cross-system links; the historical source does not establish an EMMA identity or entry.
-
-```{r objectives, results='asis'}
-show(r$objectives, 'No objective is linked along this path in the prototype.')
-```
-
-## Reported findings and assessments
-
-Findings are linked at the study-version level. Their source locator and source-version hash are retained where recorded; no raw observations or monitoring task are inferred. Multiple source passages can produce multiple rows.
+## Reported findings and their limits {#findings}
 
 ```{r findings, results='asis'}
-show(r$findings, 'No findings are linked to the selected study versions.')
-if (r$include_hypothetical) cat('<p><strong>Hypothetical examples are enabled.</strong> They are not practitioner-authored assessments or decisions.</p>')
-show(r$assessments, 'No assessment is shown; hypothetical examples are excluded by default.')
+if(nrow(r$findings)) {cat('<div class="grid">');for(i in seq_len(nrow(r$findings))) {f<-r$findings[i,];cat('<div class="card"><span class="eyebrow">',esc(f$authorship_status),'</span><strong>',esc(f$finding_text),'</strong><p class="meta">',esc(f$source_title),' · ',esc(f$source_locator),'</p></div>')};cat('</div>')} else cat('<p class="muted">No findings are linked to the selected study versions.</p>')
+if(r$include_hypothetical) cat('<div class="banner"><strong>Hypothetical examples are enabled.</strong> They are not practitioner-authored assessments or decisions.</div>')
+panel('Inspect finding records and source fingerprints',r$findings)
+panel('Inspect assessments and their status',r$assessments,'No assessment is shown. Hypothetical examples are excluded by default.')
 ```
 
-## Candidate Restoration Features
+Findings are linked at the study-version level. A reported survey result does not by itself establish target attainment, a causal effect or project success. An absent assessment in this snapshot does not prove that no judgment was ever made.
 
-The following are feature records whose exported project number matches the candidate UMRRDB project reference. This is a **candidate project-level match**, not a verified survey-to-segment relationship, exposure or effect. No map or spatial analysis is implied. The source snapshot identifies the exported feature class and its hash.
+## Candidate restoration features {#features}
+
+Feature records below share the project number of the candidate UMRR-DB reference. This is a **candidate project-level match**. It does not establish which segment a survey sampled, spatial exposure, feature identity or ecological effect.
 
 ```{r features, results='asis'}
-if (r$feature_source == 'geopackage') cat('<p>Source: full imported GeoPackage Revetment layer. Geometry presence is reported without asserting a spatial relationship.</p>')
-if (r$feature_source == 'legacy_xml') cat('<p>Source: legacy XML attribute fixture; its geometry was not imported.</p>')
-if (is.null(r$features)) cat('<p>The optional Restoration Features snapshot is not present in this database.</p>') else show(r$features, 'No matching feature records were found in this source snapshot; this does not establish absence elsewhere.')
+if(is.null(r$features)) cat('<p class="muted">The optional Restoration Features snapshot is not present in this database.</p>') else if(!nrow(r$features)) cat('<p class="muted">No matching features were found along this path in the snapshot; this does not establish absence elsewhere.</p>') else {
+  cat('<div class="card"><span class="eyebrow">Source records along this path</span><strong>',nrow(r$features),' candidate feature record',if(nrow(r$features)==1) '' else 's','</strong>')
+  if(r$feature_source=='geopackage') cat('<p>From the imported GeoPackage Revetment layer; geometry presence is recorded without a spatial comparison.</p>')
+  if(r$feature_source=='legacy_xml') cat('<p>From the legacy XML attribute fixture; geometry was not imported.</p>')
+  cat('</div>')
+}
+panel('Inspect feature attributes, geometry status and source hash',r$features)
 ```
 
-The [Bertom source review](https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/goals/bertom-rock-habitat-linkage-review.md) and earlier [multi-entry prototype](https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/features/bertom-multi-entry-prototype.md) preserve additional source-backed and candidate relationships.
+## Explore the connected records {#records}
 
-## Snapshot provenance
+The question–study link may express later proposed relevance rather than the original purpose of a study. A hypothesis reached through a question is not thereby established as that study's hypothesis.
+
+```{r details, results='asis'}
+panel('Research questions and relationship status',r$questions)
+panel('Hypotheses reached through questions',r$hypotheses)
+cat('<details><summary>How to read the model behind this report</summary><p>The report follows separately recorded question–study, study–project and project–objective associations. It retrieves project and feature records using explicitly scoped source identifiers. Each association has its own meaning and status; traversal does not turn a candidate into a verified scientific link.</p></details>')
+```
+
+The [Bertom source review](https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/goals/bertom-rock-habitat-linkage-review.md) provides source context and unresolved questions. The [Research &amp; Design guide](../RESEARCH-DESIGN-GUIDE.html) links the other starting views and earlier prototypes.
+
+## About this snapshot
 
 ```{r provenance, results='asis'}
-show(data.frame(Item=c('Generated (UTC)','Database MD5 at read','DuckDB R package'), Value=c(r$generated_at,r$database_md5,r$duckdb_version)), 'No provenance.')
+cat('<p class="small">Generated ',esc(r$generated_at),' from a local DuckDB snapshot (MD5 <code>',esc(r$database_md5),'</code>; DuckDB R ',esc(r$duckdb_version),'). The saved HTML does not query a live database. Source hashes identify the recorded exports; they are not rechecked against originals at render time.</p>')
 ```

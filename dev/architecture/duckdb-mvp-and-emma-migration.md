@@ -2,7 +2,7 @@
 
 Updated 2026-11-05. Status: **local development prototype**, not a production schema, approved EMMA change, automated LLM extractor or tested Oracle migration. The user selected embedded DuckDB for R-first development, superseding the earlier PostgreSQL selection. PostgreSQL and Oracle are possible later deployment targets; migration requires dialect and enterprise review rather than assuming automatic compatibility.
 
-Restoration Features and UMRR-DB are separately maintained sources, intended for read-only import into this sandbox; EMMA is the independent existing application whose model this work proposes to extend. See the [system boundaries](relational-model-and-extraction-roadmap.md#system-boundaries-and-data-flow). The [Restoration Features GeoPackage](../features/restoration-features-duckdb.md) is now imported in full as local source-layer tables; the science fixture and reports remain bounded, and UMRR-DB's GeoPackage and live connections are not yet available.
+Restoration Features and UMRR-DB are separately maintained sources, intended for read-only import into this sandbox; EMMA is the independent existing application whose model this work proposes to extend. See the [system boundaries](relational-model-and-extraction-roadmap.md#system-boundaries-and-data-flow). The [Restoration Features and UMRR-DB Projects GeoPackages](../features/restoration-features-duckdb.md) are imported as local source-layer tables; the science fixture and reports remain bounded, and live connections are not implemented.
 
 ## Run the local prototype
 
