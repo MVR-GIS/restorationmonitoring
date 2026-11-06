@@ -2,6 +2,8 @@
 steamboat_duckdb_summary <- function(con) {
   get <- function(sql) DBI::dbGetQuery(con,sql)
   if (get('SELECT count(*) n FROM research_alignment_issues')$n != 0) stop('Research identity alignment requires reconciliation.')
+  has_plan_reconciliation <- get("SELECT count(*) n FROM information_schema.views WHERE table_schema='main' AND table_name='plan_reconciliation_issues'")$n==1
+  if (has_plan_reconciliation && get('SELECT count(*) n FROM plan_reconciliation_issues')$n!=0) stop('Steamboat plan reconciliation requires review.')
   r <- list(
     plan=get("SELECT * FROM research_register.plan_extraction WHERE plan_id='steamboat-feasibility'"),
     benefit=get("SELECT * FROM research_register.plan_benefit WHERE plan_id='steamboat-feasibility'"),
@@ -26,7 +28,9 @@ steamboat_duckdb_summary <- function(con) {
     pilot_links=get('SELECT * FROM research_register.pilot_question_link ORDER BY question_id'),
     workshop=get('SELECT * FROM research_register.workshop'),
     workshop_limits=get('SELECT limitation FROM research_register.workshop_limitation ORDER BY position'),
-    workbook_marks=get('SELECT * FROM research_register.workshop_project_mark ORDER BY mark_id'))
+    workbook_marks=get('SELECT * FROM research_register.workshop_project_mark ORDER BY mark_id'),
+    objective_reconciliation=if(has_plan_reconciliation) get('SELECT * FROM plan_objective_comparison ORDER BY objective_id') else NULL,
+    criterion_reconciliation=if(has_plan_reconciliation) get('SELECT * FROM plan_criterion_comparison ORDER BY criterion_id') else NULL)
   if(nrow(r$plan)!=1L || nrow(r$benefit)!=1L || nrow(r$hypothesis)!=1L || nrow(r$instance)!=1L || nrow(r$chain)!=10L) stop('Incomplete Steamboat data; refusing to render.')
   r
 }

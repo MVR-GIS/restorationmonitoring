@@ -121,6 +121,8 @@ These tables expose the model's source-based and proposed records. Use the sourc
 
 ```{r records, results='asis'}
 panel('Planning sources and page locators',r$passages)
+if(!is.null(r$objective_reconciliation)) panel('Candidate alignment: pilot objective and source worksheet',r$objective_reconciliation)
+if(!is.null(r$criterion_reconciliation)) panel('Candidate alignment: pilot criterion and source worksheet',r$criterion_reconciliation)
 panel('Single stated targets and comparators',r$target)
 panel('Conditions attached to planned targets',r$conditions)
 panel('Year-by-year targets as reported',r$series)

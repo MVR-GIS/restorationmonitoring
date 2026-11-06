@@ -22,6 +22,18 @@ The user directs an opinionated model that can represent durable findings, asses
 
 These meanings are proposed to make distinctions inspectable. They do not require separate tables, exclusive types, universal field lists or a single linear sequence. A source may use terms differently; retain its wording and meaning. Scientific claims are not made true by entry, approval or the presence of a confidence label.
 
+## Partnership interpretation and long-term reexamination
+
+The user's consciously postmodern position treats conclusions as situated, attributable interpretations that can be revisited as knowledge and methods evolve. The partnership may reach a shared conclusion, or it may retain competing conclusions. The minimum useful outcome is to make the differences and their scientific bases understandable, not to force agreement. Traceability supports rigorous evaluation of claims; it does not establish that all interpretations are equally supported or that every conclusion is merely subjective.
+
+For each recoverable interpretation, the model should distinguish the **claim or judgment**, its author or group and attribution basis, the reasoning connecting it to evidence, the observations/datasets/analyses or expert knowledge referenced, and source/version/locator, methods, context, uncertainty and limitations. Preserve source-authored statements separately from later analyst or machine reconstructions. Explicitly identify supporting, challenging and contextual evidence where known. A citation alone is not proof of an evidentiary relationship; a missing rationale or original observation stays unknown. A collective assessment and individual dissent can coexist without making an individual speak for the partnership.
+
+Reports should let readers compare claims side by side and follow each claim's rationale to its own evidence, including shared datasets and methods. Sources maintained by different organizations can derive from the same underlying evidence; do not count them as independent confirmations without establishing their lineage. New measurements, methods or evidence can inform a new interpretation while the earlier claim and its then-available basis remain recoverable. Capture changes and supersession with attribution and time when implemented, without treating a later view as automatic proof that an earlier one was unreasonable.
+
+For generations of use, preservation requires more than links or hashes: plan for authorized retention or sustainable access to source versions, observation datasets, metadata, methods and code where available, plus readable/exportable records, backups, migration and ownership. Record inaccessible, missing, restricted or lost material as a gap; do not promise that all artifacts can be recovered. Retention rights, access, preservation responsibilities, authentication and costs require partnership and enterprise decisions.
+
+**Current prototype boundary:** the DuckDB slice carries selected source locators, extracted assertions, relation labels and example rationale. It does not yet implement complete named-actor/contribution attribution, observation-to-claim provenance, competing practitioner-authored judgments, durable version history, source synchronization or archival guarantees. Review, adjudication and change-control mechanics remain future partnership work after the MVP; do not infer approval or invent a reviewer.
+
 ## Minimum conceptual content for a durable judgment
 
 For a practitioner-created finding, assessment or decision, propose capturing enough information to recover:

@@ -1,10 +1,10 @@
 # Goals and requirements crosswalk
 
 - Started: 2026-10-08
-- Updated: 2026-10-30
+- Updated: 2026-11-06
 - Status: requirements reconciled; attributed-linkage pattern accepted for validation; detailed specifications remain proposed
 - Evidence: [program review](umrr-program-review.md), [source register](umrr-source-register.json), [EMMA review](../architecture/emma-crosswalk.md)
-- Boundary: program foundation first; database implementation deferred
+- Boundary: relational development prototypes exist; production implementation remains open
 
 ## Meaning and authority
 
@@ -48,6 +48,10 @@ On 2026-10-09 the user accepted US-02 as the starting point for analysis, added 
 ## Proposed requirements
 
 The user further clarified that artifact-based listing and linking is the inductive foundation of the effort. The relationship vocabulary and requirements should evolve through program-level examination of real artifacts. Descriptive discovery, scientific evaluation, and long-term preservation are distinct outcomes; new insights are not a prerequisite for preservation value.
+
+### Partnership interpretation and continuity clarification
+
+On 2026-11-06 the user clarified an accepted project direction: help partners develop consensus where possible, and otherwise make differing claims, reasons and evidentiary bases intelligible. Preserve the authentic record so future practitioners can revisit it with new observations and measurement methods. This clarifies existing proposed capabilities rather than approving a new workflow or schema. In particular, R-01/R-13/R-18 concern source and continuity; R-03/R-07/R-11 concern observation, methods and evidence; R-05/R-06/R-15/R-17 concern attribution, uncertainty, differing interpretations and their histories. See the [durable judgment model](../architecture/durable-assessment-and-decision-model.md#partnership-interpretation-and-long-term-reexamination) for the distinctions and present gaps. User acceptance of the direction does not independently approve individual requirement specifications, partnership policy or enterprise implementation.
 
 The user's latest clarification establishes support for mature, distributed expert workflows as a design direction. R-15 through R-17 below propose capabilities translating that direction and the desired study-management benefits into observable review evidence. They do not mandate replacement of existing methods or a centralized scientific approval process.
 

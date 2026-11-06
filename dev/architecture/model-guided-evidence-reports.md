@@ -11,6 +11,8 @@ The objective is comprehensive discovery **within the connected and accessible e
 
 The user additionally identifies a need to capture expert findings, assessments and decisions directly when formal artifacts are absent. A future report should discover both document-backed and practitioner-authored judgments while preserving authorship, evidence, reasoning, uncertainty and review/adoption state. See the [durable-judgment model](durable-assessment-and-decision-model.md): EMMA is the likely record system for design purposes, and new formal assessment reports are a possible future program decision, not an existing obligation.
 
+The user wants reports to help partners form consensus where possible and otherwise clarify who holds differing interpretations, their reasoning and the specific observations, datasets, analyses or other evidence behind each. Readers should be able to see shared source lineage, contrary evidence and missing bases without collapsing disagreement into one statement or treating repeated citations as independent evidence. Future users should be able to revisit the historical reasoning with new data or methods. See [partnership interpretation and long-term reexamination](durable-assessment-and-decision-model.md#partnership-interpretation-and-long-term-reexamination). This is a report requirement, not a capability already demonstrated by the curated prototypes.
+
 ## One evidence network, multiple entry points
 
 | Starting item | Conceptual or historical context to explore | Evidence and consequences to explore | Review question |
