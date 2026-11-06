@@ -71,10 +71,12 @@ show(r$assessments, 'No assessment is shown; hypothetical examples are excluded 
 
 ## Candidate Restoration Features
 
-The following are feature records whose exported project number matches the candidate UMRRDB project reference. This is a **candidate project-level match**, not a verified survey-to-segment relationship, geometry match, exposure or effect. The XML geometry was not imported or interpreted; no map or spatial analysis is implied. The source snapshot identifies the exported feature class and its hash.
+The following are feature records whose exported project number matches the candidate UMRRDB project reference. This is a **candidate project-level match**, not a verified survey-to-segment relationship, exposure or effect. No map or spatial analysis is implied. The source snapshot identifies the exported feature class and its hash.
 
 ```{r features, results='asis'}
-if (is.null(r$features)) cat('<p>The optional Restoration Features snapshot is not present in this database.</p>') else show(r$features, 'No matching feature records were found in this bounded snapshot; this does not establish absence elsewhere.')
+if (r$feature_source == 'geopackage') cat('<p>Source: full imported GeoPackage Revetment layer. Geometry presence is reported without asserting a spatial relationship.</p>')
+if (r$feature_source == 'legacy_xml') cat('<p>Source: legacy XML attribute fixture; its geometry was not imported.</p>')
+if (is.null(r$features)) cat('<p>The optional Restoration Features snapshot is not present in this database.</p>') else show(r$features, 'No matching feature records were found in this source snapshot; this does not establish absence elsewhere.')
 ```
 
 The [Bertom source review](https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/goals/bertom-rock-habitat-linkage-review.md) and earlier [multi-entry prototype](https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/features/bertom-multi-entry-prototype.md) preserve additional source-backed and candidate relationships.

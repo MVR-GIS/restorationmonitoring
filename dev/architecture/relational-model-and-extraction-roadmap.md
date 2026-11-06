@@ -6,6 +6,22 @@ Updated 2026-11-05. Status: **user-directed design direction and proposed logica
 
 ## Direction and boundaries
 
+### System boundaries and data flow
+
+The user clarified on 2026-11-06 that **Restoration Features**, **UMRR-DB**, and **EMMA** are independent existing systems. Restoration Features is the complete program repository of GIS restoration features, as described by the user; UMRR-DB is the separately maintained project database. EMMA has its own independent data model. This project is a development sandbox to design and demonstrate an extension of the EMMA model for science–restoration integration, with EMMA the intended future application for new integration records, subject to enterprise and partnership decisions.
+
+Import Restoration Features GIS data and UMRR-DB data as **read-only source snapshots**: the project consumes copies or read-only sources and never writes changes back to those systems. Keep source identifiers, class/namespace, versions and provenance so relationships and refreshes can be checked. Local development tables are writable working copies; read-only here states the source-system boundary, not an already-enforced database permission or a live integration. Existing EMMA structures and source-system ownership remain distinct from proposed science objects. Initial fixtures are partial, not a full import or a replacement system. Connection, refresh, access control, enterprise deployment and migration mechanisms remain to be designed and tested.
+
+```mermaid
+flowchart LR
+  RF[Restoration Features GIS] -->|read-only import| DEV[DuckDB development sandbox]
+  UMRR[UMRR-DB projects] -->|read-only import| DEV
+  EMMA[Existing EMMA model] -->|existing model and data anchors| DEV
+  DEV -->|proposed model and migration design| FUTURE[Future EMMA integration capabilities]
+```
+
+The arrows describe intended information flow, not implemented live connections or authorized production changes. Actual feature identity, project identity across systems and scientific relationships require evidence.
+
 The user identifies EMMA as an application in a USACE enterprise AWS-hosted Oracle APEX environment, and wants enterprise deployment of the eventual integration component as the end goal. Oracle is the **probable target**, not confirmation of a specific database version, infrastructure configuration, access path, schema ownership or deployment authorization. Model the domain explicitly as entities, relational tables and constraints suitable for review in an ERD; do not require Oracle SQL object types merely because the user said object-relational. Confirm enterprise terminology and native features with deployers.
 
 Front-load the logical model, identifiers, boundaries, evidence and governance. The user selected **DuckDB for local R-first development**, superseding the earlier PostgreSQL direction; PostgreSQL remains a potential later target. Deployment and Oracle compatibility remain open. Existing JSON files are interim reviewed extraction artifacts and prototype inputs, not the authoritative future relational contract. Preserve and trace them during transition. See the [relational vertical slice](relational-vertical-slice.md), [DuckDB prototype and migration crosswalk](duckdb-mvp-and-emma-migration.md) and [extraction quality plan](extraction-quality-and-reprocessing.md).

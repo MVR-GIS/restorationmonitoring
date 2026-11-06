@@ -9,7 +9,7 @@ bertom_report_summary <- function(root = ".") {
     "../UMRR/HREPs/Bertrom_McCartney_Lakes/BertromMcCartneyLakes_PER_2004.pdf",
     "../UMRR/HREPs/Bertrom_McCartney_Lakes/2014_BertomMcCartney_PER_Mussels.pdf",
     "../UMRR/EMMA/UMRR_Goals_Objectives_PerfC_FY27_Update.xlsx",
-    "../UMRR/EMMA/UMRRDB_PROJECTs_DDL.xml",
+    "../UMRR/UMRR-DB/UMRRDB_PROJECTs_DDL.xml",
     "../UMRR/RestorationFeatures/RestorationSchema_data_20261102.xml",
     "dev/checkpoints/archive/research_question_ranks.xlsx")
   paths <- normalizePath(file.path(root, files), winslash = "/", mustWork = TRUE)

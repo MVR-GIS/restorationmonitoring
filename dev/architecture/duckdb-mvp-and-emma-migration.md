@@ -2,6 +2,8 @@
 
 Updated 2026-11-05. Status: **local development prototype**, not a production schema, approved EMMA change, automated LLM extractor or tested Oracle migration. The user selected embedded DuckDB for R-first development, superseding the earlier PostgreSQL selection. PostgreSQL and Oracle are possible later deployment targets; migration requires dialect and enterprise review rather than assuming automatic compatibility.
 
+Restoration Features and UMRR-DB are separately maintained sources, intended for read-only import into this sandbox; EMMA is the independent existing application whose model this work proposes to extend. See the [system boundaries](relational-model-and-extraction-roadmap.md#system-boundaries-and-data-flow). The [Restoration Features GeoPackage](../features/restoration-features-duckdb.md) is now imported in full as local source-layer tables; the science fixture and reports remain bounded, and UMRR-DB's GeoPackage and live connections are not yet available.
+
 ## Run the local prototype
 
 Install the R packages `DBI`, `duckdb` and `jsonlite` in an appropriate R library, then from the repository root:
@@ -51,4 +53,4 @@ DuckDB is an embedded analytical engine, not an Oracle or PostgreSQL compatibili
 
 ## Scope and next work
 
-This increment implements the domain skeleton and a manually curated fixture, not retrieval, LLM extraction, a web application, complete provenance, formal review governance or extraction benchmarking. The `source_version.sha256` is required in this prototype, and project/criterion/assessment provenance is simplified; the [logical model](relational-vertical-slice.md) documents open design questions. The engine does not enforce that an `external_reference` has the expected `entity_kind` for each FK; validate this when importing and design stronger constraints before enterprise handoff. The current schema is recreated only in new databases and is not yet a migration framework. The [DuckDB question report](../features/duckdb-question-report.md) now demonstrates a bounded query-to-report path from this fixture; the earlier multi-entry report has not been rewired.
+This increment implements the domain skeleton and a manually curated fixture, not retrieval, LLM extraction, a web application, complete provenance, formal review governance or extraction benchmarking. The `source_version.sha256` is required in this prototype, and project/criterion/assessment provenance is simplified; the [logical model](relational-vertical-slice.md) documents open design questions. The engine does not enforce that an `external_reference` has the expected `entity_kind` for each FK; validate this when importing and design stronger constraints before enterprise handoff. The current schema is recreated only in new databases and is not yet a migration framework. The [DuckDB multi-entry reports](../features/duckdb-multi-entry-report.md) demonstrate bounded query-to-report paths.

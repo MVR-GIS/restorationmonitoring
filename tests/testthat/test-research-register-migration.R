@@ -1,0 +1,27 @@
+test_that('migrated workshop and science records reconcile with reviewed sources', {
+  skip_if_not_installed('duckdb'); skip_if_not_installed('DBI'); skip_if_not_installed('jsonlite')
+  root <- normalizePath(test_path('..','..'), winslash='/')
+  db <- file.path(root,'dev/outputs/duckdb/restoration-research-migration-v3.duckdb')
+  skip_if_not(file.exists(db),'Local migrated development database unavailable')
+  con <- DBI::dbConnect(duckdb::duckdb(),dbdir=db,read_only=TRUE)
+  on.exit(DBI::dbDisconnect(con,shutdown=TRUE),add=TRUE)
+  w <- jsonlite::fromJSON(file.path(root,'dev/goals/workshop-research-question-register.json'))
+  s <- jsonlite::fromJSON(file.path(root,'dev/goals/mussel-science-evidence.json'))
+  q <- DBI::dbGetQuery(con,'SELECT question_id, source_cell, question_text FROM research_register.workshop_question ORDER BY question_id')
+  expect_equal(q$question_id,w$questions$local_id)
+  expect_equal(q$question_text,w$questions$question)
+  expect_equal(q$source_cell,w$questions$source_cell)
+  ranks <- DBI::dbGetQuery(con,'SELECT question_id, reach_id, rank_value FROM research_register.workshop_rank')
+  expect_equal(nrow(ranks),196L)
+  for (field in c('upper_impounded','lower_impounded','unimpounded','illinois_river')) {
+    got <- ranks[ranks$reach_id==field,]; got <- got[match(w$questions$local_id,got$question_id),]
+    expect_equal(got$rank_value,as.numeric(w$questions[[field]]))
+  }
+  a <- DBI::dbGetQuery(con,'SELECT assertion_id, paraphrase, extraction_status FROM research_register.science_assertion ORDER BY assertion_id')
+  expect_equal(a$assertion_id,s$assertions$id)
+  expect_equal(a$paraphrase,s$assertions$paraphrase)
+  expect_equal(a$extraction_status,s$assertions$extraction_status)
+  expect_equal(DBI::dbGetQuery(con,'SELECT count(*) AS n FROM research_register.workshop_project_mark')$n,20)
+  expect_equal(DBI::dbGetQuery(con,'SELECT count(*) AS n FROM research_register.pilot_question_link')$n,4)
+  expect_equal(DBI::dbGetQuery(con,'SELECT count(*) AS n FROM research_register.assertion_derivation')$n,2)
+})

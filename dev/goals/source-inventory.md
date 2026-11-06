@@ -20,6 +20,8 @@ The cited Bertom DPR and PER passages and selected pages of the 2014 mussel moni
 
 ### Project and Restoration Features data exports, 2026-11-02
 
+On 2026-11-06 the user supplied `UMRR/RestorationFeatures/RestorationFeatures_20261106.gpkg` (SHA-256 `070fc007660829b8f9cd449b9d4070c0e9df835e96004f7c7d3c79cd367d5499`) and identified Restoration Features as the complete program GIS repository. All 27 supplied GIS layers were imported and checked against source counts and DuckDB-read values; seven Bertom Revetment records were additionally screened as described in the [import notes](../features/restoration-features-duckdb.md). Source completeness and every feature have not been independently audited. The UMRR-DB projects XML now resides at `UMRR/UMRR-DB/UMRRDB_PROJECTs_DDL.xml`; its previously recorded hash is unchanged. Restoration Features, UMRR-DB and EMMA are separate systems, with read-only imports intended for the first two; see [system boundaries](../architecture/relational-model-and-extraction-roadmap.md#system-boundaries-and-data-flow).
+
 The user supplied ArcGIS workspace XML exports of Restoration Features data and UMRRDB project data. A targeted Bertom availability review, filenames, SHA-256 fingerprints, record locators and limitations are in the [case screen](cross-system-case-screen.md). The snapshots support a candidate project-ID match and feature leads, but do not contain the required inspected EMMA objective, criterion or task records or establish a survey-to-feature match. Extraction timing, coverage and cross-system identity semantics need confirmation. The exports may contain connection metadata; do not propagate it into context artifacts.
 
 ### Workshop research priorities, 2026-10-21

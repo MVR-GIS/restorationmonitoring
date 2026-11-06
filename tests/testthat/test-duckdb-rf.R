@@ -24,6 +24,16 @@ test_that('RF snapshot retains seven source records and keeps synthetic geometry
     report <- env$duckdb_multi_summary(con,type,1)
     expect_equal(nrow(report$features),7L)
     expect_true(all(report$features$source_class=='RESTORATION.Revetment'))
+    expect_equal(report$feature_source, 'legacy_xml')
+  }
+  DBI::dbExecute(con, "CREATE TABLE rf.src_Revetment AS SELECT restorfeatidpk, feature_name AS SDSFEATURENAME, CAST(project_id AS INTEGER) AS PROJECT_ID, 'GeoPackage status' AS RESTORFEATSTATUS, ST_Point(1, 2) AS SHAPE FROM rf.revetment")
+  DBI::dbExecute(con, "CREATE TABLE rf.import_source AS SELECT 'test-geopackage-hash' AS source_sha256")
+  for (type in c('question','survey','project')) {
+    report <- env$duckdb_multi_summary(con,type,1)
+    expect_equal(report$feature_source, 'geopackage')
+    expect_equal(nrow(report$features),7L)
+    expect_true(all(report$features$restorfeatstatus == 'GeoPackage status'))
+    expect_true(all(report$features$source_sha256 == 'test-geopackage-hash'))
   }
   fake <- tempfile(fileext='.xml'); writeLines('<not-the-supplied-export/>',fake)
   on.exit(unlink(fake),add=TRUE)

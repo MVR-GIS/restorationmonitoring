@@ -12,7 +12,7 @@ The long-term ambition is to let a practitioner begin with a research question, 
 
 This approach is intended to help teams discover useful evidence, recognize gaps, identify opportunities to learn and carry their judgments forward as projects and staff change. It is designed to work with incomplete histories: a documented study can be useful even when some records were never created or can no longer be found.
 
-The work builds on EMMA, the Restoration Features geographic information system, research and monitoring sources, and partner knowledge. For design purposes, EMMA is the likely home for future practitioner-authored findings, assessments and decisions; the details remain open.
+EMMA, Restoration Features and UMRR-DB are separate systems. This project is a development sandbox for a proposed extension of EMMA's data model; it draws on read-only imports from the Restoration Features GIS repository and UMRR-DB, along with research, monitoring sources and partner knowledge. For design purposes, EMMA is the likely home for future practitioner-authored findings, assessments and decisions; the details remain open. See the [system boundaries](https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/architecture/relational-model-and-extraction-roadmap.md#system-boundaries-and-data-flow).
 
 ## Explore the work
 
