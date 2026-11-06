@@ -1,0 +1,145 @@
+---
+title: "Steamboat Island"
+subtitle: "A trail from restoration intent to scientific evidence"
+output:
+  html_document:
+    self_contained: true
+    mathjax: null
+    toc: false
+params:
+  report: null
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE,message=FALSE,warning=TRUE,error=FALSE)
+r <- params$report
+esc <- function(x) as.character(htmltools::htmlEscape(ifelse(is.na(x),'',as.character(x))))
+table_html <- function(x) {
+  if (!nrow(x)) return('<p class="muted">No records in this snapshot.</p>')
+  paste0('<div class="table-wrap">',paste(knitr::kable(x,format='html',escape=TRUE),collapse='\n'),'</div>')
+}
+panel <- function(title,x) cat('<details><summary>',esc(title),'</summary>',table_html(x),'</details>')
+```
+
+<style>
+:root{--ink:#17303c;--blue:#1d5567;--teal:#087f76;--gold:#b56d20;--paper:#f4f7f5;--line:#d6e2df}
+body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:#f8faf8;line-height:1.6;font-size:16px}
+.main-container{max-width:1120px!important;background:#fff;padding:2.4rem 3rem 5rem;box-shadow:0 8px 40px #17303c10}
+h1.title{font-size:clamp(2.4rem,5vw,4rem);font-weight:750;letter-spacing:-.035em;margin-bottom:.2em;color:#17303c}
+h4.subtitle{color:var(--blue);font-size:1.15rem;font-weight:500;margin-bottom:2rem}
+h2{font-size:1.85rem;letter-spacing:-.02em;margin-top:2.7rem;padding-top:.6rem;border-top:2px solid var(--line)}
+h3{font-size:1.25rem;color:var(--blue);margin-top:1.7rem}
+a{color:#006e70;text-decoration:underline;text-underline-offset:3px} a:focus,summary:focus{outline:3px solid #e1a94f;outline-offset:3px}
+.lead{font-size:1.23rem;max-width:76ch;color:#304d59}
+.banner{border-left:5px solid var(--gold);background:#fff7e9;padding:1rem 1.3rem;margin:1.4rem 0;border-radius:0 8px 8px 0}
+.navline{display:flex;flex-wrap:wrap;gap:.65rem;margin:1.3rem 0 2rem}.navline a{background:#edf4f2;border-radius:99px;padding:.35rem .8rem;font-size:.9rem}
+.eyebrow{text-transform:uppercase;letter-spacing:.11em;font-size:.73rem;font-weight:750;color:var(--teal)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:1rem;margin:1.2rem 0}
+.card{padding:1.2rem;border:1px solid var(--line);border-radius:10px;background:var(--paper)}.card strong{display:block;font-size:1.06rem;line-height:1.3;margin:.4rem 0}.card p{font-size:.92rem;margin:.35rem 0}
+.path{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.7rem;margin:1.4rem 0}.path div{padding:1rem;border-top:4px solid var(--teal);background:#f3f8f6;border-radius:5px}.path span{display:block;font-size:.79rem;font-weight:700;color:var(--teal);margin-bottom:.3rem}
+.hypothesis{background:#eaf4f2;padding:1.4rem;border-radius:10px;font-size:1.13rem;border:1px solid #bedad3}
+.timeline{border-left:3px solid #b9d7d0;margin-left:.5rem;padding-left:1.5rem}.step{position:relative;padding:0 0 1.1rem}.step:before{content:"";position:absolute;left:-1.95rem;top:.5rem;width:.7rem;height:.7rem;background:var(--teal);border-radius:50%}.step h3{margin:.2rem 0}.meta{font-size:.85rem;color:#506b73}
+details{border:1px solid var(--line);border-radius:8px;margin:.7rem 0;background:#fff}summary{cursor:pointer;padding:1rem;font-weight:700;color:var(--blue)}details[open] summary{border-bottom:1px solid var(--line)}details>p,details>ul{margin:1rem}
+.table-wrap{overflow-x:auto;margin:1rem}table{border-collapse:collapse;width:100%;font-size:.9rem}th,td{padding:.65rem .75rem;text-align:left;vertical-align:top;border-bottom:1px solid #e3ebe8;min-width:90px}th{background:#eff5f3}td{max-width:460px}tbody tr:nth-child(even){background:#fafcfb}
+.muted{color:#557078}.small{font-size:.87rem}.pill{display:inline-block;font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;border-radius:20px;background:#fff1d7;color:#764608;padding:.18rem .55rem;font-weight:750}
+@media(max-width:650px){.main-container{padding:1.3rem 1.2rem 3rem}h2{font-size:1.5rem}.path{grid-template-columns:1fr 1fr}}
+</style>
+
+<p class="eyebrow">Science &amp; restoration integration · model review</p>
+<p class="lead">What can existing science tell us about the mussel habitat benefit anticipated at Steamboat Island—and what would we need to know before evaluating it here?</p>
+<div class="banner"><strong>Read this as a design prototype.</strong> The plan anticipates an ancillary benefit. It does not establish a post-construction mussel response, an adopted local hypothesis or a project-success determination.</div>
+<nav class="navline" aria-label="Report sections"><a href="#path">Evidence pathway</a><a href="#plan">Project plan</a><a href="#science">Scientific basis</a><a href="#newton">Newton study</a><a href="#review">What remains open</a><a href="#records">Explore records</a></nav>
+
+## An evidence pathway {#path}
+
+The model connects objects with different meanings. The proposed links below are prompts for investigation, not established causal steps.
+
+<div class="path"><div><span>01 · INTENT</span>Restoration plan and ancillary mussel benefit</div><div><span>02 · QUESTION</span>Substrate conditions and mussel response</div><div><span>03 · SCIENCE</span>Studies, observations and reported findings</div><div><span>04 · APPLICATION</span>Local evidence and future assessment</div></div>
+
+```{r orientation, results='asis'}
+cat('<div class="grid"><div class="card"><span class="eyebrow">Source-reported plan</span><strong>',esc(r$benefit$classification),'</strong><p>',esc(r$benefit$survey_commitment),'.</p></div>',
+    '<div class="card"><span class="eyebrow">What has been modeled</span><strong>',nrow(r$objectives),' objectives · ',nrow(r$criteria),' planned criteria</strong><p>These are planning records, not evaluated outcomes.</p></div>',
+    '<div class="card"><span class="eyebrow">Research context</span><strong>',nrow(r$chain),' Newton evidence components</strong><p>Source-to-data trace with qualifications and unresolved checks.</p></div></div>')
+```
+
+## The project plan {#plan}
+
+The feasibility extraction identifies formal project objectives separately from an ancillary mussel-habitat benefit. Its objectives and criteria are shown as reported and grouped by the analyst; their correspondence to EMMA records has not been established.
+
+```{r objectives, results='asis'}
+cat('<div class="grid">')
+for(i in seq_len(nrow(r$objectives))) {o<-r$objectives[i,]; cat('<div class="card"><span class="eyebrow">',esc(o$objective_id),'</span><strong>',esc(o$objective_name),'</strong><p>',esc(o$normalized_text),'</p></div>')}
+cat('</div>')
+cat('<p class="muted small">External data opportunity: ',esc(r$benefit$external_data_opportunity),'.</p>')
+panel('Explore all 11 planned criterion assertions',r$criteria)
+panel('Explore five proposed response triggers',r$triggers)
+```
+
+## The scientific bridge {#science}
+
+The hypothesis below was formulated for review using selected science. The arrows describe how the ideas informed its formulation; they do not show that local designers adopted it or that the intervention caused an effect.
+
+```{r hypothesis, results='asis'}
+cat('<div class="hypothesis"><span class="pill">Assistant proposed · SC-08</span><p>',esc(r$hypothesis$hypothesis_text),'</p><p class="small">',esc(r$hypothesis$limitation),'</p></div>')
+selected <- r$assertions[r$assertions$assertion_id %in% r$derivations$informed_by_id[r$derivations$assertion_id=='SC-08'],]
+cat('<div class="grid">')
+for(i in seq_len(nrow(selected))) {a<-selected[i,]; cat('<div class="card"><span class="eyebrow">',esc(a$assertion_id),' · ',esc(a$source_id),'</span><strong>',esc(a$assertion_kind),'</strong><p>',esc(a$paraphrase),'</p><p class="meta">',esc(a$limitation),'</p></div>')}
+cat('</div>')
+```
+
+## Following the Newton study {#newton}
+
+```{r instance, results='asis'}
+cat('<p>',esc(r$instance$reading_depth),' ',esc(r$instance$review_status),'.</p>')
+cat('<p><a href="',esc(r$instance$publication_url),'">Publication abstract</a> · <a href="',esc(r$instance$dataset_url),'">Data release ',esc(r$instance$dataset_doi),'</a></p>')
+cat('<div class="timeline">')
+for(i in seq_len(nrow(r$chain))) {z<-r$chain[i,];cat('<div class="step"><span class="eyebrow">',sprintf('%02d',z$position),' · ',esc(z$basis),'</span><h3>',esc(z$component_type),'</h3><p>',esc(z$description),'</p><p class="meta">Source: ',esc(z$source_locator),'</p></div>')}
+cat('</div>')
+```
+
+## What still needs attention {#review}
+
+The study's habitat comparison is not a restoration treatment at Steamboat. Before transferring its implications, examine differences in location, species, flow conditions, design and timing. No raw observations or new vital-rate calculations are produced by this report.
+
+```{r checks, results='asis'}
+cat('<h3>Newton evidence checks</h3><ul>')
+for(flag in r$flags$flag) cat('<li>',esc(flag),'</li>')
+cat('</ul><h3>Plan reconciliation questions</h3><ul>')
+for(i in seq_len(nrow(r$issues))) cat('<li><strong>',esc(r$issues$issue_id[i]),':</strong> ',esc(r$issues$issue_text[i]),'</li>')
+cat('</ul>')
+```
+
+## Explore the underlying records {#records}
+
+These tables expose the model's source-based and proposed records. Use the source locators to inspect the evidence; current worksheets and links have not been approved as production EMMA data.
+
+<details><summary>How this example exercises the relational model</summary>
+<p>Each arrow below stands for a relationship that can be examined in the model. The planning groupings are analyst-proposed; the science derivations explain a formulation rather than demonstrate an effect.</p>
+<div class="path"><div><span>PLAN</span>Source passage → objective → planned criterion and target</div><div><span>RESPONSE</span>Objective → proposed trigger and response</div><div><span>SCIENCE</span>Scientific source → extracted assertion → proposed hypothesis</div><div><span>STUDY</span>Study evidence instance → components, source locators, review flags and files</div></div>
+<p>The <a href="https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/architecture/steamboat-planning-extraction-duckdb.md">planning ERD</a> and <a href="https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/architecture/research-questions-evidence-relational-design.md">research evidence ERD</a> show the tables and their current boundaries.</p>
+</details>
+
+```{r records, results='asis'}
+panel('Planning sources and page locators',r$passages)
+panel('Single stated targets and comparators',r$target)
+panel('Conditions attached to planned targets',r$conditions)
+panel('Year-by-year targets as reported',r$series)
+panel('Scientific sources and reading depth',r$sources)
+panel('Scientific assertions and their limits',r$assertions)
+panel('Links describing how assertions informed a formulation',r$derivations)
+panel('Newton source files and recorded fingerprints',r$files)
+panel('Proposed workshop question connections',r$pilot_links)
+panel('All workshop research questions',r$questions)
+panel('Workshop reach-specific ranks',r$ranks)
+panel('Recorded workshop project marks',r$workbook_marks)
+panel('Workshop source and limitations',r$workshop)
+cat('<details><summary>Workshop interpretation limits</summary><ul>');for(z in r$workshop_limits$limitation)cat('<li>',esc(z),'</li>');cat('</ul></details>')
+```
+
+## About this snapshot
+
+```{r snapshot, results='asis'}
+cat('<p>Generated ',esc(r$generated_at),' from a local DuckDB snapshot (MD5 <code>',esc(r$database_md5),'</code>; DuckDB R ',esc(r$duckdb_version),'). All case records shown above were queried from that snapshot at render time; this HTML does not query a live database. The feasibility PDF SHA-256 is <code>',esc(r$plan$source_sha256),'</code>; the reviewed Newton worksheet SHA-256 is <code>',esc(r$instance$worksheet_sha256),'</code>.</p>')
+```
+
+This is a bounded design example, not a comprehensive search, completed assessment or approved EMMA schema. Source systems and original documents remain separate.

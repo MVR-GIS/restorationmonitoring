@@ -188,6 +188,16 @@ connections needed among restoration intent, research, possible study
 designs and evidence, without presenting an expected benefit as a
 demonstrated local effect.
 
+- **[View the DuckDB-backed Steamboat
+  report](reports/steamboat-duckdb-20261106.md)** — A redesigned
+  evidence pathway with the project’s planning records, the complete
+  reviewed Newton study chain, and expandable source details. *Draft
+  static snapshot; not a live query or a local-effect assessment.*
+  [Downloadable
+  snapshot](https://github.com/MVR-GIS/restorationmonitoring/blob/main/pkgdown/assets/reports/steamboat-duckdb-20261106.html)
+  · [Design and reproduction
+  notes](https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/features/steamboat-duckdb-report.md).
+
 - **[View the Steamboat Island mussel
   report](reports/steamboat-mussel-20261103.md)** — A source-oriented
   case report connecting restoration intent, scientific evidence and

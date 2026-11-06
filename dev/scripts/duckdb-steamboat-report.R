@@ -1,0 +1,18 @@
+# Rscript dev/scripts/duckdb-steamboat-report.R database.duckdb new-report.html
+args <- commandArgs(trailingOnly=TRUE)
+if(length(args)!=2L) stop('Supply database and new HTML path.')
+database <- args[1]; output <- args[2]
+if(!file.exists(database) || file.exists(output) || !dir.exists(dirname(output))) stop('Use an existing database and new output in an existing directory.')
+if(file.exists(paste0(database,'.wal'))) stop('Checkpoint the database with other connections closed before taking a fingerprinted report snapshot.')
+source('dev/scripts/duckdb-steamboat-report-lib.R',local=TRUE)
+before <- unname(tools::md5sum(database))
+con <- DBI::dbConnect(duckdb::duckdb(),dbdir=database,read_only=TRUE)
+r <- tryCatch(steamboat_duckdb_summary(con),finally=DBI::dbDisconnect(con,shutdown=TRUE))
+if(file.exists(paste0(database,'.wal')) || !identical(before,unname(tools::md5sum(database)))) stop('Database changed during report read.')
+r$database_md5 <- before; r$generated_at <- format(Sys.time(),tz='UTC',usetz=TRUE)
+r$duckdb_version <- as.character(utils::packageVersion('duckdb'))
+rendered <- rmarkdown::render('inst/reports/duckdb_steamboat_report.Rmd',output_dir=tempdir(),output_file=paste0('steamboat-',Sys.getpid(),'.html'),params=list(report=r),envir=new.env(parent=globalenv()),quiet=TRUE,encoding='UTF-8')
+html <- paste(readLines(rendered,encoding='UTF-8',warn=FALSE),collapse='\n')
+if(grepl('<pre[^>]*><code[^>]*>\\s*## (Warning|Error)',html,perl=TRUE)) stop('Rendered warning or error.')
+if(!isTRUE(suppressWarnings(file.link(rendered,output)))) stop('Could not publish without replacement.')
+cat(normalizePath(output,winslash='/',mustWork=TRUE),'\n')

@@ -1,0 +1,36 @@
+test_that('Newton evidence and Steamboat summary preserve reviewed records and limits', {
+  skip_if_not_installed('DBI'); skip_if_not_installed('duckdb'); skip_if_not_installed('jsonlite')
+  root <- normalizePath(test_path('..','..'),winslash='/')
+  db <- file.path(root,'dev/outputs/duckdb/restoration-steamboat-evidence-v1.duckdb')
+  skip_if_not(file.exists(db),'Local migrated study database unavailable')
+  x <- jsonlite::fromJSON(file.path(root,'dev/goals/mussel-vital-rates-instance.json'),simplifyVector=FALSE)
+  con <- DBI::dbConnect(duckdb::duckdb(),dbdir=db,read_only=TRUE)
+  on.exit(DBI::dbDisconnect(con,shutdown=TRUE),add=TRUE)
+  env <- new.env(parent=globalenv())
+  sys.source(file.path(root,'dev/scripts/duckdb-steamboat-report-lib.R'),envir=env)
+  r <- env$steamboat_duckdb_summary(con)
+  expect_equal(r$instance$review_status,x$status)
+  expect_equal(r$instance$science_source_id,x$source_id)
+  expect_equal(r$instance$assertion_id,x$assertion_id)
+  expect_equal(r$instance$hypothesis_assertion_id,x$hypothesis_id)
+  for(i in seq_along(x$chain)) {
+    expect_equal(r$chain$component_type[i],x$chain[[i]]$object)
+    expect_equal(r$chain$description[i],x$chain[[i]]$record)
+    expect_equal(r$chain$source_locator[i],x$chain[[i]]$locator)
+    expect_equal(r$chain$basis[i],x$chain[[i]]$basis)
+  }
+  expect_equal(r$flags$flag,unlist(x$review_flags,use.names=FALSE))
+  files <- DBI::dbGetQuery(con,'SELECT local_name,source_name,md5,source_url,row_count,column_count FROM research_register.study_evidence_file ORDER BY local_name')
+  for(z in x$files) {
+    f <- files[files$local_name==z$name,]
+    expect_equal(f$source_name,z$source_name); expect_equal(f$md5,z$md5); expect_equal(f$source_url,z$url)
+    if(!is.null(z$rows)) expect_equal(as.integer(f$row_count),z$rows)
+    if(!is.null(z$columns)) expect_equal(as.integer(f$column_count),z$columns)
+  }
+  expect_equal(nrow(r$objectives),4L); expect_equal(nrow(r$criteria),11L)
+  expect_true(all(r$criteria$relation_status=='analyst-proposed'))
+  expect_equal(r$hypothesis$record_status,'assistant-proposed')
+  expect_equal(nrow(r$series),56L); expect_equal(nrow(r$triggers),5L)
+  expect_equal(nrow(r$questions),49L); expect_equal(nrow(r$ranks),196L)
+  expect_equal(DBI::dbGetQuery(con,'SELECT count(*) n FROM rf.import_layer')$n,27)
+})
