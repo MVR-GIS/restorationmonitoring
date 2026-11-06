@@ -1,7 +1,7 @@
 # Handoff: science and restoration integration design
 
-- Updated: 2026-11-05
-- Status: active conceptual-design work; no production implementation is authorized
+- Updated: 2026-11-06
+- Status: active relational modeling and local prototyping; no production implementation is authorized
 - Use: concise rehydration for the next chat. Read this after `AGENTS.md`; then open only the linked maintained artifacts needed for the task.
 
 ## Objective
@@ -44,6 +44,7 @@ Design the **science and restoration integration component of the Environmental 
 | Program purpose, source status or strategic alignment | [Project foundation](../../goals/project-foundation.md), [source inventory](../../goals/source-inventory.md), [strategic/FWWG review](../../goals/strategic-plan-fwwg-review.md) |
 | Conceptual entities/relationships or ontology alignment | [Relationship analysis](../../architecture/science-restoration-relationships.md), [Steamboat model](../../architecture/steamboat-conceptual-model.md), [USACE alignment](../../architecture/usace-ontology-alignment.md) |
 | Consolidated data model design review | [Data model design report](../../architecture/data-model-design-report.md), then the linked detailed model and source reviews as needed |
+| Research question, source or DuckDB migration design | [Research evidence model](../../architecture/research-questions-evidence-relational-design.md), [reporting and migration status](../../architecture/duckdb-reporting-and-publication.md) |
 | Existing science and AM data tooling, models or reuse | [Tooling watch baseline](../../goals/science-am-tooling-watch.md) and [repeatable watch workflow](../../workflows/science-am-tooling-watch.md); the earlier broad landscape review's priorities are superseded |
 | Bounded comparison of Bertom with external models | [Bertom tool-model mapping](../../architecture/bertom-tool-model-mapping.md); documentation-based, no imports, implementation or schema approval |
 | HREP monitoring, PERs or assessment lineage | [HREP/PER/workshop review](../../goals/hrep-per-workshop-review.md) |
@@ -57,11 +58,11 @@ The root `AGENTS.md` now contains the same source-family routing. Do not reread 
 
 ## Next safe action
 
-The [DuckDB prototype and EMMA migration crosswalk](../../architecture/duckdb-mvp-and-emma-migration.md) documents the version-2 local schema and source-backed/synthetic fixtures. [DuckDB multi-entry reports](../../features/duckdb-multi-entry-report.md) now render separate question, survey and project starts, including candidate project–objective links and source/relationship status. They do not yet include the earlier curated prototype's channel/GIS path, perform extraction or query production systems. Next, examine how to represent the missing practice/feature relationships or move toward a source-extraction demonstration. Use source attribution and provisional labels; detailed quality and review governance remain deferred. Earlier SQLite and PostgreSQL development selections are superseded by DuckDB.
+Continue the [research data migration](../../architecture/duckdb-reporting-and-publication.md#migration-status): model and reconcile the remaining Steamboat objectives, criteria and study chain, source inventory and worksheet context; then migrate report inputs and compare their content before retiring JSON files. Use the [research evidence model](../../architecture/research-questions-evidence-relational-design.md) to keep questions and hypotheses independent of source type. Design a durable backup and update process before treating the ignored local database as the sole copy of unique work. The [multi-entry reports](../../features/duckdb-multi-entry-report.md) use a candidate project-number association to imported GIS records, but do not establish a survey-to-feature relationship, perform extraction or query production systems. Preserve attribution and provisional labels; detailed quality and review governance remain deferred.
 
 The user clarified on 2026-11-03 that manuals, AM program descriptions and construction/project tracking are insufficient: the goal is inspectable data models and preferably open-source tooling for long-term governance of science–restoration integration. The [tooling watch](../../goals/science-am-tooling-watch.md) supersedes the earlier broad review's comparison priorities. No verified open end-to-end replacement emerged from the bounded search. Continue conceptual design and report work while examining concrete partial candidates, particularly AMMonitor/AMModels, Miradi's model, NPAM, ORKG and SEPIO; repositories for the USGS R packages returned 403 in direct browsing. Do not stall for broad manual/portal searches or assume outreach, adoption, production records or a technology choice is authorized. The [watch workflow](../../workflows/science-am-tooling-watch.md) gives a bounded, unscheduled refresh process.
 
-The user then requested a one- or two-turn mapping exercise. The [Bertom mapping](../../architecture/bertom-tool-model-mapping.md) completes it in one turn using available documentation: AMMonitor's monitoring concepts, Miradi's intended results, SEPIO's claims/evidence, and AMModels' analysis bundle. It records analogies and limits; no candidate was installed and no schema was validated. Resume conceptual model and practitioner-report iteration rather than extend the mapping without a new reason.
+The bounded [Bertom mapping](../../architecture/bertom-tool-model-mapping.md) records documentation-based analogies to selected external tools; it is complete and does not validate an imported schema.
 
 The [Bertom linkage review](../../goals/bertom-rock-habitat-linkage-review.md) and [availability screen](../../goals/cross-system-case-screen.md) trace WQ-39, historical objectives and targets, a rock habitat channel and the 2014 survey. UMRRDB project ID 65 matches named Restoration Features records in the supplied snapshots, but EMMA identity and survey-to-feature geometry are unverified. The FY27 compilation is an entry source, not evidence that entry occurred; it also contains a project-label mismatch elsewhere. The cited source passages have been reviewed. Do not present the historical target as an evaluated EMMA criterion or the report as a project-success judgment.
 

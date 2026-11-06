@@ -35,7 +35,7 @@
 <div id="a-readers-guide-to-restoration-science-and-design" class="section level1">
 
 <p><strong>How can a restoration program make its collective knowledge easier to find, understand and use—across projects, disciplines and generations?</strong></p>
-<p>This guide is a starting point for program managers, scientists, restoration practitioners and partners who want to explore the work behind that question. It brings together selected research and development documents for the proposed science and restoration integration component of the the Upper Mississippi River Restoration (UMRR) Program’s <strong>Environmental Monitoring and Management Application (EMMA)</strong>, supporting both UMRR and Navigation and Ecosystem Sustainability Program (NESP) communities.</p>
+<p>This guide is a starting point for program managers, scientists, restoration practitioners and partners who want to explore the work behind that question. It brings together selected research and development documents for the proposed science and restoration integration component of the Upper Mississippi River Restoration (UMRR) Program’s <strong>Environmental Monitoring and Management Application (EMMA)</strong>, supporting both UMRR and Navigation and Ecosystem Sustainability Program (NESP) communities.</p>
 <p>The guide leads directly into the working documents in <code>dev/</code>. Those documents retain the evidence, design reasoning and unanswered questions behind the project. You can read the guide in order or start with a question that matters to you.</p>
 <p>The report links below open draft HTML on the package website. When reading this Markdown file on GitHub, use the adjacent <strong>downloadable snapshot</strong> links and open the downloaded HTML in a browser. The reports are dated design prototypes; they are not approved assessments, live-system queries or comprehensive reviews.</p>
 <div class="section level2">
@@ -65,7 +65,7 @@
 <li>
 <strong>Deferred:</strong> material saved for a later conversation when the people or information needed are available.</li>
 </ul><p>The documents themselves are the source for their detailed status. In particular, a source-reported result, a proposed interpretation and an approved program decision are different things.</p>
-<p>Some reports and design notes also refer to structured JSON worksheets and registers. The <a href="https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/goals/structured-data-guide.md" class="external-link">guide to structured research and design resources</a> explains what each file contains, links to it and its companion review, and shows how to interpret record references such as <code>SI-O3</code> and <code>MS-03</code>.</p>
+<p>Some reports and design notes still refer to structured JSON worksheets and registers while their contents are being migrated to DuckDB. The <a href="https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/goals/structured-data-guide.md" class="external-link">guide to structured research and design resources</a> explains their contents, current role and record references such as <code>SI-O3</code> and <code>MS-03</code>.</p>
 </div>
 </div>
 <div class="section level2">
@@ -130,7 +130,13 @@
 <strong><a href="https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/architecture/relational-vertical-slice.md" class="external-link">Relational vertical slice</a></strong> — Reviewable ERDs, proposed fields and constraints, and Bertom/Steamboat examples for DuckDB development and later enterprise review. <em>Working design.</em>
 </li>
 <li>
+<strong><a href="https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/architecture/research-questions-evidence-relational-design.md" class="external-link">Research questions, sources and program connections</a></strong> — An ERD and dictionary for questions and hypotheses from multiple sources, their evidence and possible connections to program activities. <em>Local model increment; enterprise design remains open.</em>
+</li>
+<li>
 <strong><a href="https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/architecture/duckdb-mvp-and-emma-migration.md" class="external-link">DuckDB prototype and EMMA migration crosswalk</a></strong> — Run the local relational example and see how its tables correspond to existing EMMA structures. <em>Local prototype; enterprise migration remains unverified.</em>
+</li>
+<li>
+<strong><a href="https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/architecture/duckdb-reporting-and-publication.md" class="external-link">DuckDB reporting and publication direction</a></strong> — The static-report development approach, eventual dynamic-app goal, and remaining migration work. <em>Working delivery plan.</em>
 </li>
 <li>
 <strong><a href="https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/architecture/extraction-quality-and-reprocessing.md" class="external-link">Extraction quality and reprocessing plan</a></strong> — Future options for source provenance, human review, evaluation and incremental updates. <em>Working design; detailed review and quality processes are deferred until after the MVP.</em>

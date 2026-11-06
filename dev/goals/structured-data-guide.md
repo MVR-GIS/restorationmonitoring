@@ -1,6 +1,6 @@
 # Guide to structured research and design resources
 
-This guide explains the six JSON files currently maintained in `dev/goals/`. These are structured working records used in source review, conceptual modeling and prototype reports. **JSON** is a text format that preserves named fields and lists so people and software can inspect the same information. Select a file to view its contents on GitHub; use its companion review for the narrative and source context.
+This guide explains the six JSON files in `dev/goals/`. They remain reviewed working records, migration inputs and active dependencies of some legacy reports. The user has selected modeled DuckDB tables as the development reporting store and wants these data fixtures retired after migration and reconciliation. The [research evidence model](../architecture/research-questions-evidence-relational-design.md) and [migration status](../architecture/duckdb-reporting-and-publication.md#migration-status) describe what has been transferred and what remains. Select a file to inspect it on GitHub; use its companion review for source context.
 
 These resources have different purposes. A source inventory describes documents; an extraction worksheet describes selected material found in them; a relevance worksheet may contain proposed interpretations. They are not interchangeable with original publications, production database records, complete datasets or approved scientific assessments.
 
@@ -19,4 +19,4 @@ Some records use a file name and an item label as a compact locator. For example
 
 Likewise, `MS-03` identifies one selected source in the mussel science worksheet, and its more detailed study instance has its own linked file. `SC-08` is an assistant-formulated hypothesis in that worksheet; `WQ-39` is a local reference to a workshop question. A connection among these labels may be a proposed relevance link rather than a relationship stated in the original source. Consult the record's status and the accompanying review before drawing a conclusion.
 
-This catalog is a human-readable entry point, not another copy of the records. If a JSON file, scope, review status or companion changes, update the relevant description and link here. It does not define a production schema or change agentic routing.
+This catalog is a human-readable entry point, not another copy of the records. Update it as migration, report dependencies and record locations change. It does not define a production schema or change agentic routing.

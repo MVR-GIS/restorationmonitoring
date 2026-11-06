@@ -4,7 +4,7 @@ This development prototype creates separate self-contained report snapshots star
 
 ## Reproduce
 
-Create a **new version-2 fixture** as described in the [DuckDB setup and crosswalk](../architecture/duckdb-mvp-and-emma-migration.md); existing version-1 databases do not contain the new `project_objective_link` table and are not automatically migrated. With DuckDB/DBI, R Markdown and Pandoc installed, from the repository root:
+Use the [current aligned development database and migration notes](../architecture/research-questions-evidence-relational-design.md#implementation-and-unresolved-work), or create a new full GIS prototype as described in the [Restoration Features import guide](restoration-features-duckdb.md). The earlier version-2 fixture described in the [DuckDB crosswalk](../architecture/duckdb-mvp-and-emma-migration.md) also works but has narrower content; version-1 databases do not contain `project_objective_link` and are not automatically migrated. With DuckDB/DBI, R Markdown and Pandoc installed, from the repository root:
 
 ```text
 Rscript dev/scripts/duckdb-multi-report.R DATABASE.duckdb NEW-REPORT.html question 1
@@ -16,7 +16,7 @@ The final optional `TRUE` includes a synthetic assessment; it is excluded by def
 
 The [reader](../scripts/duckdb-multi-report-lib.R) follows question–study, survey-event–study-version and project–study associations through explicit tables, then queries findings, event context and sources. Project objectives use the separately attributed `project_objective_link`, rather than silently turning a candidate identity into a direct FK. From a project start, its objective links remain visible even if no study is linked. Question and survey starts reach those objectives through the candidate study–project association. Rows retain both association statuses and scope. Survey starts restrict study versions to the event's linked version; project and question starts include all associated versions. A study-level finding is **not** proof that it is attributable to a particular event.
 
-In-memory tests compare the same question, finding and candidate project/objective associations across all three starts, check original source locator and link status, reject missing starts, verify hypothetical exclusion and test a project with objectives but no study. Reports were rendered from the version-2 local database for each start. No clinical or scientific validation, full corpus search, RAG extraction, final GIS identity or project-success assessment is implied.
+Tests compare the same question, finding and candidate project/objective associations across all three starts, check source locators and link status, reject missing starts, verify hypothetical exclusion and test a project with objectives but no study. The three published snapshots were rendered from the full GIS prototype; the aligned database has also been checked with the project report and all three readers. No scientific validation, full corpus search, RAG extraction, final GIS identity or project-success assessment is implied.
 
 ## Current gap versus the original walkthrough
 

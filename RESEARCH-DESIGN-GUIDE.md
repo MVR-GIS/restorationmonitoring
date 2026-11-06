@@ -2,7 +2,7 @@
 
 **How can a restoration program make its collective knowledge easier to find, understand and use—across projects, disciplines and generations?**
 
-This guide is a starting point for program managers, scientists, restoration practitioners and partners who want to explore the work behind that question. It brings together selected research and development documents for the proposed science and restoration integration component of the the Upper Mississippi River Restoration (UMRR) Program's **Environmental Monitoring and Management Application (EMMA)**, supporting both UMRR and Navigation and Ecosystem Sustainability Program (NESP) communities.
+This guide is a starting point for program managers, scientists, restoration practitioners and partners who want to explore the work behind that question. It brings together selected research and development documents for the proposed science and restoration integration component of the Upper Mississippi River Restoration (UMRR) Program's **Environmental Monitoring and Management Application (EMMA)**, supporting both UMRR and Navigation and Ecosystem Sustainability Program (NESP) communities.
 
 The guide leads directly into the working documents in `dev/`. Those documents retain the evidence, design reasoning and unanswered questions behind the project. You can read the guide in order or start with a question that matters to you.
 
@@ -27,7 +27,7 @@ If you have ten minutes, these three documents give a useful overview:
 
 The documents themselves are the source for their detailed status. In particular, a source-reported result, a proposed interpretation and an approved program decision are different things.
 
-Some reports and design notes also refer to structured JSON worksheets and registers. The [guide to structured research and design resources](https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/goals/structured-data-guide.md) explains what each file contains, links to it and its companion review, and shows how to interpret record references such as `SI-O3` and `MS-03`.
+Some reports and design notes still refer to structured JSON worksheets and registers while their contents are being migrated to DuckDB. The [guide to structured research and design resources](https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/goals/structured-data-guide.md) explains their contents, current role and record references such as `SI-O3` and `MS-03`.
 
 ## What is the initiative trying to accomplish?
 
@@ -79,7 +79,9 @@ The proposed model brings together questions and hypotheses, study designs, rest
 - **[Data model design report](https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/architecture/data-model-design-report.md)** — A consolidated view of the proposed objects, relationships, existing-system anchors and open choices. *Working design.*
 - **[Relational model and extraction roadmap](https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/architecture/relational-model-and-extraction-roadmap.md)** — A first table-oriented logical sketch, enterprise and local prototyping boundaries, and retrieval-assisted document extraction. *Working design; not production DDL.*
 - **[Relational vertical slice](https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/architecture/relational-vertical-slice.md)** — Reviewable ERDs, proposed fields and constraints, and Bertom/Steamboat examples for DuckDB development and later enterprise review. *Working design.*
+- **[Research questions, sources and program connections](https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/architecture/research-questions-evidence-relational-design.md)** — An ERD and dictionary for questions and hypotheses from multiple sources, their evidence and possible connections to program activities. *Local model increment; enterprise design remains open.*
 - **[DuckDB prototype and EMMA migration crosswalk](https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/architecture/duckdb-mvp-and-emma-migration.md)** — Run the local relational example and see how its tables correspond to existing EMMA structures. *Local prototype; enterprise migration remains unverified.*
+- **[DuckDB reporting and publication direction](https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/architecture/duckdb-reporting-and-publication.md)** — The static-report development approach, eventual dynamic-app goal, and remaining migration work. *Working delivery plan.*
 - **[Extraction quality and reprocessing plan](https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/architecture/extraction-quality-and-reprocessing.md)** — Future options for source provenance, human review, evaluation and incremental updates. *Working design; detailed review and quality processes are deferred until after the MVP.*
 - **[Science–restoration relationship analysis](https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/architecture/science-restoration-relationships.md)** — The distinctions and relationships the cases suggest the model needs to preserve. *Working design.*
 - **[Minimum attributed linkage record](https://github.com/MVR-GIS/restorationmonitoring/blob/main/dev/architecture/prospective-study-linkage-minimum-record.md)** — A proposed way to describe a relationship together with its source, scope, review state and responsibility. The project lead accepted this pattern for further validation; its fields and implementation remain open. *Accepted for further validation.*
